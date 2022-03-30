@@ -240,7 +240,7 @@ public class HashMap<K,V> extends AbstractMap<K,V>
      * by either of the constructors with arguments.
      * MUST be a power of two <= 1<<30.
      */
-    static final int MAXIMUM_CAPACITY = 1 << 30;
+    static final int MAXIMUM_CAPACITY = 1 << 30;            // hashMap中的最大值
 
     /**
      *  负载因子 初始值为0.75
@@ -677,26 +677,26 @@ public class HashMap<K,V> extends AbstractMap<K,V>
     final Node<K,V>[] resize() {                            // 对table进行初始化或者进行扩容 扩容时 按照双倍进行扩容
         Node<K,V>[] oldTab = table;
         int oldCap = (oldTab == null) ? 0 : oldTab.length;      // 旧桶大小
-        int oldThr = threshold;
+        int oldThr = threshold;    // 旧桶的临界值
         int newCap, newThr = 0;
-        if (oldCap > 0) {
-            if (oldCap >= MAXIMUM_CAPACITY) {
+        if (oldCap > 0) {                               // 非第一次扩容 第一次扩容为初始化 也就是说是执行扩容 而并不是初始化
+            if (oldCap >= MAXIMUM_CAPACITY) {           // 如果就的临界条件大于桶中可以存储的最大值 那么就设置临界值为Integer的最大值 意味着这样就永远不会触发桶的扩容
                 threshold = Integer.MAX_VALUE;
-                return oldTab;
+                return oldTab;              // 直接返回旧的列表 不进行扩容
             }
-            else if ((newCap = oldCap << 1) < MAXIMUM_CAPACITY &&
-                     oldCap >= DEFAULT_INITIAL_CAPACITY)
-                newThr = oldThr << 1; // double threshold
+            else if ((newCap = oldCap << 1) < MAXIMUM_CAPACITY &&         // 扩容后的数量不会超过最大容量限制
+                     oldCap >= DEFAULT_INITIAL_CAPACITY)                // todo 暂时不理解
+                newThr = oldThr << 1; // double threshold 双倍扩容
         }
-        else if (oldThr > 0) // initial capacity was placed in threshold
+        else if (oldThr > 0) // initial capacity was placed in threshold todo 这是在啥时候执行???
             newCap = oldThr;
         else {               // zero initial threshold signifies using defaults  初始化时候
             newCap = DEFAULT_INITIAL_CAPACITY;  // 初始化桶大小
             newThr = (int)(DEFAULT_LOAD_FACTOR * DEFAULT_INITIAL_CAPACITY); //设置初始的临界值
         }
         if (newThr == 0) {
-            float ft = (float)newCap * loadFactor;
-            newThr = (newCap < MAXIMUM_CAPACITY && ft < (float)MAXIMUM_CAPACITY ?
+            float ft = (float)newCap * loadFactor;          // 设置新的容量
+            newThr = (newCap < MAXIMUM_CAPACITY && ft < (float)MAXIMUM_CAPACITY ?   // 设置新的容量临界值
                       (int)ft : Integer.MAX_VALUE);
         }
         threshold = newThr;
@@ -708,11 +708,11 @@ public class HashMap<K,V> extends AbstractMap<K,V>
                 Node<K,V> e;
                 if ((e = oldTab[j]) != null) {
                     oldTab[j] = null;
-                    if (e.next == null)
+                    if (e.next == null)                                             // 如果该桶中没有值
                         newTab[e.hash & (newCap - 1)] = e;
-                    else if (e instanceof TreeNode)
+                    else if (e instanceof TreeNode)                                 // 如果该桶中存储的红黑树
                         ((TreeNode<K,V>)e).split(this, newTab, j, oldCap);
-                    else { // preserve order
+                    else { // preserve order                                        // 如果该桶中存储的是链表 todo menlo
                         Node<K,V> loHead = null, loTail = null;
                         Node<K,V> hiHead = null, hiTail = null;
                         Node<K,V> next;
