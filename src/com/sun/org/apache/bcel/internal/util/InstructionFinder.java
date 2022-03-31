@@ -3,12 +3,7 @@
  */
 package com.sun.org.apache.bcel.internal.util;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Locale;
-import java.util.Map;
+import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -55,7 +50,7 @@ public class InstructionFinder {
 
     private static final int OFFSET = 32767; // char + OFFSET is outside of LATIN-1
     private static final int NO_OPCODES = 256; // Potential number, some are not used
-    private static final Map<String, String> map = new HashMap<>();
+    private static final Map<String, String> map = new My_HashMap<>();
     private final InstructionList il;
     private String il_string; // instruction list as string
     private InstructionHandle[] handles; // map instruction

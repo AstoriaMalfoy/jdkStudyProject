@@ -26,7 +26,6 @@
 package javax.management.loading;
 
 // Java import
-import com.sun.jmx.defaults.JmxProperties;
 
 import com.sun.jmx.defaults.ServiceName;
 
@@ -47,15 +46,8 @@ import java.net.URLStreamHandlerFactory;
 import java.nio.file.Files;
 import java.security.AccessController;
 import java.security.PrivilegedAction;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.List;
+import java.util.*;
 import java.util.logging.Level;
-import java.util.Map;
-import java.util.Set;
-import java.util.StringTokenizer;
 
 import javax.management.InstanceAlreadyExistsException;
 import javax.management.InstanceNotFoundException;
@@ -70,7 +62,7 @@ import javax.management.ReflectionException;
 
 import static com.sun.jmx.defaults.JmxProperties.MLET_LIB_DIR;
 import static com.sun.jmx.defaults.JmxProperties.MLET_LOGGER;
-import com.sun.jmx.defaults.ServiceName;
+
 import javax.management.ServiceNotFoundException;
 
 /**
@@ -228,7 +220,7 @@ public class MLet extends java.net.URLClassLoader
       * objects maps from primitive classes to primitive object classes.
       */
      private Map<String,Class<?>> primitiveClasses =
-         new HashMap<String,Class<?>>(8) ;
+         new My_HashMap<String,Class<?>>(8) ;
      {
          primitiveClasses.put(Boolean.TYPE.toString(), Boolean.class);
          primitiveClasses.put(Character.TYPE.toString(), Character.class);

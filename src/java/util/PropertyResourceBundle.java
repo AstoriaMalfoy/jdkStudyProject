@@ -136,7 +136,7 @@ public class PropertyResourceBundle extends ResourceBundle {
     public PropertyResourceBundle (InputStream stream) throws IOException {
         Properties properties = new Properties();
         properties.load(stream);
-        lookup = new HashMap(properties);
+        lookup = new My_HashMap(properties);
     }
 
     /**
@@ -157,7 +157,7 @@ public class PropertyResourceBundle extends ResourceBundle {
     public PropertyResourceBundle (Reader reader) throws IOException {
         Properties properties = new Properties();
         properties.load(reader);
-        lookup = new HashMap(properties);
+        lookup = new My_HashMap(properties);
     }
 
     // Implements java.util.ResourceBundle.handleGetObject; inherits javadoc specification.

@@ -40,7 +40,6 @@ import java.security.*;
 import java.util.*;
 
 import javax.swing.*;
-import javax.swing.border.*;
 
 import javax.xml.parsers.*;
 import org.xml.sax.SAXException;
@@ -124,7 +123,7 @@ class Metacity implements SynthConstants {
         }
 
         // Initialize constants
-        variables = new HashMap<String, Integer>();
+        variables = new My_HashMap<String, Integer>();
         NodeList nodes = xmlDoc.getElementsByTagName("constant");
         int n = nodes.getLength();
         for (int i = 0; i < n; i++) {
@@ -144,14 +143,14 @@ class Metacity implements SynthConstants {
         }
 
         // Cache frame geometries
-        frameGeometries = new HashMap<String, Map<String, Object>>();
+        frameGeometries = new My_HashMap<String, Map<String, Object>>();
         nodes = xmlDoc.getElementsByTagName("frame_geometry");
         n = nodes.getLength();
         for (int i = 0; i < n; i++) {
             Node node = nodes.item(i);
             String name = getStringAttr(node, "name");
             if (name != null) {
-                HashMap<String, Object> gm = new HashMap<String, Object>();
+                My_HashMap<String, Object> gm = new My_HashMap<String, Object>();
                 frameGeometries.put(name, gm);
 
                 String parentGM = getStringAttr(node, "parent");
@@ -602,7 +601,7 @@ class Metacity implements SynthConstants {
         g2.setComposite(oldComp);
     }
 
-    private HashMap<String, Image> images = new HashMap<String, Image>();
+    private My_HashMap<String, Image> images = new My_HashMap<String, Image>();
 
     protected Image getImage(String key, Color c) {
         Image image = images.get(key+"-"+c.getRGB());

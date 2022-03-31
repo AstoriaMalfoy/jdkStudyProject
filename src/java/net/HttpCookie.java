@@ -25,16 +25,8 @@
 
 package java.net;
 
-import java.util.List;
-import java.util.StringTokenizer;
-import java.util.NoSuchElementException;
+import java.util.*;
 import java.text.SimpleDateFormat;
-import java.util.TimeZone;
-import java.util.Calendar;
-import java.util.GregorianCalendar;
-import java.util.Date;
-import java.util.Locale;
-import java.util.Objects;
 
 /**
  * An HttpCookie object represents an HTTP cookie, which carries state
@@ -856,7 +848,7 @@ public final class HttpCookie implements Cloneable {
                                String attrValue);
     }
     static final java.util.Map<String, CookieAttributeAssignor> assignors =
-            new java.util.HashMap<>();
+            new My_HashMap<>();
     static {
         assignors.put("comment", new CookieAttributeAssignor() {
                 public void assign(HttpCookie cookie,

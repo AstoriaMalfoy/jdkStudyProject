@@ -25,6 +25,8 @@
 
 package java.lang;
 
+import java.util.My_HashMap;
+
 /**
  * Class {@code Object} is the root of the class hierarchy.
  * Every class has {@code Object} as a superclass. All objects,
@@ -65,7 +67,7 @@ public class Object {
     /**
      * Returns a hash code value for the object. This method is
      * supported for the benefit of hash tables such as those provided by
-     * {@link java.util.HashMap}.
+     * {@link My_HashMap}.
      * <p>
      * The general contract of {@code hashCode} is:
      * <ul>
@@ -143,7 +145,7 @@ public class Object {
      * @return  {@code true} if this object is the same as the obj
      *          argument; {@code false} otherwise.
      * @see     #hashCode()
-     * @see     java.util.HashMap
+     * @see     My_HashMap
      */
     public boolean equals(Object obj) {
         return (this == obj);

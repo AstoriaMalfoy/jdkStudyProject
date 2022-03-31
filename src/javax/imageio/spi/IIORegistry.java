@@ -27,11 +27,7 @@ package javax.imageio.spi;
 
 import java.security.PrivilegedAction;
 import java.security.AccessController;
-import java.util.HashMap;
 import java.util.Iterator;
-import java.util.Map;
-import java.util.NoSuchElementException;
-import java.util.Set;
 import java.util.Vector;
 import com.sun.imageio.spi.FileImageInputStreamSpi;
 import com.sun.imageio.spi.FileImageOutputStreamSpi;

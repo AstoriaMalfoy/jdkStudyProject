@@ -38,14 +38,7 @@ import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
 import java.lang.reflect.Type;
 
-import java.util.Map;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.EventListener;
-import java.util.EventObject;
-import java.util.List;
-import java.util.TreeMap;
+import java.util.*;
 
 import sun.reflect.misc.ReflectUtil;
 
@@ -568,7 +561,7 @@ public class Introspector {
         return result;
     }
 
-    private HashMap<String, List<PropertyDescriptor>> pdStore = new HashMap<>();
+    private My_HashMap<String, List<PropertyDescriptor>> pdStore = new My_HashMap<>();
 
     /**
      * Adds the property descriptor to the list store.
@@ -936,7 +929,7 @@ public class Introspector {
      */
     private EventSetDescriptor[] getTargetEventInfo() throws IntrospectionException {
         if (events == null) {
-            events = new HashMap<>();
+            events = new My_HashMap<>();
         }
 
         // Check if the bean has its own BeanInfo that will provide
@@ -1019,7 +1012,7 @@ public class Introspector {
                                 if (listenerName.length() > 0 &&
                                     type.getName().endsWith(listenerName)) {
                                     if (adds == null) {
-                                        adds = new HashMap<>();
+                                        adds = new My_HashMap<>();
                                     }
                                     adds.put(listenerName, method);
                                 }
@@ -1038,7 +1031,7 @@ public class Introspector {
                                 if (listenerName.length() > 0 &&
                                     type.getName().endsWith(listenerName)) {
                                     if (removes == null) {
-                                        removes = new HashMap<>();
+                                        removes = new My_HashMap<>();
                                     }
                                     removes.put(listenerName, method);
                                 }
@@ -1057,7 +1050,7 @@ public class Introspector {
                                 if (listenerName.length() > 0 &&
                                     type.getName().endsWith(listenerName)) {
                                     if (gets == null) {
-                                        gets = new HashMap<>();
+                                        gets = new My_HashMap<>();
                                     }
                                     gets.put(listenerName, method);
                                 }
@@ -1156,7 +1149,7 @@ public class Introspector {
      */
     private MethodDescriptor[] getTargetMethodInfo() {
         if (methods == null) {
-            methods = new HashMap<>(100);
+            methods = new My_HashMap<>(100);
         }
 
         // Check if the bean has its own BeanInfo that will provide

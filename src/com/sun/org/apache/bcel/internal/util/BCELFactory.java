@@ -21,11 +21,7 @@
 package com.sun.org.apache.bcel.internal.util;
 
 import java.io.PrintWriter;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Locale;
-import java.util.Map;
+import java.util.*;
 
 import com.sun.org.apache.bcel.internal.Const;
 import com.sun.org.apache.bcel.internal.classfile.Utility;
@@ -81,7 +77,7 @@ class BCELFactory extends EmptyVisitor {
         _out = out;
     }
 
-    private final Map<Instruction, InstructionHandle> branch_map = new HashMap<>();
+    private final Map<Instruction, InstructionHandle> branch_map = new My_HashMap<>();
 
 
     public void start() {

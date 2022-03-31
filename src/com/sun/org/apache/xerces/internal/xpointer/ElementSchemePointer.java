@@ -18,8 +18,6 @@
  */
 package com.sun.org.apache.xerces.internal.xpointer;
 
-import java.util.HashMap;
-
 import com.sun.org.apache.xerces.internal.impl.XMLErrorReporter;
 import com.sun.org.apache.xerces.internal.util.SymbolTable;
 import com.sun.org.apache.xerces.internal.util.XMLChar;
@@ -28,6 +26,8 @@ import com.sun.org.apache.xerces.internal.xni.QName;
 import com.sun.org.apache.xerces.internal.xni.XMLAttributes;
 import com.sun.org.apache.xerces.internal.xni.XNIException;
 import com.sun.org.apache.xerces.internal.xni.parser.XMLErrorHandler;
+
+import java.util.My_HashMap;
 
 /**
  * <p>
@@ -526,7 +526,7 @@ final class ElementSchemePointer implements XPointerPart {
 
         private SymbolTable fSymbolTable;
 
-        private HashMap<Integer, String> fTokenNames = new HashMap<>();
+        private My_HashMap<Integer, String> fTokenNames = new My_HashMap<>();
 
         /**
          * Constructor

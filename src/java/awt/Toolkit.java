@@ -1927,7 +1927,7 @@ public abstract class Toolkit {
     }
 
     protected final Map<String,Object> desktopProperties =
-            new HashMap<String,Object>();
+            new My_HashMap<String,Object>();
     protected final PropertyChangeSupport desktopPropsSupport =
             Toolkit.createPropertyChangeSupport(this);
 

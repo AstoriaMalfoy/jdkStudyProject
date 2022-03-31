@@ -26,21 +26,14 @@
 package com.sun.corba.se.impl.transport;
 
 import java.io.IOException;
-import java.net.ServerSocket;
 import java.nio.channels.ClosedChannelException;
 import java.nio.channels.SelectableChannel;
-import java.nio.channels.ServerSocketChannel;
 import java.nio.channels.SelectionKey;
 import java.nio.channels.Selector;
 import java.nio.channels.ClosedSelectorException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Iterator;
-import java.util.List;
+import java.util.*;
 
 
-import com.sun.corba.se.pept.broker.Broker;
 import com.sun.corba.se.pept.transport.Acceptor;
 import com.sun.corba.se.pept.transport.Connection;
 import com.sun.corba.se.pept.transport.EventHandler;
@@ -70,7 +63,7 @@ class SelectorImpl
     private long timeout;
     private List deferredRegistrations;
     private List interestOpsList;
-    private HashMap listenerThreads;
+    private My_HashMap listenerThreads;
     private Map readerThreads;
     private boolean selectorStarted;
     private volatile boolean closed;
@@ -85,8 +78,8 @@ class SelectorImpl
         timeout = 60000;
         deferredRegistrations = new ArrayList();
         interestOpsList = new ArrayList();
-        listenerThreads = new HashMap();
-        readerThreads = java.util.Collections.synchronizedMap(new HashMap());
+        listenerThreads = new My_HashMap();
+        readerThreads = java.util.Collections.synchronizedMap(new My_HashMap());
         closed = false;
         wrapper = ORBUtilSystemException.get(orb,CORBALogDomains.RPC_TRANSPORT);
     }

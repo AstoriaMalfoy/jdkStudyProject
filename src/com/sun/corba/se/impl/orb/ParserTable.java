@@ -30,15 +30,13 @@ import java.net.InetSocketAddress;
 import java.net.Socket ;
 import java.net.ServerSocket ;
 
-import java.io.IOException ;
-
-import java.util.HashMap ;
 import java.util.List;
 import java.util.Map ;
 
 import java.security.AccessController ;
 import java.security.PrivilegedExceptionAction ;
 import java.security.PrivilegedActionException ;
+import java.util.My_HashMap;
 
 import org.omg.PortableInterceptor.ORBInitializer ;
 import org.omg.PortableInterceptor.ORBInitInfo ;
@@ -50,7 +48,6 @@ import com.sun.corba.se.pept.protocol.MessageMediator;
 import com.sun.corba.se.pept.transport.Acceptor;
 import com.sun.corba.se.pept.transport.Connection;
 import com.sun.corba.se.pept.transport.ContactInfo;
-import com.sun.corba.se.pept.transport.ContactInfoList;
 import com.sun.corba.se.pept.transport.EventHandler;
 import com.sun.corba.se.pept.transport.InboundConnectionCache;
 
@@ -66,7 +63,6 @@ import com.sun.corba.se.spi.orb.ParserDataFactory ;
 import com.sun.corba.se.spi.orb.StringPair ;
 import com.sun.corba.se.spi.transport.CorbaContactInfoList;
 import com.sun.corba.se.spi.transport.CorbaContactInfoListFactory;
-import com.sun.corba.se.spi.transport.CorbaTransportManager;
 import com.sun.corba.se.spi.transport.IORToSocketInfo;
 import com.sun.corba.se.spi.transport.ReadTimeouts;
 import com.sun.corba.se.spi.transport.SocketInfo;
@@ -646,7 +642,7 @@ public class ParserTable {
 
     private Operation makeBMGROperation()
     {
-        Map map = new HashMap() ;
+        Map map = new My_HashMap() ;
         map.put( "GROW", new Integer(0) ) ;
         map.put( "CLCT", new Integer(1) ) ;
         map.put( "STRM", new Integer(2) ) ;

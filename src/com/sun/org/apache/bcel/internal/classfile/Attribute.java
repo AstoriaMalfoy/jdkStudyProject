@@ -23,8 +23,8 @@ import java.io.DataInput;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
-import java.util.HashMap;
 import java.util.Map;
+import java.util.My_HashMap;
 
 import com.sun.org.apache.bcel.internal.Const;
 
@@ -86,7 +86,7 @@ public abstract class Attribute implements Cloneable, Node {
         file.writeInt(length);
     }
 
-    private static final Map<String, Object> readers = new HashMap<>();
+    private static final Map<String, Object> readers = new My_HashMap<>();
 
     /**
      * Add an Attribute reader capable of parsing (user-defined) attributes

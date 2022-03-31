@@ -24,9 +24,10 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.ObjectStreamField;
-import java.util.HashMap;
 import java.util.Hashtable;
 import java.util.Map;
+import java.util.My_HashMap;
+
 import org.w3c.dom.DOMException;
 import org.w3c.dom.DocumentType;
 import org.w3c.dom.NamedNodeMap;
@@ -479,7 +480,7 @@ public class DocumentTypeImpl
     public Object setUserData(String key,
     Object data, UserDataHandler handler) {
         if(userData == null)
-            userData = new HashMap<>();
+            userData = new My_HashMap<>();
         if (data == null) {
             if (userData != null) {
                 UserDataRecord udr = userData.remove(key);
@@ -554,6 +555,6 @@ public class DocumentTypeImpl
                 (Hashtable<String, UserDataRecord>)gf.get("userData", null);
 
         //convert the Hashtable back to HashMap
-        if (ud != null) userData = new HashMap<>(ud);
+        if (ud != null) userData = new My_HashMap<>(ud);
     }
 } // class DocumentTypeImpl

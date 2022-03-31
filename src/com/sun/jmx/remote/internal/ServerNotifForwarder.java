@@ -33,13 +33,7 @@ import java.security.AccessControlContext;
 import java.security.AccessController;
 import java.security.PrivilegedActionException;
 import java.security.PrivilegedExceptionAction;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 import javax.management.InstanceNotFoundException;
 import javax.management.ListenerNotFoundException;
 import javax.management.MBeanPermission;
@@ -489,7 +483,7 @@ public class ServerNotifForwarder {
 
     private NotificationBuffer notifBuffer;
     private final Map<ObjectName, Set<IdAndFilter>> listenerMap =
-            new HashMap<ObjectName, Set<IdAndFilter>>();
+            new My_HashMap<ObjectName, Set<IdAndFilter>>();
 
     private boolean terminated = false;
     private final int[] terminationLock = new int[0];

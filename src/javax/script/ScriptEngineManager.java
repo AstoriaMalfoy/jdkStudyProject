@@ -78,9 +78,9 @@ public class ScriptEngineManager  {
     private void init(final ClassLoader loader) {
         globalScope = new SimpleBindings();
         engineSpis = new HashSet<ScriptEngineFactory>();
-        nameAssociations = new HashMap<String, ScriptEngineFactory>();
-        extensionAssociations = new HashMap<String, ScriptEngineFactory>();
-        mimeTypeAssociations = new HashMap<String, ScriptEngineFactory>();
+        nameAssociations = new My_HashMap<String, ScriptEngineFactory>();
+        extensionAssociations = new My_HashMap<String, ScriptEngineFactory>();
+        mimeTypeAssociations = new My_HashMap<String, ScriptEngineFactory>();
         initEngines(loader);
     }
 
@@ -403,13 +403,13 @@ public class ScriptEngineManager  {
     private HashSet<ScriptEngineFactory> engineSpis;
 
     /** Map of engine name to script engine factory. */
-    private HashMap<String, ScriptEngineFactory> nameAssociations;
+    private My_HashMap<String, ScriptEngineFactory> nameAssociations;
 
     /** Map of script file extension to script engine factory. */
-    private HashMap<String, ScriptEngineFactory> extensionAssociations;
+    private My_HashMap<String, ScriptEngineFactory> extensionAssociations;
 
     /** Map of script script MIME type to script engine factory. */
-    private HashMap<String, ScriptEngineFactory> mimeTypeAssociations;
+    private My_HashMap<String, ScriptEngineFactory> mimeTypeAssociations;
 
     /** Global bindings associated with script engines created by this manager. */
     private Bindings globalScope;

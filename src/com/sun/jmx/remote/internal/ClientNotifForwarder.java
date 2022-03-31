@@ -27,10 +27,7 @@ package com.sun.jmx.remote.internal;
 import java.io.IOException;
 import java.io.NotSerializableException;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.concurrent.Executor;
 
 import java.security.AccessControlContext;
@@ -489,7 +486,7 @@ public abstract class ClientNotifForwarder {
 
                     clientSequenceNumber = nr.getNextSequenceNumber();
 
-                    listeners = new HashMap<Integer, ClientListenerInfo>();
+                    listeners = new My_HashMap<Integer, ClientListenerInfo>();
 
                     for (int i = 0 ; i < len ; i++) {
                         final TargetedNotification tn = notifs[i];
@@ -868,7 +865,7 @@ public abstract class ClientNotifForwarder {
     private final Executor executor;
 
     private final Map<Integer, ClientListenerInfo> infoList =
-            new HashMap<Integer, ClientListenerInfo>();
+            new My_HashMap<Integer, ClientListenerInfo>();
 
     // notif stuff
     private long clientSequenceNumber = -1;

@@ -40,15 +40,11 @@ import com.sun.org.apache.xpath.internal.objects.XObject;
 import com.sun.org.apache.xpath.internal.objects.XString;
 import com.sun.org.apache.xpath.internal.res.XPATHErrorResources;
 import java.lang.reflect.Method;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Stack;
-import java.util.Vector;
+import java.util.*;
 import javax.xml.transform.ErrorListener;
 import javax.xml.transform.SourceLocator;
-import javax.xml.transform.TransformerException;
 import javax.xml.transform.URIResolver;
-import jdk.xml.internal.JdkXmlUtils;
+
 import org.xml.sax.XMLReader;
 
 /**
@@ -84,7 +80,7 @@ public class XPathContext extends DTMManager // implements ExpressionContext
    * HashMap of cached the DTMXRTreeFrag objects, which are identified by DTM IDs.
    * The object are just wrappers for DTMs which are used in  XRTreeFrag.
    */
-  private HashMap m_DTMXRTreeFrags = null;
+  private My_HashMap m_DTMXRTreeFrags = null;
 
   /**
    * state of the secure processing feature.
@@ -1292,7 +1288,7 @@ public class XPathContext extends DTMManager // implements ExpressionContext
    */
   public DTMXRTreeFrag getDTMXRTreeFrag(int dtmIdentity){
     if(m_DTMXRTreeFrags == null){
-      m_DTMXRTreeFrags = new HashMap();
+      m_DTMXRTreeFrags = new My_HashMap();
     }
 
     if(m_DTMXRTreeFrags.containsKey(dtmIdentity)){

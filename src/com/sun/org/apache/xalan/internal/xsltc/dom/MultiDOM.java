@@ -33,8 +33,10 @@ import com.sun.org.apache.xml.internal.dtm.ref.DTMAxisIterNodeList;
 import com.sun.org.apache.xml.internal.dtm.ref.DTMDefaultBase;
 import com.sun.org.apache.xml.internal.serializer.SerializationHandler;
 import com.sun.org.apache.xml.internal.utils.SuballocatedIntVector;
-import java.util.HashMap;
+
 import java.util.Map;
+import java.util.My_HashMap;
+
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
@@ -54,7 +56,7 @@ public final class MultiDOM implements DOM {
     private int _free;
     private int _size;
 
-    private Map<String, Integer> _documents = new HashMap<>();
+    private Map<String, Integer> _documents = new My_HashMap<>();
 
     private final class AxisIterator extends DTMAxisIteratorBase {
         // constitutive data

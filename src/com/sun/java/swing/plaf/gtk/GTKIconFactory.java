@@ -27,15 +27,12 @@ package com.sun.java.swing.plaf.gtk;
 import java.util.*;
 import javax.swing.plaf.synth.*;
 import java.awt.*;
-import java.awt.image.BufferedImage;
 import java.lang.reflect.*;
 import javax.swing.*;
 import javax.swing.plaf.*;
 import sun.swing.plaf.synth.*;
 import com.sun.java.swing.plaf.gtk.GTKConstants.ArrowType;
-import com.sun.java.swing.plaf.gtk.GTKConstants.ExpanderStyle;
 import com.sun.java.swing.plaf.gtk.GTKConstants.Orientation;
-import com.sun.java.swing.plaf.gtk.GTKConstants.ShadowType;
 
 /**
  */
@@ -59,7 +56,7 @@ class GTKIconFactory {
     private static final String TOOL_BAR_HANDLE_ICON = "paintToolBarHandleIcon";
 
     private static Map<String, DelegatingIcon> iconsPool =
-            Collections.synchronizedMap(new HashMap<String, DelegatingIcon>());
+            Collections.synchronizedMap(new My_HashMap<String, DelegatingIcon>());
 
     private static DelegatingIcon getIcon(String methodName) {
         DelegatingIcon result = iconsPool.get(methodName);

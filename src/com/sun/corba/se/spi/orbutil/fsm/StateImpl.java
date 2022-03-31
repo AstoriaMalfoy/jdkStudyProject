@@ -27,13 +27,9 @@ package com.sun.corba.se.spi.orbutil.fsm ;
 
 import com.sun.corba.se.impl.orbutil.fsm.NameBase ;
 
-import java.util.Map ;
-import java.util.HashMap ;
-import java.util.Set ;
-import java.util.HashSet ;
+import java.util.*;
 
 import com.sun.corba.se.impl.orbutil.fsm.GuardedAction ;
-import com.sun.corba.se.impl.orbutil.fsm.NameBase ;
 
 /** Base class for all states in a StateEngine.  This must be used
 * as the base class for all states in transitions added to a StateEngine.
@@ -47,7 +43,7 @@ public class StateImpl extends NameBase implements State {
     {
         super( name ) ;
         defaultAction = null ;
-        inputToGuardedActions = new HashMap() ;
+        inputToGuardedActions = new My_HashMap() ;
     }
 
     public void preAction( FSM fsm )

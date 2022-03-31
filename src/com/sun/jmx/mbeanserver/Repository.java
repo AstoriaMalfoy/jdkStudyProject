@@ -28,15 +28,9 @@ package com.sun.jmx.mbeanserver;
 import com.sun.jmx.defaults.ServiceName;
 import static com.sun.jmx.defaults.JmxProperties.MBEANSERVER_LOGGER;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.List;
+import java.util.*;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 import java.util.logging.Level;
-import java.util.Map;
-import java.util.Set;
 import javax.management.DynamicMBean;
 import javax.management.InstanceAlreadyExistsException;
 import javax.management.InstanceNotFoundException;
@@ -240,7 +234,7 @@ public class Repository {
                               final ObjectName name,
                               final RegistrationContext context) {
         final Map<String,NamedObject> moiTb =
-            new HashMap<String,NamedObject>();
+            new My_HashMap<String,NamedObject>();
         final String key = name.getCanonicalKeyPropertyListString();
         addMoiToTb(object,name,key,moiTb,context);
         domainTb.put(dom, moiTb);
@@ -325,7 +319,7 @@ public class Repository {
     public Repository(String domain, boolean fairLock) {
         lock = new ReentrantReadWriteLock(fairLock);
 
-        domainTb = new HashMap<String,Map<String,NamedObject>>(5);
+        domainTb = new My_HashMap<String,Map<String,NamedObject>>(5);
 
         if (domain != null && domain.length() != 0)
             this.domain = domain.intern(); // we use == domain later on...
@@ -333,7 +327,7 @@ public class Repository {
             this.domain = ServiceName.DOMAIN;
 
         // Creates a new hashtable for the default domain
-        domainTb.put(this.domain, new HashMap<String,NamedObject>());
+        domainTb.put(this.domain, new My_HashMap<String,NamedObject>());
     }
 
     /**
@@ -645,7 +639,7 @@ public class Repository {
                 // big buckets array size inside table, never cleared,
                 // thus the new !
                 if (dom == domain) // ES: OK dom and domain are interned.
-                    domainTb.put(domain, new HashMap<String,NamedObject>());
+                    domainTb.put(domain, new My_HashMap<String,NamedObject>());
             }
 
             unregistering(context,name);

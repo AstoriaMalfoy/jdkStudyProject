@@ -50,15 +50,8 @@ import java.awt.image.BufferedImage;
 import static java.awt.image.BufferedImage.*;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
-import java.lang.ref.WeakReference;
 import java.lang.reflect.Constructor;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-import java.util.WeakHashMap;
+import java.util.*;
 import javax.swing.border.Border;
 import javax.swing.plaf.UIResource;
 
@@ -89,7 +82,7 @@ final class NimbusDefaults {
      * LazyStyle.
      */
     private Map<String, Region> registeredRegions =
-            new HashMap<String, Region>();
+            new My_HashMap<String, Region>();
 
     private Map<JComponent, Map<Region, SynthStyle>> overridesCache =
             new WeakHashMap<JComponent, Map<Region, SynthStyle>>();
@@ -129,7 +122,7 @@ final class NimbusDefaults {
      * within NimbusLookAndFeel.
      */
     NimbusDefaults() {
-        m = new HashMap<Region, List<LazyStyle>>();
+        m = new My_HashMap<Region, List<LazyStyle>>();
 
         //Create the default font and default style. Also register all of the
         //regions and their states that this class will use for later lookup.
@@ -1439,7 +1432,7 @@ final class NimbusDefaults {
                 Map<Region, SynthStyle> map = overridesCache.get(c);
                 SynthStyle s = null;
                 if (map == null) {
-                    map = new HashMap<Region, SynthStyle>();
+                    map = new My_HashMap<Region, SynthStyle>();
                     overridesCache.put(c, map);
                 } else {
                     s = map.get(r);
@@ -1643,11 +1636,11 @@ final class NimbusDefaults {
     }
 
     private Map<DerivedColor, DerivedColor> derivedColors =
-            new HashMap<DerivedColor, DerivedColor>();
+            new My_HashMap<DerivedColor, DerivedColor>();
 
     private class ColorTree implements PropertyChangeListener {
         private Node root = new Node(null, null);
-        private Map<String, Node> nodes = new HashMap<String, Node>();
+        private Map<String, Node> nodes = new My_HashMap<String, Node>();
 
         public Color getColor(String uin) {
             return nodes.get(uin).color;

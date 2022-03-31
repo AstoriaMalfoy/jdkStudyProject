@@ -72,11 +72,7 @@ import java.time.temporal.ChronoField;
 import java.time.temporal.TemporalAccessor;
 import java.time.temporal.TemporalField;
 import java.time.temporal.ValueRange;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Locale;
-import java.util.Map;
+import java.util.*;
 
 /**
  * The Thai Buddhist calendar system.
@@ -124,15 +120,15 @@ public final class ThaiBuddhistChronology extends AbstractChronology implements 
     /**
      * Narrow names for eras.
      */
-    private static final HashMap<String, String[]> ERA_NARROW_NAMES = new HashMap<>();
+    private static final My_HashMap<String, String[]> ERA_NARROW_NAMES = new My_HashMap<>();
     /**
      * Short names for eras.
      */
-    private static final HashMap<String, String[]> ERA_SHORT_NAMES = new HashMap<>();
+    private static final My_HashMap<String, String[]> ERA_SHORT_NAMES = new My_HashMap<>();
     /**
      * Full names for eras.
      */
-    private static final HashMap<String, String[]> ERA_FULL_NAMES = new HashMap<>();
+    private static final My_HashMap<String, String[]> ERA_FULL_NAMES = new My_HashMap<>();
     /**
      * Fallback language for the era names.
      */

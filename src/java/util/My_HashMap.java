@@ -135,7 +135,7 @@ import sun.misc.SharedSecrets;
  * @see     Hashtable
  * @since   1.2
  */
-public class HashMap<K,V> extends AbstractMap<K,V>
+public class My_HashMap<K,V> extends AbstractMap<K,V>
     implements Map<K,V>, Cloneable, Serializable {
 
     private static final long serialVersionUID = 362498820763181265L;
@@ -444,7 +444,7 @@ public class HashMap<K,V> extends AbstractMap<K,V>
      * @throws IllegalArgumentException if the initial capacity is negative
      *         or the load factor is nonpositive
      */
-    public HashMap(int initialCapacity, float loadFactor) {
+    public My_HashMap(int initialCapacity, float loadFactor) {
         if (initialCapacity < 0)
             throw new IllegalArgumentException("Illegal initial capacity: " +
                                                initialCapacity);
@@ -464,7 +464,7 @@ public class HashMap<K,V> extends AbstractMap<K,V>
      * @param  initialCapacity the initial capacity.
      * @throws IllegalArgumentException if the initial capacity is negative.
      */
-    public HashMap(int initialCapacity) {
+    public My_HashMap(int initialCapacity) {
         this(initialCapacity, DEFAULT_LOAD_FACTOR);
     }
 
@@ -472,7 +472,7 @@ public class HashMap<K,V> extends AbstractMap<K,V>
      * Constructs an empty <tt>HashMap</tt> with the default initial capacity
      * (16) and the default load factor (0.75).
      */
-    public HashMap() {
+    public My_HashMap() {
         this.loadFactor = DEFAULT_LOAD_FACTOR;   // 默认初始化的时候只针对负载因子进行初始化 初始化为默认值 0.75
     }
 
@@ -485,7 +485,7 @@ public class HashMap<K,V> extends AbstractMap<K,V>
      * @param   m the map whose mappings are to be placed in this map
      * @throws  NullPointerException if the specified map is null
      */
-    public HashMap(Map<? extends K, ? extends V> m) {
+    public My_HashMap(Map<? extends K, ? extends V> m) {
         this.loadFactor = DEFAULT_LOAD_FACTOR;
         putMapEntries(m, false);
     }
@@ -913,14 +913,14 @@ public class HashMap<K,V> extends AbstractMap<K,V>
 
     final class KeySet extends AbstractSet<K> {
         public final int size()                 { return size; }
-        public final void clear()               { HashMap.this.clear(); }
+        public final void clear()               { My_HashMap.this.clear(); }
         public final Iterator<K> iterator()     { return new KeyIterator(); }
         public final boolean contains(Object o) { return containsKey(o); }
         public final boolean remove(Object key) {
             return removeNode(hash(key), key, null, false, true) != null;
         }
         public final Spliterator<K> spliterator() {
-            return new KeySpliterator<>(HashMap.this, 0, -1, 0, 0);
+            return new KeySpliterator<>(My_HashMap.this, 0, -1, 0, 0);
         }
         public final void forEach(Consumer<? super K> action) {
             Node<K,V>[] tab;
@@ -964,11 +964,11 @@ public class HashMap<K,V> extends AbstractMap<K,V>
 
     final class Values extends AbstractCollection<V> {
         public final int size()                 { return size; }
-        public final void clear()               { HashMap.this.clear(); }
+        public final void clear()               { My_HashMap.this.clear(); }
         public final Iterator<V> iterator()     { return new ValueIterator(); }
         public final boolean contains(Object o) { return containsValue(o); }
         public final Spliterator<V> spliterator() {
-            return new ValueSpliterator<>(HashMap.this, 0, -1, 0, 0);
+            return new ValueSpliterator<>(My_HashMap.this, 0, -1, 0, 0);
         }
         public final void forEach(Consumer<? super V> action) {
             Node<K,V>[] tab;
@@ -1009,7 +1009,7 @@ public class HashMap<K,V> extends AbstractMap<K,V>
 
     final class EntrySet extends AbstractSet<Map.Entry<K,V>> {
         public final int size()                 { return size; }
-        public final void clear()               { HashMap.this.clear(); }
+        public final void clear()               { My_HashMap.this.clear(); }
         public final Iterator<Map.Entry<K,V>> iterator() {
             return new EntryIterator();
         }
@@ -1031,7 +1031,7 @@ public class HashMap<K,V> extends AbstractMap<K,V>
             return false;
         }
         public final Spliterator<Map.Entry<K,V>> spliterator() {
-            return new EntrySpliterator<>(HashMap.this, 0, -1, 0, 0);
+            return new EntrySpliterator<>(My_HashMap.this, 0, -1, 0, 0);
         }
         public final void forEach(Consumer<? super Map.Entry<K,V>> action) {
             Node<K,V>[] tab;
@@ -1322,9 +1322,9 @@ public class HashMap<K,V> extends AbstractMap<K,V>
     @SuppressWarnings("unchecked")
     @Override
     public Object clone() {
-        HashMap<K,V> result;
+        My_HashMap<K,V> result;
         try {
-            result = (HashMap<K,V>)super.clone();
+            result = (My_HashMap<K,V>)super.clone();
         } catch (CloneNotSupportedException e) {
             // this shouldn't happen, since we are Cloneable
             throw new InternalError(e);
@@ -1483,14 +1483,14 @@ public class HashMap<K,V> extends AbstractMap<K,V>
     // spliterators
 
     static class HashMapSpliterator<K,V> {
-        final HashMap<K,V> map;
+        final My_HashMap<K,V> map;
         Node<K,V> current;          // current node
         int index;                  // current index, modified on advance/split
         int fence;                  // one past last index
         int est;                    // size estimate
         int expectedModCount;       // for comodification checks
 
-        HashMapSpliterator(HashMap<K,V> m, int origin,
+        HashMapSpliterator(My_HashMap<K,V> m, int origin,
                            int fence, int est,
                            int expectedModCount) {
             this.map = m;
@@ -1503,7 +1503,7 @@ public class HashMap<K,V> extends AbstractMap<K,V>
         final int getFence() { // initialize fence and size on first use
             int hi;
             if ((hi = fence) < 0) {
-                HashMap<K,V> m = map;
+                My_HashMap<K,V> m = map;
                 est = m.size;
                 expectedModCount = m.modCount;
                 Node<K,V>[] tab = m.table;
@@ -1521,7 +1521,7 @@ public class HashMap<K,V> extends AbstractMap<K,V>
     static final class KeySpliterator<K,V>
         extends HashMapSpliterator<K,V>
         implements Spliterator<K> {
-        KeySpliterator(HashMap<K,V> m, int origin, int fence, int est,
+        KeySpliterator(My_HashMap<K,V> m, int origin, int fence, int est,
                        int expectedModCount) {
             super(m, origin, fence, est, expectedModCount);
         }
@@ -1537,7 +1537,7 @@ public class HashMap<K,V> extends AbstractMap<K,V>
             int i, hi, mc;
             if (action == null)
                 throw new NullPointerException();
-            HashMap<K,V> m = map;
+            My_HashMap<K,V> m = map;
             Node<K,V>[] tab = m.table;
             if ((hi = fence) < 0) {
                 mc = expectedModCount = m.modCount;
@@ -1593,7 +1593,7 @@ public class HashMap<K,V> extends AbstractMap<K,V>
     static final class ValueSpliterator<K,V>
         extends HashMapSpliterator<K,V>
         implements Spliterator<V> {
-        ValueSpliterator(HashMap<K,V> m, int origin, int fence, int est,
+        ValueSpliterator(My_HashMap<K,V> m, int origin, int fence, int est,
                          int expectedModCount) {
             super(m, origin, fence, est, expectedModCount);
         }
@@ -1609,7 +1609,7 @@ public class HashMap<K,V> extends AbstractMap<K,V>
             int i, hi, mc;
             if (action == null)
                 throw new NullPointerException();
-            HashMap<K,V> m = map;
+            My_HashMap<K,V> m = map;
             Node<K,V>[] tab = m.table;
             if ((hi = fence) < 0) {
                 mc = expectedModCount = m.modCount;
@@ -1664,7 +1664,7 @@ public class HashMap<K,V> extends AbstractMap<K,V>
     static final class EntrySpliterator<K,V>
         extends HashMapSpliterator<K,V>
         implements Spliterator<Map.Entry<K,V>> {
-        EntrySpliterator(HashMap<K,V> m, int origin, int fence, int est,
+        EntrySpliterator(My_HashMap<K,V> m, int origin, int fence, int est,
                          int expectedModCount) {
             super(m, origin, fence, est, expectedModCount);
         }
@@ -1680,7 +1680,7 @@ public class HashMap<K,V> extends AbstractMap<K,V>
             int i, hi, mc;
             if (action == null)
                 throw new NullPointerException();
-            HashMap<K,V> m = map;
+            My_HashMap<K,V> m = map;
             Node<K,V>[] tab = m.table;
             if ((hi = fence) < 0) {
                 mc = expectedModCount = m.modCount;
@@ -1804,7 +1804,7 @@ public class HashMap<K,V> extends AbstractMap<K,V>
      * extends Node) so can be used as extension of either regular or
      * linked node.
      */
-    static final class TreeNode<K,V> extends LinkedHashMap.Entry<K,V> {
+    static final class TreeNode<K,V> extends LinkedMyHashMap.Entry<K,V> {
         TreeNode<K,V> parent;  // red-black tree links
         TreeNode<K,V> left;
         TreeNode<K,V> right;
@@ -1955,7 +1955,7 @@ public class HashMap<K,V> extends AbstractMap<K,V>
          * Returns a list of non-TreeNodes replacing those linked from
          * this node.
          */
-        final Node<K,V> untreeify(HashMap<K,V> map) {
+        final Node<K,V> untreeify(My_HashMap<K,V> map) {
             Node<K,V> hd = null, tl = null;
             for (Node<K,V> q = this; q != null; q = q.next) {
                 Node<K,V> p = map.replacementNode(q, null);
@@ -1971,7 +1971,7 @@ public class HashMap<K,V> extends AbstractMap<K,V>
         /**
          * Tree version of putVal.
          */
-        final TreeNode<K,V> putTreeVal(HashMap<K,V> map, Node<K,V>[] tab,
+        final TreeNode<K,V> putTreeVal(My_HashMap<K,V> map, Node<K,V>[] tab,
                                        int h, K k, V v) {
             Class<?> kc = null;
             boolean searched = false;
@@ -2027,7 +2027,7 @@ public class HashMap<K,V> extends AbstractMap<K,V>
          * the bin is converted back to a plain bin. (The test triggers
          * somewhere between 2 and 6 nodes, depending on tree structure).
          */
-        final void removeTreeNode(HashMap<K,V> map, Node<K,V>[] tab,
+        final void removeTreeNode(My_HashMap<K,V> map, Node<K,V>[] tab,
                                   boolean movable) {
             int n;
             if (tab == null || (n = tab.length) == 0)
@@ -2135,7 +2135,7 @@ public class HashMap<K,V> extends AbstractMap<K,V>
          * @param index the index of the table being split
          * @param bit the bit of hash to split on
          */
-        final void split(HashMap<K,V> map, Node<K,V>[] tab, int index, int bit) {
+        final void split(My_HashMap<K,V> map, Node<K,V>[] tab, int index, int bit) {
             TreeNode<K,V> b = this;
             // Relink into lo and hi lists, preserving order
             TreeNode<K,V> loHead = null, loTail = null;

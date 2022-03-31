@@ -38,12 +38,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLClassLoader;
 import java.text.ParseException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Locale;
-import java.util.Map;
-import java.util.StringTokenizer;
+import java.util.*;
 import java.util.regex.PatternSyntaxException;
 
 import javax.swing.ImageIcon;
@@ -197,7 +192,7 @@ class SynthParser extends DefaultHandler {
     private List<ParsedSynthStyle.PainterInfo> _statePainters;
 
     SynthParser() {
-        _mapping = new HashMap<String,Object>();
+        _mapping = new My_HashMap<String,Object>();
         _stateInfos = new ArrayList<ParsedSynthStyle.StateInfo>();
         _colorTypes = new ArrayList<ColorType>();
         _inputMapBindings = new ArrayList<String>();
@@ -783,13 +778,13 @@ class SynthParser extends DefaultHandler {
         }
         else if (_stateInfo != null) {
             if (_stateInfo.getData() == null) {
-                _stateInfo.setData(new HashMap());
+                _stateInfo.setData(new My_HashMap());
             }
             _stateInfo.getData().put(key, value);
         }
         else if (_style != null) {
             if (_style.getData() == null) {
-                _style.setData(new HashMap());
+                _style.setData(new My_HashMap());
             }
             _style.getData().put(key, value);
         }

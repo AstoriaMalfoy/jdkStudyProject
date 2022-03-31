@@ -30,10 +30,7 @@ import java.security.AccessController;
 import java.security.PrivilegedAction;
 
 import java.beans.Transient;
-import java.util.HashMap;
-import java.util.Hashtable;
-import java.util.Enumeration;
-import java.util.Vector;
+import java.util.*;
 
 import java.util.concurrent.*;
 
@@ -1087,13 +1084,13 @@ public abstract class JTextComponent extends JComponent implements Scrollable, A
         return getKeymapTable().get(nm);
     }
 
-    private static HashMap<String,Keymap> getKeymapTable() {
+    private static My_HashMap<String,Keymap> getKeymapTable() {
         synchronized (KEYMAP_TABLE) {
             AppContext appContext = AppContext.getAppContext();
-            HashMap<String,Keymap> keymapTable =
-                (HashMap<String,Keymap>)appContext.get(KEYMAP_TABLE);
+            My_HashMap<String,Keymap> keymapTable =
+                (My_HashMap<String,Keymap>)appContext.get(KEYMAP_TABLE);
             if (keymapTable == null) {
-                keymapTable = new HashMap<String,Keymap>(17);
+                keymapTable = new My_HashMap<String,Keymap>(17);
                 appContext.put(KEYMAP_TABLE, keymapTable);
                 //initialize default keymap
                 Keymap binding = addKeymap(DEFAULT_KEYMAP, null);

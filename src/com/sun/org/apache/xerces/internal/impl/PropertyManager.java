@@ -28,10 +28,11 @@ package com.sun.org.apache.xerces.internal.impl;
 import com.sun.org.apache.xerces.internal.utils.XMLSecurityManager;
 import com.sun.org.apache.xerces.internal.utils.XMLSecurityPropertyManager;
 import com.sun.xml.internal.stream.StaxEntityResolverWrapper;
-import java.util.HashMap;
+
 import javax.xml.stream.XMLInputFactory;
 import javax.xml.stream.XMLOutputFactory;
 import javax.xml.stream.XMLResolver;
+import java.util.My_HashMap;
 
 /**
  *  This class manages different properties related to Stax specification and its implementation.
@@ -58,7 +59,7 @@ public class PropertyManager {
     private static final String XML_SECURITY_PROPERTY_MANAGER =
             Constants.XML_SECURITY_PROPERTY_MANAGER;
 
-    HashMap supportedProps = new HashMap();
+    My_HashMap supportedProps = new My_HashMap();
 
     private XMLSecurityManager fSecurityManager;
     private XMLSecurityPropertyManager fSecurityPropertyMgr;
@@ -85,13 +86,13 @@ public class PropertyManager {
      */
     public PropertyManager(PropertyManager propertyManager){
 
-        HashMap properties = propertyManager.getProperties();
+        My_HashMap properties = propertyManager.getProperties();
         supportedProps.putAll(properties);
         fSecurityManager = (XMLSecurityManager)getProperty(SECURITY_MANAGER);
         fSecurityPropertyMgr = (XMLSecurityPropertyManager)getProperty(XML_SECURITY_PROPERTY_MANAGER);
     }
 
-    private HashMap getProperties(){
+    private My_HashMap getProperties(){
         return supportedProps ;
     }
 

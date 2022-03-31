@@ -33,10 +33,9 @@ import java.awt.*;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.security.AccessController;
-import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.*;
 import java.util.List;
-import java.util.Map;
+
 import static javax.swing.ClientPropertyKey.PopupFactory_FORCE_HEAVYWEIGHT_POPUP;
 
 /**
@@ -397,7 +396,7 @@ public class PopupFactory {
                                   heavyWeightPopupCacheKey);
 
                 if (cache == null) {
-                    cache = new HashMap<Window, List<HeavyWeightPopup>>(2);
+                    cache = new My_HashMap<Window, List<HeavyWeightPopup>>(2);
                     SwingUtilities.appContextPut(heavyWeightPopupCacheKey,
                                                  cache);
                 }

@@ -25,9 +25,9 @@ import com.sun.org.apache.xerces.internal.xni.XMLResourceIdentifier;
 import com.sun.org.apache.xerces.internal.xni.parser.XMLInputSource;
 import java.io.InputStream;
 import java.io.Reader;
-import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
+import java.util.My_HashMap;
 
 /**
  * This class represents an input source for an XML resource
@@ -51,7 +51,7 @@ public final class HTTPInputSource extends XMLInputSource {
     protected boolean fFollowRedirects = true;
 
     /** HTTP request properties. **/
-    protected Map<String, String> fHTTPRequestProperties = new HashMap<>();
+    protected Map<String, String> fHTTPRequestProperties = new My_HashMap<>();
 
     //
     // Constructors

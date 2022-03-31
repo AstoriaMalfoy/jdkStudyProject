@@ -25,12 +25,7 @@ import com.sun.org.apache.bcel.internal.util.ByteSequence;
 import java.io.ByteArrayOutputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
-import java.util.NoSuchElementException;
+import java.util.*;
 
 /**
  * This class is a container for a list of <a
@@ -1033,7 +1028,7 @@ public class InstructionList implements Iterable<InstructionHandle> {
      * @return complete, i.e., deep copy of this list
      */
     public InstructionList copy() {
-        final Map<InstructionHandle, InstructionHandle> map = new HashMap<>();
+        final Map<InstructionHandle, InstructionHandle> map = new My_HashMap<>();
         final InstructionList il = new InstructionList();
         /*
          * Pass 1: Make copies of all instructions, append them to the new list

@@ -28,15 +28,10 @@ package java.util;
 import java.io.Serializable;
 import java.io.IOException;
 import java.security.*;
-import java.util.Map;
-import java.util.HashMap;
-import java.util.Enumeration;
-import java.util.Hashtable;
-import java.util.Collections;
 import java.io.ObjectStreamField;
 import java.io.ObjectOutputStream;
 import java.io.ObjectInputStream;
-import java.io.IOException;
+
 import sun.security.util.SecurityConstants;
 
 /**
@@ -444,7 +439,7 @@ final class PropertyPermissionCollection extends PermissionCollection
      * Create an empty PropertyPermissionCollection object.
      */
     public PropertyPermissionCollection() {
-        perms = new HashMap<>(32);     // Capacity for default policy
+        perms = new My_HashMap<>(32);     // Capacity for default policy
         all_allowed = false;
     }
 
@@ -651,7 +646,7 @@ final class PropertyPermissionCollection extends PermissionCollection
         @SuppressWarnings("unchecked")
         Hashtable<String, PropertyPermission> permissions =
             (Hashtable<String, PropertyPermission>)gfields.get("permissions", null);
-        perms = new HashMap<>(permissions.size()*2);
+        perms = new My_HashMap<>(permissions.size()*2);
         perms.putAll(permissions);
     }
 }

@@ -28,8 +28,8 @@ import java.awt.event.KeyEvent;
 import sun.awt.AppContext;
 import java.awt.event.InputEvent;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.Map;
+import java.util.My_HashMap;
 import java.util.StringTokenizer;
 import java.io.Serializable;
 import java.security.AccessController;
@@ -253,7 +253,7 @@ public class AWTKeyStroke implements Serializable {
         AWTKeyStroke cacheKey = (AWTKeyStroke)AppContext.getAppContext().get(APP_CONTEXT_KEYSTROKE_KEY);
 
         if (cache == null) {
-            cache = new HashMap<>();
+            cache = new My_HashMap<>();
             AppContext.getAppContext().put(APP_CONTEXT_CACHE_KEY, cache);
         }
 
@@ -513,7 +513,7 @@ public class AWTKeyStroke implements Serializable {
 
         synchronized (AWTKeyStroke.class) {
             if (modifierKeywords == null) {
-                Map<String, Integer> uninitializedMap = new HashMap<>(8, 1.0f);
+                Map<String, Integer> uninitializedMap = new My_HashMap<>(8, 1.0f);
                 uninitializedMap.put("shift",
                                      Integer.valueOf(InputEvent.SHIFT_DOWN_MASK
                                                      |InputEvent.SHIFT_MASK));
@@ -865,8 +865,8 @@ class VKCollection {
     Map<String, Integer> name2code;
 
     public VKCollection() {
-        code2name = new HashMap<>();
-        name2code = new HashMap<>();
+        code2name = new My_HashMap<>();
+        name2code = new My_HashMap<>();
     }
 
     public synchronized void put(String name, Integer code) {

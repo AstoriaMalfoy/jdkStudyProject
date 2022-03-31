@@ -33,13 +33,10 @@ package com.sun.corba.se.impl.io;
 
 import java.io.IOException;
 import java.io.NotActiveException;
-import java.io.OutputStream;
 import java.io.ObjectOutputStream;
 import java.io.ObjectOutput;
 import java.util.Map;
-import java.util.HashMap;
-
-import org.omg.CORBA.INTERNAL;
+import java.util.My_HashMap;
 
 public abstract class OutputStreamHook extends ObjectOutputStream
 {
@@ -51,7 +48,7 @@ public abstract class OutputStreamHook extends ObjectOutputStream
      */
     private class HookPutFields extends ObjectOutputStream.PutField
     {
-        private Map<String,Object> fields = new HashMap<>();
+        private Map<String,Object> fields = new My_HashMap<>();
 
         /**
          * Put the value of the named boolean field into the persistent field.

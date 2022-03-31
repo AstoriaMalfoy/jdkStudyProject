@@ -43,14 +43,9 @@ import java.security.AccessControlContext;
 import java.security.AccessController;
 import java.security.PrivilegedAction;
 
-import java.util.Date;
-import java.util.HashMap;
-import java.util.HashSet;
+import java.util.*;
 import java.util.logging.Level;
-import java.util.Map;
-import java.util.Set;
 
-import java.util.Vector;
 import javax.management.Attribute;
 import javax.management.AttributeChangeNotification;
 import javax.management.AttributeChangeNotificationFilter;
@@ -1172,7 +1167,7 @@ public class RequiredModelMBean
         float.class, short.class, byte.class, char.class,
     };
     private static final Map<String,Class<?>> primitiveClassMap =
-        new HashMap<String,Class<?>>();
+        new My_HashMap<String,Class<?>>();
     static {
         for (int i = 0; i < primitiveClasses.length; i++) {
             final Class<?> c = primitiveClasses[i];

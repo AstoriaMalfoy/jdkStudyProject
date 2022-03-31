@@ -83,7 +83,7 @@ import sun.misc.SharedSecrets;
  * @see     Collection
  * @see     Set
  * @see     TreeSet
- * @see     HashMap
+ * @see     My_HashMap
  * @since   1.2
  */
 
@@ -93,7 +93,7 @@ public class HashSet<E>
 {
     static final long serialVersionUID = -5024744406713321676L;
 
-    private transient HashMap<E,Object> map;
+    private transient My_HashMap<E,Object> map;
 
     // Dummy value to associate with an Object in the backing Map
     private static final Object PRESENT = new Object();
@@ -103,7 +103,7 @@ public class HashSet<E>
      * default initial capacity (16) and load factor (0.75).
      */
     public HashSet() {
-        map = new HashMap<>();
+        map = new My_HashMap<>();
     }
 
     /**
@@ -116,7 +116,7 @@ public class HashSet<E>
      * @throws NullPointerException if the specified collection is null
      */
     public HashSet(Collection<? extends E> c) {
-        map = new HashMap<>(Math.max((int) (c.size()/.75f) + 1, 16));
+        map = new My_HashMap<>(Math.max((int) (c.size()/.75f) + 1, 16));
         addAll(c);
     }
 
@@ -130,7 +130,7 @@ public class HashSet<E>
      *             than zero, or if the load factor is nonpositive
      */
     public HashSet(int initialCapacity, float loadFactor) {
-        map = new HashMap<>(initialCapacity, loadFactor);
+        map = new My_HashMap<>(initialCapacity, loadFactor);
     }
 
     /**
@@ -142,7 +142,7 @@ public class HashSet<E>
      *             than zero
      */
     public HashSet(int initialCapacity) {
-        map = new HashMap<>(initialCapacity);
+        map = new My_HashMap<>(initialCapacity);
     }
 
     /**
@@ -159,7 +159,7 @@ public class HashSet<E>
      *             than zero, or if the load factor is nonpositive
      */
     HashSet(int initialCapacity, float loadFactor, boolean dummy) {
-        map = new LinkedHashMap<>(initialCapacity, loadFactor);
+        map = new LinkedMyHashMap<>(initialCapacity, loadFactor);
     }
 
     /**
@@ -254,7 +254,7 @@ public class HashSet<E>
     public Object clone() {
         try {
             HashSet<E> newSet = (HashSet<E>) super.clone();
-            newSet.map = (HashMap<E, Object>) map.clone();
+            newSet.map = (My_HashMap<E, Object>) map.clone();
             return newSet;
         } catch (CloneNotSupportedException e) {
             throw new InternalError(e);
@@ -320,7 +320,7 @@ public class HashSet<E>
         // Set the capacity according to the size and load factor ensuring that
         // the HashMap is at least 25% full but clamping to maximum capacity.
         capacity = (int) Math.min(size * Math.min(1 / loadFactor, 4.0f),
-                HashMap.MAXIMUM_CAPACITY);
+                java.util.My_HashMap.MAXIMUM_CAPACITY);
 
         // Constructing the backing map will lazily create an array when the first element is
         // added, so check it before construction. Call HashMap.tableSizeFor to compute the
@@ -328,12 +328,12 @@ public class HashSet<E>
         // what is actually created.
 
         SharedSecrets.getJavaOISAccess()
-                     .checkArray(s, Map.Entry[].class, HashMap.tableSizeFor(capacity));
+                     .checkArray(s, Map.Entry[].class, java.util.My_HashMap.tableSizeFor(capacity));
 
         // Create backing HashMap
         map = (((HashSet<?>)this) instanceof LinkedHashSet ?
-               new LinkedHashMap<E,Object>(capacity, loadFactor) :
-               new HashMap<E,Object>(capacity, loadFactor));
+               new LinkedMyHashMap<E,Object>(capacity, loadFactor) :
+               new My_HashMap<E,Object>(capacity, loadFactor));
 
         // Read in all elements in the proper order.
         for (int i=0; i<size; i++) {
@@ -356,6 +356,6 @@ public class HashSet<E>
      * @since 1.8
      */
     public Spliterator<E> spliterator() {
-        return new HashMap.KeySpliterator<E,Object>(map, 0, -1, 0, 0);
+        return new My_HashMap.KeySpliterator<E,Object>(map, 0, -1, 0, 0);
     }
 }

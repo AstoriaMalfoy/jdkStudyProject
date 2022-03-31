@@ -25,17 +25,11 @@
 
 package java.util.jar;
 
-import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Set;
-import java.util.Collection;
-import java.util.AbstractSet;
-import java.util.Iterator;
+import java.util.*;
+
 import sun.util.logging.PlatformLogger;
-import java.util.Comparator;
 import sun.misc.ASCIICaseInsensitiveComparator;
 
 /**
@@ -71,7 +65,7 @@ public class Attributes implements Map<Object,Object>, Cloneable {
      * @param size the initial number of attributes
      */
     public Attributes(int size) {
-        map = new HashMap<>(size);
+        map = new My_HashMap<>(size);
     }
 
     /**
@@ -81,7 +75,7 @@ public class Attributes implements Map<Object,Object>, Cloneable {
      * @param attr the specified Attributes
      */
     public Attributes(Attributes attr) {
-        map = new HashMap<>(attr);
+        map = new My_HashMap<>(attr);
     }
 
 

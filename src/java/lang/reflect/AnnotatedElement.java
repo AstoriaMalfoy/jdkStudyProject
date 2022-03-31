@@ -27,10 +27,8 @@ package java.lang.reflect;
 
 import java.lang.annotation.Annotation;
 import java.lang.annotation.AnnotationFormatError;
-import java.lang.annotation.Repeatable;
 import java.util.Arrays;
-import java.util.LinkedHashMap;
-import java.util.Map;
+import java.util.LinkedMyHashMap;
 import java.util.Objects;
 import java.util.function.Function;
 import java.util.stream.Collectors;
@@ -429,7 +427,7 @@ public interface AnnotatedElement {
                                             collect(Collectors.toMap(Annotation::annotationType,
                                                                      Function.identity(),
                                                                      ((first,second) -> first),
-                                                                     LinkedHashMap::new)),
+                                                                     LinkedMyHashMap::new)),
                                             annotationClass);
     }
 

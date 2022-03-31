@@ -33,11 +33,6 @@ import java.net.URL;
 import java.security.AccessController;
 import java.security.AccessControlContext;
 import java.security.PrivilegedAction;
-import java.util.ArrayList;
-import java.util.Enumeration;
-import java.util.Iterator;
-import java.util.List;
-import java.util.NoSuchElementException;
 
 
 /**
@@ -198,7 +193,7 @@ public final class ServiceLoader<S>
     private final AccessControlContext acc;
 
     // Cached providers, in instantiation order
-    private LinkedHashMap<String,S> providers = new LinkedHashMap<>();
+    private LinkedMyHashMap<String,S> providers = new LinkedMyHashMap<>();
 
     // The current lazy-lookup iterator
     private LazyIterator lookupIterator;

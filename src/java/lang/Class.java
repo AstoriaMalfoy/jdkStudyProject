@@ -44,16 +44,8 @@ import java.io.InputStream;
 import java.io.ObjectStreamField;
 import java.security.AccessController;
 import java.security.PrivilegedAction;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.HashSet;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Set;
-import java.util.Map;
-import java.util.HashMap;
-import java.util.Objects;
+import java.util.*;
+
 import sun.misc.Unsafe;
 import sun.reflect.CallerSensitive;
 import sun.reflect.ConstantPool;
@@ -3342,7 +3334,7 @@ public final class Class<T> implements java.io.Serializable,
             if (universe == null)
                 throw new IllegalArgumentException(
                     getName() + " is not an enum type");
-            Map<String, T> m = new HashMap<>(2 * universe.length);
+            Map<String, T> m = new My_HashMap<>(2 * universe.length);
             for (T constant : universe)
                 m.put(((Enum<?>)constant).name(), constant);
             enumConstantDirectory = m;
@@ -3528,7 +3520,7 @@ public final class Class<T> implements java.io.Serializable,
                 Class<? extends Annotation> annotationClass = e.getKey();
                 if (AnnotationType.getInstance(annotationClass).isInherited()) {
                     if (annotations == null) { // lazy construction
-                        annotations = new LinkedHashMap<>((Math.max(
+                        annotations = new LinkedMyHashMap<>((Math.max(
                                 declaredAnnotations.size(),
                                 Math.min(12, declaredAnnotations.size() + superAnnotations.size())
                             ) * 4 + 2) / 3

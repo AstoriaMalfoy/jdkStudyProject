@@ -26,11 +26,6 @@ package com.sun.corba.se.impl.interceptors;
 
 import org.omg.CORBA.Any;
 import org.omg.CORBA.BAD_INV_ORDER;
-import org.omg.CORBA.CompletionStatus;
-import org.omg.CORBA.INTERNAL;
-import org.omg.CORBA.LocalObject;
-import org.omg.CORBA.NO_IMPLEMENT;
-import org.omg.CORBA.NO_RESOURCES;
 import org.omg.CORBA.NVList;
 import org.omg.CORBA.Object;
 import org.omg.CORBA.Policy;
@@ -38,7 +33,6 @@ import org.omg.CORBA.TypeCode;
 
 import org.omg.PortableServer.Servant;
 
-import org.omg.IOP.TaggedProfile;
 import org.omg.IOP.ServiceContext;
 
 import org.omg.Dynamic.Parameter;
@@ -121,9 +115,9 @@ public final class ServerRequestInfoImpl
     private Parameter[] cachedArguments;
     private Any cachedSendingException;
     // key = Integer, value = IOP.ServiceContext.
-    private HashMap cachedRequestServiceContexts;
+    private My_HashMap cachedRequestServiceContexts;
     // key = Integer, value = IOP.ServiceContext.
-    private HashMap cachedReplyServiceContexts;
+    private My_HashMap cachedReplyServiceContexts;
 
     //////////////////////////////////////////////////////////////////////
     //
@@ -442,7 +436,7 @@ public final class ServerRequestInfoImpl
             }
 
             if( cachedReplyServiceContexts == null ) {
-                cachedReplyServiceContexts = new HashMap();
+                cachedReplyServiceContexts = new My_HashMap();
             }
 
             // This is during and ending point, so we now have enough
@@ -632,7 +626,7 @@ public final class ServerRequestInfoImpl
         checkAccess( MID_GET_REQUEST_SERVICE_CONTEXT );
 
         if( cachedRequestServiceContexts == null ) {
-            cachedRequestServiceContexts = new HashMap();
+            cachedRequestServiceContexts = new My_HashMap();
         }
 
         return getServiceContext( cachedRequestServiceContexts,
@@ -646,7 +640,7 @@ public final class ServerRequestInfoImpl
         checkAccess( MID_GET_REPLY_SERVICE_CONTEXT );
 
         if( cachedReplyServiceContexts == null ) {
-            cachedReplyServiceContexts = new HashMap();
+            cachedReplyServiceContexts = new My_HashMap();
         }
 
         return getServiceContext( cachedReplyServiceContexts,

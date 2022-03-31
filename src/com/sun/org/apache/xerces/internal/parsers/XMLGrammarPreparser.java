@@ -34,10 +34,7 @@ import com.sun.org.apache.xerces.internal.xni.parser.XMLEntityResolver;
 import com.sun.org.apache.xerces.internal.xni.parser.XMLErrorHandler;
 import com.sun.org.apache.xerces.internal.xni.parser.XMLInputSource;
 import java.io.IOException;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Locale;
-import java.util.Map;
+import java.util.*;
 
 /**
  * <p> This class provides an easy way for a user to preparse grammars
@@ -85,7 +82,7 @@ public class XMLGrammarPreparser {
     private static final Map<String, String> KNOWN_LOADERS;
 
     static {
-        Map<String, String> loaders = new HashMap<>();
+        Map<String, String> loaders = new My_HashMap<>();
         loaders.put(XMLGrammarDescription.XML_SCHEMA,
             "com.sun.org.apache.xerces.internal.impl.xs.XMLSchemaLoader");
         loaders.put(XMLGrammarDescription.XML_DTD,
@@ -130,7 +127,7 @@ public class XMLGrammarPreparser {
     public XMLGrammarPreparser (SymbolTable symbolTable) {
         fSymbolTable = symbolTable;
 
-        fLoaders = new HashMap<>();
+        fLoaders = new My_HashMap<>();
         fErrorReporter = new XMLErrorReporter();
         setLocale(Locale.getDefault());
         fEntityResolver = new XMLEntityManager();

@@ -20,10 +20,7 @@
 
 package com.sun.org.apache.xerces.internal.jaxp.validation;
 
-import java.util.HashMap;
-import java.util.Locale;
-import java.util.Iterator;
-import java.util.Map;
+import java.util.*;
 
 import javax.xml.XMLConstants;
 
@@ -177,7 +174,7 @@ final class XMLSchemaValidatorComponentManager extends ParserConfigurationSettin
     private boolean fUseGrammarPoolOnly;
 
     /** Lookup map for components required for validation. **/
-    private final HashMap fComponents = new HashMap();
+    private final My_HashMap fComponents = new My_HashMap();
 
     //
     // Components
@@ -203,10 +200,10 @@ final class XMLSchemaValidatorComponentManager extends ParserConfigurationSettin
     //
 
     /** Stores initial feature values for validator reset. */
-    private final HashMap fInitFeatures = new HashMap();
+    private final My_HashMap fInitFeatures = new My_HashMap();
 
     /** Stores initial property values for validator reset. */
-    private final HashMap fInitProperties = new HashMap();
+    private final My_HashMap fInitProperties = new My_HashMap();
 
     /** Stores the initial security manager. */
     private XMLSecurityManager fInitSecurityManager;

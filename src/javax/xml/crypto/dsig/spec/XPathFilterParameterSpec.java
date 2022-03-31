@@ -28,11 +28,7 @@
 package javax.xml.crypto.dsig.spec;
 
 import javax.xml.crypto.dsig.Transform;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
-import java.util.Map.Entry;
+import java.util.*;
 
 /**
  * Parameters for the <a href="http://www.w3.org/TR/xmldsig-core/#sec-XPath">
@@ -89,7 +85,7 @@ public final class XPathFilterParameterSpec implements TransformParameterSpec {
             throw new NullPointerException();
         }
         this.xPath = xPath;
-        Map<?,?> copy = new HashMap<>((Map<?,?>)namespaceMap);
+        Map<?,?> copy = new My_HashMap<>((Map<?,?>)namespaceMap);
         Iterator<? extends Map.Entry<?,?>> entries = copy.entrySet().iterator();
         while (entries.hasNext()) {
             Map.Entry<?,?> me = entries.next();

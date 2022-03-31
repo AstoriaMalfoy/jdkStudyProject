@@ -21,12 +21,7 @@
 
 package com.sun.org.apache.xerces.internal.impl.dtd;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Locale;
-import java.util.Map;
-import java.util.StringTokenizer;
+import java.util.*;
 
 import com.sun.org.apache.xerces.internal.impl.Constants;
 import com.sun.org.apache.xerces.internal.impl.XMLErrorReporter;
@@ -240,7 +235,7 @@ public class XMLDTDProcessor
     private final XMLEntityDecl fEntityDecl = new XMLEntityDecl();
 
     /** Notation declaration hash. */
-    private final HashMap fNDataDeclNotations = new HashMap();
+    private final My_HashMap fNDataDeclNotations = new My_HashMap();
 
     /** DTD element declaration name. */
     private String fDTDElementDeclName = null;
@@ -255,13 +250,13 @@ public class XMLDTDProcessor
     // ATTLIST, and misc VCs
 
     /** ID attribute names. */
-    private HashMap fTableOfIDAttributeNames;
+    private My_HashMap fTableOfIDAttributeNames;
 
     /** NOTATION attribute names. */
-    private HashMap fTableOfNOTATIONAttributeNames;
+    private My_HashMap fTableOfNOTATIONAttributeNames;
 
     /** NOTATION enumeration values. */
-    private HashMap fNotationEnumVals;
+    private My_HashMap fNotationEnumVals;
 
     //
     // Constructors
@@ -352,12 +347,12 @@ public class XMLDTDProcessor
         if (fValidation) {
 
             if (fNotationEnumVals == null) {
-                fNotationEnumVals = new HashMap();
+                fNotationEnumVals = new My_HashMap();
             }
             fNotationEnumVals.clear();
 
-            fTableOfIDAttributeNames = new HashMap();
-            fTableOfNOTATIONAttributeNames = new HashMap();
+            fTableOfIDAttributeNames = new My_HashMap();
+            fTableOfNOTATIONAttributeNames = new My_HashMap();
         }
 
     }

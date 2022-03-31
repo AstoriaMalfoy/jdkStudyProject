@@ -21,9 +21,9 @@
 package com.sun.org.apache.xerces.internal.impl.xs;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.My_HashMap;
 
 /**
  * A class used to hold the internal schema grammar set for the current instance
@@ -40,7 +40,7 @@ public class XSGrammarBucket {
     /**
      * Map that maps between Namespace and a Grammar
      */
-    Map<String, SchemaGrammar> fGrammarRegistry = new HashMap<>();
+    Map<String, SchemaGrammar> fGrammarRegistry = new My_HashMap<>();
     SchemaGrammar fNoNSGrammar = null;
 
     /**

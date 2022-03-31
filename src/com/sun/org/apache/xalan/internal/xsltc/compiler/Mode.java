@@ -46,12 +46,8 @@ import com.sun.org.apache.xalan.internal.xsltc.compiler.util.NamedMethodGenerato
 import com.sun.org.apache.xalan.internal.xsltc.compiler.util.Util;
 import com.sun.org.apache.xml.internal.dtm.Axis;
 import com.sun.org.apache.xml.internal.dtm.DTM;
-import java.util.Enumeration;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
-import java.util.Set;
-import java.util.Vector;
+
+import java.util.*;
 
 /**
  * Mode gathers all the templates belonging to a given mode;
@@ -129,22 +125,22 @@ final class Mode implements Constants {
     /**
      * A mapping between templates and test sequences.
      */
-    private Map<Template, Object> _neededTemplates = new HashMap<>();
+    private Map<Template, Object> _neededTemplates = new My_HashMap<>();
 
     /**
      * A mapping between named templates and Mode objects.
      */
-    private Map<Template, Mode> _namedTemplates = new HashMap<>();
+    private Map<Template, Mode> _namedTemplates = new My_HashMap<>();
 
     /**
      * A mapping between templates and instruction handles.
      */
-    private Map<Template, InstructionHandle> _templateIHs = new HashMap<>();
+    private Map<Template, InstructionHandle> _templateIHs = new My_HashMap<>();
 
     /**
      * A mapping between templates and instruction lists.
      */
-    private Map<Template, InstructionList> _templateILs = new HashMap<>();
+    private Map<Template, InstructionList> _templateILs = new My_HashMap<>();
 
     /**
      * A reference to the pattern matching the root node.
@@ -196,7 +192,7 @@ final class Mode implements Constants {
 
     public String functionName(int min, int max) {
         if (_importLevels == null) {
-            _importLevels = new HashMap<>();
+            _importLevels = new My_HashMap<>();
         }
         _importLevels.put(max, min);
         return _methodName + '_' + max;
@@ -1074,10 +1070,10 @@ for (int i = 0; i < _templates.size(); i++) {
         final Vector names      = xsltc.getNamesIndex();
 
         // Clear some datastructures
-        _namedTemplates = new HashMap<>();
-        _neededTemplates = new HashMap<>();
-        _templateIHs = new HashMap<>();
-        _templateILs = new HashMap<>();
+        _namedTemplates = new My_HashMap<>();
+        _neededTemplates = new My_HashMap<>();
+        _templateIHs = new My_HashMap<>();
+        _templateILs = new My_HashMap<>();
         _patternGroups = new Vector[32];
         _rootPattern = null;
 

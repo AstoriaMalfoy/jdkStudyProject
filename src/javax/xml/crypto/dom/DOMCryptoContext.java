@@ -31,8 +31,9 @@ import javax.xml.crypto.KeySelector;
 import javax.xml.crypto.URIDereferencer;
 import javax.xml.crypto.XMLCryptoContext;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.Iterator;
+import java.util.My_HashMap;
+
 import org.w3c.dom.Element;
 
 /**
@@ -47,13 +48,13 @@ import org.w3c.dom.Element;
  */
 public class DOMCryptoContext implements XMLCryptoContext {
 
-    private HashMap<String,String> nsMap = new HashMap<>();
-    private HashMap<String,Element> idMap = new HashMap<>();
-    private HashMap<Object,Object> objMap = new HashMap<>();
+    private My_HashMap<String,String> nsMap = new My_HashMap<>();
+    private My_HashMap<String,Element> idMap = new My_HashMap<>();
+    private My_HashMap<Object,Object> objMap = new My_HashMap<>();
     private String baseURI;
     private KeySelector ks;
     private URIDereferencer dereferencer;
-    private HashMap<String,Object> propMap = new HashMap<>();
+    private My_HashMap<String,Object> propMap = new My_HashMap<>();
     private String defaultPrefix;
 
     /**
@@ -62,7 +63,7 @@ public class DOMCryptoContext implements XMLCryptoContext {
     protected DOMCryptoContext() {}
 
     /**
-     * This implementation uses an internal {@link HashMap} to get the prefix
+     * This implementation uses an internal {@link My_HashMap} to get the prefix
      * that the specified URI maps to. It returns the <code>defaultPrefix</code>
      * if it maps to <code>null</code>.
      *
@@ -78,7 +79,7 @@ public class DOMCryptoContext implements XMLCryptoContext {
     }
 
     /**
-     * This implementation uses an internal {@link HashMap} to map the URI
+     * This implementation uses an internal {@link My_HashMap} to map the URI
      * to the specified prefix.
      *
      * @throws NullPointerException {@inheritDoc}
@@ -121,7 +122,7 @@ public class DOMCryptoContext implements XMLCryptoContext {
     }
 
     /**
-     * This implementation uses an internal {@link HashMap} to get the object
+     * This implementation uses an internal {@link My_HashMap} to get the object
      * that the specified name maps to.
      *
      * @throws NullPointerException {@inheritDoc}
@@ -134,7 +135,7 @@ public class DOMCryptoContext implements XMLCryptoContext {
     }
 
     /**
-     * This implementation uses an internal {@link HashMap} to map the name
+     * This implementation uses an internal {@link My_HashMap} to map the name
      * to the specified object.
      *
      * @throws NullPointerException {@inheritDoc}
@@ -157,7 +158,7 @@ public class DOMCryptoContext implements XMLCryptoContext {
     /**
      * Returns the <code>Element</code> with the specified ID attribute value.
      *
-     * <p>This implementation uses an internal {@link HashMap} to get the
+     * <p>This implementation uses an internal {@link My_HashMap} to get the
      * element that the specified attribute value maps to.
      *
      * @param idValue the value of the ID
@@ -177,7 +178,7 @@ public class DOMCryptoContext implements XMLCryptoContext {
      * Registers the element's attribute specified by the namespace URI and
      * local name to be of type ID. The attribute must have a non-empty value.
      *
-     * <p>This implementation uses an internal {@link HashMap} to map the
+     * <p>This implementation uses an internal {@link My_HashMap} to map the
      * attribute's value to the specified element.
      *
      * @param element the element
@@ -225,7 +226,7 @@ public class DOMCryptoContext implements XMLCryptoContext {
     }
 
     /**
-     * This implementation uses an internal {@link HashMap} to get the object
+     * This implementation uses an internal {@link My_HashMap} to get the object
      * that the specified key maps to.
      */
     public Object get(Object key) {
@@ -233,7 +234,7 @@ public class DOMCryptoContext implements XMLCryptoContext {
     }
 
     /**
-     * This implementation uses an internal {@link HashMap} to map the key
+     * This implementation uses an internal {@link My_HashMap} to map the key
      * to the specified object.
      *
      * @throws IllegalArgumentException {@inheritDoc}

@@ -31,8 +31,8 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.io.IOException;
 import java.util.Map;
-import java.util.HashMap;
 import java.util.Iterator;
+import java.util.My_HashMap;
 
 /**
  * The Manifest class is used to maintain Manifest entry names and their
@@ -51,7 +51,7 @@ public class Manifest implements Cloneable {
     private final Attributes attr = new Attributes();
 
     // manifest entries
-    private final Map<String, Attributes> entries = new HashMap<>();
+    private final Map<String, Attributes> entries = new My_HashMap<>();
 
     // associated JarVerifier, not null when called by JarFile::getManifest.
     private final JarVerifier jv;

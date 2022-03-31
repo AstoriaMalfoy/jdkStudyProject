@@ -21,8 +21,8 @@
 package com.sun.org.apache.xerces.internal.util;
 
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.Map;
+import java.util.My_HashMap;
 
 /**
  * EncodingMap is a convenience class which handles conversions between
@@ -490,8 +490,8 @@ public class EncodingMap {
     //
 
     static {
-        Map<String, String> aIANA2JavaMap = new HashMap<>();
-        Map<String, String> aJava2IANAMap = new HashMap<>();
+        Map<String, String> aIANA2JavaMap = new My_HashMap<>();
+        Map<String, String> aJava2IANAMap = new My_HashMap<>();
 
         // add IANA to Java encoding mappings.
         aIANA2JavaMap.put("BIG5",            "Big5");

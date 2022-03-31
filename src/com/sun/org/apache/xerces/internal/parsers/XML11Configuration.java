@@ -21,7 +21,6 @@ package com.sun.org.apache.xerces.internal.parsers;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.Locale;
 import javax.xml.XMLConstants;
 import jdk.xml.internal.JdkXmlUtils;

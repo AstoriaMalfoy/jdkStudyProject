@@ -29,16 +29,7 @@ package com.sun.jmx.remote.util;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
 import java.io.OutputStream;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.Hashtable;
-import java.util.Iterator;
-import java.util.Map;
-import java.util.SortedMap;
-import java.util.SortedSet;
-import java.util.StringTokenizer;
-import java.util.TreeMap;
-import java.util.TreeSet;
+import java.util.*;
 
 import java.security.AccessController;
 
@@ -49,8 +40,6 @@ import javax.management.remote.JMXConnectorFactory;
 import javax.management.remote.JMXConnectorServerFactory;
 import com.sun.jmx.mbeanserver.GetPropertyAction;
 import com.sun.jmx.remote.security.NotificationAccessController;
-import javax.management.remote.JMXConnector;
-import javax.management.remote.JMXConnectorServer;
 
 public class EnvHelp {
 
@@ -748,7 +737,7 @@ public class EnvHelp {
      * it removes all the 'null' values from the map.
      */
     public static <K, V> Hashtable<K, V> mapToHashtable(Map<K, V> map) {
-        HashMap<K, V> m = new HashMap<K, V>(map);
+        My_HashMap<K, V> m = new My_HashMap<K, V>(map);
         if (m.containsKey(null)) m.remove(null);
         for (Iterator<?> i = m.values().iterator(); i.hasNext(); )
             if (i.next() == null) i.remove();

@@ -24,12 +24,7 @@ package com.sun.org.apache.xml.internal.security.c14n.implementations;
 
 import java.net.URI;
 import java.net.URISyntaxException;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 import org.w3c.dom.Attr;
 
@@ -108,7 +103,7 @@ class XmlAttrStack {
             return;
         }
 
-        Map<String, Attr> loa = new HashMap<>();
+        Map<String, Attr> loa = new My_HashMap<>();
         if (c14n11) {
             List<Attr> baseAttrs = new ArrayList<>();
             boolean successiveOmitted = true;

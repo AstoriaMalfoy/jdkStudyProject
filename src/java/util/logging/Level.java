@@ -24,12 +24,7 @@
  */
 
 package java.util.logging;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Locale;
-import java.util.Map;
-import java.util.ResourceBundle;
+import java.util.*;
 
 /**
  * The Level class defines a set of standard logging levels that
@@ -532,8 +527,8 @@ public class Level implements java.io.Serializable {
     // were final, the following KnownLevel implementation can be removed.
     // Future API change should take this into consideration.
     static final class KnownLevel {
-        private static Map<String, List<KnownLevel>> nameToLevels = new HashMap<>();
-        private static Map<Integer, List<KnownLevel>> intToLevels = new HashMap<>();
+        private static Map<String, List<KnownLevel>> nameToLevels = new My_HashMap<>();
+        private static Map<Integer, List<KnownLevel>> intToLevels = new My_HashMap<>();
         final Level levelObject;     // instance of Level class or Level subclass
         final Level mirroredLevel;   // mirror of the custom Level
         KnownLevel(Level l) {

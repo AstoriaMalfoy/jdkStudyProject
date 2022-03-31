@@ -25,18 +25,10 @@
 
 package javax.imageio.spi;
 
-import java.io.File;
 import java.security.AccessControlContext;
 import java.security.AccessController;
 import java.security.PrivilegedAction;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
-import java.util.NoSuchElementException;
-import java.util.Set;
-import java.util.ServiceLoader;
+import java.util.*;
 
 /**
  * A registry for service provider instances.
@@ -102,7 +94,7 @@ import java.util.ServiceLoader;
 public class ServiceRegistry {
 
     // Class -> Registry
-    private Map categoryMap = new HashMap();
+    private Map categoryMap = new My_HashMap();
 
     /**
      * Constructs a <code>ServiceRegistry</code> instance with a
@@ -708,8 +700,8 @@ class SubRegistry {
     final PartiallyOrderedSet poset = new PartiallyOrderedSet();
 
     // Class -> Provider Object of that class
-    final Map<Class<?>,Object> map = new HashMap();
-    final Map<Class<?>,AccessControlContext> accMap = new HashMap<>();
+    final Map<Class<?>,Object> map = new My_HashMap();
+    final Map<Class<?>,AccessControlContext> accMap = new My_HashMap<>();
 
     public SubRegistry(ServiceRegistry registry, Class category) {
         this.registry = registry;

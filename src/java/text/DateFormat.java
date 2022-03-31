@@ -40,16 +40,8 @@ package java.text;
 
 import java.io.InvalidObjectException;
 import java.text.spi.DateFormatProvider;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.GregorianCalendar;
-import java.util.HashMap;
-import java.util.Locale;
-import java.util.Map;
-import java.util.MissingResourceException;
-import java.util.ResourceBundle;
-import java.util.TimeZone;
-import java.util.spi.LocaleServiceProvider;
+import java.util.*;
+
 import sun.util.locale.provider.LocaleProviderAdapter;
 import sun.util.locale.provider.LocaleServiceProviderPool;
 
@@ -840,7 +832,7 @@ public abstract class DateFormat extends Format {
         private static final long serialVersionUID = 7441350119349544720L;
 
         // table of all instances in this class, used by readResolve
-        private static final Map<String, Field> instanceMap = new HashMap<>(18);
+        private static final Map<String, Field> instanceMap = new My_HashMap<>(18);
         // Maps from Calendar constant (such as Calendar.ERA) to Field
         // constant (such as Field.ERA).
         private static final Field[] calendarToFieldMapping =

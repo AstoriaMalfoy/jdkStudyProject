@@ -22,8 +22,9 @@ package com.sun.org.apache.xerces.internal.jaxp;
 
 import com.sun.org.apache.xerces.internal.impl.Constants;
 import com.sun.org.apache.xerces.internal.util.SAXMessageFormatter;
-import java.util.HashMap;
+
 import java.util.Map;
+import java.util.My_HashMap;
 import javax.xml.XMLConstants;
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParser;
@@ -186,7 +187,7 @@ public class SAXParserFactoryImpl extends SAXParserFactory {
 
     private void putInFeatures(String name, boolean value){
          if (features == null) {
-            features = new HashMap<>();
+            features = new My_HashMap<>();
         }
         features.put(name, value ? Boolean.TRUE : Boolean.FALSE);
     }

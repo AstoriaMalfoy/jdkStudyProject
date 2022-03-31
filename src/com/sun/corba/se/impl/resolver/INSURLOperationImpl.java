@@ -25,13 +25,7 @@
 
 package com.sun.corba.se.impl.resolver;
 
-import java.util.List ;
-import java.util.Map ;
-import java.util.Comparator ;
-import java.util.Iterator ;
-import java.util.HashMap ;
-import java.util.ArrayList ;
-import java.util.Collections ;
+import java.util.*;
 
 import org.omg.CosNaming.NamingContextExt ;
 import org.omg.CosNaming.NamingContextExtHelper ;
@@ -42,9 +36,7 @@ import com.sun.corba.se.spi.ior.IOR;
 import com.sun.corba.se.spi.ior.IORTemplate;
 import com.sun.corba.se.spi.ior.ObjectKey;
 import com.sun.corba.se.spi.ior.IORFactories;
-import com.sun.corba.se.spi.ior.ObjectKeyFactory ;
 import com.sun.corba.se.spi.ior.iiop.IIOPAddress;
-import com.sun.corba.se.spi.ior.iiop.IIOPProfile ;
 import com.sun.corba.se.spi.ior.iiop.IIOPProfileTemplate ;
 import com.sun.corba.se.spi.ior.iiop.IIOPFactories ;
 import com.sun.corba.se.spi.ior.iiop.GIOPVersion;
@@ -216,7 +208,7 @@ public class INSURLOperationImpl implements Operation
      */
      private org.omg.CORBA.Object getIORUsingCorbaloc( INSURL corbalocObject )
      {
-        Map     profileMap = new HashMap();
+        Map     profileMap = new My_HashMap();
         List    profileList1_0 = new ArrayList();
 
         // corbalocObject cannot be null, because it's validated during

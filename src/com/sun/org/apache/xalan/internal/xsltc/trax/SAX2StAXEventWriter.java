@@ -25,13 +25,7 @@
 
 package com.sun.org.apache.xalan.internal.xsltc.trax;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 import javax.xml.stream.XMLEventFactory;
 import javax.xml.stream.XMLStreamException;
@@ -341,7 +335,7 @@ public class SAX2StAXEventWriter extends SAX2StAXBaseWriter {
                 String uri = (String) namespaces.elementAt(i);
                 Namespace ns = createNamespace(prefix, uri);
                 if (nsMap == null) {
-                    nsMap = new HashMap();
+                    nsMap = new My_HashMap();
                 }
                 nsMap.put(prefix, ns);
             }
@@ -365,7 +359,7 @@ public class SAX2StAXEventWriter extends SAX2StAXBaseWriter {
                 // namespace has already been declared, skip it, otherwise
                 // write it as an namespace
                 if (nsMap == null) {
-                    nsMap = new HashMap();
+                    nsMap = new My_HashMap();
                 }
 
                 if (!nsMap.containsKey(attrLocal)) {

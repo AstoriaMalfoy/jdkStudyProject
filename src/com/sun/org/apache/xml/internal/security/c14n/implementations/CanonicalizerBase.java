@@ -26,13 +26,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.io.UnsupportedEncodingException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
-import java.util.ListIterator;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 import javax.xml.parsers.ParserConfigurationException;
 
@@ -256,7 +250,7 @@ public abstract class CanonicalizerBase extends CanonicalizerSpi {
         final OutputStream writer = this.writer;
         final Node excludeNode = this.excludeNode;
         final boolean includeComments = this.includeComments;
-        Map<String, byte[]> cache = new HashMap<>();
+        Map<String, byte[]> cache = new My_HashMap<>();
         do {
             switch (currentNode.getNodeType()) {
 
@@ -404,7 +398,7 @@ public abstract class CanonicalizerBase extends CanonicalizerSpi {
         Node sibling = null;
         Node parentNode = null;
         int documentLevel = NODE_BEFORE_DOCUMENT_ELEMENT;
-        Map<String, byte[]> cache = new HashMap<>();
+        Map<String, byte[]> cache = new My_HashMap<>();
         do {
             switch (currentNode.getNodeType()) {
 

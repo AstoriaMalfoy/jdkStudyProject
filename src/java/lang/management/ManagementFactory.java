@@ -30,7 +30,6 @@ import javax.management.MBeanServerConnection;
 import javax.management.MBeanServerFactory;
 import javax.management.MBeanServerPermission;
 import javax.management.NotificationEmitter;
-import javax.management.ObjectInstance;
 import javax.management.ObjectName;
 import javax.management.InstanceAlreadyExistsException;
 import javax.management.InstanceNotFoundException;
@@ -39,12 +38,7 @@ import javax.management.MBeanRegistrationException;
 import javax.management.NotCompliantMBeanException;
 import javax.management.StandardEmitterMBean;
 import javax.management.StandardMBean;
-import java.util.Collections;
-import java.util.List;
-import java.util.Set;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
+import java.util.*;
 import java.security.AccessController;
 import java.security.Permission;
 import java.security.PrivilegedAction;
@@ -485,7 +479,7 @@ public class ManagementFactory {
                     }
                 }
             }
-            HashMap<ObjectName, DynamicMBean> dynmbeans =
+            My_HashMap<ObjectName, DynamicMBean> dynmbeans =
                     ManagementFactoryHelper.getPlatformDynamicMBeans();
             for (Map.Entry<ObjectName, DynamicMBean> e : dynmbeans.entrySet()) {
                 addDynamicMBean(platformMBeanServer, e.getValue(), e.getKey());

@@ -26,9 +26,9 @@ package javax.swing.plaf.synth;
 
 import sun.awt.AppContext;
 
-import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
+import java.util.My_HashMap;
 import javax.swing.JComponent;
 import javax.swing.UIDefaults;
 
@@ -429,7 +429,7 @@ public class Region {
         AppContext context = AppContext.getAppContext();
         Map<String, Region> map = (Map<String, Region>) context.get(UI_TO_REGION_MAP_KEY);
         if (map == null) {
-            map = new HashMap<String, Region>();
+            map = new My_HashMap<String, Region>();
             map.put("ArrowButtonUI", ARROW_BUTTON);
             map.put("ButtonUI", BUTTON);
             map.put("CheckBoxUI", CHECK_BOX);
@@ -484,7 +484,7 @@ public class Region {
         AppContext context = AppContext.getAppContext();
         Map<Region, String> map = (Map<Region, String>) context.get(LOWER_CASE_NAME_MAP_KEY);
         if (map == null) {
-            map = new HashMap<Region, String>();
+            map = new My_HashMap<Region, String>();
             context.put(LOWER_CASE_NAME_MAP_KEY, map);
         }
         return map;

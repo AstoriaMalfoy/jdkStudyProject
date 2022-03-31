@@ -31,13 +31,7 @@
 
 package org.xml.sax.helpers;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.EmptyStackException;
-import java.util.Enumeration;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 
 /**
@@ -809,17 +803,17 @@ public class NamespaceSupport
         private void copyTables ()
         {
             if (prefixTable != null) {
-                prefixTable = new HashMap<>(prefixTable);
+                prefixTable = new My_HashMap<>(prefixTable);
             } else {
-                prefixTable = new HashMap<>();
+                prefixTable = new My_HashMap<>();
             }
             if (uriTable != null) {
-                uriTable = new HashMap<>(uriTable);
+                uriTable = new My_HashMap<>(uriTable);
             } else {
-                uriTable = new HashMap<>();
+                uriTable = new My_HashMap<>();
             }
-            elementNameTable = new HashMap<>();
-            attributeNameTable = new HashMap<>();
+            elementNameTable = new My_HashMap<>();
+            attributeNameTable = new My_HashMap<>();
             declSeen = true;
         }
 

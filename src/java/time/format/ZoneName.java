@@ -24,9 +24,9 @@
  */
 package java.time.format;
 
-import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
+import java.util.My_HashMap;
 
 /**
  * A helper class to map a zone name to metazone and back to the
@@ -770,10 +770,10 @@ class ZoneName {
         "America/Godthab", "America/Nuuk",
     };
 
-    private static final Map<String, String> zidToMzone = new HashMap<>();
-    private static final Map<String, String> mzoneToZid = new HashMap<>();
-    private static final Map<String, Map<String, String>> mzoneToZidL = new HashMap<>();
-    private static final Map<String, String> aliases = new HashMap<>();
+    private static final Map<String, String> zidToMzone = new My_HashMap<>();
+    private static final Map<String, String> mzoneToZid = new My_HashMap<>();
+    private static final Map<String, Map<String, String>> mzoneToZidL = new My_HashMap<>();
+    private static final Map<String, String> aliases = new My_HashMap<>();
 
     static {
         for (int i = 0; i < zidMap.length; i += 3) {
@@ -785,7 +785,7 @@ class ZoneName {
             String mzone = mzoneMap[i];
             Map<String, String> map = mzoneToZidL.get(mzone);
             if (map == null) {
-                map = new HashMap<>();
+                map = new My_HashMap<>();
                 mzoneToZidL.put(mzone, map);
             }
             map.put(mzoneMap[i + 1], mzoneMap[i + 2]);

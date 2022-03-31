@@ -25,13 +25,14 @@
 
 package com.sun.corba.se.impl.monitoring;
 
-import java.util.HashMap;
 import com.sun.corba.se.spi.monitoring.MonitoringManagerFactory;
 import com.sun.corba.se.spi.monitoring.MonitoringManager;
 
+import java.util.My_HashMap;
+
 public class MonitoringManagerFactoryImpl implements MonitoringManagerFactory {
 
-    private HashMap monitoringManagerTable = new HashMap();
+    private My_HashMap monitoringManagerTable = new My_HashMap();
 
     public synchronized MonitoringManager createMonitoringManager(
         String nameOfTheRoot, String description)

@@ -27,12 +27,8 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.ObjectStreamField;
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Hashtable;
-import java.util.List;
-import java.util.Map;
-import java.util.Vector;
+import java.util.*;
+
 import org.w3c.dom.Attr;
 import org.w3c.dom.DOMException;
 import org.w3c.dom.DOMImplementation;
@@ -460,7 +456,7 @@ public class DocumentImpl
      */
     private void setEventListeners(NodeImpl n, List<LEntry> listeners) {
         if (eventListeners == null) {
-            eventListeners = new HashMap<>();
+            eventListeners = new My_HashMap<>();
         }
         if (listeners == null) {
             eventListeners.remove(n);
@@ -1371,7 +1367,7 @@ public class DocumentImpl
         if (it != null) iterators = new ArrayList<>(it);
         if (r != null) ranges = new ArrayList<>(r);
         if (el != null) {
-            eventListeners = new HashMap<>();
+            eventListeners = new My_HashMap<>();
             for (Map.Entry<NodeImpl, Vector<LEntry>> e : el.entrySet()) {
                  eventListeners.put(e.getKey(), new ArrayList<>(e.getValue()));
             }

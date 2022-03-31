@@ -95,22 +95,9 @@ import java.time.temporal.TemporalQuery;
 import java.time.temporal.ValueRange;
 import java.time.temporal.WeekFields;
 import java.time.zone.ZoneRulesProvider;
+import java.util.*;
 import java.util.AbstractMap.SimpleImmutableEntry;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Locale;
-import java.util.Map;
 import java.util.Map.Entry;
-import java.util.Objects;
-import java.util.Set;
-import java.util.TimeZone;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 
@@ -767,7 +754,7 @@ public final class DateTimeFormatterBuilder {
     public DateTimeFormatterBuilder appendText(TemporalField field, Map<Long, String> textLookup) {
         Objects.requireNonNull(field, "field");
         Objects.requireNonNull(textLookup, "textLookup");
-        Map<Long, String> copy = new LinkedHashMap<>(textLookup);
+        Map<Long, String> copy = new LinkedMyHashMap<>(textLookup);
         Map<TextStyle, Map<Long, String>> map = Collections.singletonMap(TextStyle.FULL, copy);
         final LocaleStore store = new LocaleStore(map);
         DateTimeTextProvider provider = new DateTimeTextProvider() {
@@ -1836,7 +1823,7 @@ public final class DateTimeFormatterBuilder {
     }
 
     /** Map of letters to fields. */
-    private static final Map<Character, TemporalField> FIELD_MAP = new HashMap<>();
+    private static final Map<Character, TemporalField> FIELD_MAP = new My_HashMap<>();
     static {
         // SDF = SimpleDateFormat
         FIELD_MAP.put('G', ChronoField.ERA);                       // SDF, LDML (different to both for 1/2 chars)
@@ -3712,9 +3699,9 @@ public final class DateTimeFormatterBuilder {
 
         // cache per instance for now
         private final Map<Locale, Entry<Integer, SoftReference<PrefixTree>>>
-            cachedTree = new HashMap<>();
+            cachedTree = new My_HashMap<>();
         private final Map<Locale, Entry<Integer, SoftReference<PrefixTree>>>
-            cachedTreeCI = new HashMap<>();
+            cachedTreeCI = new My_HashMap<>();
 
         @Override
         protected PrefixTree getTree(DateTimeParseContext context) {

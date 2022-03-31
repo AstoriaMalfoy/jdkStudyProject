@@ -28,15 +28,8 @@ package javax.management.relation;
 import static com.sun.jmx.defaults.JmxProperties.RELATION_LOGGER;
 import static com.sun.jmx.mbeanserver.Util.cast;
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicLong;
-import java.util.logging.Level;
 
 import javax.management.Attribute;
 import javax.management.AttributeNotFoundException;
@@ -81,27 +74,27 @@ public class RelationService extends NotificationBroadcasterSupport
     // depending if the relation has been created using createRelation()
     // method (so internally handled) or is an MBean added as a relation by the
     // user
-    private Map<String,Object> myRelId2ObjMap = new HashMap<String,Object>();
+    private Map<String,Object> myRelId2ObjMap = new My_HashMap<String,Object>();
 
     // Map associating:
     //      <relation id> -> <relation type name>
-    private Map<String,String> myRelId2RelTypeMap = new HashMap<String,String>();
+    private Map<String,String> myRelId2RelTypeMap = new My_HashMap<String,String>();
 
     // Map associating:
     //      <relation MBean Object Name> -> <relation id>
     private Map<ObjectName,String> myRelMBeanObjName2RelIdMap =
-        new HashMap<ObjectName,String>();
+        new My_HashMap<ObjectName,String>();
 
     // Map associating:
     //       <relation type name> -> <RelationType object>
     private Map<String,RelationType> myRelType2ObjMap =
-        new HashMap<String,RelationType>();
+        new My_HashMap<String,RelationType>();
 
     // Map associating:
     //       <relation type name> -> ArrayList of <relation id>
     // to list all the relations of a given type
     private Map<String,List<String>> myRelType2RelIdsMap =
-        new HashMap<String,List<String>>();
+        new My_HashMap<String,List<String>>();
 
     // Map associating:
     //       <ObjectName> -> HashMap
@@ -110,7 +103,7 @@ public class RelationService extends NotificationBroadcasterSupport
     // to track where a given MBean is referenced.
     private final Map<ObjectName,Map<String,List<String>>>
         myRefedMBeanObjName2RelIdsMap =
-            new HashMap<ObjectName,Map<String,List<String>>>();
+            new My_HashMap<ObjectName,Map<String,List<String>>>();
 
     // Flag to indicate if, when a notification is received for the
     // unregistration of an MBean referenced in a relation, if an immediate
@@ -1510,7 +1503,7 @@ public class RelationService extends NotificationBroadcasterSupport
         // Map including ObjectNames for unregistered MBeans, with
         // referencing relation ids and roles
         Map<ObjectName,Map<String,List<String>>> localMBean2RelIdMap =
-            new HashMap<ObjectName,Map<String,List<String>>>();
+            new My_HashMap<ObjectName,Map<String,List<String>>>();
 
         synchronized(myRefedMBeanObjName2RelIdsMap) {
             for (MBeanServerNotification currNtf : localUnregNtfList) {
@@ -1614,7 +1607,7 @@ public class RelationService extends NotificationBroadcasterSupport
                 "findReferencingRelations",
                 new Object[] {mbeanName, relationTypeName, roleName});
 
-        Map<String,List<String>> result = new HashMap<String,List<String>>();
+        Map<String,List<String>> result = new My_HashMap<String,List<String>>();
 
         synchronized(myRefedMBeanObjName2RelIdsMap) {
 
@@ -1732,7 +1725,7 @@ public class RelationService extends NotificationBroadcasterSupport
                                      roleName);
 
         Map<ObjectName,List<String>> result =
-            new HashMap<ObjectName,List<String>>();
+            new My_HashMap<ObjectName,List<String>>();
 
         for (String currRelId : relId2RoleNamesMap.keySet()) {
 
@@ -2708,7 +2701,7 @@ public class RelationService extends NotificationBroadcasterSupport
                 roleNames.add(roleName);
 
                 // Map of relations where the MBean is referenced
-                mbeanRefMap = new HashMap<String,List<String>>();
+                mbeanRefMap = new My_HashMap<String,List<String>>();
                 mbeanRefMap.put(relationId, roleNames);
 
                 myRefedMBeanObjName2RelIdsMap.put(objectName, mbeanRefMap);

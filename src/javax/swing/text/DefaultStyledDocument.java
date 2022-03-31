@@ -29,13 +29,7 @@ import java.awt.Font;
 import java.awt.font.TextAttribute;
 import java.lang.ref.ReferenceQueue;
 import java.lang.ref.WeakReference;
-import java.util.Enumeration;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Stack;
-import java.util.Vector;
-import java.util.ArrayList;
+import java.util.*;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.Serializable;
@@ -2627,7 +2621,7 @@ public class DefaultStyledDocument extends AbstractDocument implements StyledDoc
 
         /** Class-specific reference queues.  */
         private final static Map<Class, ReferenceQueue<DefaultStyledDocument>> queueMap
-                = new HashMap<Class, ReferenceQueue<DefaultStyledDocument>>();
+                = new My_HashMap<Class, ReferenceQueue<DefaultStyledDocument>>();
 
         /** A weak reference to the document object.  */
         private DocReference doc;

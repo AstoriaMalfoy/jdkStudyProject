@@ -24,12 +24,13 @@ package com.sun.org.apache.xml.internal.utils;
 import com.sun.org.apache.xalan.internal.XalanConstants;
 import com.sun.org.apache.xalan.internal.utils.SecuritySupport;
 import com.sun.org.apache.xalan.internal.utils.XMLSecurityManager;
-import java.util.HashMap;
 
 import javax.xml.XMLConstants;
 import jdk.xml.internal.JdkXmlUtils;
 import org.xml.sax.SAXException;
 import org.xml.sax.XMLReader;
+
+import java.util.My_HashMap;
 
 /**
  * Creates XMLReader objects and caches them for re-use.
@@ -51,7 +52,7 @@ public class XMLReaderManager {
     /**
      * Keeps track of whether an XMLReader object is in use.
      */
-    private HashMap m_inUse;
+    private My_HashMap m_inUse;
 
     private boolean _secureProcessing;
      /**
@@ -91,7 +92,7 @@ public class XMLReaderManager {
         }
 
         if (m_inUse == null) {
-            m_inUse = new HashMap();
+            m_inUse = new My_HashMap();
         }
 
         /**

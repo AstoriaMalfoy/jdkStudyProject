@@ -120,7 +120,7 @@ import sun.misc.SharedSecrets;
  * alternates holding keys and values.  (This has better locality for large
  * tables than does using separate arrays.)  For many JRE implementations
  * and operation mixes, this class will yield better performance than
- * {@link HashMap} (which uses <i>chaining</i> rather than linear-probing).
+ * {@link My_HashMap} (which uses <i>chaining</i> rather than linear-probing).
  *
  * <p>This class is a member of the
  * <a href="{@docRoot}/../technotes/guides/collections/index.html">
@@ -130,7 +130,7 @@ import sun.misc.SharedSecrets;
  * @see     Object#hashCode()
  * @see     Collection
  * @see     Map
- * @see     HashMap
+ * @see     My_HashMap
  * @see     TreeMap
  * @author  Doug Lea and Josh Bloch
  * @since   1.4

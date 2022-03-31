@@ -118,7 +118,7 @@ import java.io.Serializable;
  * @param <V> the type of mapped values
  *
  * @author  Josh Bloch
- * @see HashMap
+ * @see My_HashMap
  * @see TreeMap
  * @see Hashtable
  * @see SortedMap

@@ -24,7 +24,7 @@
  */
 package javax.print.attribute.standard;
 
-import java.util.HashMap;
+import java.util.My_HashMap;
 import java.util.Vector;
 
 import javax.print.attribute.Size2DSyntax;
@@ -56,7 +56,7 @@ public class MediaSize extends Size2DSyntax implements Attribute {
 
     private MediaSizeName mediaName;
 
-    private static HashMap mediaMap = new HashMap(100, 10);
+    private static My_HashMap mediaMap = new My_HashMap(100, 10);
 
     private static Vector sizeVector = new Vector(100, 10);
 

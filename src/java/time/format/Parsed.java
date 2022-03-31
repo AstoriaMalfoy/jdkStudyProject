@@ -96,12 +96,8 @@ import java.time.temporal.TemporalField;
 import java.time.temporal.TemporalQueries;
 import java.time.temporal.TemporalQuery;
 import java.time.temporal.UnsupportedTemporalTypeException;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
+import java.util.*;
 import java.util.Map.Entry;
-import java.util.Objects;
-import java.util.Set;
 
 /**
  * A store of parsed data.
@@ -126,7 +122,7 @@ final class Parsed implements TemporalAccessor {
     /**
      * The parsed fields.
      */
-    final Map<TemporalField, Long> fieldValues = new HashMap<>();
+    final Map<TemporalField, Long> fieldValues = new My_HashMap<>();
     /**
      * The parsed zone.
      */

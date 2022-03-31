@@ -25,15 +25,10 @@
 
 package com.sun.corba.se.impl.ior;
 
-import java.util.ListIterator ;
-import java.util.Iterator ;
-import java.util.Map ;
-import java.util.HashMap ;
+import java.util.*;
 
 import java.io.StringWriter;
 import java.io.IOException;
-
-import javax.rmi.CORBA.Util;
 
 import org.omg.CORBA_2_3.portable.InputStream ;
 import org.omg.CORBA_2_3.portable.OutputStream ;
@@ -50,10 +45,6 @@ import com.sun.corba.se.spi.ior.IdentifiableFactoryFinder ;
 import com.sun.corba.se.spi.ior.IdentifiableContainerBase ;
 import com.sun.corba.se.spi.ior.ObjectKeyTemplate ;
 import com.sun.corba.se.spi.ior.IORFactories ;
-
-import com.sun.corba.se.spi.ior.iiop.GIOPVersion;
-
-import com.sun.corba.se.spi.protocol.RequestDispatcherRegistry;
 
 import com.sun.corba.se.spi.orb.ORB;
 
@@ -272,7 +263,7 @@ public class IORImpl extends IdentifiableContainerBase implements IOR
     private void initializeIORTemplateList()
     {
         // Maps ObjectKeyTemplate to IORTemplate
-        Map oktempToIORTemplate = new HashMap() ;
+        Map oktempToIORTemplate = new My_HashMap() ;
 
         iortemps = IORFactories.makeIORTemplateList() ;
         Iterator iter = iterator() ;

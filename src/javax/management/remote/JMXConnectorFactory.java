@@ -28,12 +28,7 @@ package javax.management.remote;
 import com.sun.jmx.mbeanserver.Util;
 import java.io.IOException;
 import java.net.MalformedURLException;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Iterator;
-import java.util.ServiceLoader;
-import java.util.StringTokenizer;
+import java.util.*;
 import java.security.AccessController;
 import java.security.PrivilegedAction;
 
@@ -272,11 +267,11 @@ public class JMXConnectorFactory {
     }
 
     private static <K,V> Map<K,V> newHashMap() {
-        return new HashMap<K,V>();
+        return new My_HashMap<K,V>();
     }
 
     private static <K> Map<K,Object> newHashMap(Map<K,?> map) {
-        return new HashMap<K,Object>(map);
+        return new My_HashMap<K,Object>(map);
     }
 
     /**

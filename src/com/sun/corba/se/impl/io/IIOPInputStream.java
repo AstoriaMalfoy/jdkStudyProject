@@ -31,22 +31,17 @@
 
 package com.sun.corba.se.impl.io;
 
-import java.io.InputStream;
 import java.io.IOException;
 import java.io.StreamCorruptedException;
 import java.io.ObjectInputValidation;
 import java.io.NotActiveException;
 import java.io.InvalidObjectException;
 import java.io.InvalidClassException;
-import java.io.DataInputStream;
 import java.io.OptionalDataException;
-import java.io.WriteAbortedException;
 import java.io.Externalizable;
 import java.io.EOFException;
 import java.lang.reflect.*;
 import java.util.Vector;
-import java.util.Stack;
-import java.util.Hashtable;
 import java.util.Enumeration;
 
 import sun.corba.Bridge ;
@@ -54,7 +49,6 @@ import sun.corba.Bridge ;
 import java.security.AccessController ;
 import java.security.PrivilegedAction ;
 
-import com.sun.corba.se.impl.io.ObjectStreamClass;
 import com.sun.corba.se.impl.util.Utility;
 
 import org.omg.CORBA.portable.ValueInputStream;
@@ -71,14 +65,12 @@ import org.omg.CORBA.TypeCode;
 import com.sun.org.omg.CORBA.ValueDefPackage.FullValueDescription;
 import com.sun.org.omg.SendingContext.CodeBase;
 
-import javax.rmi.PortableRemoteObject;
 import javax.rmi.CORBA.Util;
 import javax.rmi.CORBA.ValueHandler;
 
 import java.security.*;
 import java.util.*;
 
-import com.sun.corba.se.impl.orbutil.ObjectUtility ;
 import com.sun.corba.se.impl.logging.OMGSystemException ;
 import com.sun.corba.se.impl.logging.UtilSystemException ;
 
@@ -2852,7 +2844,7 @@ public class IIOPInputStream
         public ActiveRecursionManager() {
             // A hash map is unsynchronized and allows
             // null values
-            offsetToObjectMap = new HashMap<>();
+            offsetToObjectMap = new My_HashMap<>();
         }
 
         // Called right after allocating a new object.

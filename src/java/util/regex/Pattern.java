@@ -26,15 +26,7 @@
 package java.util.regex;
 
 import java.text.Normalizer;
-import java.util.Locale;
-import java.util.Iterator;
-import java.util.Map;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Arrays;
-import java.util.NoSuchElementException;
-import java.util.Spliterator;
-import java.util.Spliterators;
+import java.util.*;
 import java.util.function.Predicate;
 import java.util.stream.Stream;
 import java.util.stream.StreamSupport;
@@ -1732,7 +1724,7 @@ loop:   for(int x=0, offset=0; x<nCodePoints; x++, offset+=len) {
 
     Map<String, Integer> namedGroups() {
         if (namedGroups == null)
-            namedGroups = new HashMap<>(2);
+            namedGroups = new My_HashMap<>(2);
         return namedGroups;
     }
 
@@ -5608,8 +5600,8 @@ NEXT:       while (i <= last) {
                     CharProperty make() { return p.clone();}});
         }
 
-        private static final HashMap<String, CharPropertyFactory> map
-            = new HashMap<>();
+        private static final My_HashMap<String, CharPropertyFactory> map
+            = new My_HashMap<>();
 
         static {
             // Unicode character property aliases, defined in

@@ -52,12 +52,7 @@ import java.net.URI;
 import java.net.URL;
 import java.net.URLConnection;
 import java.net.UnknownServiceException;
-import java.util.ArrayList;
-import java.util.Enumeration;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Properties;
-import java.util.StringTokenizer;
+import java.util.*;
 import javax.xml.XMLConstants;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -1184,7 +1179,7 @@ public final class TransformerImpl extends Transformer
 
         if (_isIdentity) {
             if (_parameters == null) {
-                _parameters = new HashMap<>();
+                _parameters = new My_HashMap<>();
             }
             _parameters.put(name, value);
         }

@@ -24,8 +24,10 @@ package com.sun.org.apache.xalan.internal.lib;
 
 import com.sun.org.apache.xml.internal.utils.DOM2Helper;
 import com.sun.org.apache.xpath.internal.NodeSet;
-import java.util.HashMap;
+
 import java.util.Map;
+import java.util.My_HashMap;
+
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
@@ -192,7 +194,7 @@ public class ExsltSets extends ExsltBase
     NodeSet dist = new NodeSet();
     dist.setShouldCacheNodes(true);
 
-    Map<String, Node> stringTable = new HashMap<>();
+    Map<String, Node> stringTable = new My_HashMap<>();
 
     for (int i = 0; i < nl.getLength(); i++)
     {

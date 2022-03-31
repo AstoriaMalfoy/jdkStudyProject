@@ -39,8 +39,8 @@ import java.io.Serializable;
 import java.lang.reflect.InvocationTargetException;
 import java.security.AccessController;
 import java.security.PrivilegedAction;
-import java.util.HashMap;
 import java.util.Map;
+import java.util.My_HashMap;
 import java.util.Properties;
 import javax.xml.XMLConstants;
 import javax.xml.transform.Templates;
@@ -408,7 +408,7 @@ public final class TemplatesImpl implements Templates, Serializable {
             _class = new Class[classCount];
 
             if (classCount > 1) {
-                _auxClasses = new HashMap<>();
+                _auxClasses = new My_HashMap<>();
             }
 
             for (int i = 0; i < classCount; i++) {

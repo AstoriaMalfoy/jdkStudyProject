@@ -155,7 +155,7 @@ public abstract class AbstractPreferences extends Preferences {
      * All known unremoved children of this node.  (This "cache" is consulted
      * prior to calling childSpi() or getChild().
      */
-    private Map<String, AbstractPreferences> kidCache = new HashMap<>();
+    private Map<String, AbstractPreferences> kidCache = new My_HashMap<>();
 
     /**
      * This field is used to keep track of whether or not this node has

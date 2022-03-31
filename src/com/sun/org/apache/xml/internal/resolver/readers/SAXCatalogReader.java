@@ -32,8 +32,8 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
 import java.net.UnknownHostException;
-import java.util.HashMap;
 import java.util.Map;
+import java.util.My_HashMap;
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
@@ -89,7 +89,7 @@ public class SAXCatalogReader implements CatalogReader, ContentHandler, Document
      * or "{namespaceuri}elementname". The former is used if the
      * namespace URI is null.</p>
      */
-  protected Map<String, String> namespaceMap = new HashMap<>();
+  protected Map<String, String> namespaceMap = new My_HashMap<>();
 
   /** The parser in use for the current catalog. */
   private SAXCatalogParser saxParser = null;

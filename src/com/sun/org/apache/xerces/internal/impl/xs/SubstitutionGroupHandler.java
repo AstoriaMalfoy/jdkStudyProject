@@ -25,10 +25,8 @@ import com.sun.org.apache.xerces.internal.xs.XSConstants;
 import com.sun.org.apache.xerces.internal.xs.XSObjectList;
 import com.sun.org.apache.xerces.internal.xs.XSSimpleTypeDefinition;
 import com.sun.org.apache.xerces.internal.xs.XSTypeDefinition;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+
+import java.util.*;
 
 /**
  * To store and validate information about substitutionGroup
@@ -181,10 +179,10 @@ public class SubstitutionGroupHandler {
     // - a Vector, which contains all elements that has this element as their
     //   substitution group affilication
     // - an array of OneSubGroup, which contains its substitution group before block.
-    Map<XSElementDecl, Object> fSubGroupsB = new HashMap<>();
+    Map<XSElementDecl, Object> fSubGroupsB = new My_HashMap<>();
     private static final OneSubGroup[] EMPTY_VECTOR = new OneSubGroup[0];
     // The real substitution groups (after "block")
-    Map<XSElementDecl, XSElementDecl[]> fSubGroups = new HashMap<>();
+    Map<XSElementDecl, XSElementDecl[]> fSubGroups = new My_HashMap<>();
 
     /**
      * clear the internal registry of substitutionGroup information

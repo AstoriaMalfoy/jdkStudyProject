@@ -25,11 +25,9 @@
 
 package javax.sound.midi;
 
-import java.io.InputStream;
-import java.io.IOException;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.Map;
+import java.util.My_HashMap;
 
 
 /**
@@ -134,7 +132,7 @@ public class MidiFileFormat {
 
 
     /** The set of properties */
-    private HashMap<String, Object> properties;
+    private My_HashMap<String, Object> properties;
 
 
     /**
@@ -189,7 +187,7 @@ public class MidiFileFormat {
                           int resolution, int bytes,
                           long microseconds, Map<String, Object> properties) {
         this(type, divisionType, resolution, bytes, microseconds);
-        this.properties = new HashMap<String, Object>(properties);
+        this.properties = new My_HashMap<String, Object>(properties);
     }
 
 
@@ -269,7 +267,7 @@ public class MidiFileFormat {
     public Map<String,Object> properties() {
         Map<String,Object> ret;
         if (properties == null) {
-            ret = new HashMap<String,Object>(0);
+            ret = new My_HashMap<String,Object>(0);
         } else {
             ret = (Map<String,Object>) (properties.clone());
         }

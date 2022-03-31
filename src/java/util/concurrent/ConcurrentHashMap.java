@@ -39,26 +39,12 @@ import java.io.ObjectStreamField;
 import java.io.Serializable;
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
-import java.util.AbstractMap;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.Comparator;
-import java.util.Enumeration;
-import java.util.HashMap;
-import java.util.Hashtable;
-import java.util.Iterator;
-import java.util.Map;
-import java.util.NoSuchElementException;
-import java.util.Set;
-import java.util.Spliterator;
-import java.util.concurrent.ConcurrentMap;
-import java.util.concurrent.ForkJoinPool;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.concurrent.locks.LockSupport;
 import java.util.concurrent.locks.ReentrantLock;
 import java.util.function.BiConsumer;
 import java.util.function.BiFunction;
-import java.util.function.BinaryOperator;
 import java.util.function.Consumer;
 import java.util.function.DoubleBinaryOperator;
 import java.util.function.Function;
@@ -144,7 +130,7 @@ import java.util.stream.Stream;
  * <em>optional</em> methods of the {@link Map} and {@link Iterator}
  * interfaces.
  *
- * <p>Like {@link Hashtable} but unlike {@link HashMap}, this class
+ * <p>Like {@link Hashtable} but unlike {@link My_HashMap}, this class
  * does <em>not</em> allow {@code null} to be used as a key or value.
  *
  * <p>ConcurrentHashMaps support a set of sequential and parallel bulk

@@ -78,14 +78,7 @@ import com.sun.org.apache.xerces.internal.xs.XSConstants;
 import com.sun.org.apache.xerces.internal.xs.XSObjectList;
 import com.sun.org.apache.xerces.internal.xs.XSTypeDefinition;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
-import java.util.Stack;
-import java.util.Vector;
+import java.util.*;
 import javax.xml.XMLConstants;
 import jdk.xml.internal.JdkXmlUtils;
 
@@ -537,7 +530,7 @@ public class XMLSchemaValidator
 
     /** Schema Grammar Description passed,  to give a chance to application to supply the Grammar */
     protected final XSDDescription fXSDDescription = new XSDDescription();
-    protected final Map<String, XMLSchemaLoader.LocationArray> fLocationPairs = new HashMap<>();
+    protected final Map<String, XMLSchemaLoader.LocationArray> fLocationPairs = new My_HashMap<>();
 
 
     // handlers
@@ -4291,7 +4284,7 @@ public class XMLSchemaValidator
          * elements.
          */
         protected final Map<LocalIDKey, ValueStoreBase>
-                fIdentityConstraint2ValueStoreMap = new HashMap<>();
+                fIdentityConstraint2ValueStoreMap = new My_HashMap<>();
 
         // sketch of algorithm:
         // - when a constraint is first encountered, its
@@ -4315,7 +4308,7 @@ public class XMLSchemaValidator
         protected final Stack<Map<IdentityConstraint, ValueStoreBase>>
                 fGlobalMapStack = new Stack<>();
         protected final Map<IdentityConstraint, ValueStoreBase>
-                fGlobalIDConstraintMap = new HashMap<>();
+                fGlobalIDConstraintMap = new My_HashMap<>();
 
         //
         // Constructors
@@ -4344,7 +4337,7 @@ public class XMLSchemaValidator
             // only clone the map when there are elements
             if (fGlobalIDConstraintMap.size() > 0)
                 fGlobalMapStack.push((Map<IdentityConstraint, ValueStoreBase>)
-                        ((HashMap<IdentityConstraint, ValueStoreBase>)fGlobalIDConstraintMap).clone());
+                        ((My_HashMap<IdentityConstraint, ValueStoreBase>)fGlobalIDConstraintMap).clone());
             else
                 fGlobalMapStack.push(null);
             fGlobalIDConstraintMap.clear();

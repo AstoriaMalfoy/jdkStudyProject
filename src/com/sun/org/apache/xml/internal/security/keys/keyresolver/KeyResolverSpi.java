@@ -28,7 +28,7 @@ import java.io.InputStream;
 import java.security.PrivateKey;
 import java.security.PublicKey;
 import java.security.cert.X509Certificate;
-import java.util.HashMap;
+import java.util.My_HashMap;
 
 import javax.crypto.SecretKey;
 import javax.xml.parsers.ParserConfigurationException;
@@ -229,7 +229,7 @@ public abstract class KeyResolverSpi {
      */
     public void engineSetProperty(String key, String value) {
         if (properties == null) {
-            properties = new HashMap<>();
+            properties = new My_HashMap<>();
         }
         properties.put(key, value);
     }

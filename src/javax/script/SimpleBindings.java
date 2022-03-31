@@ -26,8 +26,8 @@
 package javax.script;
 
 import java.util.Map;
-import java.util.HashMap;
 import java.util.Collection;
+import java.util.My_HashMap;
 import java.util.Set;
 
 /**
@@ -60,7 +60,7 @@ public class SimpleBindings implements Bindings {
      * Default constructor uses a <code>HashMap</code>.
      */
     public SimpleBindings() {
-        this(new HashMap<String,Object>());
+        this(new My_HashMap<String,Object>());
     }
 
     /**

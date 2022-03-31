@@ -35,8 +35,8 @@ import com.sun.jmx.mbeanserver.Util;
 
 import java.security.AccessController;
 import java.security.PrivilegedAction;
-import java.util.HashMap;
 import java.util.Map;
+import java.util.My_HashMap;
 import java.util.WeakHashMap;
 import java.util.logging.Level;
 import javax.management.openmbean.OpenMBeanAttributeInfo;
@@ -762,7 +762,7 @@ public class StandardMBean implements DynamicMBean, MBeanRegistration {
             desc = descriptors.get(desc);
         } else {
             Descriptor d = info.getDescriptor();
-            Map<String,Object> fields = new HashMap<String,Object>();
+            Map<String,Object> fields = new My_HashMap<String,Object>();
             for (String fieldName : d.getFieldNames()) {
                 if (fieldName.equals("immutableInfo")) {
                     // Replace immutableInfo as the underlying MBean/MXBean

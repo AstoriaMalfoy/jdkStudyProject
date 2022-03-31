@@ -38,10 +38,7 @@ import com.sun.org.apache.xerces.internal.xs.AttributePSVI;
 import com.sun.org.apache.xerces.internal.xs.ElementPSVI;
 import com.sun.org.apache.xerces.internal.xs.PSVIProvider;
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Locale;
-import java.util.Map;
+import java.util.*;
 import javax.xml.XMLConstants;
 import javax.xml.validation.Schema;
 import org.xml.sax.EntityResolver;
@@ -391,8 +388,8 @@ public class SAXParserImpl extends javax.xml.parsers.SAXParser
      */
     public static class JAXPSAXParser extends com.sun.org.apache.xerces.internal.parsers.SAXParser {
 
-        private final HashMap fInitFeatures = new HashMap();
-        private final HashMap fInitProperties = new HashMap();
+        private final My_HashMap fInitFeatures = new My_HashMap();
+        private final My_HashMap fInitProperties = new My_HashMap();
         private final SAXParserImpl fSAXParser;
         private XMLSecurityManager fSecurityManager;
         private XMLSecurityPropertyManager fSecurityPropertyMgr;

@@ -27,10 +27,7 @@
  */
 package javax.xml.crypto.dsig.spec;
 
-import java.util.Collections;
-import java.util.Iterator;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 /**
  * The XML Schema Definition of the <code>XPath</code> element as defined in the
@@ -153,7 +150,7 @@ public class XPathType {
         if (namespaceMap == null) {
             throw new NullPointerException("namespaceMap cannot be null");
         }
-        Map<?,?> copy = new HashMap<>((Map<?,?>)namespaceMap);
+        Map<?,?> copy = new My_HashMap<>((Map<?,?>)namespaceMap);
         Iterator<? extends Map.Entry<?,?>> entries = copy.entrySet().iterator();
         while (entries.hasNext()) {
             Map.Entry<?,?> me = entries.next();

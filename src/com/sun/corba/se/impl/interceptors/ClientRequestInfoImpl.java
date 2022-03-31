@@ -25,40 +25,24 @@
 
 package com.sun.corba.se.impl.interceptors;
 
-import java.util.HashMap ;
-
 import org.omg.CORBA.Any;
 import org.omg.CORBA.BAD_INV_ORDER;
-import org.omg.CORBA.BAD_PARAM;
-import org.omg.CORBA.CompletionStatus;
 import org.omg.CORBA.Context;
 import org.omg.CORBA.ContextList;
 import org.omg.CORBA.CTX_RESTRICT_SCOPE;
 import org.omg.CORBA.ExceptionList;
-import org.omg.CORBA.LocalObject;
 import org.omg.CORBA.NamedValue;
-import org.omg.CORBA.NO_IMPLEMENT;
-import org.omg.CORBA.NO_RESOURCES;
 import org.omg.CORBA.NVList;
 import org.omg.CORBA.Object;
-import org.omg.CORBA.ParameterMode;
 import org.omg.CORBA.Policy;
 import org.omg.CORBA.SystemException;
 import org.omg.CORBA.TypeCode;
-import org.omg.CORBA.INTERNAL;
-import org.omg.CORBA.UserException;
 import org.omg.CORBA.portable.ApplicationException;
-import org.omg.CORBA.portable.InputStream;
 import com.sun.corba.se.spi.servicecontext.ServiceContexts;
-import com.sun.corba.se.spi.servicecontext.UnknownServiceContext;
 
 import org.omg.IOP.ServiceContext;
-import org.omg.IOP.ServiceContextHelper;
 import org.omg.IOP.TaggedProfile;
-import org.omg.IOP.TaggedProfileHelper;
 import org.omg.IOP.TaggedComponent;
-import org.omg.IOP.TaggedComponentHelper;
-import org.omg.IOP.TAG_INTERNET_IOP;
 import org.omg.Dynamic.Parameter;
 import org.omg.PortableInterceptor.ClientRequestInfo;
 import org.omg.PortableInterceptor.LOCATION_FORWARD;
@@ -71,7 +55,6 @@ import com.sun.corba.se.pept.protocol.MessageMediator;
 
 import com.sun.corba.se.spi.ior.IOR;
 import com.sun.corba.se.spi.ior.iiop.IIOPProfileTemplate;
-import com.sun.corba.se.spi.ior.iiop.GIOPVersion;
 import com.sun.corba.se.spi.orb.ORB;
 import com.sun.corba.se.spi.protocol.CorbaMessageMediator;
 import com.sun.corba.se.spi.protocol.RetryType;
@@ -79,11 +62,10 @@ import com.sun.corba.se.spi.transport.CorbaContactInfo;
 import com.sun.corba.se.spi.transport.CorbaContactInfoList;
 import com.sun.corba.se.spi.transport.CorbaContactInfoListIterator;
 
-import com.sun.corba.se.impl.encoding.CDROutputStream;
-import com.sun.corba.se.impl.encoding.CDRInputStream_1_0;
 import com.sun.corba.se.impl.orbutil.ORBUtility;
 import com.sun.corba.se.impl.protocol.CorbaInvocationInfo;
-import com.sun.corba.se.impl.util.RepositoryId;
+
+import java.util.My_HashMap;
 
 /**
  * Implementation of the ClientRequestInfo interface as specified in
@@ -140,11 +122,11 @@ public final class ClientRequestInfoImpl
     private Any cachedReceivedException;
     private TaggedProfile cachedEffectiveProfile;
     // key = Integer, value = IOP.ServiceContext.
-    private HashMap cachedRequestServiceContexts;
+    private My_HashMap cachedRequestServiceContexts;
     // key = Integer, value = IOP.ServiceContext.
-    private HashMap cachedReplyServiceContexts;
+    private My_HashMap cachedReplyServiceContexts;
     // key = Integer, value = TaggedComponent
-    private HashMap cachedEffectiveComponents;
+    private My_HashMap cachedEffectiveComponents;
 
 
     protected boolean piCurrentPushed;
@@ -409,7 +391,7 @@ public final class ClientRequestInfoImpl
         boolean justCreatedCache = false;
 
         if( cachedEffectiveComponents == null ) {
-            cachedEffectiveComponents = new HashMap();
+            cachedEffectiveComponents = new My_HashMap();
             justCreatedCache = true;
         }
         else {
@@ -468,7 +450,7 @@ public final class ClientRequestInfoImpl
         checkAccess( MID_ADD_REQUEST_SERVICE_CONTEXT );
 
         if( cachedRequestServiceContexts == null ) {
-            cachedRequestServiceContexts = new HashMap();
+            cachedRequestServiceContexts = new My_HashMap();
         }
 
         addServiceContext( cachedRequestServiceContexts,
@@ -747,7 +729,7 @@ public final class ClientRequestInfoImpl
         checkAccess( MID_GET_REQUEST_SERVICE_CONTEXT );
 
         if( cachedRequestServiceContexts == null ) {
-            cachedRequestServiceContexts = new HashMap();
+            cachedRequestServiceContexts = new My_HashMap();
         }
 
         return  getServiceContext(cachedRequestServiceContexts,
@@ -763,7 +745,7 @@ public final class ClientRequestInfoImpl
         checkAccess( MID_GET_REPLY_SERVICE_CONTEXT );
 
         if( cachedReplyServiceContexts == null ) {
-            cachedReplyServiceContexts = new HashMap();
+            cachedReplyServiceContexts = new My_HashMap();
         }
 
         // In the event this is called from a oneway, we will have no

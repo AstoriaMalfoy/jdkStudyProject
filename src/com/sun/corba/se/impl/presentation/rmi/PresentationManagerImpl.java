@@ -25,13 +25,7 @@
 
 package com.sun.corba.se.impl.presentation.rmi ;
 
-import java.util.Map ;
-import java.util.HashMap ;
-import java.util.Set ;
-import java.util.HashSet ;
-import java.util.List ;
-import java.util.ArrayList ;
-import java.util.Iterator ;
+import java.util.*;
 
 import java.lang.reflect.Method ;
 
@@ -48,9 +42,6 @@ import com.sun.corba.se.spi.presentation.rmi.PresentationManager ;
 import com.sun.corba.se.spi.logging.CORBALogDomains ;
 
 import com.sun.corba.se.impl.logging.ORBUtilSystemException ;
-
-import com.sun.corba.se.impl.presentation.rmi.IDLNameTranslatorImpl ;
-import com.sun.corba.se.impl.presentation.rmi.StubFactoryProxyImpl ;
 
 import com.sun.corba.se.impl.orbutil.graph.Node ;
 import com.sun.corba.se.impl.orbutil.graph.Graph ;
@@ -72,8 +63,8 @@ public final class PresentationManagerImpl implements PresentationManager
             CORBALogDomains.RPC_PRESENTATION ) ;
 
         // XXX these should probably be WeakHashMaps.
-        classToClassData = new HashMap() ;
-        methodToDMM = new HashMap() ;
+        classToClassData = new My_HashMap() ;
+        methodToDMM = new My_HashMap() ;
     }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -132,7 +123,7 @@ public final class PresentationManagerImpl implements PresentationManager
             typeIds = makeTypeIds( root, gr, rootSet ) ;
             ihfactory = new InvocationHandlerFactoryImpl(
                 PresentationManagerImpl.this, this ) ;
-            dictionary = new HashMap() ;
+            dictionary = new My_HashMap() ;
         }
 
         public Class getMyClass()

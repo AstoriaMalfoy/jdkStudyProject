@@ -25,13 +25,7 @@
 
 package java.lang.management;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.HashSet;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 import javax.management.MBeanServerConnection;
 import javax.management.ObjectName;
 
@@ -439,7 +433,7 @@ enum PlatformComponent {
     private static Map<String, PlatformComponent> enumMap;
     private static synchronized void ensureInitialized() {
         if (enumMap == null) {
-            enumMap = new HashMap<>();
+            enumMap = new My_HashMap<>();
             for (PlatformComponent pc: PlatformComponent.values()) {
                 // Use String as the key rather than Class<?> to avoid
                 // causing unnecessary class loading of management interface

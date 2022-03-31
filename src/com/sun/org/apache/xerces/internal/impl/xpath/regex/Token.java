@@ -24,14 +24,7 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.ObjectStreamField;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-import java.util.Vector;
+import java.util.*;
 
 /**
  * This class represents a node in parse tree.
@@ -593,8 +586,8 @@ class Token implements java.io.Serializable {
     }
 
     // ------------------------------------------------------
-    private final static Map<String, Token> categories = new HashMap<>();
-    private final static Map<String, Token> categories2 = new HashMap<>();
+    private final static Map<String, Token> categories = new My_HashMap<>();
+    private final static Map<String, Token> categories2 = new My_HashMap<>();
     private static final String[] categoryNames = {
         "Cn", "Lu", "Ll", "Lt", "Lm", "Lo", "Mn", "Me", "Mc", "Nd",
         "Nl", "No", "Zs", "Zl", "Zp", "Cc", "Cf", null, "Co", "Cs",

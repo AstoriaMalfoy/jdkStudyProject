@@ -69,12 +69,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.Reader;
 import java.io.StringReader;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Locale;
-import java.util.Map;
-import java.util.StringTokenizer;
-import java.util.WeakHashMap;
+import java.util.*;
 import javax.xml.XMLConstants;
 import jdk.xml.internal.JdkXmlUtils;
 import org.w3c.dom.DOMConfiguration;
@@ -560,7 +555,7 @@ XSLoader, DOMConfiguration {
         desc.setBaseSystemId(source.getBaseSystemId());
         desc.setLiteralSystemId( source.getSystemId());
         // none of the other fields make sense for preparsing
-        Map locationPairs = new HashMap();
+        Map locationPairs = new My_HashMap();
         // Process external schema location properties.
         // We don't call tokenizeSchemaLocationStr here, because we also want
         // to check whether the values are valid URI.

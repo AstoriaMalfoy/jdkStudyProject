@@ -27,21 +27,14 @@ import com.sun.org.apache.xalan.internal.utils.XMLSecurityManager;
 import com.sun.org.apache.xalan.internal.xsltc.compiler.util.ErrorMsg;
 import com.sun.org.apache.xalan.internal.xsltc.compiler.util.Util;
 import com.sun.org.apache.xml.internal.dtm.DTM;
-import java.io.BufferedOutputStream;
+
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Date;
-import java.util.Enumeration;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Properties;
-import java.util.Vector;
+import java.util.*;
 import java.util.jar.JarEntry;
 import java.util.jar.JarOutputStream;
 import java.util.jar.Manifest;
@@ -168,7 +161,7 @@ public final class XSLTC {
         _parser = new Parser(this, _overrideDefaultParser);
         _xmlFeatures = featureManager;
         _extensionClassLoader = null;
-        _externalExtensionFunctions = new HashMap<>();
+        _externalExtensionFunctions = new My_HashMap<>();
     }
 
     /**
@@ -301,13 +294,13 @@ public final class XSLTC {
      */
     private void reset() {
         _nextGType      = DTM.NTYPES;
-        _elements       = new HashMap<>();
-        _attributes     = new HashMap<>();
-        _namespaces     = new HashMap<>();
+        _elements       = new My_HashMap<>();
+        _attributes     = new My_HashMap<>();
+        _namespaces     = new My_HashMap<>();
         _namespaces.put("", _nextNSType);
         _namesIndex     = new Vector(128);
         _namespaceIndex = new Vector(32);
-        _namespacePrefixes = new HashMap<>();
+        _namespacePrefixes = new My_HashMap<>();
         _stylesheet     = null;
         _parser.init();
         //_variableSerial     = 1;

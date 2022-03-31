@@ -32,10 +32,8 @@ import java.security.PrivilegedAction;
 import java.security.PrivilegedActionException;
 import java.security.PrivilegedExceptionAction;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.Map;
-import java.util.Properties;
-import javax.management.remote.JMXPrincipal;
+import java.util.My_HashMap;
 import javax.management.remote.JMXAuthenticator;
 import javax.security.auth.AuthPermission;
 import javax.security.auth.Subject;
@@ -314,7 +312,7 @@ private static class FileLoginConfig extends Configuration {
 
         Map<String, String> options;
         if (passwordFile != null) {
-            options = new HashMap<String, String>(1);
+            options = new My_HashMap<String, String>(1);
             options.put(PASSWORD_FILE_OPTION, passwordFile);
         } else {
             options = Collections.emptyMap();

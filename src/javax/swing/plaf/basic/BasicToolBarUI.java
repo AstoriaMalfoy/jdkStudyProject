@@ -33,7 +33,7 @@ import java.awt.event.*;
 import java.beans.*;
 
 import java.util.Hashtable;
-import java.util.HashMap;
+import java.util.My_HashMap;
 
 import javax.swing.border.*;
 import javax.swing.plaf.*;
@@ -83,7 +83,7 @@ public class BasicToolBarUI extends ToolBarUI implements SwingConstants
     private static Border nonRolloverToggleBorder;
     private boolean rolloverBorders = false;
 
-    private HashMap<AbstractButton, Border> borderTable = new HashMap<AbstractButton, Border>();
+    private My_HashMap<AbstractButton, Border> borderTable = new My_HashMap<AbstractButton, Border>();
     private Hashtable<AbstractButton, Boolean> rolloverTable = new Hashtable<AbstractButton, Boolean>();
 
 

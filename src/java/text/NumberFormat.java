@@ -45,15 +45,10 @@ import java.io.ObjectOutputStream;
 import java.math.BigInteger;
 import java.math.RoundingMode;
 import java.text.spi.NumberFormatProvider;
-import java.util.Currency;
-import java.util.HashMap;
-import java.util.Hashtable;
-import java.util.Locale;
-import java.util.Map;
-import java.util.ResourceBundle;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicLong;
-import java.util.spi.LocaleServiceProvider;
+
 import sun.util.locale.provider.LocaleProviderAdapter;
 import sun.util.locale.provider.LocaleServiceProviderPool;
 
@@ -1138,7 +1133,7 @@ public abstract class NumberFormat extends Format  {
         private static final long serialVersionUID = 7494728892700160890L;
 
         // table of all instances in this class, used by readResolve
-        private static final Map<String, Field> instanceMap = new HashMap<>(11);
+        private static final Map<String, Field> instanceMap = new My_HashMap<>(11);
 
         /**
          * Creates a Field instance with the specified

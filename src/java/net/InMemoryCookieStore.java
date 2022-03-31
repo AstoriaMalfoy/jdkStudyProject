@@ -25,16 +25,7 @@
 
 package java.net;
 
-import java.net.URI;
-import java.net.CookieStore;
-import java.net.HttpCookie;
-import java.net.URISyntaxException;
-import java.util.List;
-import java.util.Map;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Collections;
-import java.util.Iterator;
+import java.util.*;
 import java.util.concurrent.locks.ReentrantLock;
 
 /**
@@ -63,8 +54,8 @@ class InMemoryCookieStore implements CookieStore {
      */
     public InMemoryCookieStore() {
         cookieJar = new ArrayList<HttpCookie>();
-        domainIndex = new HashMap<String, List<HttpCookie>>();
-        uriIndex = new HashMap<URI, List<HttpCookie>>();
+        domainIndex = new My_HashMap<String, List<HttpCookie>>();
+        uriIndex = new My_HashMap<URI, List<HttpCookie>>();
 
         lock = new ReentrantLock(false);
     }

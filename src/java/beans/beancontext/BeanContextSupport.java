@@ -29,16 +29,11 @@ import java.awt.Component;
 import java.awt.Container;
 
 import java.beans.Beans;
-import java.beans.AppletInitializer;
-
-import java.beans.DesignMode;
 
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
-import java.beans.PropertyChangeSupport;
 
 import java.beans.VetoableChangeListener;
-import java.beans.VetoableChangeSupport;
 import java.beans.PropertyVetoException;
 
 import java.beans.Visibility;
@@ -51,12 +46,7 @@ import java.io.Serializable;
 
 import java.net.URL;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Locale;
-import java.util.Map;
+import java.util.*;
 
 
 /**
@@ -1301,7 +1291,7 @@ public class      BeanContextSupport extends BeanContextChildSupport
      */
 
     protected synchronized void initialize() {
-        children     = new HashMap(serializable + 1);
+        children     = new My_HashMap(serializable + 1);
         bcmListeners = new ArrayList(1);
 
         childPCL = new PropertyChangeListener() {
@@ -1362,7 +1352,7 @@ public class      BeanContextSupport extends BeanContextChildSupport
      * all accesses to the <code> protected HashMap children </code> field
      * shall be synchronized on that object.
      */
-    protected transient HashMap         children;
+    protected transient My_HashMap children;
 
     private             int             serializable  = 0; // children serializable
 

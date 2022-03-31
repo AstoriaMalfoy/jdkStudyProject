@@ -30,20 +30,10 @@ import java.security.PrivilegedAction;
 
 import java.lang.reflect.Method;
 
-import java.math.BigInteger;
-
-import java.util.Map;
-import java.util.Set;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.HashMap;
-import java.util.StringTokenizer;
+import java.util.*;
 
 import com.sun.corba.se.spi.presentation.rmi.IDLNameTranslator ;
 
-import com.sun.corba.se.impl.presentation.rmi.IDLType ;
-import com.sun.corba.se.impl.presentation.rmi.IDLTypeException ;
-import com.sun.corba.se.impl.presentation.rmi.IDLTypesUtil ;
 import com.sun.corba.se.impl.orbutil.ObjectUtility ;
 
 /**
@@ -223,7 +213,7 @@ public class IDLNameTranslatorImpl implements IDLNameTranslator {
     private void buildNameTranslation()
     {
         // holds method info, keyed by method
-        Map allMethodInfo = new HashMap() ;
+        Map allMethodInfo = new My_HashMap() ;
 
         for (int ctr=0; ctr<interf_.length; ctr++) {
             Class interf = interf_[ctr] ;
@@ -363,8 +353,8 @@ public class IDLNameTranslatorImpl implements IDLNameTranslator {
         //
         // Populate name translation maps.
         //
-        methodToIDLNameMap_ = new HashMap();
-        IDLNameToMethodMap_ = new HashMap();
+        methodToIDLNameMap_ = new My_HashMap();
+        IDLNameToMethodMap_ = new My_HashMap();
         methods_ = (Method[])allMethodInfo.keySet().toArray(
             new Method[0] ) ;
 

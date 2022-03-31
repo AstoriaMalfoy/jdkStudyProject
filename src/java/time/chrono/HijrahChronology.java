@@ -78,12 +78,7 @@ import java.time.temporal.ChronoField;
 import java.time.temporal.TemporalAccessor;
 import java.time.temporal.TemporalField;
 import java.time.temporal.ValueRange;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Objects;
-import java.util.Properties;
+import java.util.*;
 
 import sun.util.logging.PlatformLogger;
 
@@ -909,7 +904,7 @@ public final class HijrahChronology extends AbstractChronology implements Serial
             Objects.requireNonNull(resourceName, "Resource missing for calendar: " + PROP_PREFIX + typeId);
             Properties props = readConfigProperties(resourceName);
 
-            Map<Integer, int[]> years = new HashMap<>();
+            Map<Integer, int[]> years = new My_HashMap<>();
             int minYear = Integer.MAX_VALUE;
             int maxYear = Integer.MIN_VALUE;
             String id = null;

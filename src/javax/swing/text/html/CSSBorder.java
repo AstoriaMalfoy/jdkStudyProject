@@ -31,9 +31,8 @@ import java.awt.Graphics2D;
 import java.awt.Insets;
 import java.awt.Polygon;
 import java.awt.Rectangle;
-import java.awt.Shape;
-import java.util.HashMap;
 import java.util.Map;
+import java.util.My_HashMap;
 import javax.swing.border.AbstractBorder;
 import javax.swing.text.AttributeSet;
 import javax.swing.text.View;
@@ -418,7 +417,7 @@ class CSSBorder extends AbstractBorder {
 
     /** Map the border style values to the border painter objects.  */
     static Map<Value, BorderPainter> borderPainters =
-                                        new HashMap<Value, BorderPainter>();
+                                        new My_HashMap<Value, BorderPainter>();
 
     /* Initialize the border painters map with the pre-defined values.  */
     static {

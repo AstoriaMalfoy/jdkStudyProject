@@ -41,11 +41,9 @@ import com.sun.org.apache.xalan.internal.xsltc.compiler.util.MethodGenerator;
 import com.sun.org.apache.xalan.internal.xsltc.compiler.util.Type;
 import com.sun.org.apache.xalan.internal.xsltc.compiler.util.TypeCheckError;
 import com.sun.org.apache.xalan.internal.xsltc.compiler.util.Util;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
+
+import java.util.*;
+
 import org.xml.sax.Attributes;
 import org.xml.sax.helpers.AttributesImpl;
 
@@ -240,7 +238,7 @@ public abstract class SyntaxTreeNode implements Constants {
      */
     protected void addPrefixMapping(String prefix, String uri) {
         if (_prefixMapping == null)
-            _prefixMapping = new HashMap<>();
+            _prefixMapping = new My_HashMap<>();
         _prefixMapping.put(prefix, uri);
     }
 

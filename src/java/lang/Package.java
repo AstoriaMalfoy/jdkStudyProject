@@ -26,13 +26,10 @@
 package java.lang;
 
 import java.lang.reflect.AnnotatedElement;
-import java.io.InputStream;
-import java.util.Enumeration;
+import java.util.*;
 
-import java.util.StringTokenizer;
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URL;
 import java.net.MalformedURLException;
@@ -43,10 +40,6 @@ import java.util.jar.JarInputStream;
 import java.util.jar.Manifest;
 import java.util.jar.Attributes;
 import java.util.jar.Attributes.Name;
-import java.util.jar.JarException;
-import java.util.Map;
-import java.util.HashMap;
-import java.util.Iterator;
 
 import sun.net.www.ParseUtil;
 import sun.reflect.CallerSensitive;
@@ -617,13 +610,13 @@ public class Package implements java.lang.reflect.AnnotatedElement {
     }
 
     // The map of loaded system packages
-    private static Map<String, Package> pkgs = new HashMap<>(31);
+    private static Map<String, Package> pkgs = new My_HashMap<>(31);
 
     // Maps each directory or zip file name to its corresponding url
-    private static Map<String, URL> urls = new HashMap<>(10);
+    private static Map<String, URL> urls = new My_HashMap<>(10);
 
     // Maps each code source url for a jar file to its manifest
-    private static Map<String, Manifest> mans = new HashMap<>(10);
+    private static Map<String, Manifest> mans = new My_HashMap<>(10);
 
     private static native String getSystemPackage0(String name);
     private static native String[] getSystemPackages0();

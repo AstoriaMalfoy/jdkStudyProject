@@ -31,12 +31,8 @@ import com.sun.org.apache.xalan.internal.xsltc.compiler.util.TypeCheckError;
 import com.sun.org.apache.xalan.internal.xsltc.compiler.util.Util;
 import com.sun.org.apache.xml.internal.serializer.ElemDesc;
 import com.sun.org.apache.xml.internal.serializer.ToHTMLStream;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Hashtable;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+
+import java.util.*;
 
 /**
  * @author Jacek Ambroziak
@@ -200,7 +196,7 @@ final class LiteralElement extends Instruction {
      * to _ANY_ namespace URI. Used by literal result elements to determine
      */
     public Set<Map.Entry<String, String>> getNamespaceScope(SyntaxTreeNode node) {
-        Map<String, String> all = new HashMap<>();
+        Map<String, String> all = new My_HashMap<>();
 
         while (node != null) {
             Map<String, String> mapping = node.getPrefixMapping();
@@ -417,7 +413,7 @@ final class LiteralElement extends Instruction {
                  }
                  else if (node instanceof XslAttribute) {
                      if (attrsTable == null) {
-                        attrsTable = new HashMap<>();
+                        attrsTable = new My_HashMap<>();
                          for (int k = 0; k < i; k++) {
                              SyntaxTreeNode n = _attributeElements.get(k);
                              if (n instanceof LiteralAttribute) {

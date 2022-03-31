@@ -25,15 +25,10 @@
 
 package com.sun.corba.se.impl.protocol;
 
-import java.util.Set;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.HashMap;
-import java.util.Collections;
+import java.util.*;
 
 import com.sun.corba.se.pept.protocol.ClientRequestDispatcher ;
 
-import com.sun.corba.se.spi.protocol.LocalClientRequestDispatcher ;
 import com.sun.corba.se.spi.protocol.LocalClientRequestDispatcherFactory ;
 import com.sun.corba.se.spi.protocol.CorbaServerRequestDispatcher ;
 import com.sun.corba.se.spi.protocol.RequestDispatcherRegistry ;
@@ -42,7 +37,6 @@ import com.sun.corba.se.spi.oa.ObjectAdapterFactory ;
 
 import com.sun.corba.se.spi.orb.ORB ;
 
-import com.sun.corba.se.impl.orbutil.ORBConstants ;
 import com.sun.corba.se.impl.orbutil.DenseIntMapImpl ;
 
 /**
@@ -76,7 +70,7 @@ public class RequestDispatcherRegistryImpl implements RequestDispatcherRegistry 
         LCSFRegistry = new DenseIntMapImpl() ;
         objectAdapterFactories = new HashSet() ;
         objectAdapterFactoriesView = Collections.unmodifiableSet( objectAdapterFactories ) ;
-        stringToServerSubcontract = new HashMap() ;
+        stringToServerSubcontract = new My_HashMap() ;
     }
 
     public synchronized void registerClientRequestDispatcher(

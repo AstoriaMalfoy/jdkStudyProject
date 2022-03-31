@@ -25,12 +25,7 @@
 
 package javax.imageio.spi;
 
-import java.util.AbstractSet;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 /**
  * A set of <code>Object</code>s with pairwise orderings between them.
@@ -58,7 +53,7 @@ class PartiallyOrderedSet extends AbstractSet {
     // p. 315.
 
     // Maps Objects to DigraphNodes that contain them
-    private Map poNodes = new HashMap();
+    private Map poNodes = new My_HashMap();
 
     // The set of Objects
     private Set nodes = poNodes.keySet();
@@ -169,7 +164,7 @@ class PartiallyOrderedSet extends AbstractSet {
 class PartialOrderIterator implements Iterator {
 
     LinkedList zeroList = new LinkedList();
-    Map inDegrees = new HashMap(); // DigraphNode -> Integer
+    Map inDegrees = new My_HashMap(); // DigraphNode -> Integer
 
     public PartialOrderIterator(Iterator iter) {
         // Initialize scratch in-degree values, zero list

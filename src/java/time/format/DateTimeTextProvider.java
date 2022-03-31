@@ -72,18 +72,9 @@ import java.time.chrono.JapaneseChronology;
 import java.time.temporal.ChronoField;
 import java.time.temporal.IsoFields;
 import java.time.temporal.TemporalField;
+import java.util.*;
 import java.util.AbstractMap.SimpleImmutableEntry;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Locale;
-import java.util.Map;
 import java.util.Map.Entry;
-import java.util.ResourceBundle;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 
@@ -325,7 +316,7 @@ class DateTimeTextProvider {
     }
 
     private Object createStore(TemporalField field, Locale locale) {
-        Map<TextStyle, Map<Long, String>> styleMap = new HashMap<>();
+        Map<TextStyle, Map<Long, String>> styleMap = new My_HashMap<>();
         if (field == ERA) {
             for (TextStyle textStyle : TextStyle.values()) {
                 if (textStyle.isStandalone()) {
@@ -335,7 +326,7 @@ class DateTimeTextProvider {
                 Map<String, Integer> displayNames = CalendarDataUtility.retrieveJavaTimeFieldValueNames(
                         "gregory", Calendar.ERA, textStyle.toCalendarStyle(), locale);
                 if (displayNames != null) {
-                    Map<Long, String> map = new HashMap<>();
+                    Map<Long, String> map = new My_HashMap<>();
                     for (Entry<String, Integer> entry : displayNames.entrySet()) {
                         map.put((long) entry.getValue(), entry.getKey());
                     }
@@ -351,7 +342,7 @@ class DateTimeTextProvider {
             for (TextStyle textStyle : TextStyle.values()) {
                 Map<String, Integer> displayNames = CalendarDataUtility.retrieveJavaTimeFieldValueNames(
                         "gregory", Calendar.MONTH, textStyle.toCalendarStyle(), locale);
-                Map<Long, String> map = new HashMap<>();
+                Map<Long, String> map = new My_HashMap<>();
                 if (displayNames != null) {
                     for (Entry<String, Integer> entry : displayNames.entrySet()) {
                         map.put((long) (entry.getValue() + 1), entry.getKey());
@@ -381,7 +372,7 @@ class DateTimeTextProvider {
             for (TextStyle textStyle : TextStyle.values()) {
                 Map<String, Integer> displayNames = CalendarDataUtility.retrieveJavaTimeFieldValueNames(
                         "gregory", Calendar.DAY_OF_WEEK, textStyle.toCalendarStyle(), locale);
-                Map<Long, String> map = new HashMap<>();
+                Map<Long, String> map = new My_HashMap<>();
                 if (displayNames != null) {
                     for (Entry<String, Integer> entry : displayNames.entrySet()) {
                         map.put((long)toWeekDay(entry.getValue()), entry.getKey());
@@ -416,7 +407,7 @@ class DateTimeTextProvider {
                 Map<String, Integer> displayNames = CalendarDataUtility.retrieveJavaTimeFieldValueNames(
                         "gregory", Calendar.AM_PM, textStyle.toCalendarStyle(), locale);
                 if (displayNames != null) {
-                    Map<Long, String> map = new HashMap<>();
+                    Map<Long, String> map = new My_HashMap<>();
                     for (Entry<String, Integer> entry : displayNames.entrySet()) {
                         map.put((long) entry.getValue(), entry.getKey());
                     }
@@ -441,7 +432,7 @@ class DateTimeTextProvider {
             for (int i = 0; i < keys.length; i++) {
                 String[] names = getLocalizedResource(keys[i], locale);
                 if (names != null) {
-                    Map<Long, String> map = new HashMap<>();
+                    Map<Long, String> map = new My_HashMap<>();
                     for (int q = 0; q < names.length; q++) {
                         map.put((long) (q + 1), names[q]);
                     }
@@ -508,10 +499,10 @@ class DateTimeTextProvider {
          */
         LocaleStore(Map<TextStyle, Map<Long, String>> valueTextMap) {
             this.valueTextMap = valueTextMap;
-            Map<TextStyle, List<Entry<String, Long>>> map = new HashMap<>();
+            Map<TextStyle, List<Entry<String, Long>>> map = new My_HashMap<>();
             List<Entry<String, Long>> allList = new ArrayList<>();
             for (Map.Entry<TextStyle, Map<Long, String>> vtmEntry : valueTextMap.entrySet()) {
-                Map<String, Entry<String, Long>> reverse = new HashMap<>();
+                Map<String, Entry<String, Long>> reverse = new My_HashMap<>();
                 for (Map.Entry<Long, String> entry : vtmEntry.getValue().entrySet()) {
                     if (reverse.put(entry.getValue(), createEntry(entry.getValue(), entry.getKey())) != null) {
                         // TODO: BUG: this has no effect

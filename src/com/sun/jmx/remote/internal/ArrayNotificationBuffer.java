@@ -29,14 +29,7 @@ import java.security.AccessController;
 import java.security.PrivilegedAction;
 import java.security.PrivilegedActionException;
 import java.security.PrivilegedExceptionAction;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 import javax.management.InstanceNotFoundException;
 import javax.management.MBeanServer;
@@ -115,8 +108,8 @@ public class ArrayNotificationBuffer implements NotificationBuffer {
 
     private static final Object globalLock = new Object();
     private static final
-        HashMap<MBeanServer,ArrayNotificationBuffer> mbsToBuffer =
-        new HashMap<MBeanServer,ArrayNotificationBuffer>(1);
+    My_HashMap<MBeanServer,ArrayNotificationBuffer> mbsToBuffer =
+        new My_HashMap<MBeanServer,ArrayNotificationBuffer>(1);
     private final Collection<ShareBuffer> sharers = new HashSet<ShareBuffer>(1);
 
     public static NotificationBuffer getNotificationBuffer(

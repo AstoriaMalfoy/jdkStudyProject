@@ -25,8 +25,8 @@ import java.io.InputStream;
 import com.sun.org.apache.bcel.internal.classfile.ClassParser;
 import com.sun.org.apache.bcel.internal.classfile.JavaClass;
 import java.lang.ref.SoftReference;
-import java.util.HashMap;
 import java.util.Map;
+import java.util.My_HashMap;
 
 /**
  * This repository is used in situations where a Class is created outside the
@@ -45,7 +45,7 @@ import java.util.Map;
 public class SyntheticRepository implements Repository {
 
     // CLASSNAME X JAVACLASS
-    private final Map<String, SoftReference<JavaClass>> loadedClasses = new HashMap<>();
+    private final Map<String, SoftReference<JavaClass>> loadedClasses = new My_HashMap<>();
 
     private SyntheticRepository() {
     }

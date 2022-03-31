@@ -23,14 +23,13 @@ package com.sun.org.apache.xerces.internal.parsers;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.Locale;
+import java.util.My_HashMap;
 
 import com.sun.org.apache.xerces.internal.impl.Constants;
 import com.sun.org.apache.xerces.internal.util.FeatureState;
 import com.sun.org.apache.xerces.internal.util.ParserConfigurationSettings;
 import com.sun.org.apache.xerces.internal.util.PropertyState;
-import com.sun.org.apache.xerces.internal.util.Status;
 import com.sun.org.apache.xerces.internal.util.SymbolTable;
 import com.sun.org.apache.xerces.internal.xni.XMLDTDContentModelHandler;
 import com.sun.org.apache.xerces.internal.xni.XMLDTDHandler;
@@ -206,8 +205,8 @@ public abstract class BasicParserConfiguration
         fComponents = new ArrayList();
 
         // create table for features and properties
-        fFeatures = new HashMap();
-        fProperties = new HashMap();
+        fFeatures = new My_HashMap();
+        fProperties = new My_HashMap();
 
         // add default recognized features
         final String[] recognizedFeatures = {

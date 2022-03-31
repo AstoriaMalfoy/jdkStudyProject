@@ -24,8 +24,6 @@
  */
 package com.sun.corba.se.impl.encoding;
 
-import java.util.Map;
-import java.util.HashMap;
 import java.nio.ByteBuffer;
 import java.nio.CharBuffer;
 import java.nio.charset.Charset;

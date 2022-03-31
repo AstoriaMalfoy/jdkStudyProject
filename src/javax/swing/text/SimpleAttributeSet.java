@@ -24,14 +24,10 @@
  */
 package javax.swing.text;
 
-import java.util.Hashtable;
-import java.util.Enumeration;
-import java.util.Collections;
+import java.util.*;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.Serializable;
-import java.util.AbstractMap;
-import java.util.LinkedHashMap;
 
 /**
  * A straightforward implementation of MutableAttributeSet using a
@@ -57,7 +53,7 @@ public class SimpleAttributeSet implements MutableAttributeSet, Serializable, Cl
      */
     public static final AttributeSet EMPTY = new EmptyAttributeSet();
 
-    private transient LinkedHashMap<Object, Object> table = new LinkedHashMap<>(3);
+    private transient LinkedMyHashMap<Object, Object> table = new LinkedMyHashMap<>(3);
 
     /**
      * Creates a new attribute set.
@@ -275,7 +271,7 @@ public class SimpleAttributeSet implements MutableAttributeSet, Serializable, Cl
         SimpleAttributeSet attr;
         try {
             attr = (SimpleAttributeSet) super.clone();
-            attr.table = (LinkedHashMap) table.clone();
+            attr.table = (LinkedMyHashMap) table.clone();
         } catch (CloneNotSupportedException cnse) {
             attr = null;
         }
@@ -338,7 +334,7 @@ public class SimpleAttributeSet implements MutableAttributeSet, Serializable, Cl
     private void readObject(ObjectInputStream s)
       throws ClassNotFoundException, IOException {
         s.defaultReadObject();
-        table = new LinkedHashMap<>(3);
+        table = new LinkedMyHashMap<>(3);
         StyleContext.readAttributeSet(s, this);
     }
 

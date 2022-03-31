@@ -33,13 +33,7 @@ import java.lang.reflect.Array;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 import javax.management.Descriptor;
 import javax.management.DescriptorRead;
 import javax.management.ImmutableDescriptor;
@@ -573,7 +567,7 @@ public class OpenMBeanAttributeInfoSupport
                                          T[] legalValues,
                                          Comparable<T> minValue,
                                          Comparable<T> maxValue) {
-        Map<String, Object> map = new HashMap<String, Object>();
+        Map<String, Object> map = new My_HashMap<String, Object>();
         if (defaultValue != null)
             map.put("defaultValue", defaultValue);
         if (legalValues != null) {

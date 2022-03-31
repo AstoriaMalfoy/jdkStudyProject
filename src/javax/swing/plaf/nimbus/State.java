@@ -24,8 +24,8 @@
  */
 package javax.swing.plaf.nimbus;
 
-import java.util.HashMap;
 import java.util.Map;
+import java.util.My_HashMap;
 import javax.swing.JComponent;
 import javax.swing.plaf.synth.SynthConstants;
 
@@ -71,7 +71,7 @@ import javax.swing.plaf.synth.SynthConstants;
  * </code></pre>
  */
 public abstract class State<T extends JComponent>{
-    static final Map<String, StandardState> standardStates = new HashMap<String, StandardState>(7);
+    static final Map<String, StandardState> standardStates = new My_HashMap<String, StandardState>(7);
     static final State Enabled = new StandardState(SynthConstants.ENABLED);
     static final State MouseOver = new StandardState(SynthConstants.MOUSE_OVER);
     static final State Pressed = new StandardState(SynthConstants.PRESSED);

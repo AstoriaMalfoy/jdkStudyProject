@@ -62,13 +62,7 @@ import java.security.PrivilegedAction;
 import java.security.PrivilegedExceptionAction;
 import java.security.PrivilegedActionException;
 import java.security.ProtectionDomain;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Properties;
-import java.util.Set;
-import java.util.WeakHashMap;
+import java.util.*;
 import java.util.stream.Collectors;
 import javax.management.Attribute;
 import javax.management.AttributeList;
@@ -272,7 +266,7 @@ public class RMIConnector implements JMXConnector, Serializable, JMXAddressable 
             if (tracing) logger.trace("connect",idstr + " connecting...");
 
             final Map<String, Object> usemap =
-                    new HashMap<String, Object>((this.env==null) ?
+                    new My_HashMap<String, Object>((this.env==null) ?
                         Collections.<String, Object>emptyMap() : this.env);
 
 

@@ -25,8 +25,8 @@
 
 package java.util.regex;
 
-import java.util.HashMap;
 import java.util.Locale;
+import java.util.My_HashMap;
 
 enum UnicodeProp {
 
@@ -202,8 +202,8 @@ enum UnicodeProp {
         }
     };
 
-    private final static HashMap<String, String> posix = new HashMap<>();
-    private final static HashMap<String, String> aliases = new HashMap<>();
+    private final static My_HashMap<String, String> posix = new My_HashMap<>();
+    private final static My_HashMap<String, String> aliases = new My_HashMap<>();
     static {
         posix.put("ALPHA", "ALPHABETIC");
         posix.put("LOWER", "LOWERCASE");

@@ -33,14 +33,7 @@ import com.sun.org.apache.xml.internal.serializer.utils.SystemIDResolver;
 import java.io.File;
 import java.io.IOException;
 import java.io.StringReader;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
-import java.util.Properties;
-import java.util.Stack;
-import java.util.StringTokenizer;
+import java.util.*;
 import javax.xml.XMLConstants;
 import jdk.xml.internal.JdkXmlUtils;
 import org.xml.sax.Attributes;
@@ -99,11 +92,11 @@ public class Parser implements Constants, ContentHandler {
     }
 
     public void init() {
-        _qNames              = new HashMap<>(512);
-        _namespaces          = new HashMap<>();
-        _instructionClasses  = new HashMap<>();
-        _instructionAttrs    = new HashMap<>();
-        _variableScope       = new HashMap<>();
+        _qNames              = new My_HashMap<>(512);
+        _namespaces          = new My_HashMap<>();
+        _instructionClasses  = new My_HashMap<>();
+        _instructionAttrs    = new My_HashMap<>();
+        _variableScope       = new My_HashMap<>();
         _template            = null;
         _errors              = new ArrayList<>();
         _warnings            = new ArrayList<>();
@@ -316,7 +309,7 @@ public class Parser implements Constants, ContentHandler {
 
             if (space == null) {
                 final QName name = new QName(namespace, prefix, localname);
-                _namespaces.put(namespace, space = new HashMap<>());
+                _namespaces.put(namespace, space = new My_HashMap<>());
                 space.put(lexicalQName, name);
                 return name;
             }
@@ -1234,7 +1227,7 @@ public class Parser implements Constants, ContentHandler {
      */
     public void startPrefixMapping(String prefix, String uri) {
         if (_prefixMapping == null) {
-            _prefixMapping = new HashMap<>();
+            _prefixMapping = new My_HashMap<>();
         }
         _prefixMapping.put(prefix, uri);
     }

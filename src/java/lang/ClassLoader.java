@@ -29,27 +29,16 @@ import java.io.IOException;
 import java.io.File;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.security.AccessController;
 import java.security.AccessControlContext;
 import java.security.CodeSource;
-import java.security.Policy;
 import java.security.PrivilegedAction;
 import java.security.PrivilegedActionException;
 import java.security.PrivilegedExceptionAction;
 import java.security.ProtectionDomain;
 import java.security.cert.Certificate;
-import java.util.Collections;
-import java.util.Enumeration;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Set;
-import java.util.Stack;
-import java.util.Map;
-import java.util.Vector;
-import java.util.Hashtable;
-import java.util.WeakHashMap;
+import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 import sun.misc.CompoundEnumeration;
 import sun.misc.Resource;
@@ -263,7 +252,7 @@ public abstract class ClassLoader {
     // The packages defined in this class loader.  Each package name is mapped
     // to its corresponding Package object.
     // @GuardedBy("itself")
-    private final HashMap<String, Package> packages = new HashMap<>();
+    private final My_HashMap<String, Package> packages = new My_HashMap<>();
 
     private static Void checkCreateClassLoader() {
         SecurityManager security = System.getSecurityManager();
@@ -1643,7 +1632,7 @@ public abstract class ClassLoader {
     protected Package[] getPackages() {
         Map<String, Package> map;
         synchronized (packages) {
-            map = new HashMap<>(packages);
+            map = new My_HashMap<>(packages);
         }
         Package[] pkgs;
         if (parent != null) {
@@ -2102,8 +2091,8 @@ public abstract class ClassLoader {
          * them to empty maps, effectively ignoring any present settings.
          */
         synchronized (assertionLock) {
-            classAssertionStatus = new HashMap<>();
-            packageAssertionStatus = new HashMap<>();
+            classAssertionStatus = new My_HashMap<>();
+            packageAssertionStatus = new My_HashMap<>();
             defaultAssertionStatus = false;
         }
     }
@@ -2165,8 +2154,8 @@ public abstract class ClassLoader {
     private void initializeJavaAssertionMaps() {
         // assert Thread.holdsLock(assertionLock);
 
-        classAssertionStatus = new HashMap<>();
-        packageAssertionStatus = new HashMap<>();
+        classAssertionStatus = new My_HashMap<>();
+        packageAssertionStatus = new My_HashMap<>();
         AssertionStatusDirectives directives = retrieveDirectives();
 
         for(int i = 0; i < directives.classes.length; i++)

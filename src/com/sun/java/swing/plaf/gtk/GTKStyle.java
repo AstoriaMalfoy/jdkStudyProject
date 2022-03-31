@@ -27,7 +27,6 @@ package com.sun.java.swing.plaf.gtk;
 
 import java.awt.*;
 import java.lang.reflect.*;
-import java.security.*;
 import java.util.*;
 import javax.swing.*;
 import javax.swing.plaf.*;
@@ -1019,7 +1018,7 @@ class GTKStyle extends SynthStyle implements GTKConstants {
         }
 
         private static void initIconTypeMap() {
-            ICON_TYPE_MAP = new HashMap<String,Integer>();
+            ICON_TYPE_MAP = new My_HashMap<String,Integer>();
             ICON_TYPE_MAP.put("gtk-menu", Integer.valueOf(1));
             ICON_TYPE_MAP.put("gtk-small-toolbar", Integer.valueOf(2));
             ICON_TYPE_MAP.put("gtk-large-toolbar", Integer.valueOf(3));
@@ -1151,7 +1150,7 @@ class GTKStyle extends SynthStyle implements GTKConstants {
     }
 
     static {
-        CLASS_SPECIFIC_MAP = new HashMap<String,String>();
+        CLASS_SPECIFIC_MAP = new My_HashMap<String,String>();
         CLASS_SPECIFIC_MAP.put("Slider.thumbHeight", "slider-width");
         CLASS_SPECIFIC_MAP.put("Slider.thumbWidth", "slider-length");
         CLASS_SPECIFIC_MAP.put("Slider.trackBorder", "trough-border");
@@ -1171,7 +1170,7 @@ class GTKStyle extends SynthStyle implements GTKConstants {
         CLASS_SPECIFIC_MAP.put("EditorPane.caretForeground", "cursor-color");
         CLASS_SPECIFIC_MAP.put("EditorPane.caretAspectRatio", "cursor-aspect-ratio");
 
-        ICONS_MAP = new HashMap<String, GTKStockIcon>();
+        ICONS_MAP = new My_HashMap<String, GTKStockIcon>();
         ICONS_MAP.put("FileChooser.cancelIcon", new GTKStockIcon("gtk-cancel", 4));
         ICONS_MAP.put("FileChooser.okIcon",     new GTKStockIcon("gtk-ok",     4));
         ICONS_MAP.put("OptionPane.yesIcon", new GTKStockIcon("gtk-yes", 4));

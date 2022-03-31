@@ -26,9 +26,9 @@ package java.beans;
 
 import com.sun.beans.finder.PersistenceDelegateFinder;
 
-import java.util.HashMap;
 import java.util.IdentityHashMap;
 import java.util.Map;
+import java.util.My_HashMap;
 
 /**
  * An <code>Encoder</code> is a class which can be used to create
@@ -337,7 +337,7 @@ public class Encoder {
     // Package private method for setting an attributes table for the encoder
     void setAttribute(Object key, Object value) {
         if (attributes == null) {
-            attributes = new HashMap<>();
+            attributes = new My_HashMap<>();
         }
         attributes.put(key, value);
     }

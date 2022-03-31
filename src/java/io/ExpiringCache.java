@@ -28,9 +28,8 @@
 
 package java.io;
 
-import java.util.Iterator;
+import java.util.LinkedMyHashMap;
 import java.util.Map;
-import java.util.LinkedHashMap;
 import java.util.Set;
 
 class ExpiringCache {
@@ -64,7 +63,7 @@ class ExpiringCache {
     @SuppressWarnings("serial")
     ExpiringCache(long millisUntilExpiration) {
         this.millisUntilExpiration = millisUntilExpiration;
-        map = new LinkedHashMap<String,Entry>() {
+        map = new LinkedMyHashMap<String,Entry>() {
             protected boolean removeEldestEntry(Map.Entry<String,Entry> eldest) {
               return size() > MAX_ENTRIES;
             }

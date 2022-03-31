@@ -31,8 +31,8 @@ import com.sun.org.apache.xerces.internal.impl.xs.XSWildcardDecl;
 import com.sun.org.apache.xerces.internal.impl.xs.XMLSchemaException;
 import com.sun.org.apache.xerces.internal.impl.xs.XSConstraints;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
+import java.util.My_HashMap;
 
 /**
  * DFAContentModel is the implementation of XSCMValidator that does
@@ -721,7 +721,7 @@ public class XSDFACM
          * a large content model such as, "(t001+|t002+|.... |t500+)".
          */
 
-        HashMap stateTable = new HashMap();
+        My_HashMap stateTable = new My_HashMap();
 
         /* Optimization(Jan, 2001) */
 

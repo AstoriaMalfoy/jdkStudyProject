@@ -26,7 +26,6 @@
 package java.util;
 
 import java.io.*;
-import java.util.concurrent.ThreadLocalRandom;
 import java.util.function.BiConsumer;
 import java.util.function.Function;
 import java.util.function.BiFunction;
@@ -111,7 +110,7 @@ import sun.misc.SharedSecrets;
  * Java Collections Framework</a>.  Unlike the new collection
  * implementations, {@code Hashtable} is synchronized.  If a
  * thread-safe implementation is not needed, it is recommended to use
- * {@link HashMap} in place of {@code Hashtable}.  If a thread-safe
+ * {@link My_HashMap} in place of {@code Hashtable}.  If a thread-safe
  * highly-concurrent implementation is desired, then it is recommended
  * to use {@link java.util.concurrent.ConcurrentHashMap} in place of
  * {@code Hashtable}.
@@ -124,7 +123,7 @@ import sun.misc.SharedSecrets;
  * @see     Hashtable#rehash()
  * @see     Collection
  * @see     Map
- * @see     HashMap
+ * @see     My_HashMap
  * @see     TreeMap
  * @since JDK1.0
  */

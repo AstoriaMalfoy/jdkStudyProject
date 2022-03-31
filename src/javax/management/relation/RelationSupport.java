@@ -27,12 +27,7 @@ package javax.management.relation;
 
 
 
-import java.util.ArrayList;
-
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
-import java.util.List;
+import java.util.*;
 
 import java.util.concurrent.atomic.AtomicBoolean;
 import static com.sun.jmx.defaults.JmxProperties.RELATION_LOGGER;
@@ -108,7 +103,7 @@ public class RelationSupport
     //   via Relation Service setRole() and setRoles() methods
     // - if the relation is internal to the Relation Service, via
     //   setRoleInt() and setRolesInt() methods.
-    private final Map<String,Role> myRoleName2ValueMap = new HashMap<String,Role>();
+    private final Map<String,Role> myRoleName2ValueMap = new My_HashMap<String,Role>();
 
     // Flag to indicate if the object has been added in the Relation Service
     private final AtomicBoolean myInRelServFlg = new AtomicBoolean();
@@ -598,7 +593,7 @@ public class RelationSupport
                 "getReferencedMBeans");
 
         Map<ObjectName,List<String>> refMBeanMap =
-            new HashMap<ObjectName,List<String>>();
+            new My_HashMap<ObjectName,List<String>>();
 
         synchronized(myRoleName2ValueMap) {
 

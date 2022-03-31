@@ -25,10 +25,7 @@
 
 package com.sun.corba.se.impl.monitoring;
 
-import java.util.Map;
-import java.util.HashMap;
-import java.util.Collection;
-import java.util.Iterator;
+import java.util.*;
 
 import com.sun.corba.se.spi.monitoring.MonitoredObject;
 import com.sun.corba.se.spi.monitoring.MonitoredAttribute;
@@ -38,10 +35,10 @@ public class MonitoredObjectImpl implements MonitoredObject {
     private final String description;
 
     // List of all child Monitored Objects
-    private Map children = new HashMap();
+    private Map children = new My_HashMap();
 
     // All the Attributes of this Monitored Object instance
-    private Map monitoredAttributes = new HashMap();
+    private Map monitoredAttributes = new My_HashMap();
 
     private MonitoredObject parent = null;
 

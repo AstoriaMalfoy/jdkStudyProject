@@ -20,11 +20,7 @@
 
 package com.sun.org.apache.xerces.internal.util;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 import com.sun.org.apache.xerces.internal.impl.Constants;
 import com.sun.org.apache.xerces.internal.xni.parser.XMLComponentManager;
@@ -92,8 +88,8 @@ public class ParserConfigurationSettings
         fRecognizedProperties = new ArrayList<>();
 
         // create table for features and properties
-        fFeatures = new HashMap<String, Boolean>();
-        fProperties = new HashMap<String, Object>();
+        fFeatures = new My_HashMap<String, Boolean>();
+        fProperties = new My_HashMap<String, Object>();
 
         // save parent
         fParentSettings = parent;

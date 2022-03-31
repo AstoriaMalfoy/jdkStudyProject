@@ -45,8 +45,8 @@ import com.sun.org.apache.xerces.internal.xni.grammars.XMLGrammarDescription;
 import com.sun.org.apache.xerces.internal.xni.parser.XMLDTDContentModelSource;
 import com.sun.org.apache.xerces.internal.xni.parser.XMLDTDSource;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.Map;
+import java.util.My_HashMap;
 
 /**
  * A DTD grammar. This class implements the XNI handler interfaces
@@ -210,13 +210,13 @@ public class DTDGrammar
     // other information
 
     /** Element index mapping table. */
-    private final Map<String, Integer> fElementIndexMap = new HashMap<>();
+    private final Map<String, Integer> fElementIndexMap = new My_HashMap<>();
 
     /** Entity index mapping table. */
-    private final Map<String, Integer> fEntityIndexMap = new HashMap<>();
+    private final Map<String, Integer> fEntityIndexMap = new My_HashMap<>();
 
     /** Notation index mapping table. */
-    private final Map<String, Integer> fNotationIndexMap = new HashMap<>();
+    private final Map<String, Integer> fNotationIndexMap = new My_HashMap<>();
 
     // temp variables
 
@@ -250,7 +250,7 @@ public class DTDGrammar
     private XMLContentSpec fContentSpec = new XMLContentSpec();
 
     /** table of XMLElementDecl   */
-    Map<String, XMLElementDecl> fElementDeclTab = new HashMap<>();
+    Map<String, XMLElementDecl> fElementDeclTab = new My_HashMap<>();
 
     /** Children content model operation stack. */
     private short[] fOpStack = null;

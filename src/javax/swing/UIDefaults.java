@@ -31,15 +31,8 @@ import javax.swing.border.*;
 import javax.swing.event.SwingPropertyChangeSupport;
 
 import java.lang.reflect.*;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Enumeration;
-import java.util.Hashtable;
-import java.util.ResourceBundle;
+import java.util.*;
 import java.util.ResourceBundle.Control;
-import java.util.Locale;
-import java.util.Vector;
-import java.util.MissingResourceException;
 import java.awt.Font;
 import java.awt.Color;
 import java.awt.Insets;
@@ -106,7 +99,7 @@ public class UIDefaults extends Hashtable<Object,Object>
      */
     public UIDefaults(int initialCapacity, float loadFactor) {
         super(initialCapacity, loadFactor);
-        resourceCache = new HashMap<Locale, Map<String, Object>>();
+        resourceCache = new My_HashMap<Locale, Map<String, Object>>();
     }
 
 
@@ -296,7 +289,7 @@ public class UIDefaults extends Hashtable<Object,Object>
         Map<String, Object> values = resourceCache.get(l);
 
         if (values == null) {
-            values = new TextAndMnemonicHashMap();
+            values = new TextAndMnemonicMyHashMap();
             for (int i=resourceBundles.size()-1; i >= 0; i--) {
                 String bundleName = resourceBundles.get(i);
                 try {
@@ -1233,7 +1226,7 @@ public class UIDefaults extends Hashtable<Object,Object>
      * (xxxTitle, xxxMnemonic)
      *
      */
-    private static class TextAndMnemonicHashMap extends HashMap<String, Object> {
+    private static class TextAndMnemonicMyHashMap extends My_HashMap<String, Object> {
 
         static final String AND_MNEMONIC = "AndMnemonic";
         static final String TITLE_SUFFIX = ".titleAndMnemonic";

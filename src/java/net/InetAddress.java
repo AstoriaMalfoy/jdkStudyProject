@@ -25,14 +25,7 @@
 
 package java.net;
 
-import java.util.HashMap;
-import java.util.LinkedHashMap;
-import java.util.Random;
-import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.ArrayList;
-import java.util.ServiceLoader;
+import java.util.*;
 import java.security.AccessController;
 import java.io.ObjectStreamException;
 import java.io.ObjectStreamField;
@@ -740,7 +733,7 @@ class InetAddress implements java.io.Serializable {
 
     static InetAddressImpl  impl;
 
-    private static final HashMap<String, Void> lookupTable = new HashMap<>();
+    private static final My_HashMap<String, Void> lookupTable = new My_HashMap<>();
 
     /**
      * Represents a cache entry
@@ -761,7 +754,7 @@ class InetAddress implements java.io.Serializable {
      * at creation time.
      */
     static final class Cache {
-        private LinkedHashMap<String, CacheEntry> cache;
+        private LinkedMyHashMap<String, CacheEntry> cache;
         private Type type;
 
         enum Type {Positive, Negative};
@@ -771,7 +764,7 @@ class InetAddress implements java.io.Serializable {
          */
         public Cache(Type type) {
             this.type = type;
-            cache = new LinkedHashMap<String, CacheEntry>();
+            cache = new LinkedMyHashMap<String, CacheEntry>();
         }
 
         private int getPolicy() {

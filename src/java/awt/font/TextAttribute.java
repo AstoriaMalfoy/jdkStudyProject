@@ -43,7 +43,7 @@ package java.awt.font;
 import java.io.InvalidObjectException;
 import java.text.AttributedCharacterIterator.Attribute;
 import java.util.Map;
-import java.util.HashMap;
+import java.util.My_HashMap;
 
 /**
  * The <code>TextAttribute</code> class defines attribute keys and
@@ -256,7 +256,7 @@ public final class TextAttribute extends Attribute {
 
     // table of all instances in this class, used by readResolve
     private static final Map<String, TextAttribute>
-            instanceMap = new HashMap<String, TextAttribute>(29);
+            instanceMap = new My_HashMap<String, TextAttribute>(29);
 
     /**
      * Constructs a <code>TextAttribute</code> with the specified name.

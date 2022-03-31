@@ -32,16 +32,7 @@ import java.io.EOFException;
 import java.io.File;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
-import java.util.ArrayDeque;
-import java.util.Deque;
-import java.util.Enumeration;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
-import java.util.NoSuchElementException;
-import java.util.Spliterator;
-import java.util.Spliterators;
-import java.util.WeakHashMap;
+import java.util.*;
 import java.util.stream.Stream;
 import java.util.stream.StreamSupport;
 
@@ -631,7 +622,7 @@ class ZipFile implements ZipConstants, Closeable {
             // Close streams, release their inflaters
             synchronized (streams) {
                 if (false == streams.isEmpty()) {
-                    Map<InputStream, Inflater> copy = new HashMap<>(streams);
+                    Map<InputStream, Inflater> copy = new My_HashMap<>(streams);
                     streams.clear();
                     for (Map.Entry<InputStream, Inflater> e : copy.entrySet()) {
                         e.getKey().close();

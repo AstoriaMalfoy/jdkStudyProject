@@ -53,13 +53,8 @@ import com.sun.org.apache.xalan.internal.xsltc.compiler.util.Util;
 import com.sun.org.apache.xalan.internal.xsltc.runtime.AbstractTranslet;
 import com.sun.org.apache.xml.internal.dtm.DTM;
 import com.sun.org.apache.xml.internal.utils.SystemIDResolver;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
-import java.util.Properties;
-import java.util.StringTokenizer;
-import java.util.Vector;
+
+import java.util.*;
 
 /**
  * @author Jacek Ambroziak
@@ -122,7 +117,7 @@ public final class Stylesheet extends SyntaxTreeNode {
     /**
      * Mapping between mode names and Mode instances.
      */
-    private final Map<String, Mode> _modes = new HashMap<>();
+    private final Map<String, Mode> _modes = new My_HashMap<>();
 
     /**
      * A reference to the default Mode object.
@@ -132,7 +127,7 @@ public final class Stylesheet extends SyntaxTreeNode {
     /**
      * Mapping between extension URIs and their prefixes.
      */
-    private final Map<String, String> _extensions = new HashMap<>();
+    private final Map<String, String> _extensions = new My_HashMap<>();
 
     /**
      * Reference to the stylesheet from which this stylesheet was
@@ -165,7 +160,7 @@ public final class Stylesheet extends SyntaxTreeNode {
     /**
      * Mapping between key names and Key objects (needed by Key/IdPattern).
      */
-    private Map<String, Key> _keys = new HashMap<>();
+    private Map<String, Key> _keys = new My_HashMap<>();
 
     /**
      * A reference to the SourceLoader set by the user (a URIResolver

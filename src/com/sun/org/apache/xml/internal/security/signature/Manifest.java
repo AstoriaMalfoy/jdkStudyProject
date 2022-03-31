@@ -25,13 +25,7 @@ package com.sun.org.apache.xml.internal.security.signature;
 import java.io.IOException;
 import java.security.AccessController;
 import java.security.PrivilegedAction;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 import javax.xml.parsers.ParserConfigurationException;
 
@@ -525,7 +519,7 @@ public class Manifest extends SignatureElementProxy {
      */
     public void setResolverProperty(String key, String value) {
         if (resolverProperties == null) {
-            resolverProperties = new HashMap<>(10);
+            resolverProperties = new My_HashMap<>(10);
         }
         this.resolverProperties.put(key, value);
     }

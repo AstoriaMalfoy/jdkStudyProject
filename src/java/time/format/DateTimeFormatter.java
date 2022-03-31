@@ -88,14 +88,7 @@ import java.time.temporal.IsoFields;
 import java.time.temporal.TemporalAccessor;
 import java.time.temporal.TemporalField;
 import java.time.temporal.TemporalQuery;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Locale;
-import java.util.Map;
-import java.util.Objects;
-import java.util.Set;
+import java.util.*;
 
 /**
  * Formatter for printing and parsing date-time objects.
@@ -1218,7 +1211,7 @@ public final class DateTimeFormatter {
     static {
         // manually code maps to ensure correct data always used
         // (locale data can be changed by application code)
-        Map<Long, String> dow = new HashMap<>();
+        Map<Long, String> dow = new My_HashMap<>();
         dow.put(1L, "Mon");
         dow.put(2L, "Tue");
         dow.put(3L, "Wed");
@@ -1226,7 +1219,7 @@ public final class DateTimeFormatter {
         dow.put(5L, "Fri");
         dow.put(6L, "Sat");
         dow.put(7L, "Sun");
-        Map<Long, String> moy = new HashMap<>();
+        Map<Long, String> moy = new My_HashMap<>();
         moy.put(1L, "Jan");
         moy.put(2L, "Feb");
         moy.put(3L, "Mar");

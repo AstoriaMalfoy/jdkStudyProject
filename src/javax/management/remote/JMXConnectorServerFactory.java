@@ -31,10 +31,7 @@ import com.sun.jmx.remote.util.EnvHelp;
 
 import java.io.IOException;
 import java.net.MalformedURLException;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
+import java.util.*;
 
 import javax.management.MBeanServer;
 
@@ -290,10 +287,10 @@ public class JMXConnectorServerFactory {
             throws IOException {
         Map<String, Object> envcopy;
         if (environment == null)
-            envcopy = new HashMap<String, Object>();
+            envcopy = new My_HashMap<String, Object>();
         else {
             EnvHelp.checkAttributes(environment);
-            envcopy = new HashMap<String, Object>(environment);
+            envcopy = new My_HashMap<String, Object>(environment);
         }
 
         final Class<JMXConnectorServerProvider> targetInterface =

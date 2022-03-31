@@ -23,8 +23,8 @@ package com.sun.org.apache.xerces.internal.impl.dv.dtd;
 import com.sun.org.apache.xerces.internal.impl.dv.DTDDVFactory;
 import com.sun.org.apache.xerces.internal.impl.dv.DatatypeValidator;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.Map;
+import java.util.My_HashMap;
 
 /**
  * the factory to create/return built-in schema DVs and create user-defined DVs
@@ -38,7 +38,7 @@ public class DTDDVFactoryImpl extends DTDDVFactory {
 
     static final Map<String, DatatypeValidator> fBuiltInTypes;
     static {
-        Map<String, DatatypeValidator> builtInTypes = new HashMap<>();
+        Map<String, DatatypeValidator> builtInTypes = new My_HashMap<>();
         DatatypeValidator dvTemp;
 
         builtInTypes.put("string", new StringDatatypeValidator());
@@ -75,7 +75,7 @@ public class DTDDVFactoryImpl extends DTDDVFactory {
      */
     @Override
     public Map<String, DatatypeValidator> getBuiltInTypes() {
-        return new HashMap<>(fBuiltInTypes);
+        return new My_HashMap<>(fBuiltInTypes);
     }
 
 }// DTDDVFactoryImpl

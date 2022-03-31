@@ -48,7 +48,7 @@ class GTKStyleFactory extends SynthStyleFactory {
     private Font defaultFont;
 
     GTKStyleFactory() {
-        stylesCache = new HashMap<Object, GTKStyle>();
+        stylesCache = new My_HashMap<Object, GTKStyle>();
     }
 
     /**

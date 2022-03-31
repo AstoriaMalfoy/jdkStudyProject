@@ -28,9 +28,9 @@ import java.awt.FocusTraversalPolicy;
 import java.awt.Component;
 import java.awt.Container;
 import java.awt.Window;
-import java.util.HashMap;
 import java.util.HashSet;
 import java.io.*;
+import java.util.My_HashMap;
 
 
 /**
@@ -48,8 +48,8 @@ final class LegacyGlueFocusTraversalPolicy extends FocusTraversalPolicy
     private transient FocusTraversalPolicy delegatePolicy;
     private transient DefaultFocusManager delegateManager;
 
-    private HashMap<Component, Component> forwardMap = new HashMap<Component, Component>(),
-        backwardMap = new HashMap<Component, Component>();
+    private My_HashMap<Component, Component> forwardMap = new My_HashMap<Component, Component>(),
+        backwardMap = new My_HashMap<Component, Component>();
 
     LegacyGlueFocusTraversalPolicy(FocusTraversalPolicy delegatePolicy) {
         this.delegatePolicy = delegatePolicy;

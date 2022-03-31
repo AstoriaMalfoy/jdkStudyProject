@@ -46,11 +46,8 @@ import com.sun.org.apache.xerces.internal.xni.parser.XMLErrorHandler;
 import com.sun.org.apache.xerces.internal.xni.parser.XMLInputSource;
 import com.sun.org.apache.xerces.internal.xni.parser.XMLParserConfiguration;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Locale;
-import java.util.StringTokenizer;
+import java.util.*;
+
 import jdk.xml.internal.JdkXmlUtils;
 import org.w3c.dom.DOMConfiguration;
 import org.w3c.dom.DOMErrorHandler;
@@ -301,8 +298,8 @@ public class DOMConfigurationImpl extends ParserConfigurationSettings
 
 
         // create table for features and properties
-        fFeatures = new HashMap();
-        fProperties = new HashMap();
+        fFeatures = new My_HashMap();
+        fProperties = new My_HashMap();
 
         // add default recognized features
         final String[] recognizedFeatures = {

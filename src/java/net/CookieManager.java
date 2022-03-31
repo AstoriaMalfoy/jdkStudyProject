@@ -25,10 +25,7 @@
 
 package java.net;
 
-import java.util.Map;
-import java.util.List;
-import java.util.Collections;
-import java.util.Comparator;
+import java.util.*;
 import java.io.IOException;
 import sun.util.logging.PlatformLogger;
 
@@ -202,7 +199,7 @@ public class CookieManager extends CookieHandler
         }
 
         Map<String, List<String>> cookieMap =
-                        new java.util.HashMap<String, List<String>>();
+                        new My_HashMap<String, List<String>>();
         // if there's no default CookieStore, no way for us to get any cookie
         if (cookieJar == null)
             return Collections.unmodifiableMap(cookieMap);

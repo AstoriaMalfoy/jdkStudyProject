@@ -37,12 +37,7 @@ import java.io.ObjectOutputStream;
 import java.net.MalformedURLException;
 import java.rmi.server.RMIClientSocketFactory;
 import java.rmi.server.RMIServerSocketFactory;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Hashtable;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 import javax.management.InstanceNotFoundException;
 import javax.management.MBeanServer;
@@ -263,7 +258,7 @@ public class RMIConnectorServer extends JMXConnectorServer {
             IllegalStateException("Connector is not active");
 
         // Merge maps
-        Map<String, Object> usemap = new HashMap<String, Object>(
+        Map<String, Object> usemap = new My_HashMap<String, Object>(
                 (this.attributes==null)?Collections.<String, Object>emptyMap():
                     this.attributes);
 

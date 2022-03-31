@@ -47,18 +47,13 @@ import java.io.Serializable;
 import java.io.File;
 import java.io.FileInputStream;
 
-import java.util.ArrayList;
-import java.util.Properties;
-import java.util.StringTokenizer;
-import java.util.Vector;
-import java.util.Locale;
+import java.util.*;
 
 import sun.awt.SunToolkit;
 import sun.awt.OSInfo;
 import sun.security.action.GetPropertyAction;
 import sun.swing.SwingUtilities2;
-import java.lang.reflect.Method;
-import java.util.HashMap;
+
 import sun.awt.AppContext;
 import sun.awt.AWTAccessor;
 
@@ -1335,8 +1330,8 @@ public class UIManager implements Serializable
         // Try to get default LAF from system property, then from AppContext
         // (6653395), then use cross-platform one by default.
         String lafName = null;
-        HashMap lafData =
-                (HashMap) AppContext.getAppContext().remove("swing.lafdata");
+        My_HashMap lafData =
+                (My_HashMap) AppContext.getAppContext().remove("swing.lafdata");
         if (lafData != null) {
             lafName = (String) lafData.remove("defaultlaf");
         }

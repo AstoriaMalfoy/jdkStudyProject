@@ -29,8 +29,8 @@ import java.io.InputStream;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
-import java.util.HashMap;
 import java.util.Map;
+import java.util.My_HashMap;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
@@ -77,7 +77,7 @@ public class DOMCatalogReader implements CatalogReader {
    * or "{namespaceuri}elementname". The former is used if the
    * namespace URI is null.</p>
    */
-  protected Map<String, String> namespaceMap = new HashMap<>();
+  protected Map<String, String> namespaceMap = new My_HashMap<>();
 
   /**
    * Add a new parser to the reader.

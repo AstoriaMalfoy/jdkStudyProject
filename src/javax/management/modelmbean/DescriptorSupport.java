@@ -43,13 +43,7 @@ import java.io.ObjectStreamField;
 import java.lang.reflect.Constructor;
 
 import java.security.AccessController;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
-import java.util.Set;
-import java.util.SortedMap;
-import java.util.StringTokenizer;
-import java.util.TreeMap;
+import java.util.*;
 import java.util.logging.Level;
 
 import javax.management.Descriptor;
@@ -100,14 +94,14 @@ public class DescriptorSupport
     // Serializable fields in old serial form
     private static final ObjectStreamField[] oldSerialPersistentFields =
     {
-      new ObjectStreamField("descriptor", HashMap.class),
+      new ObjectStreamField("descriptor", My_HashMap.class),
       new ObjectStreamField("currClass", String.class)
     };
     //
     // Serializable fields in new serial form
     private static final ObjectStreamField[] newSerialPersistentFields =
     {
-      new ObjectStreamField("descriptor", HashMap.class)
+      new ObjectStreamField("descriptor", My_HashMap.class)
     };
     //
     // Actual serial version and serial form
@@ -1117,7 +1111,7 @@ public class DescriptorSupport
         "\f&#12;",
     };
     private static final Map<String,Character> entityToCharMap =
-        new HashMap<String,Character>();
+        new My_HashMap<String,Character>();
     private static final String[] charToEntityMap;
 
     static {
@@ -1385,14 +1379,14 @@ public class DescriptorSupport
             startMap.remove("targetObject");
         }
 
-        final HashMap<String, Object> descriptor;
+        final My_HashMap<String, Object> descriptor;
         if (compat || "1.2.0".equals(serialForm) ||
                 "1.2.1".equals(serialForm)) {
-            descriptor = new HashMap<String, Object>();
+            descriptor = new My_HashMap<String, Object>();
             for (Map.Entry<String, Object> entry : startMap.entrySet())
                 descriptor.put(entry.getKey().toLowerCase(), entry.getValue());
         } else
-            descriptor = new HashMap<String, Object>(startMap);
+            descriptor = new My_HashMap<String, Object>(startMap);
 
         fields.put("descriptor", descriptor);
         out.writeFields();

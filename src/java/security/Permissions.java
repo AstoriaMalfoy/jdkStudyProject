@@ -25,14 +25,7 @@
 
 package java.security;
 
-import java.util.Enumeration;
-import java.util.Hashtable;
-import java.util.NoSuchElementException;
-import java.util.Map;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Iterator;
-import java.util.Collections;
+import java.util.*;
 import java.io.Serializable;
 import java.io.ObjectStreamField;
 import java.io.ObjectOutputStream;
@@ -99,7 +92,7 @@ implements Serializable
      * Creates a new Permissions object containing no PermissionCollections.
      */
     public Permissions() {
-        permsMap = new HashMap<Class<?>, PermissionCollection>(11);
+        permsMap = new My_HashMap<Class<?>, PermissionCollection>(11);
         allPermission = null;
     }
 
@@ -394,7 +387,7 @@ implements Serializable
         @SuppressWarnings("unchecked")
         Hashtable<Class<?>, PermissionCollection> perms =
             (Hashtable<Class<?>, PermissionCollection>)gfields.get("perms", null);
-        permsMap = new HashMap<Class<?>, PermissionCollection>(perms.size()*2);
+        permsMap = new My_HashMap<Class<?>, PermissionCollection>(perms.size()*2);
         permsMap.putAll(perms);
 
         // Set hasUnresolved
@@ -488,7 +481,7 @@ implements Serializable
      */
 
     PermissionsHash() {
-        permsMap = new HashMap<Permission, Permission>(11);
+        permsMap = new My_HashMap<Permission, Permission>(11);
     }
 
     /**
@@ -597,7 +590,7 @@ implements Serializable
         @SuppressWarnings("unchecked")
         Hashtable<Permission, Permission> perms =
                 (Hashtable<Permission, Permission>)gfields.get("perms", null);
-        permsMap = new HashMap<Permission, Permission>(perms.size()*2);
+        permsMap = new My_HashMap<Permission, Permission>(perms.size()*2);
         permsMap.putAll(perms);
     }
 }

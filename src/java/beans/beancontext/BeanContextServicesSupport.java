@@ -25,22 +25,12 @@
 
 package java.beans.beancontext;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.Map;
-import java.util.Map.Entry;
+import java.util.*;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
-
-import java.util.TooManyListenersException;
-
-import java.util.Locale;
 
 /**
  * <p>
@@ -130,7 +120,7 @@ public class      BeanContextServicesSupport extends BeanContextSupport
     public void initialize() {
         super.initialize();
 
-        services     = new HashMap(serializable + 1);
+        services     = new My_HashMap(serializable + 1);
         bcsListeners = new ArrayList(1);
     }
 
@@ -231,7 +221,7 @@ public class      BeanContextServicesSupport extends BeanContextSupport
             }
 
             Iterator cloneOfEntries() {
-                return ((HashMap)requestors.clone()).entrySet().iterator();
+                return ((My_HashMap)requestors.clone()).entrySet().iterator();
             }
 
             Iterator entries() { return requestors.entrySet().iterator(); }
@@ -289,7 +279,7 @@ public class      BeanContextServicesSupport extends BeanContextSupport
             BeanContextServiceProvider          delegateProvider; // proxy
             int                                 delegateRefs;
 
-            HashMap                             requestors = new HashMap(1);
+            My_HashMap requestors = new My_HashMap(1);
         }
 
         /*
@@ -329,7 +319,7 @@ public class      BeanContextServicesSupport extends BeanContextSupport
             BCSSCServiceClassRef serviceClassRef = null;
 
             if (serviceClasses == null)
-                serviceClasses = new HashMap(1);
+                serviceClasses = new My_HashMap(1);
             else
                 serviceClassRef = (BCSSCServiceClassRef)serviceClasses.get(serviceClass);
 
@@ -351,13 +341,13 @@ public class      BeanContextServicesSupport extends BeanContextSupport
             Map             services   = null;
 
             if (serviceRequestors == null) {
-                serviceRequestors = new HashMap(1);
+                serviceRequestors = new My_HashMap(1);
             } else {
                 services = (Map)serviceRequestors.get(requestor);
             }
 
             if (services == null) {
-                services = new HashMap(1);
+                services = new My_HashMap(1);
 
                 serviceRequestors.put(requestor, services);
             } else
@@ -568,8 +558,8 @@ public class      BeanContextServicesSupport extends BeanContextSupport
          * fields
          */
 
-        private transient HashMap       serviceClasses;
-        private transient HashMap       serviceRequestors;
+        private transient My_HashMap serviceClasses;
+        private transient My_HashMap serviceRequestors;
     }
 
     /**
@@ -1236,7 +1226,7 @@ public class      BeanContextServicesSupport extends BeanContextSupport
      * all accesses to the <code> protected transient HashMap services </code>
      * field should be synchronized on that object
      */
-    protected transient HashMap                  services;
+    protected transient My_HashMap services;
 
     /**
      * The number of instances of a serializable <tt>BeanContextServceProvider</tt>.

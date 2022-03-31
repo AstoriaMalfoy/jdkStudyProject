@@ -19,11 +19,7 @@
  */
 package com.sun.org.apache.bcel.internal.generic;
 
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 import com.sun.org.apache.bcel.internal.classfile.Utility;
 
@@ -245,7 +241,7 @@ public class InstructionHandle {
      */
     public void addAttribute( final Object key, final Object attr ) {
         if (attributes == null) {
-            attributes = new HashMap<>(3);
+            attributes = new My_HashMap<>(3);
         }
         attributes.put(key, attr);
     }
@@ -278,7 +274,7 @@ public class InstructionHandle {
      */
     public Collection<Object> getAttributes() {
         if (attributes == null) {
-            attributes = new HashMap<>(3);
+            attributes = new My_HashMap<>(3);
         }
         return attributes.values();
     }

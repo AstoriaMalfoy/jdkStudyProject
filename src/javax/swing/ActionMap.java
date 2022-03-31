@@ -28,8 +28,7 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
-import java.util.HashMap;
-import java.util.Set;
+import java.util.My_HashMap;
 
 /**
  * <code>ActionMap</code> provides mappings from
@@ -198,7 +197,7 @@ public class ActionMap implements Serializable {
             return pKeys;
         }
 
-        HashMap<Object, Object> keyMap = new HashMap<Object, Object>();
+        My_HashMap<Object, Object> keyMap = new My_HashMap<Object, Object>();
         int            counter;
 
         for (counter = keys.length - 1; counter >= 0; counter--) {

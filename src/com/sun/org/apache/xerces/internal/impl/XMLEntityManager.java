@@ -20,7 +20,6 @@
 
 package com.sun.org.apache.xerces.internal.impl ;
 
-import com.sun.org.apache.xerces.internal.impl.io.ASCIIReader;
 import com.sun.org.apache.xerces.internal.impl.io.UCSReader;
 import com.sun.org.apache.xerces.internal.impl.io.UTF16Reader;
 import com.sun.org.apache.xerces.internal.impl.io.UTF8Reader;
@@ -46,12 +45,7 @@ import java.net.HttpURLConnection;
 import java.net.URISyntaxException;
 import java.net.URL;
 import java.net.URLConnection;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Locale;
-import java.util.Map;
-import java.util.Stack;
-import java.util.StringTokenizer;
+import java.util.*;
 import javax.xml.stream.XMLInputFactory;
 
 
@@ -367,7 +361,7 @@ public class XMLEntityManager implements XMLComponent, XMLEntityResolver {
     // entities
 
     /** Entities. */
-    protected Map<String, Entity> fEntities = new HashMap<>();
+    protected Map<String, Entity> fEntities = new My_HashMap<>();
 
     /** Entity stack. */
     protected Stack<Entity> fEntityStack = new Stack<>();

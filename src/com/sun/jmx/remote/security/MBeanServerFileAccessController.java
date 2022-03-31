@@ -31,14 +31,7 @@ import java.security.AccessControlContext;
 import java.security.AccessController;
 import java.security.Principal;
 import java.security.PrivilegedAction;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
-import java.util.Properties;
-import java.util.Set;
-import java.util.StringTokenizer;
+import java.util.*;
 import java.util.regex.Pattern;
 import javax.management.MBeanServer;
 import javax.management.ObjectName;
@@ -388,7 +381,7 @@ public class MBeanServerFileAccessController
     }
 
     private void parseProperties(Properties props) {
-        this.accessMap = new HashMap<String, Access>();
+        this.accessMap = new My_HashMap<String, Access>();
         for (Map.Entry<Object, Object> entry : props.entrySet()) {
             String identity = (String) entry.getKey();
             String accessString = (String) entry.getValue();

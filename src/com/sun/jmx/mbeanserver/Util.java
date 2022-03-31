@@ -25,20 +25,7 @@
 
 package com.sun.jmx.mbeanserver;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.IdentityHashMap;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-import java.util.SortedMap;
-import java.util.TreeMap;
+import java.util.*;
 import javax.management.MalformedObjectNameException;
 import javax.management.ObjectName;
 
@@ -52,7 +39,7 @@ public class Util {
     }
 
     static <K, V> Map<K, V> newMap() {
-        return new HashMap<K, V>();
+        return new My_HashMap<K, V>();
     }
 
     static <K, V> Map<K, V> newSynchronizedMap() {
@@ -77,7 +64,7 @@ public class Util {
     }
 
     static <K, V> Map<K, V> newInsertionOrderMap() {
-        return new LinkedHashMap<K, V>();
+        return new LinkedMyHashMap<K, V>();
     }
 
     static <E> Set<E> newSet() {

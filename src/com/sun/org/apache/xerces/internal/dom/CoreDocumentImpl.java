@@ -31,9 +31,10 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.ObjectStreamField;
 import java.lang.reflect.Constructor;
-import java.util.HashMap;
 import java.util.Hashtable;
 import java.util.Map;
+import java.util.My_HashMap;
+
 import org.w3c.dom.Attr;
 import org.w3c.dom.CDATASection;
 import org.w3c.dom.Comment;
@@ -393,7 +394,7 @@ public class CoreDocumentImpl
 
             if (identifiers != null) {
                 // Build a reverse mapping from element to identifier.
-                reversedIdentifiers = new HashMap<>(identifiers.size());
+                reversedIdentifiers = new My_HashMap<>(identifiers.size());
                 for (String elementId : identifiers.keySet()) {
                     reversedIdentifiers.put(identifiers.get(elementId), elementId);
                 }
@@ -1504,7 +1505,7 @@ public class CoreDocumentImpl
         // Node numbers are negative, from -1 to -n
         int num;
         if (nodeTable == null) {
-            nodeTable = new HashMap<>();
+            nodeTable = new My_HashMap<>();
             num = --nodeCounter;
             nodeTable.put(node, num);
         } else {
@@ -1609,7 +1610,7 @@ public class CoreDocumentImpl
                     String elementId = reversedIdentifiers.get(source);
                     if (elementId != null) {
                         if (identifiers == null) {
-                            identifiers = new HashMap<>();
+                            identifiers = new My_HashMap<>();
                         }
 
                         identifiers.put(elementId, newElement);
@@ -2037,7 +2038,7 @@ public class CoreDocumentImpl
         }
 
         if (identifiers == null) {
-            identifiers = new HashMap<>();
+            identifiers = new My_HashMap<>();
         }
 
         identifiers.put(idName, element);
@@ -2365,13 +2366,13 @@ public class CoreDocumentImpl
         } else {
             Map<String, UserDataRecord> t;
             if (nodeUserData == null) {
-                nodeUserData = new HashMap<>();
-                t = new HashMap<>();
+                nodeUserData = new My_HashMap<>();
+                t = new My_HashMap<>();
                 nodeUserData.put(n, t);
             } else {
                 t = nodeUserData.get(n);
                 if (t == null) {
-                    t = new HashMap<>();
+                    t = new My_HashMap<>();
                     nodeUserData.put(n, t);
                 }
             }
@@ -2439,7 +2440,7 @@ public class CoreDocumentImpl
      */
     void setUserDataTable(Node n, Map<String, UserDataRecord> data) {
         if (nodeUserData == null) {
-            nodeUserData = new HashMap<>();
+            nodeUserData = new My_HashMap<>();
         }
 
         if (data != null) {
@@ -2863,13 +2864,13 @@ public class CoreDocumentImpl
 
         //convert Hashtables back to HashMaps
         if (nud != null) {
-            nodeUserData = new HashMap<>();
+            nodeUserData = new My_HashMap<>();
             for (Map.Entry<Node, Hashtable<String, UserDataRecord>> e : nud.entrySet()) {
-                nodeUserData.put(e.getKey(), new HashMap<>(e.getValue()));
+                nodeUserData.put(e.getKey(), new My_HashMap<>(e.getValue()));
             }
         }
 
-        if (ids != null) identifiers = new HashMap<>(ids);
-        if (nt != null) nodeTable = new HashMap<>(nt);
+        if (ids != null) identifiers = new My_HashMap<>(ids);
+        if (nt != null) nodeTable = new My_HashMap<>(nt);
     }
 } // class CoreDocumentImpl

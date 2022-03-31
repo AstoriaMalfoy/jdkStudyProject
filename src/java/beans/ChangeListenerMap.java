@@ -24,15 +24,8 @@
  */
 package java.beans;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.EventListener;
-import java.util.EventListenerProxy;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.Map.Entry;
-import java.util.Set;
 
 /**
  * This is an abstract class that provides base functionality
@@ -76,7 +69,7 @@ abstract class ChangeListenerMap<L extends EventListener> {
      */
     public final synchronized void add(String name, L listener) {
         if (this.map == null) {
-            this.map = new HashMap<>();
+            this.map = new My_HashMap<>();
         }
         L[] array = this.map.get(name);
         int size = (array != null)
@@ -146,7 +139,7 @@ abstract class ChangeListenerMap<L extends EventListener> {
     public final void set(String name, L[] listeners) {
         if (listeners != null) {
             if (this.map == null) {
-                this.map = new HashMap<>();
+                this.map = new My_HashMap<>();
             }
             this.map.put(name, listeners);
         }

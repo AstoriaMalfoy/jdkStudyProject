@@ -29,7 +29,7 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
-import java.util.HashMap;
+import java.util.My_HashMap;
 
 /**
  * Class HashAttributeSet provides an <code>AttributeSet</code>
@@ -54,7 +54,7 @@ public class HashAttributeSet implements AttributeSet, Serializable {
      * A HashMap used by the implementation.
      * The serialised form doesn't include this instance variable.
      */
-    private transient HashMap attrMap = new HashMap();
+    private transient My_HashMap attrMap = new My_HashMap();
 
     /**
      * Write the instance to a stream (ie serialize the object)
@@ -82,7 +82,7 @@ public class HashAttributeSet implements AttributeSet, Serializable {
         throws ClassNotFoundException, IOException {
 
         s.defaultReadObject();
-        attrMap = new HashMap();
+        attrMap = new My_HashMap();
         int count = s.readInt();
         Attribute attr;
         for (int i = 0; i < count; i++) {

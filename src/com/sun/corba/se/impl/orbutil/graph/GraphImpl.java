@@ -25,13 +25,7 @@
 
 package com.sun.corba.se.impl.orbutil.graph ;
 
-import java.util.Collection ;
-import java.util.AbstractSet ;
-import java.util.Iterator ;
-import java.util.Map ;
-import java.util.HashMap ;
-import java.util.Set ;
-import java.util.HashSet ;
+import java.util.*;
 
 public class GraphImpl extends AbstractSet implements Graph
 {
@@ -39,7 +33,7 @@ public class GraphImpl extends AbstractSet implements Graph
 
     public GraphImpl()
     {
-        nodeToData = new HashMap() ;
+        nodeToData = new My_HashMap() ;
     }
 
     public GraphImpl( Collection coll )

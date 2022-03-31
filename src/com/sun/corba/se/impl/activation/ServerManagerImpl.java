@@ -33,14 +33,10 @@ package com.sun.corba.se.impl.activation;
  * @since       JDK1.2
  */
 
-import java.lang.reflect.Constructor;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.Iterator;
+import java.util.My_HashMap;
 import java.util.NoSuchElementException;
-
-import org.omg.CORBA.OBJECT_NOT_EXIST;
-import org.omg.CORBA.SystemException;
 
 import com.sun.corba.se.spi.activation.EndPointInfo;
 import com.sun.corba.se.spi.activation.IIOP_CLEAR_TEXT;
@@ -60,7 +56,6 @@ import com.sun.corba.se.spi.activation.ServerNotActive;
 import com.sun.corba.se.spi.activation.NoSuchEndPoint;
 import com.sun.corba.se.spi.activation.InvalidORBid;
 import com.sun.corba.se.spi.activation.Server;
-import com.sun.corba.se.spi.activation.IIOP_CLEAR_TEXT;
 import com.sun.corba.se.spi.ior.IORTemplate ;
 import com.sun.corba.se.spi.ior.IOR ;
 import com.sun.corba.se.spi.ior.ObjectKey ;
@@ -81,15 +76,13 @@ import com.sun.corba.se.impl.logging.ActivationSystemException ;
 
 import com.sun.corba.se.impl.oa.poa.BadServerIdHandler;
 import com.sun.corba.se.impl.orbutil.ORBConstants;
-import com.sun.corba.se.impl.orbutil.ORBUtility;
-import com.sun.corba.se.impl.util.Utility;
 
 public class ServerManagerImpl extends _ServerManagerImplBase
     implements BadServerIdHandler
 {
     // Using HashMap, since synchronization should be done by the calling
     // routines
-    HashMap serverTable;
+    My_HashMap serverTable;
     Repository repository;
 
     CorbaTransportManager transportManager;
@@ -118,7 +111,7 @@ public class ServerManagerImpl extends _ServerManagerImplBase
 
         initialPort = ((SocketOrChannelAcceptor)endpoint)
             .getServerSocket().getLocalPort();
-        serverTable = new HashMap(256);
+        serverTable = new My_HashMap(256);
 
         // The ServerStartupDelay is the delay added after the Server registers
         // end point information. This is to allow the server to completely

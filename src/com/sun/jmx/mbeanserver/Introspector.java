@@ -33,14 +33,7 @@ import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
 import java.lang.reflect.Proxy;
 import java.lang.reflect.UndeclaredThrowableException;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
-import java.util.LinkedList;
-import java.util.Locale;
-import java.util.Map;
-import java.util.WeakHashMap;
+import java.util.*;
 
 import javax.management.Descriptor;
 import javax.management.DescriptorKey;
@@ -395,7 +388,7 @@ public class Introspector {
     public static Descriptor descriptorForAnnotations(Annotation[] annots) {
         if (annots.length == 0)
             return ImmutableDescriptor.EMPTY_DESCRIPTOR;
-        Map<String, Object> descriptorMap = new HashMap<String, Object>();
+        Map<String, Object> descriptorMap = new My_HashMap<String, Object>();
         for (Annotation a : annots) {
             Class<? extends Annotation> c = a.annotationType();
             Method[] elements = c.getMethods();

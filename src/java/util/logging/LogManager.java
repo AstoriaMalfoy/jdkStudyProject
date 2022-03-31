@@ -158,7 +158,7 @@ public class LogManager {
 
     // The map of the registered listeners. The map value is the registration
     // count to allow for cases where the same listener is registered many times.
-    private final Map<Object,Integer> listenerMap = new HashMap<>();
+    private final Map<Object,Integer> listenerMap = new My_HashMap<>();
 
     // LoggerContext for system loggers and user loggers
     private final LoggerContext systemContext = new SystemLoggerContext();
@@ -899,7 +899,7 @@ public class LogManager {
                     name = "";
                 }
                 if (node.children == null) {
-                    node.children = new HashMap<>();
+                    node.children = new My_HashMap<>();
                 }
                 LogNode child = node.children.get(head);
                 if (child == null) {
@@ -1431,7 +1431,7 @@ public class LogManager {
         Map<Object,Integer> listeners = null;
         synchronized (listenerMap) {
             if (!listenerMap.isEmpty())
-                listeners = new HashMap<>(listenerMap);
+                listeners = new My_HashMap<>(listenerMap);
         }
         if (listeners != null) {
             assert Beans.isBeansPresent();
@@ -1602,7 +1602,7 @@ public class LogManager {
 
     // Nested class to represent a node in our tree of named loggers.
     private static class LogNode {
-        HashMap<String,LogNode> children;
+        My_HashMap<String,LogNode> children;
         LoggerWeakRef loggerRef;
         LogNode parent;
         final LoggerContext context;

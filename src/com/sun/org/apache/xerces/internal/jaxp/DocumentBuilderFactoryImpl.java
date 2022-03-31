@@ -22,8 +22,9 @@ package com.sun.org.apache.xerces.internal.jaxp;
 
 import com.sun.org.apache.xerces.internal.parsers.DOMParser;
 import com.sun.org.apache.xerces.internal.util.SAXMessageFormatter;
-import java.util.HashMap;
+
 import java.util.Map;
+import java.util.My_HashMap;
 import javax.xml.XMLConstants;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -102,7 +103,7 @@ public class DocumentBuilderFactoryImpl extends DocumentBuilderFactory {
 
         // Create the Map if none existed before
         if (attributes == null) {
-            attributes = new HashMap<>();
+            attributes = new My_HashMap<>();
         }
 
         attributes.put(name, value);
@@ -191,7 +192,7 @@ public class DocumentBuilderFactoryImpl extends DocumentBuilderFactory {
     public void setFeature(String name, boolean value)
         throws ParserConfigurationException {
         if (features == null) {
-            features = new HashMap<>();
+            features = new My_HashMap<>();
         }
         // If this is the secure processing feature, save it then return.
         if (name.equals(XMLConstants.FEATURE_SECURE_PROCESSING)) {

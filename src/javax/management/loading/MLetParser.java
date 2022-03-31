@@ -34,10 +34,7 @@ import java.io.InputStreamReader;
 import java.io.Reader;
 import java.net.URL;
 import java.net.URLConnection;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.logging.Level;
 
 /**
@@ -112,7 +109,7 @@ class MLetParser {
      * Scan tag
      */
     public Map<String,String> scanTag(Reader in) throws IOException {
-        Map<String,String> atts = new HashMap<String,String>();
+        Map<String,String> atts = new My_HashMap<String,String>();
         skipSpace(in);
         while (c >= 0 && c != '>') {
             if (c == '<')

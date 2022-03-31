@@ -35,11 +35,7 @@ import java.io.InputStream;
 import java.io.UnsupportedEncodingException;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.util.Enumeration;
-import java.util.HashMap;
-import java.util.Locale;
-import java.util.Map;
-import java.util.Vector;
+import java.util.*;
 import javax.xml.parsers.SAXParserFactory;
 import jdk.xml.internal.JdkXmlUtils;
 
@@ -340,7 +336,7 @@ public class Catalog {
    * vector. This allows the Catalog to quickly locate the reader
    * for a particular MIME type.</p>
    */
-  protected Map<String, Integer> readerMap = new HashMap<>();
+  protected Map<String, Integer> readerMap = new My_HashMap<>();
 
   /**
    * A vector of CatalogReaders.

@@ -37,13 +37,8 @@ import com.sun.org.apache.bcel.internal.classfile.ParameterAnnotations;
 import com.sun.org.apache.bcel.internal.classfile.RuntimeVisibleParameterAnnotations;
 import com.sun.org.apache.bcel.internal.classfile.Utility;
 import com.sun.org.apache.bcel.internal.util.BCELComparator;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Stack;
+
+import java.util.*;
 
 /**
  * Template class for building up a method. This is done by defining exception
@@ -944,7 +939,7 @@ public class MethodGen extends FieldGenOrMethodGen {
     static final class BranchStack {
 
         private final Stack<BranchTarget> branchTargets = new Stack<>();
-        private final Map<InstructionHandle, BranchTarget> visitedTargets = new HashMap<>();
+        private final Map<InstructionHandle, BranchTarget> visitedTargets = new My_HashMap<>();
 
 
         public void push( final InstructionHandle target, final int stackDepth ) {

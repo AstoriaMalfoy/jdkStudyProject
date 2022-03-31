@@ -24,9 +24,9 @@ import com.sun.org.apache.bcel.internal.Const;
 import java.io.DataInput;
 import java.io.DataOutputStream;
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.LinkedHashMap;
+import java.util.LinkedMyHashMap;
 import java.util.Map;
+import java.util.My_HashMap;
 
 /**
  * This class is derived from the abstract {@link Constant}
@@ -56,8 +56,8 @@ public final class ConstantUtf8 extends Constant {
         private static final int MAX_CACHE_ENTRIES = 20000;
         private static final int INITIAL_CACHE_CAPACITY = (int)(MAX_CACHE_ENTRIES/0.75);
 
-        private static final HashMap<String, ConstantUtf8> CACHE =
-                new LinkedHashMap<String, ConstantUtf8>(INITIAL_CACHE_CAPACITY, 0.75f, true) {
+        private static final My_HashMap<String, ConstantUtf8> CACHE =
+                new LinkedMyHashMap<String, ConstantUtf8>(INITIAL_CACHE_CAPACITY, 0.75f, true) {
             private static final long serialVersionUID = -8506975356158971766L;
 
             @Override

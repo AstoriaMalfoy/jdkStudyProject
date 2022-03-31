@@ -24,9 +24,9 @@
  */
 package java.beans;
 
-import java.util.HashMap;
 import java.util.IdentityHashMap;
 import java.util.Map;
+import java.util.My_HashMap;
 
 import static java.util.Locale.ENGLISH;
 
@@ -48,7 +48,7 @@ class NameGenerator {
 
     public NameGenerator() {
         valueToName = new IdentityHashMap<>();
-        nameToCount = new HashMap<>();
+        nameToCount = new My_HashMap<>();
     }
 
     /**

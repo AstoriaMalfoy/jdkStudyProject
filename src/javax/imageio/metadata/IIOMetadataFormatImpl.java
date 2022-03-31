@@ -25,15 +25,7 @@
 
 package javax.imageio.metadata;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Locale;
-import java.util.Map;
-import java.util.MissingResourceException;
-import java.util.ResourceBundle;
+import java.util.*;
 import javax.imageio.ImageTypeSpecifier;
 import com.sun.imageio.plugins.common.StandardMetadataFormat;
 
@@ -90,7 +82,7 @@ public abstract class IIOMetadataFormatImpl implements IIOMetadataFormat {
     private String rootName;
 
     // Element name (String) -> Element
-    private HashMap elementMap = new HashMap();
+    private My_HashMap elementMap = new My_HashMap();
 
     class Element {
         String elementName;
@@ -108,7 +100,7 @@ public abstract class IIOMetadataFormatImpl implements IIOMetadataFormat {
         // List of attribute names in the order they were added
         List attrList = new ArrayList();
         // Attr name (String) -> Attribute
-        Map attrMap = new HashMap();
+        Map attrMap = new My_HashMap();
 
         ObjectValue objectValue;
     }

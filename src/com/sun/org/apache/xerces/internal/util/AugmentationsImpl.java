@@ -21,10 +21,8 @@
 package com.sun.org.apache.xerces.internal.util;
 
 import com.sun.org.apache.xerces.internal.xni.Augmentations;
-import java.util.Collections;
-import java.util.Enumeration;
-import java.util.HashMap;
-import java.util.Map;
+
+import java.util.*;
 
 /**
  * This class provides an implementation for Augmentations interface.
@@ -241,7 +239,7 @@ public class AugmentationsImpl implements Augmentations{
     }
 
     class LargeContainer extends AugmentationsItemsContainer {
-        final Map<Object, Object> fAugmentations = new HashMap<>();
+        final Map<Object, Object> fAugmentations = new My_HashMap<>();
 
         public Object getItem(Object key) {
             return fAugmentations.get(key);

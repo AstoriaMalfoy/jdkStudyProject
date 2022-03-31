@@ -23,8 +23,8 @@
 package com.sun.org.apache.xpath.internal.compiler;
 
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.Map;
+import java.util.My_HashMap;
 
 /**
  * Table of strings to operation code lookups.
@@ -333,10 +333,10 @@ public class Keywords {
     public static final String FUNC_DOCLOCATION_STRING = "document-location";
 
     static {
-        Map<String, Integer> keywords = new HashMap<>();
-        Map<String, Integer> axisnames = new HashMap<>();
-        Map<String, Integer> nodetests = new HashMap<>();
-        Map<String, Integer> nodetypes = new HashMap<>();
+        Map<String, Integer> keywords = new My_HashMap<>();
+        Map<String, Integer> axisnames = new My_HashMap<>();
+        Map<String, Integer> nodetests = new My_HashMap<>();
+        Map<String, Integer> nodetypes = new My_HashMap<>();
 
         axisnames.put(FROM_ANCESTORS_STRING, OpCodes.FROM_ANCESTORS);
         axisnames.put(FROM_ANCESTORS_OR_SELF_STRING, OpCodes.FROM_ANCESTORS_OR_SELF);

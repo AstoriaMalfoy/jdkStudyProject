@@ -24,12 +24,7 @@
  */
 package com.sun.corba.se.spi.orb ;
 
-import java.util.List ;
-import java.util.LinkedList ;
-import java.util.Map ;
-import java.util.HashMap ;
-import java.util.Iterator ;
-import java.util.Properties ;
+import java.util.*;
 
 import com.sun.corba.se.impl.orb.ParserAction ;
 import com.sun.corba.se.impl.orb.ParserActionFactory ;
@@ -62,7 +57,7 @@ public class PropertyParser {
     */
     public Map parse( Properties props )
     {
-        Map map = new HashMap() ;
+        Map map = new My_HashMap() ;
         Iterator iter = actions.iterator() ;
         while (iter.hasNext()) {
             ParserAction act = (ParserAction)(iter.next()) ;

@@ -377,7 +377,7 @@ public class GroupLayout implements LayoutManager2 {
         this.host = host;
         setHorizontalGroup(createParallelGroup(Alignment.LEADING, true));
         setVerticalGroup(createParallelGroup(Alignment.LEADING, true));
-        componentInfos = new HashMap<Component,ComponentInfo>();
+        componentInfos = new My_HashMap<Component,ComponentInfo>();
         tmpParallelSet = new HashSet<Spring>();
     }
 

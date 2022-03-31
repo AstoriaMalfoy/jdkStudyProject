@@ -51,12 +51,8 @@ import com.sun.org.apache.xalan.internal.xsltc.compiler.util.TypeCheckError;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Objects;
+import java.util.*;
+
 import jdk.xml.internal.JdkXmlFeatures;
 
 /**
@@ -255,9 +251,9 @@ class FunctionCall extends Expression {
 
         _internal2Java.makeUnmodifiable();
 
-        Map<Class<?>, Type> java2Internal = new HashMap<>();
-        Map<String, String> extensionNamespaceTable = new HashMap<>();
-        Map<String, String> extensionFunctionTable = new HashMap<>();
+        Map<Class<?>, Type> java2Internal = new My_HashMap<>();
+        Map<String, String> extensionNamespaceTable = new My_HashMap<>();
+        Map<String, String> extensionFunctionTable = new My_HashMap<>();
 
         // Possible conversions between Java and internal types
         java2Internal.put(Boolean.TYPE, Type.Boolean);

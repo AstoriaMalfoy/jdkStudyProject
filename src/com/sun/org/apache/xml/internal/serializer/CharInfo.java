@@ -31,11 +31,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
 import java.net.URL;
-import java.util.Enumeration;
-import java.util.HashMap;
-import java.util.Locale;
-import java.util.PropertyResourceBundle;
-import java.util.ResourceBundle;
+import java.util.*;
 import javax.xml.transform.TransformerException;
 
 /**
@@ -51,7 +47,7 @@ import javax.xml.transform.TransformerException;
 final class CharInfo
 {
     /** Given a character, lookup a String to output (e.g. a decorated entity reference). */
-    private HashMap m_charToString = new HashMap();
+    private My_HashMap m_charToString = new My_HashMap();
 
     /**
      * The name of the HTML entities file.
@@ -533,7 +529,7 @@ final class CharInfo
     }
 
     /** Table of user-specified char infos. */
-    private static HashMap m_getCharInfoCache = new HashMap();
+    private static My_HashMap m_getCharInfoCache = new My_HashMap();
 
     /**
      * Returns the array element holding the bit value for the

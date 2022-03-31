@@ -29,12 +29,8 @@ import java.io.FileWriter;
 import java.io.PrintWriter;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.StringTokenizer;
+import java.util.*;
+
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -220,7 +216,7 @@ public class EnvironmentCheck
   public Map<String, Object> getEnvironmentHash()
   {
     // Setup a hash to store various environment information in
-    Map<String, Object> hash = new HashMap<>();
+    Map<String, Object> hash = new My_HashMap<>();
 
     // Call various worker methods to fill in the hash
     //  These are explicitly separate for maintenance and so
@@ -523,7 +519,7 @@ public class EnvironmentCheck
   {
 
     if (null == h)
-      h = new HashMap<>();
+      h = new My_HashMap<>();
 
     // Grab java version for later use
     try
@@ -641,7 +637,7 @@ public class EnvironmentCheck
             // If any requested jarName exists, report on
             //  the details of that .jar file
             try {
-                Map<String, String> h = new HashMap<>(2);
+                Map<String, String> h = new My_HashMap<>(2);
                 // Note "-" char is looked for in appendFoundJars
                 h.put(jars[i] + "-path", f.getAbsolutePath());
 
@@ -660,7 +656,7 @@ public class EnvironmentCheck
                 /* no-op, don't add it  */
             }
           } else {
-            Map<String, String> h = new HashMap<>(2);
+            Map<String, String> h = new My_HashMap<>(2);
             // Note "-" char is looked for in appendFoundJars
             h.put(jars[i] + "-path", WARNING + " Classpath entry: "
                     + filename + " does not exist");
@@ -737,7 +733,7 @@ public class EnvironmentCheck
   {
 
     if (null == h)
-      h = new HashMap<>();
+      h = new My_HashMap<>();
 
     Class clazz = null;
 
@@ -768,7 +764,7 @@ public class EnvironmentCheck
   {
 
     if (null == h)
-      h = new HashMap<>();
+      h = new My_HashMap<>();
 
     try
     {
@@ -854,7 +850,7 @@ public class EnvironmentCheck
   {
 
     if (null == h)
-      h = new HashMap<>();
+      h = new My_HashMap<>();
 
     try
     {
@@ -915,7 +911,7 @@ public class EnvironmentCheck
   {
 
     if (null == h)
-      h = new HashMap<>();
+      h = new My_HashMap<>();
 
     try
     {
@@ -945,7 +941,7 @@ public class EnvironmentCheck
   {
 
     if (null == h)
-      h = new HashMap<>();
+      h = new My_HashMap<>();
 
     final String DOM_CLASS = "org.w3c.dom.Document";
     final String DOM_LEVEL3_METHOD = "getDoctype";  // no parameter
@@ -980,7 +976,7 @@ public class EnvironmentCheck
   {
 
     if (null == h)
-      h = new HashMap<>();
+      h = new My_HashMap<>();
 
     final String DOM_LEVEL2_CLASS = "org.w3c.dom.Document";
     final String DOM_LEVEL2_METHOD = "createElementNS";  // String, String
@@ -1056,7 +1052,7 @@ public class EnvironmentCheck
   {
 
     if (null == h)
-      h = new HashMap<>();
+      h = new My_HashMap<>();
 
     final String SAX_VERSION1_CLASS = "org.xml.sax.Parser";
     final String SAX_VERSION1_METHOD = "parse";  // String
@@ -1146,7 +1142,7 @@ public class EnvironmentCheck
    */
   static
   {
-    Map<Long, String> jarVersions = new HashMap<>();
+    Map<Long, String> jarVersions = new My_HashMap<>();
     jarVersions.put(new Long(857192), "xalan.jar from xalan-j_1_1");
     jarVersions.put(new Long(440237), "xalan.jar from xalan-j_1_2");
     jarVersions.put(new Long(436094), "xalan.jar from xalan-j_1_2_1");

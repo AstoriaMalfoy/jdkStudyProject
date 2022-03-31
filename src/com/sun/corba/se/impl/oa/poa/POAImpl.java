@@ -25,12 +25,7 @@
 
 package com.sun.corba.se.impl.oa.poa;
 
-import java.util.Collection ;
-import java.util.Set ;
-import java.util.HashSet ;
-import java.util.Map ;
-import java.util.HashMap ;
-import java.util.Iterator ;
+import java.util.*;
 
 import org.omg.CORBA.Policy ;
 import org.omg.CORBA.SystemException ;
@@ -70,30 +65,20 @@ import org.omg.PortableInterceptor.ObjectReferenceFactory ;
 import org.omg.PortableInterceptor.ObjectReferenceTemplate ;
 import org.omg.PortableInterceptor.NON_EXISTENT ;
 
-import org.omg.IOP.TAG_INTERNET_IOP ;
-
 import com.sun.corba.se.spi.copyobject.CopierManager ;
-import com.sun.corba.se.spi.copyobject.ObjectCopier ;
 import com.sun.corba.se.spi.copyobject.ObjectCopierFactory ;
 import com.sun.corba.se.spi.oa.OADestroyed ;
 import com.sun.corba.se.spi.oa.OAInvocationInfo ;
-import com.sun.corba.se.spi.oa.ObjectAdapter ;
 import com.sun.corba.se.spi.oa.ObjectAdapterBase ;
-import com.sun.corba.se.spi.oa.ObjectAdapterFactory ;
 import com.sun.corba.se.spi.ior.ObjectKeyTemplate ;
 import com.sun.corba.se.spi.ior.ObjectId ;
 import com.sun.corba.se.spi.ior.ObjectAdapterId ;
 import com.sun.corba.se.spi.ior.IOR ;
 import com.sun.corba.se.spi.ior.IORFactories ;
-import com.sun.corba.se.spi.ior.IORTemplate ;
 import com.sun.corba.se.spi.ior.IORTemplateList ;
 import com.sun.corba.se.spi.ior.TaggedProfile ;
-import com.sun.corba.se.spi.ior.iiop.IIOPProfile ;
-import com.sun.corba.se.spi.ior.iiop.IIOPAddress ;
-import com.sun.corba.se.spi.ior.iiop.IIOPFactories ;
 import com.sun.corba.se.spi.orb.ORB ;
 import com.sun.corba.se.spi.protocol.ForwardException ;
-import com.sun.corba.se.spi.transport.SocketOrChannelAcceptor;
 
 import com.sun.corba.se.impl.ior.POAObjectKeyTemplate ;
 import com.sun.corba.se.impl.ior.ObjectAdapterIdArray ;
@@ -322,7 +307,7 @@ public class POAImpl extends ObjectAdapterBase implements POA
         this.state     = initialState ;
         this.name      = name ;
         this.parent    = parent;
-        children = new HashMap();
+        children = new My_HashMap();
         activator = null ;
 
         // This was done in initialize, but I moved it here

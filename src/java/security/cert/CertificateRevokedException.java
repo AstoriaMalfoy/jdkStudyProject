@@ -28,10 +28,7 @@ package java.security.cert;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.IOException;
-import java.util.Collections;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 import javax.security.auth.x500.X500Principal;
 
 import sun.misc.IOUtils;
@@ -96,7 +93,7 @@ public class CertificateRevokedException extends CertificateException {
         this.reason = reason;
         this.authority = authority;
         // make sure Map only contains correct types
-        this.extensions = Collections.checkedMap(new HashMap<>(),
+        this.extensions = Collections.checkedMap(new My_HashMap<>(),
                                                  String.class, Extension.class);
         this.extensions.putAll(extensions);
     }
@@ -232,7 +229,7 @@ public class CertificateRevokedException extends CertificateException {
         } else if (size < 0) {
             throw new IOException("size cannot be negative");
         } else {
-            extensions = new HashMap<>(size > 20 ? 20 : size);
+            extensions = new My_HashMap<>(size > 20 ? 20 : size);
         }
 
         // Read in the extensions and put the mappings in the extensions map

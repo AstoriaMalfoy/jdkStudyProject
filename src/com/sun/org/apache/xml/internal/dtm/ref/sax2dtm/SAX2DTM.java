@@ -43,8 +43,9 @@ import com.sun.org.apache.xml.internal.utils.SystemIDResolver;
 import com.sun.org.apache.xml.internal.utils.WrappedRuntimeException;
 import com.sun.org.apache.xml.internal.utils.XMLString;
 import com.sun.org.apache.xml.internal.utils.XMLStringFactory;
-import java.util.HashMap;
+
 import java.util.Map;
+import java.util.My_HashMap;
 import java.util.Vector;
 import javax.xml.transform.Source;
 import javax.xml.transform.SourceLocator;
@@ -162,7 +163,7 @@ public class SAX2DTM extends DTMDefaultBaseIterators
    * This table holds the ID string to node associations, for
    * XML IDs.
    */
-  protected Map<String, Integer> m_idAttributes = new HashMap<>();
+  protected Map<String, Integer> m_idAttributes = new My_HashMap<>();
 
   /**
    * fixed dom-style names.

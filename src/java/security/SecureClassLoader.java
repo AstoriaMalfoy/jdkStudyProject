@@ -25,9 +25,7 @@
 
 package java.security;
 
-import java.util.HashMap;
-import java.util.ArrayList;
-import java.net.URL;
+import java.util.My_HashMap;
 
 import sun.security.util.Debug;
 
@@ -49,8 +47,8 @@ public class SecureClassLoader extends ClassLoader {
 
     // HashMap that maps CodeSource to ProtectionDomain
     // @GuardedBy("pdcache")
-    private final HashMap<CodeSource, ProtectionDomain> pdcache =
-                        new HashMap<>(11);
+    private final My_HashMap<CodeSource, ProtectionDomain> pdcache =
+                        new My_HashMap<>(11);
 
     private static final Debug debug = Debug.getInstance("scl");
 

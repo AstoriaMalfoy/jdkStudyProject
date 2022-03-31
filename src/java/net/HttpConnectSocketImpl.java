@@ -28,8 +28,8 @@ package java.net;
 import java.io.IOException;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
-import java.util.HashMap;
 import java.util.Map;
+import java.util.My_HashMap;
 import java.util.Set;
 
 /**
@@ -53,7 +53,7 @@ import java.util.Set;
 
     private final String server;
     private InetSocketAddress external_address;
-    private HashMap<Integer, Object> optionsMap = new HashMap<>();
+    private My_HashMap<Integer, Object> optionsMap = new My_HashMap<>();
 
     static  {
         try {

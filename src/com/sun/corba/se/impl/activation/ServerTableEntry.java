@@ -30,8 +30,6 @@ package com.sun.corba.se.impl.activation;
  * @since       JDK1.2
  */
 
-import org.omg.CORBA.CompletionStatus;
-
 import com.sun.corba.se.spi.activation.Server;
 import com.sun.corba.se.spi.activation.EndPointInfo;
 import com.sun.corba.se.spi.activation.ORBAlreadyRegistered;
@@ -39,15 +37,12 @@ import com.sun.corba.se.spi.activation.ORBPortInfo;
 import com.sun.corba.se.spi.activation.InvalidORBid;
 import com.sun.corba.se.spi.activation.ServerHeldDown;
 import com.sun.corba.se.spi.activation.RepositoryPackage.ServerDef;
-import com.sun.corba.se.spi.activation.IIOP_CLEAR_TEXT;
-import com.sun.corba.se.spi.orb.ORB ;
 
 import com.sun.corba.se.impl.orbutil.ORBConstants;
 import com.sun.corba.se.impl.logging.ActivationSystemException ;
 
-import java.io.File;
-import java.util.HashMap;
 import java.util.Iterator;
+import java.util.My_HashMap;
 import java.util.NoSuchElementException;
 
 public class ServerTableEntry
@@ -82,7 +77,7 @@ public class ServerTableEntry
     // state of each entry
     private int state;
     private int serverId;
-    private HashMap orbAndPortInfo;
+    private My_HashMap orbAndPortInfo;
     private Server serverObj;
     private ServerDef serverDef;
     private Process process;
@@ -117,7 +112,7 @@ public class ServerTableEntry
         // create a HashMap with capacity 255
         // Since all methods are synchronized, we don't need any
         // additional synchronization mechanisms
-        orbAndPortInfo = new HashMap(255);
+        orbAndPortInfo = new My_HashMap(255);
 
         activateRetryCount = 0;
         state = ACTIVATING;

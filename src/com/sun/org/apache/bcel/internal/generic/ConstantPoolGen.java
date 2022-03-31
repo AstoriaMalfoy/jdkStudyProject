@@ -19,8 +19,8 @@
  */
 package com.sun.org.apache.bcel.internal.generic;
 
-import java.util.HashMap;
 import java.util.Map;
+import java.util.My_HashMap;
 
 import com.sun.org.apache.bcel.internal.Const;
 import com.sun.org.apache.bcel.internal.classfile.Constant;
@@ -217,7 +217,7 @@ public class ConstantPoolGen {
         }
     }
 
-    private final Map<String, Index> string_table = new HashMap<>();
+    private final Map<String, Index> string_table = new My_HashMap<>();
 
 
     /**
@@ -254,7 +254,7 @@ public class ConstantPoolGen {
         return ret;
     }
 
-    private final Map<String, Index> class_table = new HashMap<>();
+    private final Map<String, Index> class_table = new My_HashMap<>();
 
 
     /**
@@ -393,7 +393,7 @@ public class ConstantPoolGen {
         return ret;
     }
 
-    private final Map<String, Index> utf8_table = new HashMap<>();
+    private final Map<String, Index> utf8_table = new My_HashMap<>();
 
 
     /**
@@ -505,7 +505,7 @@ public class ConstantPoolGen {
         return ret;
     }
 
-    private final Map<String, Index> n_a_t_table = new HashMap<>();
+    private final Map<String, Index> n_a_t_table = new My_HashMap<>();
 
 
     /**
@@ -548,7 +548,7 @@ public class ConstantPoolGen {
         return ret;
     }
 
-    private final Map<String, Index> cp_table = new HashMap<>();
+    private final Map<String, Index> cp_table = new My_HashMap<>();
 
 
     /**

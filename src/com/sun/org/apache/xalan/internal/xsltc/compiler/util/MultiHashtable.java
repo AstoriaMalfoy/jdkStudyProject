@@ -23,9 +23,9 @@
 
 package com.sun.org.apache.xalan.internal.xsltc.compiler.util;
 
-import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
+import java.util.My_HashMap;
 import java.util.Set;
 
 /**
@@ -37,7 +37,7 @@ import java.util.Set;
 public final class MultiHashtable<K,V> {
     static final long serialVersionUID = -6151608290510033572L;
 
-    private final Map<K, Set<V>> map = new HashMap<>();
+    private final Map<K, Set<V>> map = new My_HashMap<>();
     private boolean modifiable = true;
 
     /**

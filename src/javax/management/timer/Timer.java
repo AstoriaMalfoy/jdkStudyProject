@@ -26,13 +26,8 @@
 package javax.management.timer;
 
 import static com.sun.jmx.defaults.JmxProperties.TIMER_LOGGER;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Set;
-import java.util.TreeSet;
-import java.util.Vector;
+
+import java.util.*;
 import java.util.logging.Level;
 
 // jmx imports
@@ -128,7 +123,7 @@ public class Timer extends NotificationBroadcasterSupport
      * with the associated date, period and number of occurrences.
      */
     final private Map<Integer,Object[]> timerTable =
-        new HashMap<>();
+        new My_HashMap<>();
 
     /**
      * Past notifications sending on/off flag value.

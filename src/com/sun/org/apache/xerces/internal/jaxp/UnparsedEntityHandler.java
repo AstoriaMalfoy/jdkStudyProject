@@ -21,8 +21,6 @@
 
 package com.sun.org.apache.xerces.internal.jaxp;
 
-import java.util.HashMap;
-
 import com.sun.org.apache.xerces.internal.impl.validation.EntityState;
 import com.sun.org.apache.xerces.internal.impl.validation.ValidationManager;
 import com.sun.org.apache.xerces.internal.xni.Augmentations;
@@ -33,6 +31,8 @@ import com.sun.org.apache.xerces.internal.xni.XMLString;
 import com.sun.org.apache.xerces.internal.xni.XNIException;
 import com.sun.org.apache.xerces.internal.xni.parser.XMLDTDFilter;
 import com.sun.org.apache.xerces.internal.xni.parser.XMLDTDSource;
+
+import java.util.My_HashMap;
 
 /**
  * <p>This filter records which unparsed entities have been
@@ -52,7 +52,7 @@ final class UnparsedEntityHandler implements XMLDTDFilter, EntityState {
     private final ValidationManager fValidationManager;
 
     /** Map for tracking unparsed entities. */
-    private HashMap fUnparsedEntities = null;
+    private My_HashMap fUnparsedEntities = null;
 
     UnparsedEntityHandler(ValidationManager manager) {
         fValidationManager = manager;
@@ -173,7 +173,7 @@ final class UnparsedEntityHandler implements XMLDTDFilter, EntityState {
             XMLResourceIdentifier identifier, String notation,
             Augmentations augmentations) throws XNIException {
         if (fUnparsedEntities == null) {
-            fUnparsedEntities = new HashMap();
+            fUnparsedEntities = new My_HashMap();
         }
         fUnparsedEntities.put(name, name);
         if (fDTDHandler != null) {

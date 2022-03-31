@@ -64,12 +64,8 @@ import com.sun.org.apache.bcel.internal.generic.TargetLostException;
 import com.sun.org.apache.bcel.internal.generic.Type;
 import com.sun.org.apache.xalan.internal.xsltc.compiler.Pattern;
 import com.sun.org.apache.xalan.internal.xsltc.compiler.XSLTC;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
-import java.util.Stack;
+
+import java.util.*;
 
 /**
  * @author Jacek Ambroziak
@@ -125,7 +121,7 @@ public class MethodGenerator extends MethodGen
                  * times. Note that patterns whose kernels are "*", "node()"
                  * and "@*" can between shared by test sequences.
                  */
-        private Map<Pattern, InstructionList> _preCompiled = new HashMap<>();
+        private Map<Pattern, InstructionList> _preCompiled = new My_HashMap<>();
 
 
     public MethodGenerator(int access_flags, Type return_type,
@@ -281,7 +277,7 @@ public class MethodGenerator extends MethodGen
         /**
          * Maps a name to a {@link LocalVariableGen}
          */
-        protected HashMap _nameToLVGMap = new HashMap();
+        protected My_HashMap _nameToLVGMap = new My_HashMap();
 
         /**
          * Registers a {@link org.apache.bcel.generic.LocalVariableGen}
@@ -1349,14 +1345,14 @@ public class MethodGenerator extends MethodGen
         // method to instruction handles in the outlined method.  Only need
         // to track instructions that are targeted by something else in the
         // generated BCEL
-        HashMap targetMap   = new HashMap();
+        My_HashMap targetMap   = new My_HashMap();
 
         // Keeps track of the mapping from local variables in the old method
         // to local variables in the outlined method.
-        HashMap localVarMap = new HashMap();
+        My_HashMap localVarMap = new My_HashMap();
 
-        HashMap revisedLocalVarStart = new HashMap();
-        HashMap revisedLocalVarEnd = new HashMap();
+        My_HashMap revisedLocalVarStart = new My_HashMap();
+        My_HashMap revisedLocalVarEnd = new My_HashMap();
 
         // Pass 1: Make copies of all instructions, append them to the new list
         // and associate old instruction references with the new ones, i.e.,
