@@ -703,22 +703,22 @@ public class HashMap<K,V> extends AbstractMap<K,V>
         @SuppressWarnings({"rawtypes","unchecked"})
         Node<K,V>[] newTab = (Node<K,V>[])new Node[newCap];// 开辟新的空间
         table = newTab;
-        if (oldTab != null) { // 如果不是初始化 就执行扩容操作
+        if (oldTab != null) { // 真实扩容操作  就执行扩容操作
             for (int j = 0; j < oldCap; ++j) {
                 Node<K,V> e;
                 if ((e = oldTab[j]) != null) {
-                    oldTab[j] = null;
+                    oldTab[j] = null;                                               // 将原有的节点设置为null 猜测目的是为了保证内存释放
                     if (e.next == null)                                             // 如果该桶中没有值
-                        newTab[e.hash & (newCap - 1)] = e;
+                        newTab[e.hash & (newCap - 1)] = e;                          // 将新的元素写入桶中
                     else if (e instanceof TreeNode)                                 // 如果该桶中存储的红黑树
                         ((TreeNode<K,V>)e).split(this, newTab, j, oldCap);
                     else { // preserve order                                        // 如果该桶中存储的是链表 todo menlo
-                        Node<K,V> loHead = null, loTail = null;
-                        Node<K,V> hiHead = null, hiTail = null;
-                        Node<K,V> next;
+                        Node<K,V> loHead = null, loTail = null;                     // 扩容时填入的位置和旧桶中的位置相同
+                        Node<K,V> hiHead = null, hiTail = null;                     // 扩容时填入的位置为(旧桶的长度 + 在旧桶中的秩)
+                        Node<K,V> next;                                             // 对链表循环的时候当前节点的下一个节点
                         do {
-                            next = e.next;
-                            if ((e.hash & oldCap) == 0) {
+                            next = e.next;                                          // 链表下的第一个节点
+                            if ((e.hash & oldCap) == 0) {                           // 判断位置的逻辑 todo 不理解 粗略理解是对源链表均等分
                                 if (loTail == null)
                                     loHead = e;
                                 else
@@ -732,12 +732,12 @@ public class HashMap<K,V> extends AbstractMap<K,V>
                                     hiTail.next = e;
                                 hiTail = e;
                             }
-                        } while ((e = next) != null);
-                        if (loTail != null) {
+                        } while ((e = next) != null);                               // 对链表进行遍历
+                        if (loTail != null) {                                       // 将该链插入到新桶的原位置
                             loTail.next = null;
                             newTab[j] = loHead;
                         }
-                        if (hiTail != null) {
+                        if (hiTail != null) {                                       // 将该链插入到新的桶中
                             hiTail.next = null;
                             newTab[j + oldCap] = hiHead;
                         }
