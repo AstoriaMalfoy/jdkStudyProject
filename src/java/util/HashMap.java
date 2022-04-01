@@ -231,16 +231,16 @@ public class HashMap<K,V> extends AbstractMap<K,V>
      */
 
     /**
-     * The default initial capacity - MUST be a power of two.
+     * 初始容量 必须要是2的幂次
      */
     static final int DEFAULT_INITIAL_CAPACITY = 1 << 4; // aka 16  初始大小 16
 
     /**
-     * The maximum capacity, used if a higher value is implicitly specified
-     * by either of the constructors with arguments.
-     * MUST be a power of two <= 1<<30.
+     * hashMap的最大容量,在使用自定义的值进行初始化的时候,要求该值必须为2的幂次,并且小于 1<<30
+     *
+     *
      */
-    static final int MAXIMUM_CAPACITY = 1 << 30;            // hashMap中的最大值
+    static final int MAXIMUM_CAPACITY = 1 << 30;            // hashMap的最大容量
 
     /**
      *  负载因子 初始值为0.75
@@ -273,8 +273,8 @@ public class HashMap<K,V> extends AbstractMap<K,V>
     static final int MIN_TREEIFY_CAPACITY = 64;
 
     /**
-     * Basic hash bin node, used for most entries.  (See below for
-     * TreeNode subclass, and in LinkedHashMap for its Entry subclass.)
+     * HashMao中的节点定义 和后续的红黑树种的节点相同
+     *
      */
     static class Node<K,V> implements Map.Entry<K,V> {
         final int hash;                 //  hash值
@@ -316,7 +316,7 @@ public class HashMap<K,V> extends AbstractMap<K,V>
         }
     }
 
-    /* ---------------- Static utilities -------------- */
+    /* ---------------- 静态方法部分 -------------- */
 
     /**
      * Computes key.hashCode() and spreads (XORs) higher bits of hash
@@ -336,7 +336,7 @@ public class HashMap<K,V> extends AbstractMap<K,V>
      */
     static final int hash(Object key) {
         int h;
-        return (key == null) ? 0 : (h = key.hashCode()) ^ (h >>> 16);  // 在计算hash值的时候 只保留hash值的低16位 如果key为null 则hash为0
+        return (key == null) ? 0 : (h = key.hashCode()) ^ (h >>> 16);  // 在计算hash值的时候 对hash的高16为和低16为做hash 最后得到一个16的hash
     }
 
     /**
@@ -373,7 +373,7 @@ public class HashMap<K,V> extends AbstractMap<K,V>
     }
 
     /**
-     * Returns a power of two size for the given target capacity.
+     * 返回比cap大的所有2的整数次幂中最小的那个
      */
     static final int tableSizeFor(int cap) {
         int n = cap - 1;
@@ -385,7 +385,7 @@ public class HashMap<K,V> extends AbstractMap<K,V>
         return (n < 0) ? 1 : (n >= MAXIMUM_CAPACITY) ? MAXIMUM_CAPACITY : n + 1;
     }
 
-    /* ---------------- Fields -------------- */
+    /* ---------------- 属性 -------------- */
 
     /**
      * The table, initialized on first use, and resized as
@@ -431,16 +431,16 @@ public class HashMap<K,V> extends AbstractMap<K,V>
      *
      * @serial
      */
-    final float loadFactor;
+    final float loadFactor;                 // 当前hashMap的负载因子
 
     /* ---------------- Public operations -------------- */
 
     /**
-     * Constructs an empty <tt>HashMap</tt> with the specified initial
+     * 初始化HashMap,指定初始桶的大小,以及扩容的负载因子
      * capacity and load factor.
      *
-     * @param  initialCapacity the initial capacity
-     * @param  loadFactor      the load factor
+     * @param  initialCapacity 桶的大小
+     * @param  loadFactor      负载因子
      * @throws IllegalArgumentException if the initial capacity is negative
      *         or the load factor is nonpositive
      */
