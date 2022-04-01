@@ -2844,7 +2844,7 @@ public class IIOPInputStream
         public ActiveRecursionManager() {
             // A hash map is unsynchronized and allows
             // null values
-            offsetToObjectMap = new My_HashMap<>();
+            offsetToObjectMap = new HashMap<>();
         }
 
         // Called right after allocating a new object.

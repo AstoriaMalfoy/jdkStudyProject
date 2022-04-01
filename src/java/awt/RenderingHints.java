@@ -88,7 +88,7 @@ public class RenderingHints
      * {@code equals()} method.
      */
     public abstract static class Key {
-        private static My_HashMap<Object,Object> identitymap = new My_HashMap<>(17);
+        private static HashMap<Object,Object> identitymap = new HashMap<>(17);
 
         private String getIdentity() {
             // Note that the identity string is dependent on 3 variables:
@@ -191,7 +191,7 @@ public class RenderingHints
         }
     }
 
-    My_HashMap<Object,Object> hintmap = new My_HashMap<>(7);
+    HashMap<Object,Object> hintmap = new HashMap<>(7);
 
     /**
      * Antialiasing hint key.
@@ -1269,7 +1269,7 @@ public class RenderingHints
         try {
             rh = (RenderingHints) super.clone();
             if (hintmap != null) {
-                rh.hintmap = (My_HashMap<Object,Object>) hintmap.clone();
+                rh.hintmap = (HashMap<Object,Object>) hintmap.clone();
             }
         } catch (CloneNotSupportedException e) {
             // this shouldn't happen, since we are Cloneable

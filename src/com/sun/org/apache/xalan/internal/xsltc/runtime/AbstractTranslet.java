@@ -43,7 +43,7 @@ import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
 import java.util.ArrayList;
 import java.util.Map;
-import java.util.My_HashMap;
+import java.util.HashMap;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.transform.Templates;
@@ -278,7 +278,7 @@ public abstract class AbstractTranslet implements Translet {
      */
     public void addDecimalFormat(String name, DecimalFormatSymbols symbols) {
         // Instanciate map for formatting symbols if needed
-        if (_formatSymbols == null) _formatSymbols = new My_HashMap<>();
+        if (_formatSymbols == null) _formatSymbols = new HashMap<>();
 
         // The name cannot be null - use empty string instead
         if (name == null) name = EMPTYSTRING;
@@ -467,7 +467,7 @@ public abstract class AbstractTranslet implements Translet {
      * @return a KeyIndex.
      */
     private KeyIndex buildKeyIndexHelper(String name) {
-        if (_keyIndexes == null) _keyIndexes = new My_HashMap<>();
+        if (_keyIndexes == null) _keyIndexes = new HashMap<>();
 
         KeyIndex index = _keyIndexes.get(name);
         if (index == null) {
@@ -711,7 +711,7 @@ public abstract class AbstractTranslet implements Translet {
     private Map<String, Class<?>> _auxClasses = null;
 
     public void addAuxiliaryClass(Class auxClass) {
-        if (_auxClasses == null) _auxClasses = new My_HashMap<>();
+        if (_auxClasses == null) _auxClasses = new HashMap<>();
         _auxClasses.put(auxClass.getName(), auxClass);
     }
 

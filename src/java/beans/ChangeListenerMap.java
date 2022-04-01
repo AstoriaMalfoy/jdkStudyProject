@@ -69,7 +69,7 @@ abstract class ChangeListenerMap<L extends EventListener> {
      */
     public final synchronized void add(String name, L listener) {
         if (this.map == null) {
-            this.map = new My_HashMap<>();
+            this.map = new HashMap<>();
         }
         L[] array = this.map.get(name);
         int size = (array != null)
@@ -139,7 +139,7 @@ abstract class ChangeListenerMap<L extends EventListener> {
     public final void set(String name, L[] listeners) {
         if (listeners != null) {
             if (this.map == null) {
-                this.map = new My_HashMap<>();
+                this.map = new HashMap<>();
             }
             this.map.put(name, listeners);
         }

@@ -123,7 +123,7 @@ public class Timer extends NotificationBroadcasterSupport
      * with the associated date, period and number of occurrences.
      */
     final private Map<Integer,Object[]> timerTable =
-        new My_HashMap<>();
+        new HashMap<>();
 
     /**
      * Past notifications sending on/off flag value.

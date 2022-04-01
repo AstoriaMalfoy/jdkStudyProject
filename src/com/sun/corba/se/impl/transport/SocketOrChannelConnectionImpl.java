@@ -250,7 +250,7 @@ public class SocketOrChannelConnectionImpl
         }
         this.acceptor = acceptor;
 
-        serverRequestMap = Collections.synchronizedMap(new My_HashMap());
+        serverRequestMap = Collections.synchronizedMap(new HashMap());
         isServer = true;
 
         state = ESTABLISHED;

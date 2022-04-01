@@ -36,7 +36,7 @@ import java.util.Map ;
 import java.security.AccessController ;
 import java.security.PrivilegedExceptionAction ;
 import java.security.PrivilegedActionException ;
-import java.util.My_HashMap;
+import java.util.HashMap;
 
 import org.omg.PortableInterceptor.ORBInitializer ;
 import org.omg.PortableInterceptor.ORBInitInfo ;
@@ -642,7 +642,7 @@ public class ParserTable {
 
     private Operation makeBMGROperation()
     {
-        Map map = new My_HashMap() ;
+        Map map = new HashMap() ;
         map.put( "GROW", new Integer(0) ) ;
         map.put( "CLCT", new Integer(1) ) ;
         map.put( "STRM", new Integer(2) ) ;

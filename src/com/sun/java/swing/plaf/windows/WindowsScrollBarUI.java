@@ -392,12 +392,12 @@ public class WindowsScrollBarUI extends BasicScrollBarUI {
      */
     private static class Grid {
         private static final int BUFFER_SIZE = 64;
-        private static My_HashMap<String, WeakReference<Grid>> map;
+        private static HashMap<String, WeakReference<Grid>> map;
 
         private BufferedImage image;
 
         static {
-            map = new My_HashMap<String, WeakReference<Grid>>();
+            map = new HashMap<String, WeakReference<Grid>>();
         }
 
         public static Grid getGrid(Color fg, Color bg) {

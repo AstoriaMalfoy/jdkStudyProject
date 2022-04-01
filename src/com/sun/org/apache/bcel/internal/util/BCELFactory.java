@@ -77,7 +77,7 @@ class BCELFactory extends EmptyVisitor {
         _out = out;
     }
 
-    private final Map<Instruction, InstructionHandle> branch_map = new My_HashMap<>();
+    private final Map<Instruction, InstructionHandle> branch_map = new HashMap<>();
 
 
     public void start() {

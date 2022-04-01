@@ -28,7 +28,7 @@ package java.nio.charset;
 import java.lang.ref.WeakReference;
 import java.nio.*;
 import java.util.Map;
-import java.util.My_HashMap;
+import java.util.HashMap;
 
 
 /**
@@ -204,7 +204,7 @@ public class CoderResult {
             WeakReference<CoderResult> w;
             CoderResult e = null;
             if (cache == null) {
-                cache = new My_HashMap<Integer,WeakReference<CoderResult>>();
+                cache = new HashMap<Integer,WeakReference<CoderResult>>();
             } else if ((w = cache.get(k)) != null) {
                 e = w.get();
             }

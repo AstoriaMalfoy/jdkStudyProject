@@ -307,14 +307,14 @@ public final class Encodings extends Object
     //
     private final static class EncodingInfos {
         // These maps are final and not modified after initialization.
-        private final Map<String, EncodingInfo> _encodingTableKeyJava = new My_HashMap<>();
-        private final Map<String, EncodingInfo> _encodingTableKeyMime = new My_HashMap<>();
+        private final Map<String, EncodingInfo> _encodingTableKeyJava = new HashMap<>();
+        private final Map<String, EncodingInfo> _encodingTableKeyMime = new HashMap<>();
         // This map will be added to after initialization: make sure it's
         // thread-safe. This map should not be used frequently - only in cases
         // where the mapping requested was not declared in the Encodings.properties
         // file.
         private final Map<String, EncodingInfo> _encodingDynamicTable =
-                Collections.synchronizedMap(new My_HashMap<String, EncodingInfo>());
+                Collections.synchronizedMap(new HashMap<String, EncodingInfo>());
 
         private EncodingInfos() {
             loadEncodingInfo();
@@ -454,7 +454,7 @@ public final class Encodings extends Object
 
                 // create instances of EncodingInfo from the loaded mapping
                 Enumeration keys = props.keys();
-                Map<String, EncodingInfo> canonicals = new My_HashMap<>();
+                Map<String, EncodingInfo> canonicals = new HashMap<>();
                 while (keys.hasMoreElements()) {
                     final String javaName = (String) keys.nextElement();
                     final String[] mimes = parseMimeTypes(props.getProperty(javaName));

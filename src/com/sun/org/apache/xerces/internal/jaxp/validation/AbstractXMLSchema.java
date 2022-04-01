@@ -24,7 +24,7 @@ package com.sun.org.apache.xerces.internal.jaxp.validation;
 import javax.xml.validation.Schema;
 import javax.xml.validation.Validator;
 import javax.xml.validation.ValidatorHandler;
-import java.util.My_HashMap;
+import java.util.HashMap;
 
 /**
  * <p>Abstract implementation of Schema for W3C XML Schemas.</p>
@@ -39,17 +39,17 @@ abstract class AbstractXMLSchema extends Schema implements
      * Map containing the initial values of features for
      * validators created using this grammar pool container.
      */
-    private final My_HashMap fFeatures;
+    private final HashMap fFeatures;
 
     /**
      * Map containing the initial values of properties for
      * validators created using this grammar pool container.
      */
-    private final My_HashMap fProperties;
+    private final HashMap fProperties;
 
     public AbstractXMLSchema() {
-        fFeatures = new My_HashMap();
-        fProperties = new My_HashMap();
+        fFeatures = new HashMap();
+        fProperties = new HashMap();
     }
 
     /*

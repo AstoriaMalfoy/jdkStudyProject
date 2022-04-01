@@ -737,7 +737,7 @@ public class EnvHelp {
      * it removes all the 'null' values from the map.
      */
     public static <K, V> Hashtable<K, V> mapToHashtable(Map<K, V> map) {
-        My_HashMap<K, V> m = new My_HashMap<K, V>(map);
+        HashMap<K, V> m = new HashMap<K, V>(map);
         if (m.containsKey(null)) m.remove(null);
         for (Iterator<?> i = m.values().iterator(); i.hasNext(); )
             if (i.next() == null) i.remove();

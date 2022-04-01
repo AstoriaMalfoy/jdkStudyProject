@@ -174,7 +174,7 @@ final class XMLSchemaValidatorComponentManager extends ParserConfigurationSettin
     private boolean fUseGrammarPoolOnly;
 
     /** Lookup map for components required for validation. **/
-    private final My_HashMap fComponents = new My_HashMap();
+    private final HashMap fComponents = new HashMap();
 
     //
     // Components
@@ -200,10 +200,10 @@ final class XMLSchemaValidatorComponentManager extends ParserConfigurationSettin
     //
 
     /** Stores initial feature values for validator reset. */
-    private final My_HashMap fInitFeatures = new My_HashMap();
+    private final HashMap fInitFeatures = new HashMap();
 
     /** Stores initial property values for validator reset. */
-    private final My_HashMap fInitProperties = new My_HashMap();
+    private final HashMap fInitProperties = new HashMap();
 
     /** Stores the initial security manager. */
     private XMLSecurityManager fInitSecurityManager;

@@ -123,7 +123,7 @@ public class ServiceContexts {
 
         addAlignmentOnWrite = false ;
 
-        scMap = new My_HashMap();
+        scMap = new HashMap();
 
         // Use the GIOP version of the ORB.  Should
         // be specified in ServiceContext.

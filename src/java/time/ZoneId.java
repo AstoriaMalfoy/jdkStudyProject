@@ -216,7 +216,7 @@ public abstract class ZoneId implements Serializable {
      */
     public static final Map<String, String> SHORT_IDS;
     static {
-        Map<String, String> map = new My_HashMap<>(64);
+        Map<String, String> map = new HashMap<>(64);
         map.put("ACT", "Australia/Darwin");
         map.put("AET", "Australia/Sydney");
         map.put("AGT", "America/Argentina/Buenos_Aires");

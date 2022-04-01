@@ -21,7 +21,7 @@
 package com.sun.org.apache.xerces.internal.dom;
 
 import java.util.ArrayList;
-import java.util.My_HashMap;
+import java.util.HashMap;
 
 import org.w3c.dom.DOMImplementation;
 import org.w3c.dom.Element;
@@ -2025,7 +2025,7 @@ public class DeferredDocumentImpl
 
         // create Map
         if (identifiers == null) {
-            identifiers = new My_HashMap<>();
+            identifiers = new HashMap<>();
         }
 
         // save ID and its associated element

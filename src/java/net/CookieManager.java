@@ -199,7 +199,7 @@ public class CookieManager extends CookieHandler
         }
 
         Map<String, List<String>> cookieMap =
-                        new My_HashMap<String, List<String>>();
+                        new HashMap<String, List<String>>();
         // if there's no default CookieStore, no way for us to get any cookie
         if (cookieJar == null)
             return Collections.unmodifiableMap(cookieMap);

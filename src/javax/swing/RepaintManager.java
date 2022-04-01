@@ -79,7 +79,7 @@ public class RepaintManager
      * Maps from GraphicsConfiguration to VolatileImage.
      */
     private Map<GraphicsConfiguration,VolatileImage> volatileMap = new
-            My_HashMap<GraphicsConfiguration,VolatileImage>(1);
+            HashMap<GraphicsConfiguration,VolatileImage>(1);
 
     //
     // As of 1.6 Swing handles scheduling of paint events from native code.

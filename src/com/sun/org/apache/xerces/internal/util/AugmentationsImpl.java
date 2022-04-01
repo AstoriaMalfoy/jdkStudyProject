@@ -239,7 +239,7 @@ public class AugmentationsImpl implements Augmentations{
     }
 
     class LargeContainer extends AugmentationsItemsContainer {
-        final Map<Object, Object> fAugmentations = new My_HashMap<>();
+        final Map<Object, Object> fAugmentations = new HashMap<>();
 
         public Object getItem(Object key) {
             return fAugmentations.get(key);

@@ -183,7 +183,7 @@ import java.util.*;
  * @since       1.4
  */
 public class SpringLayout implements LayoutManager2 {
-    private Map<Component, Constraints> componentConstraints = new My_HashMap<Component, Constraints>();
+    private Map<Component, Constraints> componentConstraints = new HashMap<Component, Constraints>();
 
     private Spring cyclicReference = Spring.constant(Spring.UNSET);
     private Set<Spring> cyclicSprings;

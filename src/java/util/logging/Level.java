@@ -527,8 +527,8 @@ public class Level implements java.io.Serializable {
     // were final, the following KnownLevel implementation can be removed.
     // Future API change should take this into consideration.
     static final class KnownLevel {
-        private static Map<String, List<KnownLevel>> nameToLevels = new My_HashMap<>();
-        private static Map<Integer, List<KnownLevel>> intToLevels = new My_HashMap<>();
+        private static Map<String, List<KnownLevel>> nameToLevels = new HashMap<>();
+        private static Map<Integer, List<KnownLevel>> intToLevels = new HashMap<>();
         final Level levelObject;     // instance of Level class or Level subclass
         final Level mirroredLevel;   // mirror of the custom Level
         KnownLevel(Level l) {

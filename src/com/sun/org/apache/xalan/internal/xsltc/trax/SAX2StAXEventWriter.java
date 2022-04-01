@@ -335,7 +335,7 @@ public class SAX2StAXEventWriter extends SAX2StAXBaseWriter {
                 String uri = (String) namespaces.elementAt(i);
                 Namespace ns = createNamespace(prefix, uri);
                 if (nsMap == null) {
-                    nsMap = new My_HashMap();
+                    nsMap = new HashMap();
                 }
                 nsMap.put(prefix, ns);
             }
@@ -359,7 +359,7 @@ public class SAX2StAXEventWriter extends SAX2StAXBaseWriter {
                 // namespace has already been declared, skip it, otherwise
                 // write it as an namespace
                 if (nsMap == null) {
-                    nsMap = new My_HashMap();
+                    nsMap = new HashMap();
                 }
 
                 if (!nsMap.containsKey(attrLocal)) {

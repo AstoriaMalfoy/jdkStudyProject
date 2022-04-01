@@ -1167,7 +1167,7 @@ public class RequiredModelMBean
         float.class, short.class, byte.class, char.class,
     };
     private static final Map<String,Class<?>> primitiveClassMap =
-        new My_HashMap<String,Class<?>>();
+        new HashMap<String,Class<?>>();
     static {
         for (int i = 0; i < primitiveClasses.length; i++) {
             final Class<?> c = primitiveClasses[i];

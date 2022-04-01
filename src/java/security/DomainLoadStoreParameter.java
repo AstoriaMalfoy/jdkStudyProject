@@ -135,7 +135,7 @@ public final class DomainLoadStoreParameter implements LoadStoreParameter {
         }
         this.configuration = configuration;
         this.protectionParams =
-            Collections.unmodifiableMap(new My_HashMap<>(protectionParams));
+            Collections.unmodifiableMap(new HashMap<>(protectionParams));
     }
 
     /**

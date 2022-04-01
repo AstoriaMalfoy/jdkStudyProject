@@ -193,7 +193,7 @@ public abstract class ListResourceBundle extends ResourceBundle {
             return;
 
         Object[][] contents = getContents();
-        My_HashMap<String,Object> temp = new My_HashMap<>(contents.length);
+        HashMap<String,Object> temp = new HashMap<>(contents.length);
         for (int i = 0; i < contents.length; ++i) {
             // key must be non-null String, value must be non-null
             String key = (String) contents[i][0];

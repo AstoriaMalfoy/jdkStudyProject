@@ -43,7 +43,7 @@ import com.sun.org.apache.xerces.internal.impl.Constants;
 import com.sun.org.apache.xerces.internal.utils.XMLSecurityManager.Limit;
 import java.util.Formatter;
 import java.util.Map;
-import java.util.My_HashMap;
+import java.util.HashMap;
 
 /**
  * A helper for analyzing entity expansion limits
@@ -144,7 +144,7 @@ public final class XMLLimitAnalyzer {
 
         Map<String, Integer> cache;
         if (caches[index] == null) {
-            cache = new My_HashMap<>(10);
+            cache = new HashMap<>(10);
             caches[index] = cache;
         } else {
             cache = caches[index];

@@ -193,7 +193,7 @@ public final class ServiceLoader<S>
     private final AccessControlContext acc;
 
     // Cached providers, in instantiation order
-    private LinkedMyHashMap<String,S> providers = new LinkedMyHashMap<>();
+    private LinkedHashMap<String,S> providers = new LinkedHashMap<>();
 
     // The current lazy-lookup iterator
     private LazyIterator lookupIterator;

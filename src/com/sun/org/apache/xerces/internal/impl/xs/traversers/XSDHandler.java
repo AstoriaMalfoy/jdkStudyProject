@@ -257,28 +257,28 @@ public class XSDHandler {
     // XSDocumentInfoRegistry we can easily get the corresponding
     // XSDocumentInfo object.
     private boolean registryEmpty = true;
-    private Map<String, Element> fUnparsedAttributeRegistry = new My_HashMap<>();
-    private Map<String, Element> fUnparsedAttributeGroupRegistry =  new My_HashMap<>();
-    private Map<String, Element> fUnparsedElementRegistry =  new My_HashMap<>();
-    private Map<String, Element> fUnparsedGroupRegistry =  new My_HashMap<>();
-    private Map<String, Element> fUnparsedIdentityConstraintRegistry =  new My_HashMap<>();
-    private Map<String, Element> fUnparsedNotationRegistry =  new My_HashMap<>();
-    private Map<String, Element> fUnparsedTypeRegistry =  new My_HashMap<>();
+    private Map<String, Element> fUnparsedAttributeRegistry = new HashMap<>();
+    private Map<String, Element> fUnparsedAttributeGroupRegistry =  new HashMap<>();
+    private Map<String, Element> fUnparsedElementRegistry =  new HashMap<>();
+    private Map<String, Element> fUnparsedGroupRegistry =  new HashMap<>();
+    private Map<String, Element> fUnparsedIdentityConstraintRegistry =  new HashMap<>();
+    private Map<String, Element> fUnparsedNotationRegistry =  new HashMap<>();
+    private Map<String, Element> fUnparsedTypeRegistry =  new HashMap<>();
     // Compensation for the above maps to locate XSDocumentInfo,
     // Since we may take Schema Element directly, so can not get the
     // corresponding XSDocumentInfo object just using above maps.
-    private Map<String, XSDocumentInfo> fUnparsedAttributeRegistrySub =  new My_HashMap<>();
-    private Map<String, XSDocumentInfo> fUnparsedAttributeGroupRegistrySub =  new My_HashMap<>();
-    private Map<String, XSDocumentInfo> fUnparsedElementRegistrySub =  new My_HashMap<>();
-    private Map<String, XSDocumentInfo> fUnparsedGroupRegistrySub =  new My_HashMap<>();
-    private Map<String, XSDocumentInfo> fUnparsedIdentityConstraintRegistrySub =  new My_HashMap<>();
-    private Map<String, XSDocumentInfo> fUnparsedNotationRegistrySub =  new My_HashMap<>();
-    private Map<String, XSDocumentInfo> fUnparsedTypeRegistrySub =  new My_HashMap<>();
+    private Map<String, XSDocumentInfo> fUnparsedAttributeRegistrySub =  new HashMap<>();
+    private Map<String, XSDocumentInfo> fUnparsedAttributeGroupRegistrySub =  new HashMap<>();
+    private Map<String, XSDocumentInfo> fUnparsedElementRegistrySub =  new HashMap<>();
+    private Map<String, XSDocumentInfo> fUnparsedGroupRegistrySub =  new HashMap<>();
+    private Map<String, XSDocumentInfo> fUnparsedIdentityConstraintRegistrySub =  new HashMap<>();
+    private Map<String, XSDocumentInfo> fUnparsedNotationRegistrySub =  new HashMap<>();
+    private Map<String, XSDocumentInfo> fUnparsedTypeRegistrySub =  new HashMap<>();
 
     // Stores XSDocumentInfo (keyed by component name), to check for duplicate
     // components declared within the same xsd document
     @SuppressWarnings({"rawtypes", "unchecked"})
-    private Map<String, XSDocumentInfo> fUnparsedRegistriesExt[] = new My_HashMap[] {
+    private Map<String, XSDocumentInfo> fUnparsedRegistriesExt[] = new HashMap[] {
         null,
         null, // ATTRIBUTE_TYPE
         null, // ATTRIBUTEGROUP_TYPE
@@ -292,13 +292,13 @@ public class XSDHandler {
     // this map is keyed on by XSDocumentInfo objects.  Its values
     // are Vectors containing the XSDocumentInfo objects <include>d,
     // <import>ed or <redefine>d by the key XSDocumentInfo.
-    private Map<XSDocumentInfo, List<XSDocumentInfo>> fDependencyMap = new My_HashMap<>();
+    private Map<XSDocumentInfo, List<XSDocumentInfo>> fDependencyMap = new HashMap<>();
 
     // this map is keyed on by a target namespace.  Its values
     // are Vectors containing namespaces imported by schema documents
     // with the key target namespace.
     // if an imported schema has absent namespace, the value "null" is stored.
-    private Map<String, List<String>> fImportMap = new My_HashMap<>();
+    private Map<String, List<String>> fImportMap = new HashMap<>();
 
     // all namespaces that imports other namespaces
     // if the importing schema has absent namespace, empty string is stored.
@@ -335,18 +335,18 @@ public class XSDHandler {
     // schema document.  This combination is used so that the user's
     // EntityResolver can provide a consistent way of identifying a
     // schema document that is included in multiple other schemas.
-    private Map<XSDKey, Element> fTraversed = new My_HashMap<>();
+    private Map<XSDKey, Element> fTraversed = new HashMap<>();
 
     // this map contains a mapping from Schema Element to its systemId
     // this is useful to resolve a uri relative to the referring document
-    private Map<Element, String> fDoc2SystemId = new My_HashMap<>();
+    private Map<Element, String> fDoc2SystemId = new HashMap<>();
 
     // the primary XSDocumentInfo we were called to parse
     private XSDocumentInfo fRoot = null;
 
     // This map's job is to act as a link between the Schema Element and its
     // XSDocumentInfo object.
-    private Map fDoc2XSDocumentMap = new My_HashMap();
+    private Map fDoc2XSDocumentMap = new HashMap();
 
     // map between <redefine> elements and the XSDocumentInfo
     // objects that correspond to the documents being redefined.
@@ -360,8 +360,8 @@ public class XSDHandler {
     // they redefine by restriction (implicitly).  It is up to the
     // Group and AttributeGroup traversers to check these restrictions for
     // validity.
-    private final Map<String, String> fRedefinedRestrictedAttributeGroupRegistry = new My_HashMap<>();
-    private final Map<String, String> fRedefinedRestrictedGroupRegistry = new My_HashMap<>();
+    private final Map<String, String> fRedefinedRestrictedAttributeGroupRegistry = new HashMap<>();
+    private final Map<String, String> fRedefinedRestrictedGroupRegistry = new HashMap<>();
 
     // a variable storing whether the last schema document
     // processed (by getSchema) was a duplicate.
@@ -473,7 +473,7 @@ public class XSDHandler {
 
     // Constructors
     public XSDHandler(){
-        fHiddenNodes = new My_HashMap<>();
+        fHiddenNodes = new HashMap<>();
         fSchemaParser = new SchemaDOMParser(new SchemaParsingConfig());
     }
 
@@ -1037,7 +1037,7 @@ public class XSDHandler {
                 schemaHint = (String)includeAttrs[XSAttributeChecker.ATTIDX_SCHEMALOCATION];
                 // store the namespace decls of the redefine element
                 if (localName.equals(SchemaSymbols.ELT_REDEFINE)) {
-                    if (fRedefine2NSSupport == null) fRedefine2NSSupport = new My_HashMap<>();
+                    if (fRedefine2NSSupport == null) fRedefine2NSSupport = new HashMap<>();
                     fRedefine2NSSupport.put(child, new SchemaNamespaceSupport(currSchemaInfo.fNamespaceSupport));
                 }
 
@@ -1148,7 +1148,7 @@ public class XSDHandler {
                     newSchemaInfo != null) {
                 // must record which schema we're redefining so that we can
                 // rename the right things later!
-                if (fRedefine2XSDMap == null) fRedefine2XSDMap = new My_HashMap<>();
+                if (fRedefine2XSDMap == null) fRedefine2XSDMap = new HashMap<>();
                 fRedefine2XSDMap.put(child, newSchemaInfo);
             }
             if (newSchemaRoot != null) {
@@ -2553,7 +2553,7 @@ public class XSDHandler {
         else {
             XSObject[] components = schemaSource.getComponents();
             if (components != null && components.length > 0) {
-                Map<String, List<String>> importDependencies = new My_HashMap<>();
+                Map<String, List<String>> importDependencies = new HashMap<>();
                 List<XSObject> expandedComponents = expandComponents(components, importDependencies);
                 if (fNamespaceGrowth || canAddComponents(expandedComponents)) {
                     addGlobalComponents(expandedComponents, importDependencies);
@@ -3822,7 +3822,7 @@ public class XSDHandler {
         // store the lastest current document info
         if (fTolerateDuplicates) {
             if (fUnparsedRegistriesExt[declType] == null)
-                fUnparsedRegistriesExt[declType] = new My_HashMap<>();
+                fUnparsedRegistriesExt[declType] = new HashMap<>();
             fUnparsedRegistriesExt[declType].put(qName, currSchema);
         }
 

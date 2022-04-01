@@ -388,7 +388,7 @@ public class Introspector {
     public static Descriptor descriptorForAnnotations(Annotation[] annots) {
         if (annots.length == 0)
             return ImmutableDescriptor.EMPTY_DESCRIPTOR;
-        Map<String, Object> descriptorMap = new My_HashMap<String, Object>();
+        Map<String, Object> descriptorMap = new HashMap<String, Object>();
         for (Annotation a : annots) {
             Class<? extends Annotation> c = a.annotationType();
             Method[] elements = c.getMethods();

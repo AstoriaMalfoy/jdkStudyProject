@@ -904,7 +904,7 @@ public final class HijrahChronology extends AbstractChronology implements Serial
             Objects.requireNonNull(resourceName, "Resource missing for calendar: " + PROP_PREFIX + typeId);
             Properties props = readConfigProperties(resourceName);
 
-            Map<Integer, int[]> years = new My_HashMap<>();
+            Map<Integer, int[]> years = new HashMap<>();
             int minYear = Integer.MAX_VALUE;
             int maxYear = Integer.MIN_VALUE;
             String id = null;

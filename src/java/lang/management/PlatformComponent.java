@@ -433,7 +433,7 @@ enum PlatformComponent {
     private static Map<String, PlatformComponent> enumMap;
     private static synchronized void ensureInitialized() {
         if (enumMap == null) {
-            enumMap = new My_HashMap<>();
+            enumMap = new HashMap<>();
             for (PlatformComponent pc: PlatformComponent.values()) {
                 // Use String as the key rather than Class<?> to avoid
                 // causing unnecessary class loading of management interface

@@ -622,7 +622,7 @@ class ZipFile implements ZipConstants, Closeable {
             // Close streams, release their inflaters
             synchronized (streams) {
                 if (false == streams.isEmpty()) {
-                    Map<InputStream, Inflater> copy = new My_HashMap<>(streams);
+                    Map<InputStream, Inflater> copy = new HashMap<>(streams);
                     streams.clear();
                     for (Map.Entry<InputStream, Inflater> e : copy.entrySet()) {
                         e.getKey().close();

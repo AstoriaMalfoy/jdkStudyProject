@@ -235,7 +235,7 @@ public class XMLDTDProcessor
     private final XMLEntityDecl fEntityDecl = new XMLEntityDecl();
 
     /** Notation declaration hash. */
-    private final My_HashMap fNDataDeclNotations = new My_HashMap();
+    private final HashMap fNDataDeclNotations = new HashMap();
 
     /** DTD element declaration name. */
     private String fDTDElementDeclName = null;
@@ -250,13 +250,13 @@ public class XMLDTDProcessor
     // ATTLIST, and misc VCs
 
     /** ID attribute names. */
-    private My_HashMap fTableOfIDAttributeNames;
+    private HashMap fTableOfIDAttributeNames;
 
     /** NOTATION attribute names. */
-    private My_HashMap fTableOfNOTATIONAttributeNames;
+    private HashMap fTableOfNOTATIONAttributeNames;
 
     /** NOTATION enumeration values. */
-    private My_HashMap fNotationEnumVals;
+    private HashMap fNotationEnumVals;
 
     //
     // Constructors
@@ -347,12 +347,12 @@ public class XMLDTDProcessor
         if (fValidation) {
 
             if (fNotationEnumVals == null) {
-                fNotationEnumVals = new My_HashMap();
+                fNotationEnumVals = new HashMap();
             }
             fNotationEnumVals.clear();
 
-            fTableOfIDAttributeNames = new My_HashMap();
-            fTableOfNOTATIONAttributeNames = new My_HashMap();
+            fTableOfIDAttributeNames = new HashMap();
+            fTableOfNOTATIONAttributeNames = new HashMap();
         }
 
     }

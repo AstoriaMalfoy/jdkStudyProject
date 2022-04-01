@@ -208,7 +208,7 @@ public class INSURLOperationImpl implements Operation
      */
      private org.omg.CORBA.Object getIORUsingCorbaloc( INSURL corbalocObject )
      {
-        Map     profileMap = new My_HashMap();
+        Map     profileMap = new HashMap();
         List    profileList1_0 = new ArrayList();
 
         // corbalocObject cannot be null, because it's validated during

@@ -486,7 +486,7 @@ public abstract class ClientNotifForwarder {
 
                     clientSequenceNumber = nr.getNextSequenceNumber();
 
-                    listeners = new My_HashMap<Integer, ClientListenerInfo>();
+                    listeners = new HashMap<Integer, ClientListenerInfo>();
 
                     for (int i = 0 ; i < len ; i++) {
                         final TargetedNotification tn = notifs[i];
@@ -865,7 +865,7 @@ public abstract class ClientNotifForwarder {
     private final Executor executor;
 
     private final Map<Integer, ClientListenerInfo> infoList =
-            new My_HashMap<Integer, ClientListenerInfo>();
+            new HashMap<Integer, ClientListenerInfo>();
 
     // notif stuff
     private long clientSequenceNumber = -1;

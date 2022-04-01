@@ -63,7 +63,7 @@ class SelectorImpl
     private long timeout;
     private List deferredRegistrations;
     private List interestOpsList;
-    private My_HashMap listenerThreads;
+    private HashMap listenerThreads;
     private Map readerThreads;
     private boolean selectorStarted;
     private volatile boolean closed;
@@ -78,8 +78,8 @@ class SelectorImpl
         timeout = 60000;
         deferredRegistrations = new ArrayList();
         interestOpsList = new ArrayList();
-        listenerThreads = new My_HashMap();
-        readerThreads = java.util.Collections.synchronizedMap(new My_HashMap());
+        listenerThreads = new HashMap();
+        readerThreads = java.util.Collections.synchronizedMap(new HashMap());
         closed = false;
         wrapper = ORBUtilSystemException.get(orb,CORBALogDomains.RPC_TRANSPORT);
     }

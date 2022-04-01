@@ -26,7 +26,7 @@ package java.lang.reflect;
 
 import java.lang.annotation.*;
 import java.util.Map;
-import java.util.My_HashMap;
+import java.util.HashMap;
 import java.util.Objects;
 import sun.reflect.annotation.AnnotationSupport;
 
@@ -338,7 +338,7 @@ public final class Parameter implements AnnotatedElement {
     private synchronized Map<Class<? extends Annotation>, Annotation> declaredAnnotations() {
         if(null == declaredAnnotations) {
             declaredAnnotations =
-                new My_HashMap<Class<? extends Annotation>, Annotation>();
+                new HashMap<Class<? extends Annotation>, Annotation>();
             Annotation[] ann = getDeclaredAnnotations();
             for(int i = 0; i < ann.length; i++)
                 declaredAnnotations.put(ann[i].annotationType(), ann[i]);

@@ -28,7 +28,7 @@ import java.io.IOException ;
 
 import java.lang.reflect.Method ;
 import java.lang.reflect.InvocationTargetException ;
-import java.util.My_HashMap;
+import java.util.HashMap;
 
 import org.omg.PortableInterceptor.ForwardRequest;
 import org.omg.PortableInterceptor.InvalidSlot;
@@ -620,7 +620,7 @@ public abstract class RequestInfoImpl
      * a cache.  If not found in cache, the result is inserted in the cache.
      */
     protected org.omg.IOP.ServiceContext
-        getServiceContext ( My_HashMap cachedServiceContexts,
+        getServiceContext ( HashMap cachedServiceContexts,
                             ServiceContexts serviceContexts, int id )
     {
         org.omg.IOP.ServiceContext result = null;
@@ -674,7 +674,7 @@ public abstract class RequestInfoImpl
      * in the container, it goes in the HashMap as well.
      */
     protected void addServiceContext(
-        My_HashMap cachedServiceContexts,
+        HashMap cachedServiceContexts,
         ServiceContexts serviceContexts,
         org.omg.IOP.ServiceContext service_context,
         boolean replace )

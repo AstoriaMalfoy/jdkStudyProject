@@ -26,7 +26,7 @@
 package com.sun.corba.se.spi.orb;
 
 import java.util.Map ;
-import java.util.My_HashMap;
+import java.util.HashMap;
 import java.util.Properties ;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.logging.Logger ;
@@ -276,7 +276,7 @@ public abstract class ORB extends com.sun.corba.se.org.omg.CORBA.ORB
         omgWrapper = OMGSystemException.get( this,
             CORBALogDomains.RPC_PRESENTATION ) ;
 
-        typeCodeMap = new My_HashMap();
+        typeCodeMap = new HashMap();
 
         primitiveTypeCodeConstants = new TypeCodeImpl[] {
             new TypeCodeImpl(this, TCKind._tk_null),

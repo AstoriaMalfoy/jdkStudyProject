@@ -241,7 +241,7 @@ public class InstructionHandle {
      */
     public void addAttribute( final Object key, final Object attr ) {
         if (attributes == null) {
-            attributes = new My_HashMap<>(3);
+            attributes = new HashMap<>(3);
         }
         attributes.put(key, attr);
     }
@@ -274,7 +274,7 @@ public class InstructionHandle {
      */
     public Collection<Object> getAttributes() {
         if (attributes == null) {
-            attributes = new My_HashMap<>(3);
+            attributes = new HashMap<>(3);
         }
         return attributes.values();
     }

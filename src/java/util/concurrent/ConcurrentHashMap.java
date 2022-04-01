@@ -130,7 +130,7 @@ import java.util.stream.Stream;
  * <em>optional</em> methods of the {@link Map} and {@link Iterator}
  * interfaces.
  *
- * <p>Like {@link Hashtable} but unlike {@link My_HashMap}, this class
+ * <p>Like {@link Hashtable} but unlike {@link HashMap}, this class
  * does <em>not</em> allow {@code null} to be used as a key or value.
  *
  * <p>ConcurrentHashMaps support a set of sequential and parallel bulk

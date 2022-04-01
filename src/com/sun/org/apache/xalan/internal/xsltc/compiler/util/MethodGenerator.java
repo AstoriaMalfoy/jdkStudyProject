@@ -121,7 +121,7 @@ public class MethodGenerator extends MethodGen
                  * times. Note that patterns whose kernels are "*", "node()"
                  * and "@*" can between shared by test sequences.
                  */
-        private Map<Pattern, InstructionList> _preCompiled = new My_HashMap<>();
+        private Map<Pattern, InstructionList> _preCompiled = new HashMap<>();
 
 
     public MethodGenerator(int access_flags, Type return_type,
@@ -277,7 +277,7 @@ public class MethodGenerator extends MethodGen
         /**
          * Maps a name to a {@link LocalVariableGen}
          */
-        protected My_HashMap _nameToLVGMap = new My_HashMap();
+        protected HashMap _nameToLVGMap = new HashMap();
 
         /**
          * Registers a {@link org.apache.bcel.generic.LocalVariableGen}
@@ -1345,14 +1345,14 @@ public class MethodGenerator extends MethodGen
         // method to instruction handles in the outlined method.  Only need
         // to track instructions that are targeted by something else in the
         // generated BCEL
-        My_HashMap targetMap   = new My_HashMap();
+        HashMap targetMap   = new HashMap();
 
         // Keeps track of the mapping from local variables in the old method
         // to local variables in the outlined method.
-        My_HashMap localVarMap = new My_HashMap();
+        HashMap localVarMap = new HashMap();
 
-        My_HashMap revisedLocalVarStart = new My_HashMap();
-        My_HashMap revisedLocalVarEnd = new My_HashMap();
+        HashMap revisedLocalVarStart = new HashMap();
+        HashMap revisedLocalVarEnd = new HashMap();
 
         // Pass 1: Make copies of all instructions, append them to the new list
         // and associate old instruction references with the new ones, i.e.,

@@ -287,10 +287,10 @@ public class JMXConnectorServerFactory {
             throws IOException {
         Map<String, Object> envcopy;
         if (environment == null)
-            envcopy = new My_HashMap<String, Object>();
+            envcopy = new HashMap<String, Object>();
         else {
             EnvHelp.checkAttributes(environment);
-            envcopy = new My_HashMap<String, Object>(environment);
+            envcopy = new HashMap<String, Object>(environment);
         }
 
         final Class<JMXConnectorServerProvider> targetInterface =

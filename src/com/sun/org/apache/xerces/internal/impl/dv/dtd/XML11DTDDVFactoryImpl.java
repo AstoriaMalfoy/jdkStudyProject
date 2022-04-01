@@ -23,7 +23,7 @@ package com.sun.org.apache.xerces.internal.impl.dv.dtd;
 import com.sun.org.apache.xerces.internal.impl.dv.DatatypeValidator;
 import java.util.Collections;
 import java.util.Map;
-import java.util.My_HashMap;
+import java.util.HashMap;
 
 /**
  * the factory to create/return built-in XML 1.1 DVs and create user-defined DVs
@@ -37,7 +37,7 @@ public class XML11DTDDVFactoryImpl extends DTDDVFactoryImpl {
 
     static Map<String, DatatypeValidator> XML11BUILTINTYPES;
     static {
-        Map<String, DatatypeValidator> xml11BuiltInTypes = new My_HashMap<>();
+        Map<String, DatatypeValidator> xml11BuiltInTypes = new HashMap<>();
         xml11BuiltInTypes.put("XML11ID", new XML11IDDatatypeValidator());
         DatatypeValidator dvTemp = new XML11IDREFDatatypeValidator();
         xml11BuiltInTypes.put("XML11IDREF", dvTemp);
@@ -72,7 +72,7 @@ public class XML11DTDDVFactoryImpl extends DTDDVFactoryImpl {
      */
     @Override
     public Map<String, DatatypeValidator> getBuiltInTypes() {
-        final My_HashMap<String, DatatypeValidator> toReturn = new My_HashMap<>(fBuiltInTypes);
+        final HashMap<String, DatatypeValidator> toReturn = new HashMap<>(fBuiltInTypes);
         toReturn.putAll(XML11BUILTINTYPES);
         return toReturn;
     }

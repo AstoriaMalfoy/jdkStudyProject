@@ -122,7 +122,7 @@ final class Parsed implements TemporalAccessor {
     /**
      * The parsed fields.
      */
-    final Map<TemporalField, Long> fieldValues = new My_HashMap<>();
+    final Map<TemporalField, Long> fieldValues = new HashMap<>();
     /**
      * The parsed zone.
      */

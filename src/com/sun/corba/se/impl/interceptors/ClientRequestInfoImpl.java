@@ -65,7 +65,7 @@ import com.sun.corba.se.spi.transport.CorbaContactInfoListIterator;
 import com.sun.corba.se.impl.orbutil.ORBUtility;
 import com.sun.corba.se.impl.protocol.CorbaInvocationInfo;
 
-import java.util.My_HashMap;
+import java.util.HashMap;
 
 /**
  * Implementation of the ClientRequestInfo interface as specified in
@@ -122,11 +122,11 @@ public final class ClientRequestInfoImpl
     private Any cachedReceivedException;
     private TaggedProfile cachedEffectiveProfile;
     // key = Integer, value = IOP.ServiceContext.
-    private My_HashMap cachedRequestServiceContexts;
+    private HashMap cachedRequestServiceContexts;
     // key = Integer, value = IOP.ServiceContext.
-    private My_HashMap cachedReplyServiceContexts;
+    private HashMap cachedReplyServiceContexts;
     // key = Integer, value = TaggedComponent
-    private My_HashMap cachedEffectiveComponents;
+    private HashMap cachedEffectiveComponents;
 
 
     protected boolean piCurrentPushed;
@@ -391,7 +391,7 @@ public final class ClientRequestInfoImpl
         boolean justCreatedCache = false;
 
         if( cachedEffectiveComponents == null ) {
-            cachedEffectiveComponents = new My_HashMap();
+            cachedEffectiveComponents = new HashMap();
             justCreatedCache = true;
         }
         else {
@@ -450,7 +450,7 @@ public final class ClientRequestInfoImpl
         checkAccess( MID_ADD_REQUEST_SERVICE_CONTEXT );
 
         if( cachedRequestServiceContexts == null ) {
-            cachedRequestServiceContexts = new My_HashMap();
+            cachedRequestServiceContexts = new HashMap();
         }
 
         addServiceContext( cachedRequestServiceContexts,
@@ -729,7 +729,7 @@ public final class ClientRequestInfoImpl
         checkAccess( MID_GET_REQUEST_SERVICE_CONTEXT );
 
         if( cachedRequestServiceContexts == null ) {
-            cachedRequestServiceContexts = new My_HashMap();
+            cachedRequestServiceContexts = new HashMap();
         }
 
         return  getServiceContext(cachedRequestServiceContexts,
@@ -745,7 +745,7 @@ public final class ClientRequestInfoImpl
         checkAccess( MID_GET_REPLY_SERVICE_CONTEXT );
 
         if( cachedReplyServiceContexts == null ) {
-            cachedReplyServiceContexts = new My_HashMap();
+            cachedReplyServiceContexts = new HashMap();
         }
 
         // In the event this is called from a oneway, we will have no

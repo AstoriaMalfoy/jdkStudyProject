@@ -328,7 +328,7 @@ final class BasicPermissionCollection
      */
 
     public BasicPermissionCollection(Class<?> clazz) {
-        perms = new My_HashMap<String, Permission>(11);
+        perms = new HashMap<String, Permission>(11);
         all_allowed = false;
         permClass = clazz;
     }
@@ -529,7 +529,7 @@ final class BasicPermissionCollection
         @SuppressWarnings("unchecked")
         Hashtable<String, Permission> permissions =
                 (Hashtable<String, Permission>)gfields.get("permissions", null);
-        perms = new My_HashMap<String, Permission>(permissions.size()*2);
+        perms = new HashMap<String, Permission>(permissions.size()*2);
         perms.putAll(permissions);
 
         // Get all_allowed

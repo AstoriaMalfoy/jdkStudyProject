@@ -23,7 +23,7 @@ package com.sun.org.apache.bcel.internal.util;
 
 import java.util.Collection;
 import java.util.Map;
-import java.util.My_HashMap;
+import java.util.HashMap;
 
 import com.sun.org.apache.bcel.internal.classfile.JavaClass;
 
@@ -37,7 +37,7 @@ import com.sun.org.apache.bcel.internal.classfile.JavaClass;
  */
 public class ClassSet {
 
-    private final Map<String, JavaClass> map = new My_HashMap<>();
+    private final Map<String, JavaClass> map = new HashMap<>();
 
 
     public boolean add( final JavaClass clazz ) {

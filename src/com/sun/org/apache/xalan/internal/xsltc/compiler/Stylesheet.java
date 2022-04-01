@@ -117,7 +117,7 @@ public final class Stylesheet extends SyntaxTreeNode {
     /**
      * Mapping between mode names and Mode instances.
      */
-    private final Map<String, Mode> _modes = new My_HashMap<>();
+    private final Map<String, Mode> _modes = new HashMap<>();
 
     /**
      * A reference to the default Mode object.
@@ -127,7 +127,7 @@ public final class Stylesheet extends SyntaxTreeNode {
     /**
      * Mapping between extension URIs and their prefixes.
      */
-    private final Map<String, String> _extensions = new My_HashMap<>();
+    private final Map<String, String> _extensions = new HashMap<>();
 
     /**
      * Reference to the stylesheet from which this stylesheet was
@@ -160,7 +160,7 @@ public final class Stylesheet extends SyntaxTreeNode {
     /**
      * Mapping between key names and Key objects (needed by Key/IdPattern).
      */
-    private Map<String, Key> _keys = new My_HashMap<>();
+    private Map<String, Key> _keys = new HashMap<>();
 
     /**
      * A reference to the SourceLoader set by the user (a URIResolver

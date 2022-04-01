@@ -1028,7 +1028,7 @@ public class InstructionList implements Iterable<InstructionHandle> {
      * @return complete, i.e., deep copy of this list
      */
     public InstructionList copy() {
-        final Map<InstructionHandle, InstructionHandle> map = new My_HashMap<>();
+        final Map<InstructionHandle, InstructionHandle> map = new HashMap<>();
         final InstructionList il = new InstructionList();
         /*
          * Pass 1: Make copies of all instructions, append them to the new list

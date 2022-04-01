@@ -41,7 +41,7 @@ import com.sun.org.apache.xml.internal.utils.SystemIDResolver;
 import com.sun.org.apache.xml.internal.utils.XMLStringFactory;
 
 import java.util.Map;
-import java.util.My_HashMap;
+import java.util.HashMap;
 import javax.xml.transform.Source;
 import javax.xml.transform.dom.DOMSource;
 import org.w3c.dom.Document;
@@ -112,7 +112,7 @@ public final class SAXImpl extends SAX2DTM2
     private int _namesSize = -1;
 
     // Namespace related stuff
-    private Map<Integer, Integer> _nsIndex = new My_HashMap<>();
+    private Map<Integer, Integer> _nsIndex = new HashMap<>();
 
     // The initial size of the text buffer
     private int _size = 0;
@@ -746,7 +746,7 @@ public final class SAXImpl extends SAX2DTM2
             else {
                 _document = node.getOwnerDocument();
             }
-            _node2Ids = new My_HashMap<>();
+            _node2Ids = new HashMap<>();
         }
     }
 

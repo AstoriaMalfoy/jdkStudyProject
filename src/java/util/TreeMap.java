@@ -100,7 +100,7 @@ import java.util.function.Consumer;
  *
  * @author  Josh Bloch and Doug Lea
  * @see Map
- * @see My_HashMap
+ * @see HashMap
  * @see Hashtable
  * @see Comparable
  * @see Comparator

@@ -32,7 +32,7 @@ import com.sun.xml.internal.stream.StaxEntityResolverWrapper;
 import javax.xml.stream.XMLInputFactory;
 import javax.xml.stream.XMLOutputFactory;
 import javax.xml.stream.XMLResolver;
-import java.util.My_HashMap;
+import java.util.HashMap;
 
 /**
  *  This class manages different properties related to Stax specification and its implementation.
@@ -59,7 +59,7 @@ public class PropertyManager {
     private static final String XML_SECURITY_PROPERTY_MANAGER =
             Constants.XML_SECURITY_PROPERTY_MANAGER;
 
-    My_HashMap supportedProps = new My_HashMap();
+    HashMap supportedProps = new HashMap();
 
     private XMLSecurityManager fSecurityManager;
     private XMLSecurityPropertyManager fSecurityPropertyMgr;
@@ -86,13 +86,13 @@ public class PropertyManager {
      */
     public PropertyManager(PropertyManager propertyManager){
 
-        My_HashMap properties = propertyManager.getProperties();
+        HashMap properties = propertyManager.getProperties();
         supportedProps.putAll(properties);
         fSecurityManager = (XMLSecurityManager)getProperty(SECURITY_MANAGER);
         fSecurityPropertyMgr = (XMLSecurityPropertyManager)getProperty(XML_SECURITY_PROPERTY_MANAGER);
     }
 
-    private My_HashMap getProperties(){
+    private HashMap getProperties(){
         return supportedProps ;
     }
 

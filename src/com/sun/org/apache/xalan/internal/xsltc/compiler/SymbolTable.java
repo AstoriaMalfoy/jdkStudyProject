@@ -35,8 +35,8 @@ import java.util.*;
 final class SymbolTable {
 
     // These maps are used for all stylesheets
-    private final Map<String, Stylesheet> _stylesheets = new My_HashMap<>();
-    private final Map<String, Vector> _primops     = new My_HashMap<>();
+    private final Map<String, Stylesheet> _stylesheets = new HashMap<>();
+    private final Map<String, Vector> _primops     = new HashMap<>();
 
     // These maps are used for some stylesheets
     private Map<String, VariableBase> _variables = null;
@@ -54,7 +54,7 @@ final class SymbolTable {
     }
 
     public void addDecimalFormatting(QName name, DecimalFormatting symbols) {
-        if (_decimalFormats == null) _decimalFormats = new My_HashMap<>();
+        if (_decimalFormats == null) _decimalFormats = new HashMap<>();
         _decimalFormats.put(name.getStringRep(), symbols);
     }
 
@@ -64,7 +64,7 @@ final class SymbolTable {
     }
 
     public void addKey(QName name, Key key) {
-        if (_keys == null) _keys = new My_HashMap<>();
+        if (_keys == null) _keys = new HashMap<>();
         _keys.put(name.getStringRep(), key);
     }
 
@@ -78,7 +78,7 @@ final class SymbolTable {
 
     public Template addTemplate(Template template) {
         final QName name = template.getName();
-        if (_templates == null) _templates = new My_HashMap<>();
+        if (_templates == null) _templates = new HashMap<>();
         return _templates.put(name.getStringRep(), template);
     }
 
@@ -88,13 +88,13 @@ final class SymbolTable {
     }
 
     public Variable addVariable(Variable variable) {
-        if (_variables == null) _variables = new My_HashMap<>();
+        if (_variables == null) _variables = new HashMap<>();
         final String name = variable.getName().getStringRep();
         return (Variable)_variables.put(name, variable);
     }
 
     public Param addParam(Param parameter) {
-        if (_variables == null) _variables = new My_HashMap<>();
+        if (_variables == null) _variables = new HashMap<>();
         final String name = parameter.getName().getStringRep();
         return (Param)_variables.put(name, parameter);
     }
@@ -120,7 +120,7 @@ final class SymbolTable {
     }
 
     public AttributeSet addAttributeSet(AttributeSet atts) {
-        if (_attributeSets == null) _attributeSets = new My_HashMap<>();
+        if (_attributeSets == null) _attributeSets = new HashMap<>();
         return _attributeSets.put(atts.getName().getStringRep(), atts);
     }
 
@@ -178,7 +178,7 @@ final class SymbolTable {
      * Adds an alias for a namespace prefix
      */
     public void addPrefixAlias(String prefix, String alias) {
-        if (_aliases == null) _aliases = new My_HashMap<>();
+        if (_aliases == null) _aliases = new HashMap<>();
         _aliases.put(prefix,alias);
     }
 
@@ -199,7 +199,7 @@ final class SymbolTable {
         if (uri == null) return;
 
         // Create a new map of exlcuded URIs if none exists
-        if (_excludedURI == null) _excludedURI = new My_HashMap<>();
+        if (_excludedURI == null) _excludedURI = new HashMap<>();
 
         // Register the namespace URI
         Integer refcnt = _excludedURI.get(uri);

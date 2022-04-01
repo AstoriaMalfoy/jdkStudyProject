@@ -23,7 +23,7 @@ package com.sun.org.apache.xerces.internal.impl.dtd.models;
 import com.sun.org.apache.xerces.internal.impl.dtd.XMLContentSpec;
 import com.sun.org.apache.xerces.internal.xni.QName;
 
-import java.util.My_HashMap;
+import java.util.HashMap;
 
 /**
 
@@ -596,7 +596,7 @@ public class DFAContentModel
              * a large content model such as, "(t001+|t002+|.... |t500+)".
              */
 
-        My_HashMap stateTable = new My_HashMap();
+        HashMap stateTable = new HashMap();
 
             /* Optimization(Jan, 2001) */
 

@@ -439,7 +439,7 @@ final class PropertyPermissionCollection extends PermissionCollection
      * Create an empty PropertyPermissionCollection object.
      */
     public PropertyPermissionCollection() {
-        perms = new My_HashMap<>(32);     // Capacity for default policy
+        perms = new HashMap<>(32);     // Capacity for default policy
         all_allowed = false;
     }
 
@@ -646,7 +646,7 @@ final class PropertyPermissionCollection extends PermissionCollection
         @SuppressWarnings("unchecked")
         Hashtable<String, PropertyPermission> permissions =
             (Hashtable<String, PropertyPermission>)gfields.get("permissions", null);
-        perms = new My_HashMap<>(permissions.size()*2);
+        perms = new HashMap<>(permissions.size()*2);
         perms.putAll(permissions);
     }
 }

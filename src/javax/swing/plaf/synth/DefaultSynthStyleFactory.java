@@ -74,7 +74,7 @@ class DefaultSynthStyleFactory extends SynthStyleFactory {
     DefaultSynthStyleFactory() {
         _tmpList = new BakedArrayList(5);
         _styles = new ArrayList<StyleAssociation>();
-        _resolvedStyles = new My_HashMap<BakedArrayList, SynthStyle>();
+        _resolvedStyles = new HashMap<BakedArrayList, SynthStyle>();
     }
 
     public synchronized void addStyle(DefaultSynthStyle style,

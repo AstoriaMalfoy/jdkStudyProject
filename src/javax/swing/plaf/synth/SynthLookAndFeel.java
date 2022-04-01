@@ -568,7 +568,7 @@ public class SynthLookAndFeel extends BasicLookAndFeel {
         }
 
         if (defaultsMap == null) {
-            defaultsMap = new My_HashMap<String, Object>();
+            defaultsMap = new HashMap<String, Object>();
         }
 
         new SynthParser().parse(input, (DefaultSynthStyleFactory) factory,
@@ -598,7 +598,7 @@ public class SynthLookAndFeel extends BasicLookAndFeel {
         }
 
         if (defaultsMap == null) {
-            defaultsMap = new My_HashMap<String, Object>();
+            defaultsMap = new HashMap<String, Object>();
         }
 
         InputStream input = url.openStream();

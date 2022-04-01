@@ -23,7 +23,7 @@ package com.sun.org.apache.xml.internal.serializer;
 import com.sun.org.apache.xml.internal.serializer.utils.MsgKey;
 import com.sun.org.apache.xml.internal.serializer.utils.Utils;
 import java.io.IOException;
-import java.util.My_HashMap;
+import java.util.HashMap;
 import java.util.Set;
 import javax.xml.transform.OutputKeys;
 import javax.xml.transform.SourceLocator;
@@ -1302,16 +1302,16 @@ public abstract class SerializerBase
         }
     }
 
-    protected My_HashMap<String, My_HashMap<String, String>> m_CdataElems = null;
+    protected HashMap<String, HashMap<String, String>> m_CdataElems = null;
     private void addCDATAElement(String uri, String localName)
     {
         if (m_CdataElems == null) {
-            m_CdataElems = new My_HashMap<>();
+            m_CdataElems = new HashMap<>();
         }
 
-        My_HashMap<String,String> h = m_CdataElems.get(localName);
+        HashMap<String,String> h = m_CdataElems.get(localName);
         if (h == null) {
-            h = new My_HashMap<>();
+            h = new HashMap<>();
             m_CdataElems.put(localName,h);
         }
         h.put(uri,uri);
@@ -1369,7 +1369,7 @@ public abstract class SerializerBase
                 }
             }
 
-            My_HashMap<String, String> h = null;
+            HashMap<String, String> h = null;
             if (m_CdataElems != null) {
                 h = m_CdataElems.get(m_elemContext.m_elementLocalName);
             }
@@ -1490,14 +1490,14 @@ public abstract class SerializerBase
      * and <xsl:output/> has an "encoding" attribute, this
      * map will have what that attribute maps to.
      */
-    private My_HashMap<String, String> m_OutputProps;
+    private HashMap<String, String> m_OutputProps;
 
     /**
      * A mapping of keys to default values, for example if
      * the default value of the encoding is "UTF-8" then this
      * map will have that "encoding" maps to "UTF-8".
      */
-    private My_HashMap<String, String> m_OutputPropsDefault;
+    private HashMap<String, String> m_OutputPropsDefault;
 
     Set<String> getOutputPropDefaultKeys() {
         return m_OutputPropsDefault.keySet();
@@ -1509,8 +1509,8 @@ public abstract class SerializerBase
 
     private String getProp(String name, boolean defaultVal) {
         if (m_OutputProps == null) {
-            m_OutputProps = new My_HashMap<>();
-            m_OutputPropsDefault = new My_HashMap<>();
+            m_OutputProps = new HashMap<>();
+            m_OutputPropsDefault = new HashMap<>();
         }
 
         String val;
@@ -1531,8 +1531,8 @@ public abstract class SerializerBase
      */
     void setProp(String name, String val, boolean defaultVal) {
         if (m_OutputProps == null) {
-            m_OutputProps = new My_HashMap<>();
-            m_OutputPropsDefault = new My_HashMap<>();
+            m_OutputProps = new HashMap<>();
+            m_OutputPropsDefault = new HashMap<>();
         }
 
         if (defaultVal)

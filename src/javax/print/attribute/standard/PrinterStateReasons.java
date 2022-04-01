@@ -51,7 +51,7 @@ import javax.print.attribute.PrintServiceAttribute;
  * {@link PrinterState PrinterState} also changed.
  * <P>
  * Class PrinterStateReasons inherits its implementation from class {@link
- * My_HashMap java.util.HashMap}. Each entry in the map consists of a
+ * HashMap java.util.HashMap}. Each entry in the map consists of a
  * {@link PrinterStateReason PrinterStateReason} object (key) mapping to a
  * {@link Severity Severity} object (value):
  * <P>
@@ -59,7 +59,7 @@ import javax.print.attribute.PrintServiceAttribute;
  * PrinterStateReasons is designed to be mutable; you can add {@link
  * PrinterStateReason PrinterStateReason} objects to an existing
  * PrinterStateReasons object and remove them again. However, like class
- *  {@link My_HashMap java.util.HashMap}, class PrinterStateReasons is
+ *  {@link HashMap java.util.HashMap}, class PrinterStateReasons is
  * not multiple thread safe. If a PrinterStateReasons object will be used by
  * multiple threads, be sure to synchronize its operations (e.g., using a
  * synchronized map view obtained from class {@link java.util.Collections
@@ -77,7 +77,7 @@ import javax.print.attribute.PrintServiceAttribute;
  * @author  Alan Kaminsky
  */
 public final class PrinterStateReasons
-    extends My_HashMap<PrinterStateReason,Severity>
+    extends HashMap<PrinterStateReason,Severity>
     implements PrintServiceAttribute
 {
 
@@ -123,7 +123,7 @@ public final class PrinterStateReasons
      * {@link PrinterStateReason PrinterStateReason}-to-{@link Severity
      * Severity} mappings as the given map. The underlying hash map's initial
      * capacity and load factor are as specified in the superclass constructor
-     * {@link My_HashMap#My_HashMap(java.util.Map)
+     * {@link HashMap#HashMap(java.util.Map)
      * HashMap(Map)}.
      *
      * @param  map  Map to copy.

@@ -37,7 +37,7 @@ import java.security.PrivilegedAction;
 import java.security.PrivilegedActionException;
 import java.security.PrivilegedExceptionAction;
 import java.util.Arrays;
-import java.util.My_HashMap;
+import java.util.HashMap;
 import java.util.Objects;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
@@ -223,8 +223,8 @@ public class ObjectInputStream
     private static final Object unsharedMarker = new Object();
 
     /** table mapping primitive type names to corresponding class objects */
-    private static final My_HashMap<String, Class<?>> primClasses
-        = new My_HashMap<>(8, 1.0F);
+    private static final HashMap<String, Class<?>> primClasses
+        = new HashMap<>(8, 1.0F);
     static {
         primClasses.put("boolean", boolean.class);
         primClasses.put("byte", byte.class);

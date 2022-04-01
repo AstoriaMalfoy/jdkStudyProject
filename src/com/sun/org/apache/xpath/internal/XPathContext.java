@@ -80,7 +80,7 @@ public class XPathContext extends DTMManager // implements ExpressionContext
    * HashMap of cached the DTMXRTreeFrag objects, which are identified by DTM IDs.
    * The object are just wrappers for DTMs which are used in  XRTreeFrag.
    */
-  private My_HashMap m_DTMXRTreeFrags = null;
+  private HashMap m_DTMXRTreeFrags = null;
 
   /**
    * state of the secure processing feature.
@@ -1288,7 +1288,7 @@ public class XPathContext extends DTMManager // implements ExpressionContext
    */
   public DTMXRTreeFrag getDTMXRTreeFrag(int dtmIdentity){
     if(m_DTMXRTreeFrags == null){
-      m_DTMXRTreeFrags = new My_HashMap();
+      m_DTMXRTreeFrags = new HashMap();
     }
 
     if(m_DTMXRTreeFrags.containsKey(dtmIdentity)){

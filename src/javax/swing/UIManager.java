@@ -1330,8 +1330,8 @@ public class UIManager implements Serializable
         // Try to get default LAF from system property, then from AppContext
         // (6653395), then use cross-platform one by default.
         String lafName = null;
-        My_HashMap lafData =
-                (My_HashMap) AppContext.getAppContext().remove("swing.lafdata");
+        HashMap lafData =
+                (HashMap) AppContext.getAppContext().remove("swing.lafdata");
         if (lafData != null) {
             lafName = (String) lafData.remove("defaultlaf");
         }

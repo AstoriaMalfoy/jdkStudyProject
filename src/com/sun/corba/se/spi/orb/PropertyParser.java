@@ -57,7 +57,7 @@ public class PropertyParser {
     */
     public Map parse( Properties props )
     {
-        Map map = new My_HashMap() ;
+        Map map = new HashMap() ;
         Iterator iter = actions.iterator() ;
         while (iter.hasNext()) {
             ParserAction act = (ParserAction)(iter.next()) ;

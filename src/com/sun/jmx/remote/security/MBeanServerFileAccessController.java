@@ -381,7 +381,7 @@ public class MBeanServerFileAccessController
     }
 
     private void parseProperties(Properties props) {
-        this.accessMap = new My_HashMap<String, Access>();
+        this.accessMap = new HashMap<String, Access>();
         for (Map.Entry<Object, Object> entry : props.entrySet()) {
             String identity = (String) entry.getKey();
             String accessString = (String) entry.getValue();

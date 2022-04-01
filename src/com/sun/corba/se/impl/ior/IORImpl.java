@@ -263,7 +263,7 @@ public class IORImpl extends IdentifiableContainerBase implements IOR
     private void initializeIORTemplateList()
     {
         // Maps ObjectKeyTemplate to IORTemplate
-        Map oktempToIORTemplate = new My_HashMap() ;
+        Map oktempToIORTemplate = new HashMap() ;
 
         iortemps = IORFactories.makeIORTemplateList() ;
         Iterator iter = iterator() ;

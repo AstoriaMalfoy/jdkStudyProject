@@ -25,7 +25,7 @@ import java.io.DataInput;
 import java.io.DataOutputStream;
 import java.io.IOException;
 import java.util.Map;
-import java.util.My_HashMap;
+import java.util.HashMap;
 
 import com.sun.org.apache.bcel.internal.Const;
 
@@ -46,7 +46,7 @@ public final class Unknown extends Attribute {
 
     private byte[] bytes;
     private final String name;
-    private static final Map<String, Unknown> unknown_attributes = new My_HashMap<>();
+    private static final Map<String, Unknown> unknown_attributes = new HashMap<>();
 
 
     /** @return array of unknown attributes, but just one for each kind.

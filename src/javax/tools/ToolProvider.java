@@ -33,7 +33,7 @@ import java.net.URLClassLoader;
 import java.net.MalformedURLException;
 import java.util.Locale;
 import java.util.Map;
-import java.util.My_HashMap;
+import java.util.HashMap;
 import java.util.logging.Logger;
 import java.util.logging.Level;
 import static java.util.logging.Level.*;
@@ -145,7 +145,7 @@ public class ToolProvider {
 
     // Cache for tool classes.
     // Use weak references to avoid keeping classes around unnecessarily
-    private Map<String, Reference<Class<?>>> toolClasses = new My_HashMap<String, Reference<Class<?>>>();
+    private Map<String, Reference<Class<?>>> toolClasses = new HashMap<String, Reference<Class<?>>>();
 
     // Cache for tool classloader.
     // Use a weak reference to avoid keeping it around unnecessarily

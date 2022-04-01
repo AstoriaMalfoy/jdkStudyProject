@@ -238,7 +238,7 @@ public abstract class SyntaxTreeNode implements Constants {
      */
     protected void addPrefixMapping(String prefix, String uri) {
         if (_prefixMapping == null)
-            _prefixMapping = new My_HashMap<>();
+            _prefixMapping = new HashMap<>();
         _prefixMapping.put(prefix, uri);
     }
 

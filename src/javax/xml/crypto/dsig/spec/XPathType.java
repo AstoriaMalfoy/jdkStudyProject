@@ -150,7 +150,7 @@ public class XPathType {
         if (namespaceMap == null) {
             throw new NullPointerException("namespaceMap cannot be null");
         }
-        Map<?,?> copy = new My_HashMap<>((Map<?,?>)namespaceMap);
+        Map<?,?> copy = new HashMap<>((Map<?,?>)namespaceMap);
         Iterator<? extends Map.Entry<?,?>> entries = copy.entrySet().iterator();
         while (entries.hasNext()) {
             Map.Entry<?,?> me = entries.next();

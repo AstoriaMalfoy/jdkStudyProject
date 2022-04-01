@@ -699,7 +699,7 @@ public abstract class Provider extends Properties {
 
     private void readObject(ObjectInputStream in)
                 throws IOException, ClassNotFoundException {
-        Map<Object,Object> copy = new My_HashMap<>();
+        Map<Object,Object> copy = new HashMap<>();
         for (Map.Entry<Object,Object> entry : super.entrySet()) {
             copy.put(entry.getKey(), entry.getValue());
         }
@@ -720,7 +720,7 @@ public abstract class Provider extends Properties {
 
         legacyChanged = true;
         if (legacyStrings == null) {
-            legacyStrings = new LinkedMyHashMap<>();
+            legacyStrings = new LinkedHashMap<>();
         }
         return true;
     }
@@ -782,7 +782,7 @@ public abstract class Provider extends Properties {
             ? extends Object> function) {
         legacyChanged = true;
         if (legacyStrings == null) {
-            legacyStrings = new LinkedMyHashMap<>();
+            legacyStrings = new LinkedHashMap<>();
         } else {
             legacyStrings.replaceAll((BiFunction<? super String, ? super String,
                     ? extends String>) function);
@@ -1395,7 +1395,7 @@ public abstract class Provider extends Properties {
     }
 
     static {
-        knownEngines = new My_HashMap<String,EngineDescription>();
+        knownEngines = new HashMap<String,EngineDescription>();
         // JCA
         addEngine("AlgorithmParameterGenerator",        false, null);
         addEngine("AlgorithmParameters",                false, null);
@@ -1528,7 +1528,7 @@ public abstract class Provider extends Properties {
 
         void addAttribute(String type, String value) {
             if (attributes.isEmpty()) {
-                attributes = new My_HashMap<UString,String>(8);
+                attributes = new HashMap<UString,String>(8);
             }
             attributes.put(new UString(type), value);
         }
@@ -1566,7 +1566,7 @@ public abstract class Provider extends Properties {
             if (attributes == null) {
                 this.attributes = Collections.<UString,String>emptyMap();
             } else {
-                this.attributes = new My_HashMap<UString,String>();
+                this.attributes = new HashMap<UString,String>();
                 for (Map.Entry<String,String> entry : attributes.entrySet()) {
                     this.attributes.put(new UString(entry.getKey()), entry.getValue());
                 }

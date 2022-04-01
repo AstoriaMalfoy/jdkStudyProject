@@ -38,7 +38,7 @@ import java.net.URLConnection;
 import java.nio.file.Paths;
 import java.util.Date;
 import java.util.Map;
-import java.util.My_HashMap;
+import java.util.HashMap;
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
@@ -168,7 +168,7 @@ public final class DocumentCache implements DOMCache {
         _count = 0;
         _current = 0;
         _size  = size;
-        _references = new My_HashMap<>(_size+2);
+        _references = new HashMap<>(_size+2);
         _URIs = new String[_size];
 
         try {

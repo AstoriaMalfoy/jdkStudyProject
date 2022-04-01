@@ -82,7 +82,7 @@ public class XMLGrammarPreparser {
     private static final Map<String, String> KNOWN_LOADERS;
 
     static {
-        Map<String, String> loaders = new My_HashMap<>();
+        Map<String, String> loaders = new HashMap<>();
         loaders.put(XMLGrammarDescription.XML_SCHEMA,
             "com.sun.org.apache.xerces.internal.impl.xs.XMLSchemaLoader");
         loaders.put(XMLGrammarDescription.XML_DTD,
@@ -127,7 +127,7 @@ public class XMLGrammarPreparser {
     public XMLGrammarPreparser (SymbolTable symbolTable) {
         fSymbolTable = symbolTable;
 
-        fLoaders = new My_HashMap<>();
+        fLoaders = new HashMap<>();
         fErrorReporter = new XMLErrorReporter();
         setLocale(Locale.getDefault());
         fEntityResolver = new XMLEntityManager();

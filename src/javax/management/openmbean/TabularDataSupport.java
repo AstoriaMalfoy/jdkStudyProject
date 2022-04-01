@@ -74,7 +74,7 @@ public class TabularDataSupport
 
 
     /**
-     * @serial This tabular data instance's contents: a {@link My_HashMap}
+     * @serial This tabular data instance's contents: a {@link HashMap}
      */
     // field cannot be final because of clone method
     private Map<Object,CompositeData> dataMap;
@@ -149,8 +149,8 @@ public class TabularDataSupport
         // Construct the empty contents HashMap
         //
         this.dataMap = useHashMap ?
-            new My_HashMap<Object,CompositeData>(initialCapacity, loadFactor) :
-            new LinkedMyHashMap<Object, CompositeData>(initialCapacity, loadFactor);
+            new HashMap<Object,CompositeData>(initialCapacity, loadFactor) :
+            new LinkedHashMap<Object, CompositeData>(initialCapacity, loadFactor);
     }
 
 
@@ -660,7 +660,7 @@ public class TabularDataSupport
     public Object clone() {
         try {
             TabularDataSupport c = (TabularDataSupport) super.clone();
-            c.dataMap = new My_HashMap<Object,CompositeData>(c.dataMap);
+            c.dataMap = new HashMap<Object,CompositeData>(c.dataMap);
             return c;
         }
         catch (CloneNotSupportedException e) {
@@ -766,7 +766,7 @@ public class TabularDataSupport
      * The string representation consists of the name of this class (ie <code>javax.management.openmbean.TabularDataSupport</code>),
      * the string representation of the tabular type of this instance, and the string representation of the contents
      * (ie list the key=value mappings as returned by a call to
-     * <tt>dataMap.</tt>{@link My_HashMap#toString() toString()}).
+     * <tt>dataMap.</tt>{@link HashMap#toString() toString()}).
      *
      * @return  a string representation of this <code>TabularDataSupport</code> instance
      */

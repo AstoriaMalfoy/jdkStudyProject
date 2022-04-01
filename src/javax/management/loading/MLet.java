@@ -220,7 +220,7 @@ public class MLet extends java.net.URLClassLoader
       * objects maps from primitive classes to primitive object classes.
       */
      private Map<String,Class<?>> primitiveClasses =
-         new My_HashMap<String,Class<?>>(8) ;
+         new HashMap<String,Class<?>>(8) ;
      {
          primitiveClasses.put(Boolean.TYPE.toString(), Boolean.class);
          primitiveClasses.put(Character.TYPE.toString(), Character.class);

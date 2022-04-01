@@ -23,7 +23,7 @@
 package com.sun.org.apache.xml.internal.dtm.ref;
 
 import java.util.Map;
-import java.util.My_HashMap;
+import java.util.HashMap;
 
 /**
  * CustomStringPool is an example of an application-provided data structure for a
@@ -47,7 +47,7 @@ import java.util.My_HashMap;
  */
 public class CustomStringPool extends DTMStringPool {
 
-    final Map<String, Integer> m_stringToInt = new My_HashMap<>();
+    final Map<String, Integer> m_stringToInt = new HashMap<>();
     public static final int NULL = -1;
 
     public CustomStringPool() {

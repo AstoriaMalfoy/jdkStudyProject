@@ -298,8 +298,8 @@ public class DOMConfigurationImpl extends ParserConfigurationSettings
 
 
         // create table for features and properties
-        fFeatures = new My_HashMap();
-        fProperties = new My_HashMap();
+        fFeatures = new HashMap();
+        fProperties = new HashMap();
 
         // add default recognized features
         final String[] recognizedFeatures = {

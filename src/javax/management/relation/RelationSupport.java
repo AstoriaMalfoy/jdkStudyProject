@@ -103,7 +103,7 @@ public class RelationSupport
     //   via Relation Service setRole() and setRoles() methods
     // - if the relation is internal to the Relation Service, via
     //   setRoleInt() and setRolesInt() methods.
-    private final Map<String,Role> myRoleName2ValueMap = new My_HashMap<String,Role>();
+    private final Map<String,Role> myRoleName2ValueMap = new HashMap<String,Role>();
 
     // Flag to indicate if the object has been added in the Relation Service
     private final AtomicBoolean myInRelServFlg = new AtomicBoolean();
@@ -593,7 +593,7 @@ public class RelationSupport
                 "getReferencedMBeans");
 
         Map<ObjectName,List<String>> refMBeanMap =
-            new My_HashMap<ObjectName,List<String>>();
+            new HashMap<ObjectName,List<String>>();
 
         synchronized(myRoleName2ValueMap) {
 

@@ -29,7 +29,7 @@ import com.sun.org.apache.xerces.internal.xni.parser.XMLParseException;
 import java.io.PrintWriter;
 import java.util.Collections;
 import java.util.Map;
-import java.util.My_HashMap;
+import java.util.HashMap;
 
 import org.w3c.dom.DOMError;
 import org.w3c.dom.DOMErrorHandler;
@@ -295,7 +295,7 @@ public class DOMErrorHandlerWrapper
 
             // REVISIT: do well-formedness issues involving XML declaration <?xml ... ?> need to be added to hash table (no XML declaration node in DOM, but Document includes xmlEncoding, xmlStandalone, xmlVersion, etc.
 
-            Map<XMLErrorCode, String> aDOMErrorTypeTable = new My_HashMap<>();
+            Map<XMLErrorCode, String> aDOMErrorTypeTable = new HashMap<>();
             aDOMErrorTypeTable.put(new XMLErrorCode(XMLMessageFormatter.XML_DOMAIN, "InvalidCharInCDSect"), "wf-invalid-character");
             aDOMErrorTypeTable.put(new XMLErrorCode(XMLMessageFormatter.XML_DOMAIN, "InvalidCharInContent"), "wf-invalid-character");
             aDOMErrorTypeTable.put(new XMLErrorCode(XMLMessageFormatter.XML_DOMAIN, "TwoColonsInQName"), "wf-invalid-character-in-node-name");

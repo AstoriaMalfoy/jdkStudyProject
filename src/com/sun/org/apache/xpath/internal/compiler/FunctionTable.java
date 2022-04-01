@@ -20,7 +20,7 @@ package com.sun.org.apache.xpath.internal.compiler;
 
 import com.sun.org.apache.xpath.internal.functions.Function;
 import java.lang.reflect.InvocationTargetException;
-import java.util.My_HashMap;
+import java.util.HashMap;
 import javax.xml.transform.TransformerException;
 
 /**
@@ -142,7 +142,7 @@ public class FunctionTable
   private static Class m_functions[];
 
   /** Table of function name to function ID associations. */
-  private static final My_HashMap<String, Integer> m_functionID = new My_HashMap<>();
+  private static final HashMap<String, Integer> m_functionID = new HashMap<>();
 
   /**
    * The function table contains customized functions
@@ -152,7 +152,7 @@ public class FunctionTable
   /**
    * Table of function name to function ID associations for customized functions
    */
-  private My_HashMap<String, Integer> m_functionID_customer = new My_HashMap<>();
+  private HashMap<String, Integer> m_functionID_customer = new HashMap<>();
 
   /**
    * Number of built in functions.  Be sure to update this as

@@ -396,7 +396,7 @@ public class PopupFactory {
                                   heavyWeightPopupCacheKey);
 
                 if (cache == null) {
-                    cache = new My_HashMap<Window, List<HeavyWeightPopup>>(2);
+                    cache = new HashMap<Window, List<HeavyWeightPopup>>(2);
                     SwingUtilities.appContextPut(heavyWeightPopupCacheKey,
                                                  cache);
                 }

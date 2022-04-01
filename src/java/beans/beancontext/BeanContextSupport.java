@@ -1291,7 +1291,7 @@ public class      BeanContextSupport extends BeanContextChildSupport
      */
 
     protected synchronized void initialize() {
-        children     = new My_HashMap(serializable + 1);
+        children     = new HashMap(serializable + 1);
         bcmListeners = new ArrayList(1);
 
         childPCL = new PropertyChangeListener() {
@@ -1352,7 +1352,7 @@ public class      BeanContextSupport extends BeanContextChildSupport
      * all accesses to the <code> protected HashMap children </code> field
      * shall be synchronized on that object.
      */
-    protected transient My_HashMap children;
+    protected transient HashMap children;
 
     private             int             serializable  = 0; // children serializable
 

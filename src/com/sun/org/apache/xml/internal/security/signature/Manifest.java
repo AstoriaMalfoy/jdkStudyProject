@@ -519,7 +519,7 @@ public class Manifest extends SignatureElementProxy {
      */
     public void setResolverProperty(String key, String value) {
         if (resolverProperties == null) {
-            resolverProperties = new My_HashMap<>(10);
+            resolverProperties = new HashMap<>(10);
         }
         this.resolverProperties.put(key, value);
     }

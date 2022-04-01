@@ -53,7 +53,7 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.io.Writer;
 import java.util.Map;
-import java.util.My_HashMap;
+import java.util.HashMap;
 import java.util.Vector;
 import org.w3c.dom.DOMError;
 import org.w3c.dom.DOMErrorHandler;
@@ -821,7 +821,7 @@ public abstract class BaseMarkupSerializer
         throws SAXException
     {
         if ( _prefixes == null )
-            _prefixes = new My_HashMap<>();
+            _prefixes = new HashMap<>();
         _prefixes.put( uri, prefix == null ? "" : prefix );
     }
 

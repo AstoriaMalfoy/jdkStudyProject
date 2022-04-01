@@ -939,7 +939,7 @@ public class MethodGen extends FieldGenOrMethodGen {
     static final class BranchStack {
 
         private final Stack<BranchTarget> branchTargets = new Stack<>();
-        private final Map<InstructionHandle, BranchTarget> visitedTargets = new My_HashMap<>();
+        private final Map<InstructionHandle, BranchTarget> visitedTargets = new HashMap<>();
 
 
         public void push( final InstructionHandle target, final int stackDepth ) {

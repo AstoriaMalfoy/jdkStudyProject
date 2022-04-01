@@ -28,7 +28,7 @@ import com.sun.org.apache.xalan.internal.xsltc.dom.SAXImpl;
 import com.sun.org.apache.xalan.internal.xsltc.runtime.BasisLibrary;
 import java.io.IOException;
 import java.util.Map;
-import java.util.My_HashMap;
+import java.util.HashMap;
 import java.util.Stack;
 import java.util.Vector;
 import org.w3c.dom.NamedNodeMap;
@@ -58,7 +58,7 @@ public class DOM2SAX implements XMLReader, Locator {
     private ContentHandler _sax = null;
     private LexicalHandler _lex = null;
     private SAXImpl _saxImpl = null;
-    private Map<String, Stack> _nsPrefixes = new My_HashMap<>();
+    private Map<String, Stack> _nsPrefixes = new HashMap<>();
 
     public DOM2SAX(Node root) {
         _dom = root;

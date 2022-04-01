@@ -111,7 +111,7 @@ public final class TypeCodeOutputStream extends EncapsOutputStream
 
     public void addIDAtPosition(String id, int position) {
         if (typeMap == null)
-            typeMap = new My_HashMap(16);
+            typeMap = new HashMap(16);
         //if (TypeCodeImpl.debug) System.out.println(this + " adding id " + id + " at position " + position);
         typeMap.put(id, new Integer(position));
     }

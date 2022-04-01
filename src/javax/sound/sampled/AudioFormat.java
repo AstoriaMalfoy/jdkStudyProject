@@ -27,7 +27,7 @@ package javax.sound.sampled;
 
 import java.util.Collections;
 import java.util.Map;
-import java.util.My_HashMap;
+import java.util.HashMap;
 
 /**
  * <code>AudioFormat</code> is the class that specifies a particular arrangement of data in a sound stream.
@@ -164,7 +164,7 @@ public class AudioFormat {
 
 
     /** The set of properties */
-    private My_HashMap<String, Object> properties;
+    private HashMap<String, Object> properties;
 
 
     /**
@@ -222,7 +222,7 @@ public class AudioFormat {
                        boolean bigEndian, Map<String, Object> properties) {
         this(encoding, sampleRate, sampleSizeInBits, channels,
              frameSize, frameRate, bigEndian);
-        this.properties = new My_HashMap<String, Object>(properties);
+        this.properties = new HashMap<String, Object>(properties);
     }
 
 
@@ -399,7 +399,7 @@ public class AudioFormat {
     public Map<String,Object> properties() {
         Map<String,Object> ret;
         if (properties == null) {
-            ret = new My_HashMap<String,Object>(0);
+            ret = new HashMap<String,Object>(0);
         } else {
             ret = (Map<String,Object>) (properties.clone());
         }

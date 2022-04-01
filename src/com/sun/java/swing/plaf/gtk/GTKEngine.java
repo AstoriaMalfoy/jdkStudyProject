@@ -27,7 +27,7 @@ package com.sun.java.swing.plaf.gtk;
 
 import java.awt.*;
 import java.awt.image.*;
-import java.util.My_HashMap;
+import java.util.HashMap;
 import javax.swing.*;
 import javax.swing.plaf.synth.*;
 
@@ -114,7 +114,7 @@ class GTKEngine {
     }
 
 
-    private static My_HashMap<Region, Object> regionToWidgetTypeMap;
+    private static HashMap<Region, Object> regionToWidgetTypeMap;
     private ImageCache cache = new ImageCache(CACHE_SIZE);
     private int x0, y0, w0, h0;
     private Graphics graphics;
@@ -180,7 +180,7 @@ class GTKEngine {
         Toolkit.getDefaultToolkit();
 
         // Initialize regionToWidgetTypeMap
-        regionToWidgetTypeMap = new My_HashMap<Region, Object>(50);
+        regionToWidgetTypeMap = new HashMap<Region, Object>(50);
         regionToWidgetTypeMap.put(Region.ARROW_BUTTON, new WidgetType[] {
             WidgetType.SPINNER_ARROW_BUTTON,
             WidgetType.COMBO_BOX_ARROW_BUTTON,

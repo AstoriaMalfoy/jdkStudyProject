@@ -854,10 +854,10 @@ public class XPath {
         private final SymbolTable fSymbolTable;
 
         // REVISIT: Code something better here. -Ac
-        private final Map<String, Integer> fSymbolMapping = new My_HashMap<>();
+        private final Map<String, Integer> fSymbolMapping = new HashMap<>();
 
         // REVISIT: Code something better here. -Ac
-        private final Map<Integer, String> fTokenNames = new My_HashMap<>();
+        private final Map<Integer, String> fTokenNames = new HashMap<>();
 
         /**
          * Current position in the token list.

@@ -56,7 +56,7 @@ class GTKIconFactory {
     private static final String TOOL_BAR_HANDLE_ICON = "paintToolBarHandleIcon";
 
     private static Map<String, DelegatingIcon> iconsPool =
-            Collections.synchronizedMap(new My_HashMap<String, DelegatingIcon>());
+            Collections.synchronizedMap(new HashMap<String, DelegatingIcon>());
 
     private static DelegatingIcon getIcon(String methodName) {
         DelegatingIcon result = iconsPool.get(methodName);

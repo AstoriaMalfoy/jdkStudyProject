@@ -179,10 +179,10 @@ public class SubstitutionGroupHandler {
     // - a Vector, which contains all elements that has this element as their
     //   substitution group affilication
     // - an array of OneSubGroup, which contains its substitution group before block.
-    Map<XSElementDecl, Object> fSubGroupsB = new My_HashMap<>();
+    Map<XSElementDecl, Object> fSubGroupsB = new HashMap<>();
     private static final OneSubGroup[] EMPTY_VECTOR = new OneSubGroup[0];
     // The real substitution groups (after "block")
-    Map<XSElementDecl, XSElementDecl[]> fSubGroups = new My_HashMap<>();
+    Map<XSElementDecl, XSElementDecl[]> fSubGroups = new HashMap<>();
 
     /**
      * clear the internal registry of substitutionGroup information

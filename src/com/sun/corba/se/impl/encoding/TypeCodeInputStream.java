@@ -65,7 +65,7 @@ public class TypeCodeInputStream extends EncapsInputStream implements TypeCodeRe
     public void addTypeCodeAtPosition(TypeCodeImpl tc, int position) {
         if (typeMap == null) {
             //if (TypeCodeImpl.debug) System.out.println("Creating typeMap");
-            typeMap = new My_HashMap(16);
+            typeMap = new HashMap(16);
         }
         //if (TypeCodeImpl.debug) System.out.println(this + " adding tc " + tc + " at position " + position);
         typeMap.put(new Integer(position), tc);

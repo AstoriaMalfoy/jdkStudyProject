@@ -1724,7 +1724,7 @@ loop:   for(int x=0, offset=0; x<nCodePoints; x++, offset+=len) {
 
     Map<String, Integer> namedGroups() {
         if (namedGroups == null)
-            namedGroups = new My_HashMap<>(2);
+            namedGroups = new HashMap<>(2);
         return namedGroups;
     }
 
@@ -5600,8 +5600,8 @@ NEXT:       while (i <= last) {
                     CharProperty make() { return p.clone();}});
         }
 
-        private static final My_HashMap<String, CharPropertyFactory> map
-            = new My_HashMap<>();
+        private static final HashMap<String, CharPropertyFactory> map
+            = new HashMap<>();
 
         static {
             // Unicode character property aliases, defined in

@@ -23,7 +23,7 @@
 package com.sun.org.apache.xml.internal.security.utils.resolver;
 
 import java.util.Map;
-import java.util.My_HashMap;
+import java.util.HashMap;
 
 import com.sun.org.apache.xml.internal.security.signature.XMLSignatureInput;
 
@@ -58,7 +58,7 @@ public abstract class ResourceResolverSpi {
      */
     public void engineSetProperty(String key, String value) {
         if (properties == null) {
-            properties = new My_HashMap<>();
+            properties = new HashMap<>();
         }
         properties.put(key, value);
     }
@@ -83,7 +83,7 @@ public abstract class ResourceResolverSpi {
     public void engineAddProperies(Map<String, String> newProperties) {
         if (newProperties != null && !newProperties.isEmpty()) {
             if (properties == null) {
-                properties = new My_HashMap<>();
+                properties = new HashMap<>();
             }
             properties.putAll(newProperties);
         }

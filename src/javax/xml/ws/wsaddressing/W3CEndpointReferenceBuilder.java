@@ -31,7 +31,7 @@ import org.w3c.dom.Element;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-import java.util.My_HashMap;
+import java.util.HashMap;
 import javax.xml.namespace.QName;
 import javax.xml.ws.WebServiceException;
 import javax.xml.ws.spi.Provider;
@@ -71,7 +71,7 @@ public final class W3CEndpointReferenceBuilder {
     public W3CEndpointReferenceBuilder() {
         referenceParameters = new ArrayList<Element>();
         metadata = new ArrayList<Element>();
-        attributes = new My_HashMap<QName, String>();
+        attributes = new HashMap<QName, String>();
         elements = new ArrayList<Element>();
     }
 

@@ -22,7 +22,7 @@ package com.sun.org.apache.xerces.internal.impl.xpath.regex;
 
 import java.util.Locale;
 import java.util.Map;
-import java.util.My_HashMap;
+import java.util.HashMap;
 
 /**
  * A regular expression parser for the XML Schema.
@@ -374,8 +374,8 @@ class ParserForXMLSchema extends RegexParser {
     static private Map<String, Token> ranges2 = null;
     static synchronized protected RangeToken getRange(String name, boolean positive) {
         if (ranges == null) {
-            ranges = new My_HashMap<>();
-            ranges2 = new My_HashMap<>();
+            ranges = new HashMap<>();
+            ranges2 = new HashMap<>();
 
             Token tok = Token.createRange();
             setupRange(tok, SPACES);

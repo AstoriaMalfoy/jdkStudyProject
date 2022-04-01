@@ -1084,13 +1084,13 @@ public abstract class JTextComponent extends JComponent implements Scrollable, A
         return getKeymapTable().get(nm);
     }
 
-    private static My_HashMap<String,Keymap> getKeymapTable() {
+    private static HashMap<String,Keymap> getKeymapTable() {
         synchronized (KEYMAP_TABLE) {
             AppContext appContext = AppContext.getAppContext();
-            My_HashMap<String,Keymap> keymapTable =
-                (My_HashMap<String,Keymap>)appContext.get(KEYMAP_TABLE);
+            HashMap<String,Keymap> keymapTable =
+                (HashMap<String,Keymap>)appContext.get(KEYMAP_TABLE);
             if (keymapTable == null) {
-                keymapTable = new My_HashMap<String,Keymap>(17);
+                keymapTable = new HashMap<String,Keymap>(17);
                 appContext.put(KEYMAP_TABLE, keymapTable);
                 //initialize default keymap
                 Keymap binding = addKeymap(DEFAULT_KEYMAP, null);

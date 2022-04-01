@@ -307,7 +307,7 @@ public class POAImpl extends ObjectAdapterBase implements POA
         this.state     = initialState ;
         this.name      = name ;
         this.parent    = parent;
-        children = new My_HashMap();
+        children = new HashMap();
         activator = null ;
 
         // This was done in initialize, but I moved it here

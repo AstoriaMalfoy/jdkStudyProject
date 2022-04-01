@@ -93,7 +93,7 @@ public class CertificateRevokedException extends CertificateException {
         this.reason = reason;
         this.authority = authority;
         // make sure Map only contains correct types
-        this.extensions = Collections.checkedMap(new My_HashMap<>(),
+        this.extensions = Collections.checkedMap(new HashMap<>(),
                                                  String.class, Extension.class);
         this.extensions.putAll(extensions);
     }
@@ -229,7 +229,7 @@ public class CertificateRevokedException extends CertificateException {
         } else if (size < 0) {
             throw new IOException("size cannot be negative");
         } else {
-            extensions = new My_HashMap<>(size > 20 ? 20 : size);
+            extensions = new HashMap<>(size > 20 ? 20 : size);
         }
 
         // Read in the extensions and put the mappings in the extensions map

@@ -27,7 +27,7 @@ package javax.sound.sampled;
 
 import java.util.Collections;
 import java.util.Map;
-import java.util.My_HashMap;
+import java.util.HashMap;
 
 
 /**
@@ -127,7 +127,7 @@ public class AudioFileFormat {
 
 
     /** The set of properties */
-    private My_HashMap<String, Object> properties;
+    private HashMap<String, Object> properties;
 
 
     /**
@@ -185,7 +185,7 @@ public class AudioFileFormat {
     public AudioFileFormat(Type type, AudioFormat format,
                            int frameLength, Map<String, Object> properties) {
         this(type,AudioSystem.NOT_SPECIFIED,format,frameLength);
-        this.properties = new My_HashMap<String, Object>(properties);
+        this.properties = new HashMap<String, Object>(properties);
     }
 
 
@@ -244,7 +244,7 @@ public class AudioFileFormat {
     public Map<String,Object> properties() {
         Map<String,Object> ret;
         if (properties == null) {
-            ret = new My_HashMap<String,Object>(0);
+            ret = new HashMap<String,Object>(0);
         } else {
             ret = (Map<String,Object>) (properties.clone());
         }

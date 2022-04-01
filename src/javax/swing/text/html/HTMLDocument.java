@@ -1770,7 +1770,7 @@ public class HTMLDocument extends DefaultStyledDocument {
      * Used to store button groups for radio buttons in
      * a form.
      */
-    private My_HashMap<String, ButtonGroup> radioButtonGroupsMap;
+    private HashMap<String, ButtonGroup> radioButtonGroupsMap;
 
     /**
      * Document property for the number of tokens to buffer
@@ -2819,7 +2819,7 @@ public class HTMLDocument extends DefaultStyledDocument {
                 // might be defined in the FORM.
                 // for new group new ButtonGroup will be created (fix for 4529702)
                 // group name is a key in radioButtonGroupsMap
-                radioButtonGroupsMap = new My_HashMap<String, ButtonGroup>();
+                radioButtonGroupsMap = new HashMap<String, ButtonGroup>();
             }
 
             public void end(HTML.Tag t) {
@@ -3477,7 +3477,7 @@ public class HTMLDocument extends DefaultStyledDocument {
                     if (type.equals("radio")) {
                         String name = (String) attr.getAttribute(HTML.Attribute.NAME);
                         if ( radioButtonGroupsMap == null ) { //fix for 4772743
-                           radioButtonGroupsMap = new My_HashMap<String, ButtonGroup>();
+                           radioButtonGroupsMap = new HashMap<String, ButtonGroup>();
                         }
                         ButtonGroup radioButtonGroup = radioButtonGroupsMap.get(name);
                         if (radioButtonGroup == null) {

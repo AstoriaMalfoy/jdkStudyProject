@@ -1211,7 +1211,7 @@ public final class DateTimeFormatter {
     static {
         // manually code maps to ensure correct data always used
         // (locale data can be changed by application code)
-        Map<Long, String> dow = new My_HashMap<>();
+        Map<Long, String> dow = new HashMap<>();
         dow.put(1L, "Mon");
         dow.put(2L, "Tue");
         dow.put(3L, "Wed");
@@ -1219,7 +1219,7 @@ public final class DateTimeFormatter {
         dow.put(5L, "Fri");
         dow.put(6L, "Sat");
         dow.put(7L, "Sun");
-        Map<Long, String> moy = new My_HashMap<>();
+        Map<Long, String> moy = new HashMap<>();
         moy.put(1L, "Jan");
         moy.put(2L, "Feb");
         moy.put(3L, "Mar");

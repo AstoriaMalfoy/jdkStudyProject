@@ -36,7 +36,7 @@ import java.io.NotActiveException;
 import java.io.ObjectOutputStream;
 import java.io.ObjectOutput;
 import java.util.Map;
-import java.util.My_HashMap;
+import java.util.HashMap;
 
 public abstract class OutputStreamHook extends ObjectOutputStream
 {
@@ -48,7 +48,7 @@ public abstract class OutputStreamHook extends ObjectOutputStream
      */
     private class HookPutFields extends ObjectOutputStream.PutField
     {
-        private Map<String,Object> fields = new My_HashMap<>();
+        private Map<String,Object> fields = new HashMap<>();
 
         /**
          * Put the value of the named boolean field into the persistent field.

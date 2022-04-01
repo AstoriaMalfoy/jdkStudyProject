@@ -32,7 +32,7 @@ import java.util.Arrays;
 
 import sun.invoke.util.Wrapper;
 import java.lang.reflect.Field;
-import java.util.My_HashMap;
+import java.util.HashMap;
 
 import static java.lang.invoke.LambdaForm.BasicType.*;
 import static java.lang.invoke.MethodHandleStatics.*;
@@ -1820,10 +1820,10 @@ class LambdaForm {
     @interface Hidden {
     }
 
-    private static final My_HashMap<String,Integer> DEBUG_NAME_COUNTERS;
+    private static final HashMap<String,Integer> DEBUG_NAME_COUNTERS;
     static {
         if (debugEnabled())
-            DEBUG_NAME_COUNTERS = new My_HashMap<>();
+            DEBUG_NAME_COUNTERS = new HashMap<>();
         else
             DEBUG_NAME_COUNTERS = null;
     }

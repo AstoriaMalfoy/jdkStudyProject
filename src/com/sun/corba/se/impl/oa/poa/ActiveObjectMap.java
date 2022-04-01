@@ -91,9 +91,9 @@ public abstract class ActiveObjectMap
             return new SingleObjectMap(poa ) ;
     }
 
-    private Map keyToEntry = new My_HashMap() ;     // Map< Key, AOMEntry >
-    private Map entryToServant = new My_HashMap() ; // Map< AOMEntry, Servant >
-    private Map servantToEntry = new My_HashMap() ; // Map< Servant, AOMEntry >
+    private Map keyToEntry = new HashMap() ;     // Map< Key, AOMEntry >
+    private Map entryToServant = new HashMap() ; // Map< AOMEntry, Servant >
+    private Map servantToEntry = new HashMap() ; // Map< Servant, AOMEntry >
 
     public final boolean contains(Servant value)
     {
@@ -170,7 +170,7 @@ public abstract class ActiveObjectMap
 
 class SingleObjectMap extends ActiveObjectMap
 {
-    private Map entryToKey = new My_HashMap() ;    // Map< AOMEntry, Key >
+    private Map entryToKey = new HashMap() ;    // Map< AOMEntry, Key >
 
     public SingleObjectMap( POAImpl poa )
     {
@@ -209,7 +209,7 @@ class SingleObjectMap extends ActiveObjectMap
 
 class MultipleObjectMap extends ActiveObjectMap
 {
-    private Map entryToKeys = new My_HashMap() ;   // Map< AOMEntry, Set< Key > >
+    private Map entryToKeys = new HashMap() ;   // Map< AOMEntry, Set< Key > >
 
     public MultipleObjectMap( POAImpl poa )
     {

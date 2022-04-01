@@ -506,8 +506,8 @@ class JarVerifier {
 
     // Extended JavaUtilJarAccess CodeSource API Support
 
-    private Map<URL, Map<CodeSigner[], CodeSource>> urlToCodeSourceMap = new My_HashMap<>();
-    private Map<CodeSigner[], CodeSource> signerToCodeSource = new My_HashMap<>();
+    private Map<URL, Map<CodeSigner[], CodeSource>> urlToCodeSourceMap = new HashMap<>();
+    private Map<CodeSigner[], CodeSource> signerToCodeSource = new HashMap<>();
     private URL lastURL;
     private Map<CodeSigner[], CodeSource> lastURLMap;
 
@@ -523,7 +523,7 @@ class JarVerifier {
         } else {
             map = urlToCodeSourceMap.get(url);
             if (map == null) {
-                map = new My_HashMap<>();
+                map = new HashMap<>();
                 urlToCodeSourceMap.put(url, map);
             }
             lastURLMap = map;
@@ -664,7 +664,7 @@ class JarVerifier {
              * only about the asserted signatures. Verification of
              * signature validity happens via the JarEntry apis.
              */
-            signerMap = new My_HashMap<>(verifiedSigners.size() + sigFileSigners.size());
+            signerMap = new HashMap<>(verifiedSigners.size() + sigFileSigners.size());
             signerMap.putAll(verifiedSigners);
             signerMap.putAll(sigFileSigners);
         }
@@ -736,7 +736,7 @@ class JarVerifier {
      * and includes signed entries with no ZIP data.
      */
     public Enumeration<JarEntry> entries2(final JarFile jar, Enumeration<? extends ZipEntry> e) {
-        final Map<String, CodeSigner[]> map = new My_HashMap<>();
+        final Map<String, CodeSigner[]> map = new HashMap<>();
         map.putAll(signerMap());
         final Enumeration<? extends ZipEntry> enum_ = e;
         return new Enumeration<JarEntry>() {

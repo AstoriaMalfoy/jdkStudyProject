@@ -30,7 +30,7 @@ import com.sun.org.apache.xml.internal.dtm.DTM;
 import com.sun.org.apache.xml.internal.dtm.DTMWSFilter;
 
 import java.util.Map;
-import java.util.My_HashMap;
+import java.util.HashMap;
 
 /**
  * A wrapper class that adapts the
@@ -61,7 +61,7 @@ public class DOMWSFilter implements DTMWSFilter {
      */
     public DOMWSFilter(AbstractTranslet translet) {
         m_translet = translet;
-        m_mappings = new My_HashMap<>();
+        m_mappings = new HashMap<>();
 
         if (translet instanceof StripFilter) {
             m_filter = (StripFilter) translet;

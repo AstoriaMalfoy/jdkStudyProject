@@ -29,7 +29,7 @@ package java.lang.ref;
 import java.util.Map;
 import java.util.Arrays;
 import java.util.Comparator;
-import java.util.My_HashMap;
+import java.util.HashMap;
 
 /**
  * This FinalizerHistogram class is for GC.finalizer_info diagnostic command support.
@@ -59,7 +59,7 @@ final class FinalizerHistogram {
     // entry class layout.
 
     static Entry[] getFinalizerHistogram() {
-        Map<String, Entry> countMap = new My_HashMap<>();
+        Map<String, Entry> countMap = new HashMap<>();
         ReferenceQueue<Object> queue = Finalizer.getQueue();
         queue.forEach(r -> {
             Object referent = r.get();

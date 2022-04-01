@@ -5463,7 +5463,7 @@ public class Collections {
      * implementation corresponding to any {@link Map} implementation.  There
      * is no need to use this method on a {@link Map} implementation that
      * already has a corresponding {@link Set} implementation (such as {@link
-     * My_HashMap} or {@link TreeMap}).
+     * HashMap} or {@link TreeMap}).
      *
      * <p>Each method invocation on the set returned by this method results in
      * exactly one method invocation on the backing map or its <tt>keySet</tt>

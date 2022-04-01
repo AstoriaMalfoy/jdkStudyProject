@@ -22,7 +22,7 @@
 package com.sun.org.apache.xml.internal.serializer;
 
 import java.util.Iterator;
-import java.util.My_HashMap;
+import java.util.HashMap;
 import java.util.Stack;
 
 import org.xml.sax.ContentHandler;
@@ -79,7 +79,7 @@ public class NamespaceMappings
      * mappings at deeper depths push later on such a stack.  Mappings pushed
      * earlier on the stack will have smaller values for MappingRecord.m_declarationDepth.
      */
-    private My_HashMap m_namespaces = new My_HashMap();
+    private HashMap m_namespaces = new HashMap();
 
     /**
      * The top of this stack contains the MapRecord
@@ -296,7 +296,7 @@ public class NamespaceMappings
     public Object clone() throws CloneNotSupportedException {
         NamespaceMappings clone = new NamespaceMappings();
         clone.m_nodeStack = (Stack) m_nodeStack.clone();
-        clone.m_namespaces = (My_HashMap) m_namespaces.clone();
+        clone.m_namespaces = (HashMap) m_namespaces.clone();
         clone.count = count;
         return clone;
 

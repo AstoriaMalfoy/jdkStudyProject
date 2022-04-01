@@ -62,8 +62,8 @@ public class CorbaTransportManagerImpl
     {
         this.orb = orb;
         acceptors = new ArrayList();
-        outboundConnectionCaches = new My_HashMap();
-        inboundConnectionCaches = new My_HashMap();
+        outboundConnectionCaches = new HashMap();
+        inboundConnectionCaches = new HashMap();
         selector = new SelectorImpl(orb);
     }
 

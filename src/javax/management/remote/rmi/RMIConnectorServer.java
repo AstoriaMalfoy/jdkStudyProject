@@ -258,7 +258,7 @@ public class RMIConnectorServer extends JMXConnectorServer {
             IllegalStateException("Connector is not active");
 
         // Merge maps
-        Map<String, Object> usemap = new My_HashMap<String, Object>(
+        Map<String, Object> usemap = new HashMap<String, Object>(
                 (this.attributes==null)?Collections.<String, Object>emptyMap():
                     this.attributes);
 

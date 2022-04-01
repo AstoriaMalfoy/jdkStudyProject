@@ -30,7 +30,7 @@ import java.lang.ref.ReferenceQueue;
 import java.lang.ref.SoftReference;
 import java.util.Arrays;
 import java.util.Iterator;
-import java.util.LinkedMyHashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.concurrent.locks.ReadWriteLock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
@@ -44,8 +44,8 @@ import java.util.concurrent.locks.ReentrantReadWriteLock;
  */
 class ImageCache {
     // Ordered Map keyed by args hash, ordered by most recent accessed entry.
-    private final LinkedMyHashMap<Integer, PixelCountSoftReference> map =
-            new LinkedMyHashMap<Integer, PixelCountSoftReference>(16, 0.75f, true);
+    private final LinkedHashMap<Integer, PixelCountSoftReference> map =
+            new LinkedHashMap<Integer, PixelCountSoftReference>(16, 0.75f, true);
     // Maximum number of pixels to cache, this is used if maxCount
     private final int maxPixelCount;
     // Maximum cached image size in pxiels

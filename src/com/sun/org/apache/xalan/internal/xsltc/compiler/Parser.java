@@ -92,11 +92,11 @@ public class Parser implements Constants, ContentHandler {
     }
 
     public void init() {
-        _qNames              = new My_HashMap<>(512);
-        _namespaces          = new My_HashMap<>();
-        _instructionClasses  = new My_HashMap<>();
-        _instructionAttrs    = new My_HashMap<>();
-        _variableScope       = new My_HashMap<>();
+        _qNames              = new HashMap<>(512);
+        _namespaces          = new HashMap<>();
+        _instructionClasses  = new HashMap<>();
+        _instructionAttrs    = new HashMap<>();
+        _variableScope       = new HashMap<>();
         _template            = null;
         _errors              = new ArrayList<>();
         _warnings            = new ArrayList<>();
@@ -309,7 +309,7 @@ public class Parser implements Constants, ContentHandler {
 
             if (space == null) {
                 final QName name = new QName(namespace, prefix, localname);
-                _namespaces.put(namespace, space = new My_HashMap<>());
+                _namespaces.put(namespace, space = new HashMap<>());
                 space.put(lexicalQName, name);
                 return name;
             }
@@ -1227,7 +1227,7 @@ public class Parser implements Constants, ContentHandler {
      */
     public void startPrefixMapping(String prefix, String uri) {
         if (_prefixMapping == null) {
-            _prefixMapping = new My_HashMap<>();
+            _prefixMapping = new HashMap<>();
         }
         _prefixMapping.put(prefix, uri);
     }

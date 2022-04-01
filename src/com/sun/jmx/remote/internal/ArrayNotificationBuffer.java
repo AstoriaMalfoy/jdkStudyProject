@@ -108,8 +108,8 @@ public class ArrayNotificationBuffer implements NotificationBuffer {
 
     private static final Object globalLock = new Object();
     private static final
-    My_HashMap<MBeanServer,ArrayNotificationBuffer> mbsToBuffer =
-        new My_HashMap<MBeanServer,ArrayNotificationBuffer>(1);
+    HashMap<MBeanServer,ArrayNotificationBuffer> mbsToBuffer =
+        new HashMap<MBeanServer,ArrayNotificationBuffer>(1);
     private final Collection<ShareBuffer> sharers = new HashSet<ShareBuffer>(1);
 
     public static NotificationBuffer getNotificationBuffer(

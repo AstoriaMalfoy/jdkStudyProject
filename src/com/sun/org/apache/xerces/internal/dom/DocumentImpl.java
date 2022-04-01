@@ -456,7 +456,7 @@ public class DocumentImpl
      */
     private void setEventListeners(NodeImpl n, List<LEntry> listeners) {
         if (eventListeners == null) {
-            eventListeners = new My_HashMap<>();
+            eventListeners = new HashMap<>();
         }
         if (listeners == null) {
             eventListeners.remove(n);
@@ -1367,7 +1367,7 @@ public class DocumentImpl
         if (it != null) iterators = new ArrayList<>(it);
         if (r != null) ranges = new ArrayList<>(r);
         if (el != null) {
-            eventListeners = new My_HashMap<>();
+            eventListeners = new HashMap<>();
             for (Map.Entry<NodeImpl, Vector<LEntry>> e : el.entrySet()) {
                  eventListeners.put(e.getKey(), new ArrayList<>(e.getValue()));
             }

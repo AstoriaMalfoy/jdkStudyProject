@@ -333,7 +333,7 @@ public final class ResourceManager {
         synchronized (factoryCache) {
             perLoaderCache = factoryCache.get(loader);
             if (perLoaderCache == null) {
-                perLoaderCache = new My_HashMap<>(11);
+                perLoaderCache = new HashMap<>(11);
                 factoryCache.put(loader, perLoaderCache);
             }
         }
@@ -423,7 +423,7 @@ public final class ResourceManager {
         synchronized (urlFactoryCache) {
             perLoaderCache = urlFactoryCache.get(loader);
             if (perLoaderCache == null) {
-                perLoaderCache = new My_HashMap<>(11);
+                perLoaderCache = new HashMap<>(11);
                 urlFactoryCache.put(loader, perLoaderCache);
             }
         }

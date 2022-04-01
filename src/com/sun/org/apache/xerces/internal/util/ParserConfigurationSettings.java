@@ -88,8 +88,8 @@ public class ParserConfigurationSettings
         fRecognizedProperties = new ArrayList<>();
 
         // create table for features and properties
-        fFeatures = new My_HashMap<String, Boolean>();
-        fProperties = new My_HashMap<String, Object>();
+        fFeatures = new HashMap<String, Boolean>();
+        fProperties = new HashMap<String, Object>();
 
         // save parent
         fParentSettings = parent;

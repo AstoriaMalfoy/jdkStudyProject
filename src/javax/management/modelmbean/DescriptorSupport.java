@@ -94,14 +94,14 @@ public class DescriptorSupport
     // Serializable fields in old serial form
     private static final ObjectStreamField[] oldSerialPersistentFields =
     {
-      new ObjectStreamField("descriptor", My_HashMap.class),
+      new ObjectStreamField("descriptor", HashMap.class),
       new ObjectStreamField("currClass", String.class)
     };
     //
     // Serializable fields in new serial form
     private static final ObjectStreamField[] newSerialPersistentFields =
     {
-      new ObjectStreamField("descriptor", My_HashMap.class)
+      new ObjectStreamField("descriptor", HashMap.class)
     };
     //
     // Actual serial version and serial form
@@ -1111,7 +1111,7 @@ public class DescriptorSupport
         "\f&#12;",
     };
     private static final Map<String,Character> entityToCharMap =
-        new My_HashMap<String,Character>();
+        new HashMap<String,Character>();
     private static final String[] charToEntityMap;
 
     static {
@@ -1379,14 +1379,14 @@ public class DescriptorSupport
             startMap.remove("targetObject");
         }
 
-        final My_HashMap<String, Object> descriptor;
+        final HashMap<String, Object> descriptor;
         if (compat || "1.2.0".equals(serialForm) ||
                 "1.2.1".equals(serialForm)) {
-            descriptor = new My_HashMap<String, Object>();
+            descriptor = new HashMap<String, Object>();
             for (Map.Entry<String, Object> entry : startMap.entrySet())
                 descriptor.put(entry.getKey().toLowerCase(), entry.getValue());
         } else
-            descriptor = new My_HashMap<String, Object>(startMap);
+            descriptor = new HashMap<String, Object>(startMap);
 
         fields.put("descriptor", descriptor);
         out.writeFields();

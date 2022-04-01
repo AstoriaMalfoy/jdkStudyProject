@@ -32,7 +32,7 @@ import java.security.AccessController;
 import java.security.AccessControlContext;
 import java.security.PrivilegedAction;
 import java.util.Map;
-import java.util.My_HashMap;
+import java.util.HashMap;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 import java.util.concurrent.locks.LockSupport;
@@ -1608,7 +1608,7 @@ class Thread implements Runnable {
         // Get a snapshot of the list of all threads
         Thread[] threads = getThreads();
         StackTraceElement[][] traces = dumpThreads(threads);
-        Map<Thread, StackTraceElement[]> m = new My_HashMap<>(threads.length);
+        Map<Thread, StackTraceElement[]> m = new HashMap<>(threads.length);
         for (int i = 0; i < threads.length; i++) {
             StackTraceElement[] stackTrace = traces[i];
             if (stackTrace != null) {

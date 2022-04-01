@@ -100,7 +100,7 @@ public final class SystemFlavorMap implements FlavorMap, FlavorTable {
      * text DataFlavors).
      * Do not use the field directly, use getNativeToFlavor() instead.
      */
-    private final Map<String, LinkedHashSet<DataFlavor>> nativeToFlavor = new My_HashMap<>();
+    private final Map<String, LinkedHashSet<DataFlavor>> nativeToFlavor = new HashMap<>();
 
     /**
      * Accessor to nativeToFlavor map.  Since we use lazy initialization we must
@@ -121,7 +121,7 @@ public final class SystemFlavorMap implements FlavorMap, FlavorTable {
      * native Strings.
      * Do not use the field directly, use getFlavorToNative() instead.
      */
-    private final Map<DataFlavor, LinkedHashSet<String>> flavorToNative = new My_HashMap<>();
+    private final Map<DataFlavor, LinkedHashSet<String>> flavorToNative = new HashMap<>();
 
     /**
      * Accessor to flavorToNative map.  Since we use lazy initialization we must
@@ -142,7 +142,7 @@ public final class SystemFlavorMap implements FlavorMap, FlavorTable {
      * standard mappings registered in the flavormap.properties
      * Do not use this field directly, use getTextTypeToNative() instead.
      */
-    private Map<String, LinkedHashSet<String>> textTypeToNative = new My_HashMap<>();
+    private Map<String, LinkedHashSet<String>> textTypeToNative = new HashMap<>();
 
     /**
      * Shows if the object has been initialized.
@@ -933,7 +933,7 @@ public final class SystemFlavorMap implements FlavorMap, FlavorTable {
             flavor_list.toArray(flavors);
         }
 
-        Map<DataFlavor, String> retval = new My_HashMap<>(flavors.length, 1.0f);
+        Map<DataFlavor, String> retval = new HashMap<>(flavors.length, 1.0f);
         for (DataFlavor flavor : flavors) {
             List<String> natives = getNativesForFlavor(flavor);
             String nat = (natives.isEmpty()) ? null : natives.get(0);
@@ -977,7 +977,7 @@ public final class SystemFlavorMap implements FlavorMap, FlavorTable {
             nativesList.toArray(natives);
         }
 
-        Map<String, DataFlavor> retval = new My_HashMap<>(natives.length, 1.0f);
+        Map<String, DataFlavor> retval = new HashMap<>(natives.length, 1.0f);
         for (String aNative : natives) {
             List<DataFlavor> flavors = getFlavorsForNative(aNative);
             DataFlavor flav = (flavors.isEmpty())? null : flavors.get(0);
@@ -1234,7 +1234,7 @@ public final class SystemFlavorMap implements FlavorMap, FlavorTable {
 
         public void put(K key, LinkedHashSet<V> value) {
             if (cache == null) {
-                cache = new My_HashMap<>(1);
+                cache = new HashMap<>(1);
             }
             cache.put(key, new SoftReference<>(value));
         }

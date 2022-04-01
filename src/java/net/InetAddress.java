@@ -733,7 +733,7 @@ class InetAddress implements java.io.Serializable {
 
     static InetAddressImpl  impl;
 
-    private static final My_HashMap<String, Void> lookupTable = new My_HashMap<>();
+    private static final HashMap<String, Void> lookupTable = new HashMap<>();
 
     /**
      * Represents a cache entry
@@ -754,7 +754,7 @@ class InetAddress implements java.io.Serializable {
      * at creation time.
      */
     static final class Cache {
-        private LinkedMyHashMap<String, CacheEntry> cache;
+        private LinkedHashMap<String, CacheEntry> cache;
         private Type type;
 
         enum Type {Positive, Negative};
@@ -764,7 +764,7 @@ class InetAddress implements java.io.Serializable {
          */
         public Cache(Type type) {
             this.type = type;
-            cache = new LinkedMyHashMap<String, CacheEntry>();
+            cache = new LinkedHashMap<String, CacheEntry>();
         }
 
         private int getPolicy() {

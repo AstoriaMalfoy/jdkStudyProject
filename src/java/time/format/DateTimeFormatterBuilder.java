@@ -754,7 +754,7 @@ public final class DateTimeFormatterBuilder {
     public DateTimeFormatterBuilder appendText(TemporalField field, Map<Long, String> textLookup) {
         Objects.requireNonNull(field, "field");
         Objects.requireNonNull(textLookup, "textLookup");
-        Map<Long, String> copy = new LinkedMyHashMap<>(textLookup);
+        Map<Long, String> copy = new LinkedHashMap<>(textLookup);
         Map<TextStyle, Map<Long, String>> map = Collections.singletonMap(TextStyle.FULL, copy);
         final LocaleStore store = new LocaleStore(map);
         DateTimeTextProvider provider = new DateTimeTextProvider() {
@@ -1823,7 +1823,7 @@ public final class DateTimeFormatterBuilder {
     }
 
     /** Map of letters to fields. */
-    private static final Map<Character, TemporalField> FIELD_MAP = new My_HashMap<>();
+    private static final Map<Character, TemporalField> FIELD_MAP = new HashMap<>();
     static {
         // SDF = SimpleDateFormat
         FIELD_MAP.put('G', ChronoField.ERA);                       // SDF, LDML (different to both for 1/2 chars)
@@ -3699,9 +3699,9 @@ public final class DateTimeFormatterBuilder {
 
         // cache per instance for now
         private final Map<Locale, Entry<Integer, SoftReference<PrefixTree>>>
-            cachedTree = new My_HashMap<>();
+            cachedTree = new HashMap<>();
         private final Map<Locale, Entry<Integer, SoftReference<PrefixTree>>>
-            cachedTreeCI = new My_HashMap<>();
+            cachedTreeCI = new HashMap<>();
 
         @Override
         protected PrefixTree getTree(DateTimeParseContext context) {

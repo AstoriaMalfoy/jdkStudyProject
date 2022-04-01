@@ -279,7 +279,7 @@ public final class NimbusStyle extends SynthStyle {
         //states but list them in a non-standard order.
         List<State> states = new ArrayList<State>();
         //a map of state name to code
-        Map<String,Integer> stateCodes = new My_HashMap<String,Integer>();
+        Map<String,Integer> stateCodes = new HashMap<String,Integer>();
         //This is a list of runtime "state" context objects. These contain
         //the values associated with each state.
         List<RuntimeState> runtimeStates = new ArrayList<RuntimeState>();
@@ -1072,7 +1072,7 @@ public final class NimbusStyle extends SynthStyle {
          *
          * foo.bar$$2353
          */
-        Map<CacheKey,Object> cache = new My_HashMap<CacheKey,Object>();
+        Map<CacheKey,Object> cache = new HashMap<CacheKey,Object>();
     }
 
     /**

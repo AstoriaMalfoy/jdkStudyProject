@@ -27,7 +27,7 @@ import com.sun.org.apache.xerces.internal.xni.XMLAttributes;
 import com.sun.org.apache.xerces.internal.xni.XNIException;
 import com.sun.org.apache.xerces.internal.xni.parser.XMLErrorHandler;
 
-import java.util.My_HashMap;
+import java.util.HashMap;
 
 /**
  * <p>
@@ -526,7 +526,7 @@ final class ElementSchemePointer implements XPointerPart {
 
         private SymbolTable fSymbolTable;
 
-        private My_HashMap<Integer, String> fTokenNames = new My_HashMap<>();
+        private HashMap<Integer, String> fTokenNames = new HashMap<>();
 
         /**
          * Constructor

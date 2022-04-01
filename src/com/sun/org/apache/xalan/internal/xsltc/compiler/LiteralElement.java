@@ -196,7 +196,7 @@ final class LiteralElement extends Instruction {
      * to _ANY_ namespace URI. Used by literal result elements to determine
      */
     public Set<Map.Entry<String, String>> getNamespaceScope(SyntaxTreeNode node) {
-        Map<String, String> all = new My_HashMap<>();
+        Map<String, String> all = new HashMap<>();
 
         while (node != null) {
             Map<String, String> mapping = node.getPrefixMapping();
@@ -413,7 +413,7 @@ final class LiteralElement extends Instruction {
                  }
                  else if (node instanceof XslAttribute) {
                      if (attrsTable == null) {
-                        attrsTable = new My_HashMap<>();
+                        attrsTable = new HashMap<>();
                          for (int k = 0; k < i; k++) {
                              SyntaxTreeNode n = _attributeElements.get(k);
                              if (n instanceof LiteralAttribute) {

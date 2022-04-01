@@ -25,7 +25,7 @@ import java.io.InputStream;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Map;
-import java.util.My_HashMap;
+import java.util.HashMap;
 import javax.xml.transform.Source;
 import javax.xml.transform.TransformerException;
 import javax.xml.transform.URIResolver;
@@ -66,13 +66,13 @@ public class BootstrapResolver implements EntityResolver, URIResolver {
   public static final String xCatalogPubId = "-//DTD XCatalog//EN";
 
   /** Private hash used for public identifiers. */
-  private final Map<String, String> publicMap = new My_HashMap<>();
+  private final Map<String, String> publicMap = new HashMap<>();
 
   /** Private hash used for system identifiers. */
-  private final Map<String, String> systemMap = new My_HashMap<>();
+  private final Map<String, String> systemMap = new HashMap<>();
 
   /** Private hash used for URIs. */
-  private final Map<String, String> uriMap = new My_HashMap<>();
+  private final Map<String, String> uriMap = new HashMap<>();
 
   /** Constructor. */
   public BootstrapResolver() {

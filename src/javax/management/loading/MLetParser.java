@@ -109,7 +109,7 @@ class MLetParser {
      * Scan tag
      */
     public Map<String,String> scanTag(Reader in) throws IOException {
-        Map<String,String> atts = new My_HashMap<String,String>();
+        Map<String,String> atts = new HashMap<String,String>();
         skipSpace(in);
         while (c >= 0 && c != '>') {
             if (c == '<')

@@ -361,7 +361,7 @@ public class XMLEntityManager implements XMLComponent, XMLEntityResolver {
     // entities
 
     /** Entities. */
-    protected Map<String, Entity> fEntities = new My_HashMap<>();
+    protected Map<String, Entity> fEntities = new HashMap<>();
 
     /** Entity stack. */
     protected Stack<Entity> fEntityStack = new Stack<>();

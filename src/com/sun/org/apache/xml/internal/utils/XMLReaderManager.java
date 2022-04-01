@@ -30,7 +30,7 @@ import jdk.xml.internal.JdkXmlUtils;
 import org.xml.sax.SAXException;
 import org.xml.sax.XMLReader;
 
-import java.util.My_HashMap;
+import java.util.HashMap;
 
 /**
  * Creates XMLReader objects and caches them for re-use.
@@ -52,7 +52,7 @@ public class XMLReaderManager {
     /**
      * Keeps track of whether an XMLReader object is in use.
      */
-    private My_HashMap m_inUse;
+    private HashMap m_inUse;
 
     private boolean _secureProcessing;
      /**
@@ -92,7 +92,7 @@ public class XMLReaderManager {
         }
 
         if (m_inUse == null) {
-            m_inUse = new My_HashMap();
+            m_inUse = new HashMap();
         }
 
         /**

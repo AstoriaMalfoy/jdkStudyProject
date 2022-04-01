@@ -53,7 +53,7 @@ public class SimpleAttributeSet implements MutableAttributeSet, Serializable, Cl
      */
     public static final AttributeSet EMPTY = new EmptyAttributeSet();
 
-    private transient LinkedMyHashMap<Object, Object> table = new LinkedMyHashMap<>(3);
+    private transient LinkedHashMap<Object, Object> table = new LinkedHashMap<>(3);
 
     /**
      * Creates a new attribute set.
@@ -271,7 +271,7 @@ public class SimpleAttributeSet implements MutableAttributeSet, Serializable, Cl
         SimpleAttributeSet attr;
         try {
             attr = (SimpleAttributeSet) super.clone();
-            attr.table = (LinkedMyHashMap) table.clone();
+            attr.table = (LinkedHashMap) table.clone();
         } catch (CloneNotSupportedException cnse) {
             attr = null;
         }
@@ -334,7 +334,7 @@ public class SimpleAttributeSet implements MutableAttributeSet, Serializable, Cl
     private void readObject(ObjectInputStream s)
       throws ClassNotFoundException, IOException {
         s.defaultReadObject();
-        table = new LinkedMyHashMap<>(3);
+        table = new LinkedHashMap<>(3);
         StyleContext.readAttributeSet(s, this);
     }
 

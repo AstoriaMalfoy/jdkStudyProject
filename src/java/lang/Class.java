@@ -3334,7 +3334,7 @@ public final class Class<T> implements java.io.Serializable,
             if (universe == null)
                 throw new IllegalArgumentException(
                     getName() + " is not an enum type");
-            Map<String, T> m = new My_HashMap<>(2 * universe.length);
+            Map<String, T> m = new HashMap<>(2 * universe.length);
             for (T constant : universe)
                 m.put(((Enum<?>)constant).name(), constant);
             enumConstantDirectory = m;
@@ -3520,7 +3520,7 @@ public final class Class<T> implements java.io.Serializable,
                 Class<? extends Annotation> annotationClass = e.getKey();
                 if (AnnotationType.getInstance(annotationClass).isInherited()) {
                     if (annotations == null) { // lazy construction
-                        annotations = new LinkedMyHashMap<>((Math.max(
+                        annotations = new LinkedHashMap<>((Math.max(
                                 declaredAnnotations.size(),
                                 Math.min(12, declaredAnnotations.size() + superAnnotations.size())
                             ) * 4 + 2) / 3

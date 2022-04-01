@@ -53,7 +53,7 @@ class PartiallyOrderedSet extends AbstractSet {
     // p. 315.
 
     // Maps Objects to DigraphNodes that contain them
-    private Map poNodes = new My_HashMap();
+    private Map poNodes = new HashMap();
 
     // The set of Objects
     private Set nodes = poNodes.keySet();
@@ -164,7 +164,7 @@ class PartiallyOrderedSet extends AbstractSet {
 class PartialOrderIterator implements Iterator {
 
     LinkedList zeroList = new LinkedList();
-    Map inDegrees = new My_HashMap(); // DigraphNode -> Integer
+    Map inDegrees = new HashMap(); // DigraphNode -> Integer
 
     public PartialOrderIterator(Iterator iter) {
         // Initialize scratch in-degree values, zero list

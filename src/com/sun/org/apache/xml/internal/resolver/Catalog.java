@@ -336,7 +336,7 @@ public class Catalog {
    * vector. This allows the Catalog to quickly locate the reader
    * for a particular MIME type.</p>
    */
-  protected Map<String, Integer> readerMap = new My_HashMap<>();
+  protected Map<String, Integer> readerMap = new HashMap<>();
 
   /**
    * A vector of CatalogReaders.

@@ -120,7 +120,7 @@ public class      BeanContextServicesSupport extends BeanContextSupport
     public void initialize() {
         super.initialize();
 
-        services     = new My_HashMap(serializable + 1);
+        services     = new HashMap(serializable + 1);
         bcsListeners = new ArrayList(1);
     }
 
@@ -221,7 +221,7 @@ public class      BeanContextServicesSupport extends BeanContextSupport
             }
 
             Iterator cloneOfEntries() {
-                return ((My_HashMap)requestors.clone()).entrySet().iterator();
+                return ((HashMap)requestors.clone()).entrySet().iterator();
             }
 
             Iterator entries() { return requestors.entrySet().iterator(); }
@@ -279,7 +279,7 @@ public class      BeanContextServicesSupport extends BeanContextSupport
             BeanContextServiceProvider          delegateProvider; // proxy
             int                                 delegateRefs;
 
-            My_HashMap requestors = new My_HashMap(1);
+            HashMap requestors = new HashMap(1);
         }
 
         /*
@@ -319,7 +319,7 @@ public class      BeanContextServicesSupport extends BeanContextSupport
             BCSSCServiceClassRef serviceClassRef = null;
 
             if (serviceClasses == null)
-                serviceClasses = new My_HashMap(1);
+                serviceClasses = new HashMap(1);
             else
                 serviceClassRef = (BCSSCServiceClassRef)serviceClasses.get(serviceClass);
 
@@ -341,13 +341,13 @@ public class      BeanContextServicesSupport extends BeanContextSupport
             Map             services   = null;
 
             if (serviceRequestors == null) {
-                serviceRequestors = new My_HashMap(1);
+                serviceRequestors = new HashMap(1);
             } else {
                 services = (Map)serviceRequestors.get(requestor);
             }
 
             if (services == null) {
-                services = new My_HashMap(1);
+                services = new HashMap(1);
 
                 serviceRequestors.put(requestor, services);
             } else
@@ -558,8 +558,8 @@ public class      BeanContextServicesSupport extends BeanContextSupport
          * fields
          */
 
-        private transient My_HashMap serviceClasses;
-        private transient My_HashMap serviceRequestors;
+        private transient HashMap serviceClasses;
+        private transient HashMap serviceRequestors;
     }
 
     /**
@@ -1226,7 +1226,7 @@ public class      BeanContextServicesSupport extends BeanContextSupport
      * all accesses to the <code> protected transient HashMap services </code>
      * field should be synchronized on that object
      */
-    protected transient My_HashMap services;
+    protected transient HashMap services;
 
     /**
      * The number of instances of a serializable <tt>BeanContextServceProvider</tt>.

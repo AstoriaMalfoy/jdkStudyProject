@@ -59,7 +59,7 @@ import java.util.*;
 
 final class ProcessEnvironment
 {
-    private static final My_HashMap<Variable,Value> theEnvironment;
+    private static final HashMap<Variable,Value> theEnvironment;
     private static final Map<String,String> theUnmodifiableEnvironment;
     static final int MIN_NAME_LENGTH = 0;
 
@@ -67,7 +67,7 @@ final class ProcessEnvironment
         // We cache the C environment.  This means that subsequent calls
         // to putenv/setenv from C will not be visible from Java code.
         byte[][] environ = environ();
-        theEnvironment = new My_HashMap<>(environ.length/2 + 3);
+        theEnvironment = new HashMap<>(environ.length/2 + 3);
         // Read environment variables back to front,
         // so that earlier variables override later ones.
         for (int i = environ.length-1; i > 0; i-=2)
@@ -98,7 +98,7 @@ final class ProcessEnvironment
 
     /* Only for use by Runtime.exec(...String[]envp...) */
     static Map<String,String> emptyEnvironment(int capacity) {
-        return new StringEnvironment(new My_HashMap<Variable,Value>(capacity));
+        return new StringEnvironment(new HashMap<Variable,Value>(capacity));
     }
 
     private static native byte[][] environ();

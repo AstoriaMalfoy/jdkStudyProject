@@ -54,8 +54,8 @@ class InMemoryCookieStore implements CookieStore {
      */
     public InMemoryCookieStore() {
         cookieJar = new ArrayList<HttpCookie>();
-        domainIndex = new My_HashMap<String, List<HttpCookie>>();
-        uriIndex = new My_HashMap<URI, List<HttpCookie>>();
+        domainIndex = new HashMap<String, List<HttpCookie>>();
+        uriIndex = new HashMap<URI, List<HttpCookie>>();
 
         lock = new ReentrantLock(false);
     }

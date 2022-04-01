@@ -39,7 +39,7 @@ import java.util.*;
 public class LogStream extends PrintStream {
 
     /** table mapping known log names to log stream objects */
-    private static Map<String,LogStream> known = new My_HashMap<>(5);
+    private static Map<String,LogStream> known = new HashMap<>(5);
     /** default output stream for new logs */
     private static PrintStream  defaultStream = System.err;
 

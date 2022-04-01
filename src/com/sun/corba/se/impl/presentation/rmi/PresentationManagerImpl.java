@@ -63,8 +63,8 @@ public final class PresentationManagerImpl implements PresentationManager
             CORBALogDomains.RPC_PRESENTATION ) ;
 
         // XXX these should probably be WeakHashMaps.
-        classToClassData = new My_HashMap() ;
-        methodToDMM = new My_HashMap() ;
+        classToClassData = new HashMap() ;
+        methodToDMM = new HashMap() ;
     }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -123,7 +123,7 @@ public final class PresentationManagerImpl implements PresentationManager
             typeIds = makeTypeIds( root, gr, rootSet ) ;
             ihfactory = new InvocationHandlerFactoryImpl(
                 PresentationManagerImpl.this, this ) ;
-            dictionary = new My_HashMap() ;
+            dictionary = new HashMap() ;
         }
 
         public Class getMyClass()

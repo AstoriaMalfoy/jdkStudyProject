@@ -85,7 +85,7 @@ public final class XPathFilterParameterSpec implements TransformParameterSpec {
             throw new NullPointerException();
         }
         this.xPath = xPath;
-        Map<?,?> copy = new My_HashMap<>((Map<?,?>)namespaceMap);
+        Map<?,?> copy = new HashMap<>((Map<?,?>)namespaceMap);
         Iterator<? extends Map.Entry<?,?>> entries = copy.entrySet().iterator();
         while (entries.hasNext()) {
             Map.Entry<?,?> me = entries.next();

@@ -72,8 +72,8 @@ class XPStyle {
 
     private static Boolean themeActive = null;
 
-    private My_HashMap<String, Border> borderMap;
-    private My_HashMap<String, Color> colorMap;
+    private HashMap<String, Border> borderMap;
+    private HashMap<String, Color> colorMap;
 
     private boolean flatMenus;
 
@@ -736,8 +736,8 @@ class XPStyle {
     private XPStyle() {
         flatMenus = getSysBoolean(Prop.FLATMENUS);
 
-        colorMap  = new My_HashMap<String, Color>();
-        borderMap = new My_HashMap<String, Border>();
+        colorMap  = new HashMap<String, Color>();
+        borderMap = new HashMap<String, Border>();
         // Note: All further access to the maps must be synchronized
     }
 

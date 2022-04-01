@@ -129,7 +129,7 @@ import java.util.function.Consumer;
  * @author      Josh Bloch
  * @author      Mark Reinhold
  * @since       1.2
- * @see         My_HashMap
+ * @see         HashMap
  * @see         java.lang.ref.WeakReference
  */
 public class WeakHashMap<K,V>

@@ -266,7 +266,7 @@ public class RMIConnector implements JMXConnector, Serializable, JMXAddressable 
             if (tracing) logger.trace("connect",idstr + " connecting...");
 
             final Map<String, Object> usemap =
-                    new My_HashMap<String, Object>((this.env==null) ?
+                    new HashMap<String, Object>((this.env==null) ?
                         Collections.<String, Object>emptyMap() : this.env);
 
 

@@ -23,7 +23,7 @@ package com.sun.org.apache.xerces.internal.impl.dtd;
 import com.sun.org.apache.xerces.internal.xni.grammars.XMLGrammarDescription;
 
 import java.util.Map;
-import java.util.My_HashMap;
+import java.util.HashMap;
 
 /**
  * This very simple class is the skeleton of what the DTDValidator could use
@@ -63,7 +63,7 @@ public class DTDGrammarBucket {
 
     /** Default constructor. */
     public DTDGrammarBucket() {
-        fGrammars = new My_HashMap<>();
+        fGrammars = new HashMap<>();
     } // <init>()
 
     //

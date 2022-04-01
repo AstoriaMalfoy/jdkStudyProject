@@ -75,7 +75,7 @@ public class CorbaResponseWaitingRoomImpl
             CORBALogDomains.RPC_TRANSPORT ) ;
         this.connection = connection;
         out_calls =
-            Collections.synchronizedMap(new My_HashMap<Integer, OutCallDesc>());
+            Collections.synchronizedMap(new HashMap<Integer, OutCallDesc>());
     }
 
     ////////////////////////////////////////////////////

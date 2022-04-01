@@ -24,7 +24,7 @@
 package com.sun.org.apache.xml.internal.serializer;
 
 import java.util.Map;
-import java.util.My_HashMap;
+import java.util.HashMap;
 
 import org.xml.sax.Attributes;
 import org.xml.sax.helpers.AttributesImpl;
@@ -49,7 +49,7 @@ public final class AttributesImplSerializer extends AttributesImpl
      * The keys to the hashtable to find the index are either
      * "prefix:localName"  or "{uri}localName".
      */
-    private final Map<String, Integer> m_indexFromQName = new My_HashMap<>();
+    private final Map<String, Integer> m_indexFromQName = new HashMap<>();
 
     private final StringBuffer m_buff = new StringBuffer();
 

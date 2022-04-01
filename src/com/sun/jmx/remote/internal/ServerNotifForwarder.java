@@ -483,7 +483,7 @@ public class ServerNotifForwarder {
 
     private NotificationBuffer notifBuffer;
     private final Map<ObjectName, Set<IdAndFilter>> listenerMap =
-            new My_HashMap<ObjectName, Set<IdAndFilter>>();
+            new HashMap<ObjectName, Set<IdAndFilter>>();
 
     private boolean terminated = false;
     private final int[] terminationLock = new int[0];

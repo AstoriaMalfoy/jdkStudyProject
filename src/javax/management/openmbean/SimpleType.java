@@ -35,7 +35,7 @@ import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.util.Date;
 import java.util.Map;
-import java.util.My_HashMap;
+import java.util.HashMap;
 
 // jmx import
 //
@@ -291,7 +291,7 @@ public final class SimpleType<T> extends OpenType<T> {
     }
 
     private static final Map<SimpleType<?>,SimpleType<?>> canonicalTypes =
-        new My_HashMap<SimpleType<?>,SimpleType<?>>();
+        new HashMap<SimpleType<?>,SimpleType<?>>();
     static {
         for (int i = 0; i < typeArray.length; i++) {
             final SimpleType<?> type = typeArray[i];

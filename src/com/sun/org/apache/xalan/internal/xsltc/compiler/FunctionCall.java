@@ -251,9 +251,9 @@ class FunctionCall extends Expression {
 
         _internal2Java.makeUnmodifiable();
 
-        Map<Class<?>, Type> java2Internal = new My_HashMap<>();
-        Map<String, String> extensionNamespaceTable = new My_HashMap<>();
-        Map<String, String> extensionFunctionTable = new My_HashMap<>();
+        Map<Class<?>, Type> java2Internal = new HashMap<>();
+        Map<String, String> extensionNamespaceTable = new HashMap<>();
+        Map<String, String> extensionFunctionTable = new HashMap<>();
 
         // Possible conversions between Java and internal types
         java2Internal.put(Boolean.TYPE, Type.Boolean);

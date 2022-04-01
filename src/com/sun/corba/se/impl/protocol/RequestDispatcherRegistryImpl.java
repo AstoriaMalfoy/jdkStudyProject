@@ -70,7 +70,7 @@ public class RequestDispatcherRegistryImpl implements RequestDispatcherRegistry 
         LCSFRegistry = new DenseIntMapImpl() ;
         objectAdapterFactories = new HashSet() ;
         objectAdapterFactoriesView = Collections.unmodifiableSet( objectAdapterFactories ) ;
-        stringToServerSubcontract = new My_HashMap() ;
+        stringToServerSubcontract = new HashMap() ;
     }
 
     public synchronized void registerClientRequestDispatcher(

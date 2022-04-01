@@ -848,7 +848,7 @@ public final class HttpCookie implements Cloneable {
                                String attrValue);
     }
     static final java.util.Map<String, CookieAttributeAssignor> assignors =
-            new My_HashMap<>();
+            new HashMap<>();
     static {
         assignors.put("comment", new CookieAttributeAssignor() {
                 public void assign(HttpCookie cookie,

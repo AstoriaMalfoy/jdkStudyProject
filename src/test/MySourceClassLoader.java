@@ -9,7 +9,7 @@ import java.util.*;
 /**
  * @author litao34
  * @ClassName MySourceClassLoader
- * @Description TODO
+ * @Description 想要实现自定义的类加载器来加载类,加载自己的hashMap,String等类,经过实现 发现该方法不可行
  * @CreateDate 2022/3/31-7:00 PM
  **/
 public class MySourceClassLoader extends ClassLoader{
@@ -60,6 +60,6 @@ public class MySourceClassLoader extends ClassLoader{
 
     public static void main(String[] args) throws ClassNotFoundException, IOException, InstantiationException, IllegalAccessException {
         System.out.println("this is test classPath");
-        My_HashMap string = (My_HashMap) new MySourceClassLoader().findClass("HashMap").newInstance();
+        new MySourceClassLoader().findClass("HashMap").newInstance();
     }
 }

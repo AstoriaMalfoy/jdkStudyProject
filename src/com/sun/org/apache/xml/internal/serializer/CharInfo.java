@@ -47,7 +47,7 @@ import javax.xml.transform.TransformerException;
 final class CharInfo
 {
     /** Given a character, lookup a String to output (e.g. a decorated entity reference). */
-    private My_HashMap m_charToString = new My_HashMap();
+    private HashMap m_charToString = new HashMap();
 
     /**
      * The name of the HTML entities file.
@@ -529,7 +529,7 @@ final class CharInfo
     }
 
     /** Table of user-specified char infos. */
-    private static My_HashMap m_getCharInfoCache = new My_HashMap();
+    private static HashMap m_getCharInfoCache = new HashMap();
 
     /**
      * Returns the array element holding the bit value for the

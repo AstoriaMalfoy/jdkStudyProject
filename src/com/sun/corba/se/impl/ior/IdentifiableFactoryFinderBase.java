@@ -28,7 +28,7 @@ package com.sun.corba.se.impl.ior ;
 import org.omg.CORBA_2_3.portable.InputStream ;
 
 import java.util.Map ;
-import java.util.My_HashMap;
+import java.util.HashMap;
 
 import com.sun.corba.se.spi.orb.ORB ;
 
@@ -49,7 +49,7 @@ public abstract class IdentifiableFactoryFinderBase implements
 
     protected IdentifiableFactoryFinderBase( ORB orb )
     {
-        map = new My_HashMap() ;
+        map = new HashMap() ;
         this.orb = orb ;
         wrapper = IORSystemException.get( orb,
             CORBALogDomains.OA_IOR ) ;

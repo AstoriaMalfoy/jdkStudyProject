@@ -33,7 +33,7 @@ import com.sun.org.apache.xml.internal.dtm.DTMAxisIterator;
 import com.sun.org.apache.xml.internal.dtm.ref.DTMAxisIteratorBase;
 
 import java.util.Map;
-import java.util.My_HashMap;
+import java.util.HashMap;
 import java.util.StringTokenizer;
 
 /**
@@ -60,7 +60,7 @@ public class KeyIndex extends DTMAxisIteratorBase {
     /**
      * A mapping from a document node to the mapping between values and nodesets
      */
-    private Map<Integer, Map> _rootToIndexMap = new My_HashMap<>();
+    private Map<Integer, Map> _rootToIndexMap = new HashMap<>();
 
     /**
      * The node set associated to the current value passed
@@ -94,7 +94,7 @@ public class KeyIndex extends DTMAxisIteratorBase {
     public void add(String value, int node, int rootNode) {
         if (_currentDocumentNode != rootNode) {
             _currentDocumentNode = rootNode;
-            _index = new My_HashMap<>();
+            _index = new HashMap<>();
             _rootToIndexMap.put(rootNode, _index);
         }
 
@@ -181,7 +181,7 @@ public class KeyIndex extends DTMAxisIteratorBase {
                 Map<String, IntegerArray> index = _rootToIndexMap.get(root);
 
                 if (index == null) {
-                    index = new My_HashMap<>();
+                    index = new HashMap<>();
                     _rootToIndexMap.put(root, index);
                 } else {
                     nodes = index.get(id);

@@ -34,7 +34,7 @@ import javax.security.auth.Subject;
 import javax.security.auth.AuthPermission;
 import javax.security.auth.callback.*;
 import java.security.AccessControlContext;
-import java.util.My_HashMap;
+import java.util.HashMap;
 
 import sun.security.util.PendingException;
 import sun.security.util.ResourcesMgr;
@@ -205,7 +205,7 @@ public class LoginContext {
     private boolean subjectProvided = false;
     private boolean loginSucceeded = false;
     private CallbackHandler callbackHandler;
-    private Map<String,?> state = new My_HashMap<String,Object>();
+    private Map<String,?> state = new HashMap<String,Object>();
 
     private Configuration config;
     private AccessControlContext creatorAcc = null;  // customized config only

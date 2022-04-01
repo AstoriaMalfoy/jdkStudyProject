@@ -115,9 +115,9 @@ public final class ServerRequestInfoImpl
     private Parameter[] cachedArguments;
     private Any cachedSendingException;
     // key = Integer, value = IOP.ServiceContext.
-    private My_HashMap cachedRequestServiceContexts;
+    private HashMap cachedRequestServiceContexts;
     // key = Integer, value = IOP.ServiceContext.
-    private My_HashMap cachedReplyServiceContexts;
+    private HashMap cachedReplyServiceContexts;
 
     //////////////////////////////////////////////////////////////////////
     //
@@ -436,7 +436,7 @@ public final class ServerRequestInfoImpl
             }
 
             if( cachedReplyServiceContexts == null ) {
-                cachedReplyServiceContexts = new My_HashMap();
+                cachedReplyServiceContexts = new HashMap();
             }
 
             // This is during and ending point, so we now have enough
@@ -626,7 +626,7 @@ public final class ServerRequestInfoImpl
         checkAccess( MID_GET_REQUEST_SERVICE_CONTEXT );
 
         if( cachedRequestServiceContexts == null ) {
-            cachedRequestServiceContexts = new My_HashMap();
+            cachedRequestServiceContexts = new HashMap();
         }
 
         return getServiceContext( cachedRequestServiceContexts,
@@ -640,7 +640,7 @@ public final class ServerRequestInfoImpl
         checkAccess( MID_GET_REPLY_SERVICE_CONTEXT );
 
         if( cachedReplyServiceContexts == null ) {
-            cachedReplyServiceContexts = new My_HashMap();
+            cachedReplyServiceContexts = new HashMap();
         }
 
         return getServiceContext( cachedReplyServiceContexts,

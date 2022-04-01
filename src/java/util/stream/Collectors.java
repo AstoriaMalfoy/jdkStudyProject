@@ -831,7 +831,7 @@ public final class Collectors {
     public static <T, K, A, D>
     Collector<T, ?, Map<K, D>> groupingBy(Function<? super T, ? extends K> classifier,
                                           Collector<? super T, A, D> downstream) {
-        return groupingBy(classifier, My_HashMap::new, downstream);
+        return groupingBy(classifier, HashMap::new, downstream);
     }
 
     /**
@@ -1190,7 +1190,7 @@ public final class Collectors {
     public static <T, K, U>
     Collector<T, ?, Map<K,U>> toMap(Function<? super T, ? extends K> keyMapper,
                                     Function<? super T, ? extends U> valueMapper) {
-        return toMap(keyMapper, valueMapper, throwingMerger(), My_HashMap::new);
+        return toMap(keyMapper, valueMapper, throwingMerger(), HashMap::new);
     }
 
     /**
@@ -1249,7 +1249,7 @@ public final class Collectors {
     Collector<T, ?, Map<K,U>> toMap(Function<? super T, ? extends K> keyMapper,
                                     Function<? super T, ? extends U> valueMapper,
                                     BinaryOperator<U> mergeFunction) {
-        return toMap(keyMapper, valueMapper, mergeFunction, My_HashMap::new);
+        return toMap(keyMapper, valueMapper, mergeFunction, HashMap::new);
     }
 
     /**

@@ -28,7 +28,7 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
-import java.util.My_HashMap;
+import java.util.HashMap;
 
 /**
  * <code>InputMap</code> provides a binding between an input event
@@ -200,7 +200,7 @@ public class InputMap implements Serializable {
             return pKeys;
         }
 
-        My_HashMap<KeyStroke, KeyStroke> keyMap = new My_HashMap<KeyStroke, KeyStroke>();
+        HashMap<KeyStroke, KeyStroke> keyMap = new HashMap<KeyStroke, KeyStroke>();
         int            counter;
 
         for (counter = keys.length - 1; counter >= 0; counter--) {

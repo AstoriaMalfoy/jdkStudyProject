@@ -31,7 +31,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.Locale;
 import java.util.Map;
-import java.util.My_HashMap;
+import java.util.HashMap;
 
 
 /**
@@ -375,8 +375,8 @@ public final class HTMLdtd
         if ( _byName != null )
             return;
         try {
-            _byName = new My_HashMap<>();
-            _byChar = new My_HashMap<>();
+            _byName = new HashMap<>();
+            _byChar = new HashMap<>();
             is = HTMLdtd.class.getResourceAsStream( ENTITIES_RESOURCE );
             if ( is == null ) {
                 throw new RuntimeException(
@@ -475,7 +475,7 @@ public final class HTMLdtd
 
     static
     {
-        _elemDefs = new My_HashMap<>();
+        _elemDefs = new HashMap<>();
         defineElement( "ADDRESS", CLOSE_P );
         defineElement( "AREA", EMPTY );
         defineElement( "BASE",  EMPTY | ALLOWED_HEAD );
@@ -529,7 +529,7 @@ public final class HTMLdtd
         defineElement( "TR", ELEM_CONTENT | OPT_CLOSING | CLOSE_TABLE );
         defineElement( "UL", ELEM_CONTENT | CLOSE_P );
 
-        _boolAttrs = new My_HashMap<>();
+        _boolAttrs = new HashMap<>();
         defineBoolean( "AREA", "href" );
         defineBoolean( "BUTTON", "disabled" );
         defineBoolean( "DIR", "compact" );

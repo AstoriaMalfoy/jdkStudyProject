@@ -23,7 +23,7 @@
 package com.sun.org.apache.xml.internal.utils;
 
 import java.util.Map;
-import java.util.My_HashMap;
+import java.util.HashMap;
 
 
 /**
@@ -159,7 +159,7 @@ class ElemDesc
   {
 
     if (null == m_attrs)
-      m_attrs = new My_HashMap<>();
+      m_attrs = new HashMap<>();
 
     m_attrs.put(name, flags);
   }

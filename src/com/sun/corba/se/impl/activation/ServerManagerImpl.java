@@ -35,7 +35,7 @@ package com.sun.corba.se.impl.activation;
 
 import java.util.ArrayList;
 import java.util.Iterator;
-import java.util.My_HashMap;
+import java.util.HashMap;
 import java.util.NoSuchElementException;
 
 import com.sun.corba.se.spi.activation.EndPointInfo;
@@ -82,7 +82,7 @@ public class ServerManagerImpl extends _ServerManagerImplBase
 {
     // Using HashMap, since synchronization should be done by the calling
     // routines
-    My_HashMap serverTable;
+    HashMap serverTable;
     Repository repository;
 
     CorbaTransportManager transportManager;
@@ -111,7 +111,7 @@ public class ServerManagerImpl extends _ServerManagerImplBase
 
         initialPort = ((SocketOrChannelAcceptor)endpoint)
             .getServerSocket().getLocalPort();
-        serverTable = new My_HashMap(256);
+        serverTable = new HashMap(256);
 
         // The ServerStartupDelay is the delay added after the Server registers
         // end point information. This is to allow the server to completely

@@ -657,7 +657,7 @@ class Character implements java.io.Serializable, Comparable<Character> {
      */
     public static final class UnicodeBlock extends Subset {
 
-        private static Map<String, UnicodeBlock> map = new My_HashMap<>(256);
+        private static Map<String, UnicodeBlock> map = new HashMap<>(256);
 
         /**
          * Creates a UnicodeBlock with the given identifier name.
@@ -4365,9 +4365,9 @@ class Character implements java.io.Serializable, Comparable<Character> {
             UNKNOWN
         };
 
-        private static My_HashMap<String, UnicodeScript> aliases;
+        private static HashMap<String, UnicodeScript> aliases;
         static {
-            aliases = new My_HashMap<>(128);
+            aliases = new HashMap<>(128);
             aliases.put("ARAB", ARABIC);
             aliases.put("ARMI", IMPERIAL_ARAMAIC);
             aliases.put("ARMN", ARMENIAN);

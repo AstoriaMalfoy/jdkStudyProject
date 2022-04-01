@@ -141,13 +141,13 @@ class InvokerBytecodeGenerator {
 
 
     /** instance counters for dumped classes */
-    private final static My_HashMap<String,Integer> DUMP_CLASS_FILES_COUNTERS;
+    private final static HashMap<String,Integer> DUMP_CLASS_FILES_COUNTERS;
     /** debugging flag for saving generated class files */
     private final static File DUMP_CLASS_FILES_DIR;
 
     static {
         if (DUMP_CLASS_FILES) {
-            DUMP_CLASS_FILES_COUNTERS = new My_HashMap<>();
+            DUMP_CLASS_FILES_COUNTERS = new HashMap<>();
             try {
                 File dumpDir = new File("DUMP_CLASS_FILES");
                 if (!dumpDir.exists()) {
@@ -216,7 +216,7 @@ class InvokerBytecodeGenerator {
         }
     }
 
-    Map<Object, CpPatch> cpPatches = new My_HashMap<>();
+    Map<Object, CpPatch> cpPatches = new HashMap<>();
 
     int cph = 0;  // for counting constant placeholders
 

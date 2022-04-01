@@ -210,7 +210,7 @@ public abstract class InputStreamHook extends ObjectInputStream
     public ObjectInputStream.GetField readFields()
         throws IOException, ClassNotFoundException, NotActiveException {
 
-        My_HashMap fieldValueMap = new My_HashMap();
+        HashMap fieldValueMap = new HashMap();
 
         // We were treating readFields same as defaultReadObject. It is
         // incorrect if the state is readOptionalData. If this line

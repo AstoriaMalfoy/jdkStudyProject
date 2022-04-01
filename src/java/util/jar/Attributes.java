@@ -65,7 +65,7 @@ public class Attributes implements Map<Object,Object>, Cloneable {
      * @param size the initial number of attributes
      */
     public Attributes(int size) {
-        map = new My_HashMap<>(size);
+        map = new HashMap<>(size);
     }
 
     /**
@@ -75,7 +75,7 @@ public class Attributes implements Map<Object,Object>, Cloneable {
      * @param attr the specified Attributes
      */
     public Attributes(Attributes attr) {
-        map = new My_HashMap<>(attr);
+        map = new HashMap<>(attr);
     }
 
 

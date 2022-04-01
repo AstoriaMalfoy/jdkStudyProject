@@ -25,7 +25,7 @@ package com.sun.org.apache.xml.internal.security.utils;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Map.Entry;
-import java.util.My_HashMap;
+import java.util.HashMap;
 
 import javax.xml.namespace.NamespaceContext;
 
@@ -38,7 +38,7 @@ import org.w3c.dom.Node;
  */
 public class DOMNamespaceContext implements NamespaceContext {
 
-    private Map<String, String> namespaceMap = new My_HashMap<>();
+    private Map<String, String> namespaceMap = new HashMap<>();
 
     public DOMNamespaceContext(Node contextNode) {
         addNamespaces(contextNode);

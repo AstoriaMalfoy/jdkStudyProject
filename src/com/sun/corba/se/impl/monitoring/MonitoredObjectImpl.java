@@ -35,10 +35,10 @@ public class MonitoredObjectImpl implements MonitoredObject {
     private final String description;
 
     // List of all child Monitored Objects
-    private Map children = new My_HashMap();
+    private Map children = new HashMap();
 
     // All the Attributes of this Monitored Object instance
-    private Map monitoredAttributes = new My_HashMap();
+    private Map monitoredAttributes = new HashMap();
 
     private MonitoredObject parent = null;
 

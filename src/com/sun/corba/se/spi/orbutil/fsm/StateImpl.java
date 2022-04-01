@@ -43,7 +43,7 @@ public class StateImpl extends NameBase implements State {
     {
         super( name ) ;
         defaultAction = null ;
-        inputToGuardedActions = new My_HashMap() ;
+        inputToGuardedActions = new HashMap() ;
     }
 
     public void preAction( FSM fsm )

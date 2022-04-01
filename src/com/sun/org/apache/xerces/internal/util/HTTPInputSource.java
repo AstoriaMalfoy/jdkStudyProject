@@ -27,7 +27,7 @@ import java.io.InputStream;
 import java.io.Reader;
 import java.util.Iterator;
 import java.util.Map;
-import java.util.My_HashMap;
+import java.util.HashMap;
 
 /**
  * This class represents an input source for an XML resource
@@ -51,7 +51,7 @@ public final class HTTPInputSource extends XMLInputSource {
     protected boolean fFollowRedirects = true;
 
     /** HTTP request properties. **/
-    protected Map<String, String> fHTTPRequestProperties = new My_HashMap<>();
+    protected Map<String, String> fHTTPRequestProperties = new HashMap<>();
 
     //
     // Constructors

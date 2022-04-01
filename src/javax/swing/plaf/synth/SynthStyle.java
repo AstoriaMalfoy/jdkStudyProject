@@ -31,7 +31,7 @@ import javax.swing.plaf.UIResource;
 import javax.swing.plaf.basic.BasicLookAndFeel;
 import javax.swing.text.DefaultEditorKit;
 import java.util.Map;
-import java.util.My_HashMap;
+import java.util.HashMap;
 import javax.swing.text.JTextComponent;
 
 /**
@@ -715,7 +715,7 @@ public abstract class SynthStyle {
     private static Object getDefaultValue(Object key) {
         synchronized(SynthStyle.class) {
             if (DEFAULT_VALUES == null) {
-                DEFAULT_VALUES = new My_HashMap<Object, Object>();
+                DEFAULT_VALUES = new HashMap<Object, Object>();
                 populateDefaultValues();
             }
             Object value = DEFAULT_VALUES.get(key);

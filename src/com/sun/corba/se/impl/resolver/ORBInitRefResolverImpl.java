@@ -30,7 +30,7 @@ import com.sun.corba.se.spi.resolver.Resolver ;
 import com.sun.corba.se.spi.orb.Operation ;
 import com.sun.corba.se.spi.orb.StringPair ;
 
-import java.util.My_HashMap;
+import java.util.HashMap;
 
 public class ORBInitRefResolverImpl implements Resolver {
     Operation urlHandler ;
@@ -39,7 +39,7 @@ public class ORBInitRefResolverImpl implements Resolver {
     public ORBInitRefResolverImpl( Operation urlHandler, StringPair[] initRefs )
     {
         this.urlHandler = urlHandler ;
-        orbInitRefTable = new My_HashMap() ;
+        orbInitRefTable = new HashMap() ;
 
         for( int i = 0; i < initRefs.length ; i++ ) {
             StringPair sp = initRefs[i] ;

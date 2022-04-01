@@ -213,7 +213,7 @@ public class IDLNameTranslatorImpl implements IDLNameTranslator {
     private void buildNameTranslation()
     {
         // holds method info, keyed by method
-        Map allMethodInfo = new My_HashMap() ;
+        Map allMethodInfo = new HashMap() ;
 
         for (int ctr=0; ctr<interf_.length; ctr++) {
             Class interf = interf_[ctr] ;
@@ -353,8 +353,8 @@ public class IDLNameTranslatorImpl implements IDLNameTranslator {
         //
         // Populate name translation maps.
         //
-        methodToIDLNameMap_ = new My_HashMap();
-        IDLNameToMethodMap_ = new My_HashMap();
+        methodToIDLNameMap_ = new HashMap();
+        IDLNameToMethodMap_ = new HashMap();
         methods_ = (Method[])allMethodInfo.keySet().toArray(
             new Method[0] ) ;
 

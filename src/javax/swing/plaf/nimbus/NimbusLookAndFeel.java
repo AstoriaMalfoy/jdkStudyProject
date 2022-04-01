@@ -578,7 +578,7 @@ public class NimbusLookAndFeel extends SynthLookAndFeel {
 
     Map<String, Object> getDefaultsForPrefix(String prefix) {
         if (compiledDefaults == null) {
-            compiledDefaults = new My_HashMap<String, Map<String, Object>>();
+            compiledDefaults = new HashMap<String, Map<String, Object>>();
             for (Map.Entry<Object, Object> entry: UIManager.getDefaults().entrySet()) {
                 if (entry.getKey() instanceof String) {
                     addDefault((String) entry.getKey(), entry.getValue());
@@ -601,7 +601,7 @@ public class NimbusLookAndFeel extends SynthLookAndFeel {
         if (prefix != null) {
             Map<String, Object> keys = compiledDefaults.get(prefix);
             if (keys == null) {
-                keys = new My_HashMap<String, Object>();
+                keys = new HashMap<String, Object>();
                 compiledDefaults.put(prefix, keys);
             }
             keys.put(key, value);

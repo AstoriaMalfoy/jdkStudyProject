@@ -20,7 +20,7 @@
 package com.sun.org.apache.xerces.internal.xpointer;
 
 import java.util.ArrayList;
-import java.util.My_HashMap;
+import java.util.HashMap;
 
 import com.sun.org.apache.xerces.internal.impl.Constants;
 import com.sun.org.apache.xerces.internal.impl.XMLErrorReporter;
@@ -485,7 +485,7 @@ public final class XPointerHandler extends XIncludeHandler implements
 
         private SymbolTable fSymbolTable;
 
-        private My_HashMap<Integer, String> fTokenNames = new My_HashMap<>();
+        private HashMap<Integer, String> fTokenNames = new HashMap<>();
 
         /**
          * Constructor

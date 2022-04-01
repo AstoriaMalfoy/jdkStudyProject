@@ -28,10 +28,10 @@ package com.sun.corba.se.impl.resolver ;
 import com.sun.corba.se.spi.resolver.LocalResolver ;
 import com.sun.corba.se.spi.orbutil.closure.Closure ;
 
-import java.util.My_HashMap;
+import java.util.HashMap;
 
 public class LocalResolverImpl implements LocalResolver {
-    java.util.Map nameToClosure = new My_HashMap() ;
+    java.util.Map nameToClosure = new HashMap() ;
 
     public synchronized org.omg.CORBA.Object resolve( String name )
     {

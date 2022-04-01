@@ -586,8 +586,8 @@ class Token implements java.io.Serializable {
     }
 
     // ------------------------------------------------------
-    private final static Map<String, Token> categories = new My_HashMap<>();
-    private final static Map<String, Token> categories2 = new My_HashMap<>();
+    private final static Map<String, Token> categories = new HashMap<>();
+    private final static Map<String, Token> categories2 = new HashMap<>();
     private static final String[] categoryNames = {
         "Cn", "Lu", "Ll", "Lt", "Lm", "Lo", "Mn", "Me", "Mc", "Nd",
         "Nl", "No", "Zs", "Zl", "Zp", "Cc", "Cf", null, "Co", "Cs",

@@ -99,7 +99,7 @@ public class UIDefaults extends Hashtable<Object,Object>
      */
     public UIDefaults(int initialCapacity, float loadFactor) {
         super(initialCapacity, loadFactor);
-        resourceCache = new My_HashMap<Locale, Map<String, Object>>();
+        resourceCache = new HashMap<Locale, Map<String, Object>>();
     }
 
 
@@ -289,7 +289,7 @@ public class UIDefaults extends Hashtable<Object,Object>
         Map<String, Object> values = resourceCache.get(l);
 
         if (values == null) {
-            values = new TextAndMnemonicMyHashMap();
+            values = new TextAndMnemonicHashMap();
             for (int i=resourceBundles.size()-1; i >= 0; i--) {
                 String bundleName = resourceBundles.get(i);
                 try {
@@ -1226,7 +1226,7 @@ public class UIDefaults extends Hashtable<Object,Object>
      * (xxxTitle, xxxMnemonic)
      *
      */
-    private static class TextAndMnemonicMyHashMap extends My_HashMap<String, Object> {
+    private static class TextAndMnemonicHashMap extends HashMap<String, Object> {
 
         static final String AND_MNEMONIC = "AndMnemonic";
         static final String TITLE_SUFFIX = ".titleAndMnemonic";

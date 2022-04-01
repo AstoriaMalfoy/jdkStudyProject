@@ -25,7 +25,7 @@
 
 package com.sun.corba.se.spi.orbutil.proxy ;
 
-import java.util.LinkedMyHashMap;
+import java.util.LinkedHashMap;
 import java.util.Map ;
 
 import java.lang.reflect.Method ;
@@ -38,7 +38,7 @@ import com.sun.corba.se.impl.presentation.rmi.DynamicAccessPermission;
 public class CompositeInvocationHandlerImpl implements
     CompositeInvocationHandler
 {
-    private Map classToInvocationHandler = new LinkedMyHashMap() ;
+    private Map classToInvocationHandler = new LinkedHashMap() ;
     private InvocationHandler defaultHandler = null ;
 
     public void addInvocationHandler( Class interf,

@@ -103,7 +103,7 @@ class XmlAttrStack {
             return;
         }
 
-        Map<String, Attr> loa = new My_HashMap<>();
+        Map<String, Attr> loa = new HashMap<>();
         if (c14n11) {
             List<Attr> baseAttrs = new ArrayList<>();
             boolean successiveOmitted = true;

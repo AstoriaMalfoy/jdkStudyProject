@@ -1179,7 +1179,7 @@ public final class TransformerImpl extends Transformer
 
         if (_isIdentity) {
             if (_parameters == null) {
-                _parameters = new My_HashMap<>();
+                _parameters = new HashMap<>();
             }
             _parameters.put(name, value);
         }

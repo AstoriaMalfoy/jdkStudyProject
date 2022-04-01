@@ -76,7 +76,7 @@ public class RelationTypeSupport implements RelationType {
     private static final ObjectStreamField[] oldSerialPersistentFields =
     {
       new ObjectStreamField("myTypeName", String.class),
-      new ObjectStreamField("myRoleName2InfoMap", My_HashMap.class),
+      new ObjectStreamField("myRoleName2InfoMap", HashMap.class),
       new ObjectStreamField("myIsInRelServFlg", boolean.class)
     };
     //
@@ -132,7 +132,7 @@ public class RelationTypeSupport implements RelationType {
      *           &lt;role name ({@link String})&gt; -&gt; &lt;role info ({@link RoleInfo} object)&gt;
      */
     private Map<String,RoleInfo> roleName2InfoMap =
-        new My_HashMap<String,RoleInfo>();
+        new HashMap<String,RoleInfo>();
 
     /**
      * @serial Flag specifying whether the relation type has been declared in the

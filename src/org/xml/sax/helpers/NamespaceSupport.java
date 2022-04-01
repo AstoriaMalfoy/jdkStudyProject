@@ -803,17 +803,17 @@ public class NamespaceSupport
         private void copyTables ()
         {
             if (prefixTable != null) {
-                prefixTable = new My_HashMap<>(prefixTable);
+                prefixTable = new HashMap<>(prefixTable);
             } else {
-                prefixTable = new My_HashMap<>();
+                prefixTable = new HashMap<>();
             }
             if (uriTable != null) {
-                uriTable = new My_HashMap<>(uriTable);
+                uriTable = new HashMap<>(uriTable);
             } else {
-                uriTable = new My_HashMap<>();
+                uriTable = new HashMap<>();
             }
-            elementNameTable = new My_HashMap<>();
-            attributeNameTable = new My_HashMap<>();
+            elementNameTable = new HashMap<>();
+            attributeNameTable = new HashMap<>();
             declSeen = true;
         }
 

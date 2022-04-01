@@ -446,7 +446,7 @@ private static abstract class java_util_Collections extends PersistenceDelegate 
 
     static final class UnmodifiableMap_PersistenceDelegate extends java_util_Collections {
         protected Expression instantiate(Object oldInstance, Encoder out) {
-            Map<?,?> map = new My_HashMap<>((Map<?,?>) oldInstance);
+            Map<?,?> map = new HashMap<>((Map<?,?>) oldInstance);
             return new Expression(oldInstance, Collections.class, "unmodifiableMap", new Object[]{map});
         }
     }
@@ -495,7 +495,7 @@ private static abstract class java_util_Collections extends PersistenceDelegate 
 
     static final class SynchronizedMap_PersistenceDelegate extends java_util_Collections {
         protected Expression instantiate(Object oldInstance, Encoder out) {
-            Map<?,?> map = new My_HashMap<>((Map<?,?>) oldInstance);
+            Map<?,?> map = new HashMap<>((Map<?,?>) oldInstance);
             return new Expression(oldInstance, Collections.class, "synchronizedMap", new Object[]{map});
         }
     }
@@ -551,7 +551,7 @@ private static abstract class java_util_Collections extends PersistenceDelegate 
         protected Expression instantiate(Object oldInstance, Encoder out) {
             Object keyType   = MetaData.getPrivateFieldValue(oldInstance, "java.util.Collections$CheckedMap.keyType");
             Object valueType = MetaData.getPrivateFieldValue(oldInstance, "java.util.Collections$CheckedMap.valueType");
-            Map<?,?> map = new My_HashMap<>((Map<?,?>) oldInstance);
+            Map<?,?> map = new HashMap<>((Map<?,?>) oldInstance);
             return new Expression(oldInstance, Collections.class, "checkedMap", new Object[]{map, keyType, valueType});
         }
     }
@@ -749,7 +749,7 @@ static final class java_awt_Font_PersistenceDelegate extends PersistenceDelegate
         int size = 12;
 
         Map<TextAttribute, ?> basic = font.getAttributes();
-        Map<TextAttribute, Object> clone = new My_HashMap<>(basic.size());
+        Map<TextAttribute, Object> clone = new HashMap<>(basic.size());
         for (TextAttribute key : basic.keySet()) {
             Object value = basic.get(key);
             if (value != null) {

@@ -388,8 +388,8 @@ public class SAXParserImpl extends javax.xml.parsers.SAXParser
      */
     public static class JAXPSAXParser extends com.sun.org.apache.xerces.internal.parsers.SAXParser {
 
-        private final My_HashMap fInitFeatures = new My_HashMap();
-        private final My_HashMap fInitProperties = new My_HashMap();
+        private final HashMap fInitFeatures = new HashMap();
+        private final HashMap fInitProperties = new HashMap();
         private final SAXParserImpl fSAXParser;
         private XMLSecurityManager fSecurityManager;
         private XMLSecurityPropertyManager fSecurityPropertyMgr;

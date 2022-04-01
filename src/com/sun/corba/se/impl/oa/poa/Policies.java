@@ -27,7 +27,7 @@ package com.sun.corba.se.impl.oa.poa;
 
 import java.util.BitSet ;
 import java.util.Iterator ;
-import java.util.My_HashMap;
+import java.util.HashMap;
 
 import com.sun.corba.se.impl.orbutil.ORBConstants ;
 import com.sun.corba.se.spi.extension.ServantCachingPolicy ;
@@ -56,7 +56,7 @@ public final class Policies {
 
     int defaultObjectCopierFactoryId ;
 
-    private My_HashMap policyMap = new My_HashMap() ; // Maps Integer(policy type) to Policy
+    private HashMap policyMap = new HashMap() ; // Maps Integer(policy type) to Policy
 
     public static final Policies defaultPolicies
         = new Policies() ;

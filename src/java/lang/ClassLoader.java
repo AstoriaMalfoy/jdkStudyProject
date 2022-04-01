@@ -252,7 +252,7 @@ public abstract class ClassLoader {
     // The packages defined in this class loader.  Each package name is mapped
     // to its corresponding Package object.
     // @GuardedBy("itself")
-    private final My_HashMap<String, Package> packages = new My_HashMap<>();
+    private final HashMap<String, Package> packages = new HashMap<>();
 
     private static Void checkCreateClassLoader() {
         SecurityManager security = System.getSecurityManager();
@@ -1632,7 +1632,7 @@ public abstract class ClassLoader {
     protected Package[] getPackages() {
         Map<String, Package> map;
         synchronized (packages) {
-            map = new My_HashMap<>(packages);
+            map = new HashMap<>(packages);
         }
         Package[] pkgs;
         if (parent != null) {
@@ -2091,8 +2091,8 @@ public abstract class ClassLoader {
          * them to empty maps, effectively ignoring any present settings.
          */
         synchronized (assertionLock) {
-            classAssertionStatus = new My_HashMap<>();
-            packageAssertionStatus = new My_HashMap<>();
+            classAssertionStatus = new HashMap<>();
+            packageAssertionStatus = new HashMap<>();
             defaultAssertionStatus = false;
         }
     }
@@ -2154,8 +2154,8 @@ public abstract class ClassLoader {
     private void initializeJavaAssertionMaps() {
         // assert Thread.holdsLock(assertionLock);
 
-        classAssertionStatus = new My_HashMap<>();
-        packageAssertionStatus = new My_HashMap<>();
+        classAssertionStatus = new HashMap<>();
+        packageAssertionStatus = new HashMap<>();
         AssertionStatusDirectives directives = retrieveDirectives();
 
         for(int i = 0; i < directives.classes.length; i++)

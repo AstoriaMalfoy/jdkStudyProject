@@ -82,7 +82,7 @@ final class NimbusDefaults {
      * LazyStyle.
      */
     private Map<String, Region> registeredRegions =
-            new My_HashMap<String, Region>();
+            new HashMap<String, Region>();
 
     private Map<JComponent, Map<Region, SynthStyle>> overridesCache =
             new WeakHashMap<JComponent, Map<Region, SynthStyle>>();
@@ -122,7 +122,7 @@ final class NimbusDefaults {
      * within NimbusLookAndFeel.
      */
     NimbusDefaults() {
-        m = new My_HashMap<Region, List<LazyStyle>>();
+        m = new HashMap<Region, List<LazyStyle>>();
 
         //Create the default font and default style. Also register all of the
         //regions and their states that this class will use for later lookup.
@@ -1432,7 +1432,7 @@ final class NimbusDefaults {
                 Map<Region, SynthStyle> map = overridesCache.get(c);
                 SynthStyle s = null;
                 if (map == null) {
-                    map = new My_HashMap<Region, SynthStyle>();
+                    map = new HashMap<Region, SynthStyle>();
                     overridesCache.put(c, map);
                 } else {
                     s = map.get(r);
@@ -1636,11 +1636,11 @@ final class NimbusDefaults {
     }
 
     private Map<DerivedColor, DerivedColor> derivedColors =
-            new My_HashMap<DerivedColor, DerivedColor>();
+            new HashMap<DerivedColor, DerivedColor>();
 
     private class ColorTree implements PropertyChangeListener {
         private Node root = new Node(null, null);
-        private Map<String, Node> nodes = new My_HashMap<String, Node>();
+        private Map<String, Node> nodes = new HashMap<String, Node>();
 
         public Color getColor(String uin) {
             return nodes.get(uin).color;

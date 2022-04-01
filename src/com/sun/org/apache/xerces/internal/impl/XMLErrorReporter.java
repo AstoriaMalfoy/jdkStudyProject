@@ -32,7 +32,7 @@ import com.sun.org.apache.xerces.internal.xni.parser.XMLParseException;
 
 import java.util.Locale;
 import java.util.Map;
-import java.util.My_HashMap;
+import java.util.HashMap;
 
 import org.xml.sax.ErrorHandler;
 
@@ -194,7 +194,7 @@ public class XMLErrorReporter
         //       caller to specify the location of the error being
         //       reported. -Ac
 
-        fMessageFormatters = new My_HashMap<>();
+        fMessageFormatters = new HashMap<>();
 
     } // <init>()
 

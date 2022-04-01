@@ -23,7 +23,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.Reader;
 import java.io.StringReader;
-import java.util.My_HashMap;
+import java.util.HashMap;
 
 import javax.xml.XMLConstants;
 import javax.xml.parsers.FactoryConfigurationError;
@@ -166,7 +166,7 @@ final class ValidatorHandlerImpl extends ValidatorHandler implements
     private boolean fNeedPushNSContext = true;
 
     /** Map for tracking unparsed entities. */
-    private My_HashMap fUnparsedEntities = null;
+    private HashMap fUnparsedEntities = null;
 
     /** Flag used to track whether XML names and Namespace URIs have been internalized. */
     private boolean fStringsInternalized = false;
@@ -650,7 +650,7 @@ final class ValidatorHandlerImpl extends ValidatorHandler implements
     public void unparsedEntityDecl(String name, String publicId,
             String systemId, String notationName) throws SAXException {
         if (fUnparsedEntities == null) {
-            fUnparsedEntities = new My_HashMap();
+            fUnparsedEntities = new HashMap();
         }
         fUnparsedEntities.put(name, name);
     }

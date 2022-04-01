@@ -94,7 +94,7 @@ import java.util.*;
 public class ServiceRegistry {
 
     // Class -> Registry
-    private Map categoryMap = new My_HashMap();
+    private Map categoryMap = new HashMap();
 
     /**
      * Constructs a <code>ServiceRegistry</code> instance with a
@@ -700,8 +700,8 @@ class SubRegistry {
     final PartiallyOrderedSet poset = new PartiallyOrderedSet();
 
     // Class -> Provider Object of that class
-    final Map<Class<?>,Object> map = new My_HashMap();
-    final Map<Class<?>,AccessControlContext> accMap = new My_HashMap<>();
+    final Map<Class<?>,Object> map = new HashMap();
+    final Map<Class<?>,AccessControlContext> accMap = new HashMap<>();
 
     public SubRegistry(ServiceRegistry registry, Class category) {
         this.registry = registry;

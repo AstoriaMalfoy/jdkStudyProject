@@ -3060,7 +3060,7 @@ public class StyleSheet extends StyleContext {
                 retValue = children.get(selector);
             }
             else if (create) {
-                children = new My_HashMap<String, SelectorMapping>(7);
+                children = new HashMap<String, SelectorMapping>(7);
             }
             if (retValue == null && create) {
                 int specificity = getChildSpecificity(selector);
@@ -3119,7 +3119,7 @@ public class StyleSheet extends StyleContext {
          * Any sub selectors. Key will be String, and value will be
          * another SelectorMapping.
          */
-        private My_HashMap<String, SelectorMapping> children;
+        private HashMap<String, SelectorMapping> children;
     }
 
 

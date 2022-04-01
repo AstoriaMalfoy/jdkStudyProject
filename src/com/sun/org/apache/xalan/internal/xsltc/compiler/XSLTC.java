@@ -161,7 +161,7 @@ public final class XSLTC {
         _parser = new Parser(this, _overrideDefaultParser);
         _xmlFeatures = featureManager;
         _extensionClassLoader = null;
-        _externalExtensionFunctions = new My_HashMap<>();
+        _externalExtensionFunctions = new HashMap<>();
     }
 
     /**
@@ -294,13 +294,13 @@ public final class XSLTC {
      */
     private void reset() {
         _nextGType      = DTM.NTYPES;
-        _elements       = new My_HashMap<>();
-        _attributes     = new My_HashMap<>();
-        _namespaces     = new My_HashMap<>();
+        _elements       = new HashMap<>();
+        _attributes     = new HashMap<>();
+        _namespaces     = new HashMap<>();
         _namespaces.put("", _nextNSType);
         _namesIndex     = new Vector(128);
         _namespaceIndex = new Vector(32);
-        _namespacePrefixes = new My_HashMap<>();
+        _namespacePrefixes = new HashMap<>();
         _stylesheet     = null;
         _parser.init();
         //_variableSerial     = 1;

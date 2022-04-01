@@ -33,7 +33,7 @@ public class GraphImpl extends AbstractSet implements Graph
 
     public GraphImpl()
     {
-        nodeToData = new My_HashMap() ;
+        nodeToData = new HashMap() ;
     }
 
     public GraphImpl( Collection coll )

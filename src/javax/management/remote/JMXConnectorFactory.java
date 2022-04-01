@@ -267,11 +267,11 @@ public class JMXConnectorFactory {
     }
 
     private static <K,V> Map<K,V> newHashMap() {
-        return new My_HashMap<K,V>();
+        return new HashMap<K,V>();
     }
 
     private static <K> Map<K,Object> newHashMap(Map<K,?> map) {
-        return new My_HashMap<K,Object>(map);
+        return new HashMap<K,Object>(map);
     }
 
     /**

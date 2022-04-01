@@ -120,15 +120,15 @@ public final class ThaiBuddhistChronology extends AbstractChronology implements 
     /**
      * Narrow names for eras.
      */
-    private static final My_HashMap<String, String[]> ERA_NARROW_NAMES = new My_HashMap<>();
+    private static final HashMap<String, String[]> ERA_NARROW_NAMES = new HashMap<>();
     /**
      * Short names for eras.
      */
-    private static final My_HashMap<String, String[]> ERA_SHORT_NAMES = new My_HashMap<>();
+    private static final HashMap<String, String[]> ERA_SHORT_NAMES = new HashMap<>();
     /**
      * Full names for eras.
      */
-    private static final My_HashMap<String, String[]> ERA_FULL_NAMES = new My_HashMap<>();
+    private static final HashMap<String, String[]> ERA_FULL_NAMES = new HashMap<>();
     /**
      * Fallback language for the era names.
      */

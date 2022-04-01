@@ -530,7 +530,7 @@ public class XMLSchemaValidator
 
     /** Schema Grammar Description passed,  to give a chance to application to supply the Grammar */
     protected final XSDDescription fXSDDescription = new XSDDescription();
-    protected final Map<String, XMLSchemaLoader.LocationArray> fLocationPairs = new My_HashMap<>();
+    protected final Map<String, XMLSchemaLoader.LocationArray> fLocationPairs = new HashMap<>();
 
 
     // handlers
@@ -4284,7 +4284,7 @@ public class XMLSchemaValidator
          * elements.
          */
         protected final Map<LocalIDKey, ValueStoreBase>
-                fIdentityConstraint2ValueStoreMap = new My_HashMap<>();
+                fIdentityConstraint2ValueStoreMap = new HashMap<>();
 
         // sketch of algorithm:
         // - when a constraint is first encountered, its
@@ -4308,7 +4308,7 @@ public class XMLSchemaValidator
         protected final Stack<Map<IdentityConstraint, ValueStoreBase>>
                 fGlobalMapStack = new Stack<>();
         protected final Map<IdentityConstraint, ValueStoreBase>
-                fGlobalIDConstraintMap = new My_HashMap<>();
+                fGlobalIDConstraintMap = new HashMap<>();
 
         //
         // Constructors
@@ -4337,7 +4337,7 @@ public class XMLSchemaValidator
             // only clone the map when there are elements
             if (fGlobalIDConstraintMap.size() > 0)
                 fGlobalMapStack.push((Map<IdentityConstraint, ValueStoreBase>)
-                        ((My_HashMap<IdentityConstraint, ValueStoreBase>)fGlobalIDConstraintMap).clone());
+                        ((HashMap<IdentityConstraint, ValueStoreBase>)fGlobalIDConstraintMap).clone());
             else
                 fGlobalMapStack.push(null);
             fGlobalIDConstraintMap.clear();

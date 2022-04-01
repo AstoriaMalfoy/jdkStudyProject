@@ -1,5 +1,5 @@
 import java.util.Map;
-import java.util.My_HashMap;
+import java.util.HashMap;
 
 /**
  * @author litao34
@@ -9,7 +9,7 @@ import java.util.My_HashMap;
  **/
 public class DemoTest {
     public static void main(String[] args) {
-        Map<String,String> testMap = new My_HashMap<>();
+        Map<String,String> testMap = new HashMap<>();
         for ( int  i = 0; i < 100 ; i ++){
             testMap.put( "ket" + i,"value" + i);
         }

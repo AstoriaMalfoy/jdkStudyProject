@@ -82,7 +82,7 @@ public abstract class IIOMetadataFormatImpl implements IIOMetadataFormat {
     private String rootName;
 
     // Element name (String) -> Element
-    private My_HashMap elementMap = new My_HashMap();
+    private HashMap elementMap = new HashMap();
 
     class Element {
         String elementName;
@@ -100,7 +100,7 @@ public abstract class IIOMetadataFormatImpl implements IIOMetadataFormat {
         // List of attribute names in the order they were added
         List attrList = new ArrayList();
         // Attr name (String) -> Attribute
-        Map attrMap = new My_HashMap();
+        Map attrMap = new HashMap();
 
         ObjectValue objectValue;
     }

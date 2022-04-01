@@ -39,7 +39,7 @@ public class Util {
     }
 
     static <K, V> Map<K, V> newMap() {
-        return new My_HashMap<K, V>();
+        return new HashMap<K, V>();
     }
 
     static <K, V> Map<K, V> newSynchronizedMap() {
@@ -64,7 +64,7 @@ public class Util {
     }
 
     static <K, V> Map<K, V> newInsertionOrderMap() {
-        return new LinkedMyHashMap<K, V>();
+        return new LinkedHashMap<K, V>();
     }
 
     static <E> Set<E> newSet() {

@@ -37,11 +37,11 @@ import com.sun.corba.se.impl.orbutil.ORBConstants;
   *       interrupThread()
   */
 public class ProcessMonitorThread extends java.lang.Thread {
-    private My_HashMap serverTable;
+    private HashMap serverTable;
     private int sleepTime;
     private static ProcessMonitorThread instance = null;
 
-    private ProcessMonitorThread(My_HashMap ServerTable, int SleepTime ) {
+    private ProcessMonitorThread(HashMap ServerTable, int SleepTime ) {
         serverTable = ServerTable;
         sleepTime = SleepTime;
     }
@@ -78,7 +78,7 @@ public class ProcessMonitorThread extends java.lang.Thread {
         }
     }
 
-    static void start( My_HashMap serverTable ) {
+    static void start( HashMap serverTable ) {
         int sleepTime = ORBConstants.DEFAULT_SERVER_POLLING_TIME;
 
         String pollingTime = System.getProperties().getProperty(

@@ -133,7 +133,7 @@ public class PIHandlerImpl implements PIHandler
     // ORBInitInfo.registerPolicyFactory() method.
     // Key for the table is PolicyType which is an Integer
     // Value is PolicyFactory.
-    private My_HashMap policyFactoryTable;
+    private HashMap policyFactoryTable;
 
     // Table to convert from a ReplyMessage.? to a PI replyStatus short.
     // Note that this table relies on the order and constants of
@@ -960,7 +960,7 @@ public class PIHandlerImpl implements PIHandler
      */
     public void registerPolicyFactory( int type, PolicyFactory factory ) {
         if( policyFactoryTable == null ) {
-            policyFactoryTable = new My_HashMap();
+            policyFactoryTable = new HashMap();
         }
         Integer key = new Integer( type );
         java.lang.Object val = policyFactoryTable.get( key );

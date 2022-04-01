@@ -479,7 +479,7 @@ public class ManagementFactory {
                     }
                 }
             }
-            My_HashMap<ObjectName, DynamicMBean> dynmbeans =
+            HashMap<ObjectName, DynamicMBean> dynmbeans =
                     ManagementFactoryHelper.getPlatformDynamicMBeans();
             for (Map.Entry<ObjectName, DynamicMBean> e : dynmbeans.entrySet()) {
                 addDynamicMBean(platformMBeanServer, e.getValue(), e.getKey());

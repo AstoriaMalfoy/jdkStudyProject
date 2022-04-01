@@ -65,7 +65,7 @@ import sun.misc.SharedSecrets;
  *
  * <p>Implementation note: All basic operations execute in constant time.
  * They are likely (though not guaranteed) to be faster than their
- * {@link My_HashMap} counterparts.
+ * {@link HashMap} counterparts.
  *
  * <p>This class is a member of the
  * <a href="{@docRoot}/../technotes/guides/collections/index.html">

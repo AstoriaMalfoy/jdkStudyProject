@@ -1575,7 +1575,7 @@ public class JEditorPane extends JTextComponent {
      */
     public static final String HONOR_DISPLAY_PROPERTIES = "JEditorPane.honorDisplayProperties";
 
-    static final Map<String, String> defaultEditorKitMap = new My_HashMap<String, String>(0);
+    static final Map<String, String> defaultEditorKitMap = new HashMap<String, String>(0);
 
     /**
      * Returns a string representation of this <code>JEditorPane</code>.

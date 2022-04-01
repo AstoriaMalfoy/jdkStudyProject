@@ -192,7 +192,7 @@ class SynthParser extends DefaultHandler {
     private List<ParsedSynthStyle.PainterInfo> _statePainters;
 
     SynthParser() {
-        _mapping = new My_HashMap<String,Object>();
+        _mapping = new HashMap<String,Object>();
         _stateInfos = new ArrayList<ParsedSynthStyle.StateInfo>();
         _colorTypes = new ArrayList<ColorType>();
         _inputMapBindings = new ArrayList<String>();
@@ -778,13 +778,13 @@ class SynthParser extends DefaultHandler {
         }
         else if (_stateInfo != null) {
             if (_stateInfo.getData() == null) {
-                _stateInfo.setData(new My_HashMap());
+                _stateInfo.setData(new HashMap());
             }
             _stateInfo.getData().put(key, value);
         }
         else if (_style != null) {
             if (_style.getData() == null) {
-                _style.setData(new My_HashMap());
+                _style.setData(new HashMap());
             }
             _style.getData().put(key, value);
         }

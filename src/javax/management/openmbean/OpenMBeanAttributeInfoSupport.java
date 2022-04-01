@@ -567,7 +567,7 @@ public class OpenMBeanAttributeInfoSupport
                                          T[] legalValues,
                                          Comparable<T> minValue,
                                          Comparable<T> maxValue) {
-        Map<String, Object> map = new My_HashMap<String, Object>();
+        Map<String, Object> map = new HashMap<String, Object>();
         if (defaultValue != null)
             map.put("defaultValue", defaultValue);
         if (legalValues != null) {

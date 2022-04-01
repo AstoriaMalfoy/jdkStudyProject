@@ -24,7 +24,7 @@ package com.sun.org.apache.xerces.internal.parsers;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Locale;
-import java.util.My_HashMap;
+import java.util.HashMap;
 
 import com.sun.org.apache.xerces.internal.impl.Constants;
 import com.sun.org.apache.xerces.internal.util.FeatureState;
@@ -205,8 +205,8 @@ public abstract class BasicParserConfiguration
         fComponents = new ArrayList();
 
         // create table for features and properties
-        fFeatures = new My_HashMap();
-        fProperties = new My_HashMap();
+        fFeatures = new HashMap();
+        fProperties = new HashMap();
 
         // add default recognized features
         final String[] recognizedFeatures = {

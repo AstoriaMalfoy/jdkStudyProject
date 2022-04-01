@@ -144,9 +144,9 @@ public class XSAttributeChecker {
 
     // used to store the map from element name to attribute list
     // for 14 global elements
-    private static final Map<String, Container> fEleAttrsMapG = new My_HashMap<>(29);
+    private static final Map<String, Container> fEleAttrsMapG = new HashMap<>(29);
     // for 39 local elememnts
-    private static final Map<String, Container> fEleAttrsMapL = new My_HashMap<>(79);
+    private static final Map<String, Container> fEleAttrsMapL = new HashMap<>(79);
 
     // used to initialize fEleAttrsMap
     // step 1: all possible data types
@@ -925,7 +925,7 @@ public class XSAttributeChecker {
     protected SymbolTable fSymbolTable = null;
 
     // used to store the mapping from processed element to attributes
-    protected Map<String, List<String>> fNonSchemaAttrs = new My_HashMap<>();
+    protected Map<String, List<String>> fNonSchemaAttrs = new HashMap<>();
 
     // temprory vector, used to hold the namespace list
     protected List<String> fNamespaceList = new ArrayList<>();
@@ -1815,7 +1815,7 @@ class SmallContainer extends Container {
 class LargeContainer extends Container {
     Map<String, OneAttr> items;
     LargeContainer(int size) {
-        items = new My_HashMap<>(size*2+1);
+        items = new HashMap<>(size*2+1);
         values = new OneAttr[size];
     }
     void put(String key, OneAttr value) {

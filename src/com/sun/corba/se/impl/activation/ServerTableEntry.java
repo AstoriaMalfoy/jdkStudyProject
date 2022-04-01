@@ -42,7 +42,7 @@ import com.sun.corba.se.impl.orbutil.ORBConstants;
 import com.sun.corba.se.impl.logging.ActivationSystemException ;
 
 import java.util.Iterator;
-import java.util.My_HashMap;
+import java.util.HashMap;
 import java.util.NoSuchElementException;
 
 public class ServerTableEntry
@@ -77,7 +77,7 @@ public class ServerTableEntry
     // state of each entry
     private int state;
     private int serverId;
-    private My_HashMap orbAndPortInfo;
+    private HashMap orbAndPortInfo;
     private Server serverObj;
     private ServerDef serverDef;
     private Process process;
@@ -112,7 +112,7 @@ public class ServerTableEntry
         // create a HashMap with capacity 255
         // Since all methods are synchronized, we don't need any
         // additional synchronization mechanisms
-        orbAndPortInfo = new My_HashMap(255);
+        orbAndPortInfo = new HashMap(255);
 
         activateRetryCount = 0;
         state = ACTIVATING;
